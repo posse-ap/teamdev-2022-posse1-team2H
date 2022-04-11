@@ -1,0 +1,30 @@
+version: '3'
+services:
+  web:
+    platform: linux/amd64
+    image: nginx:1.21
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    volumes:
+      - ./nginx/etc/nginx/conf.d:/etc/nginx/conf.d
+      - ./src:/var/www/html
+  app:
+    platform: linux/amd64
+    build: ./php
+    depends_on:
+      - db
+    volumes:
+      - ./src:/var/www/html
+  db:
+    platform: linux/amd64
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ./mysql/etc/mysql/conf.d:/etc/mysql/conf.d
+      - ./mysql/data:/var/lib/mysql
