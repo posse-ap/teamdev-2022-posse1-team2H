@@ -5,6 +5,7 @@
 # Note
 
 ソースの取得
+※コマンドを実行したフォルダにサンプルコードがダウンロードされます
 
 ```bash
 git clone git@github.com:posse-ap/teamdev-2022-sample2.git
@@ -13,6 +14,7 @@ git clone git@github.com:posse-ap/teamdev-2022-sample2.git
 コンテナ起動
 
 ```bash
+cd teamdev-2022-sample2
 docker-compose build --no-cache
 docker-compose up -d
 ```
