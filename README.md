@@ -2,7 +2,13 @@
 
 チーム開発用のサンプルです、これを使ってサクッと開発してください
 
-# Usage
+# Note
+
+ソースの取得
+
+```bash
+git clone git@github.com:posse-ap/teamdev-2022-sample2.git
+```
 
 コンテナ起動
 
@@ -10,8 +16,6 @@
 docker-compose build --no-cache
 docker-compose up -d
 ```
-
-# Note
 
 ログインURL
 
