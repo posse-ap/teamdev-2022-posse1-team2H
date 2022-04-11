@@ -29,6 +29,6 @@ http://localhost/
 データ初期化
 
 ```bash
-./mysql/data を削除
-コンテナ起動すると　./mysql/docker-entrypoint-initdb.d/init.sql が実行され
-初期データが投入されます
+./mysql/data を削除後、コンテナ再起動
+./mysql/docker-entrypoint-initdb.d/init.sql が実行され初期データが投入されます
+```
