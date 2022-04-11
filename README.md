@@ -13,7 +13,9 @@ docker-compose up -d
 
 # Note
 
-
+```bash
+http://localhost/
+```
 
 管理者ログイン情報
 
