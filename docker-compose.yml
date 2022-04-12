@@ -1,6 +1,7 @@
 version: '3'
 services:
   web:
+    container_name: craft_nginx_dev
     platform: linux/amd64
     image: nginx:1.21
     ports:
@@ -12,12 +13,14 @@ services:
       - ./src:/var/www/html
   app:
     platform: linux/amd64
+    container_name: craft_api_dev
     build: ./php
     depends_on:
       - db
     volumes:
       - ./src:/var/www/html
   db:
+    container_name: craft_db_dev
     platform: linux/amd64
     image: mysql:8.0
     environment:
@@ -28,3 +31,24 @@ services:
       - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - ./mysql/etc/mysql/conf.d:/etc/mysql/conf.d
       - ./mysql/data:/var/lib/mysql
+  mail:
+    image: mailhog/mailhog
+    container_name: mailhog
+    ports:
+      - '8025:8025'
+    environment:
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: /tmp
+    volumes:
+      - maildir:/tmp
+  phpmyadmin:
+    container_name: craft_db_admin
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - "8888:80"
+    depends_on:
+      - db
+
+volumes:
+  db-volume:
+  maildir: {}
