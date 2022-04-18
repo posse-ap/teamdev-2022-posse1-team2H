@@ -6,21 +6,21 @@ USE shukatsu;
 
 DROP TABLE IF EXISTS users;
 
--- CREATE TABLE users (
---   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
---   email VARCHAR(255) UNIQUE NOT NULL,
---   password VARCHAR(255) NOT NULL,
---   tel VARChAR(255) NOT NULL,
---   univercity VARCHAR(255) NOT NULL,
---   undergraduage VARCHAR(255) NOT NULL,
---   department VARCHAR(255) NOT NULL,
---   school_year INT(10) NOT NULL,
---   graduation_year INT(10) NOT NULL,
---   gender BOOLEAN NOT NULL,
---   address VARCHAR(255) NOT NULL,
---   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
---   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
--- );
+CREATE TABLE users (
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  tel VARChAR(255) NOT NULL,
+  univercity VARCHAR(255) NOT NULL,
+  undergraduage VARCHAR(255) NOT NULL,
+  department VARCHAR(255) NOT NULL,
+  school_year INT(10) NOT NULL,
+  graduation_year INT(10) NOT NULL,
+  gender BOOLEAN NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 
 -- INSERT INTO
 --   users
@@ -45,7 +45,18 @@ CREATE TABLE agencies (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-DROP TABLE IF EXISTS users_agencies;
+DROP TABLE IF EXISTS agency_articles;
+CREATE TABLE agency_articles (
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  agency_id INT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  sentenses VARCHAR(255) NOT NULL,
+  eyecatch_url VARCHAR(255) NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
 
 CREATE TABLE users_agencies (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -81,7 +92,7 @@ CREATE TABLE agencies_industories (
   industory_id INT
 );
 
-DROP TABLE IF EXISTS agencies_types;
+DROP TABLE IF EXISTS agencies_types; -- 中間テーブル
 
 CREATE TABLE agencies_types (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -101,3 +112,31 @@ CREATE TABLE managers (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+DROP TABLE IF EXISTS contracts;
+
+CREATE TABLE contracts ( -- 契約情報のテーブル
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, -- 契約id
+  agency_id INT NOT NULL, -- エージェンシーid 外部キー成約
+  contract_year_month INT NOT NUll, -- 契約年月
+  claim_year_month INT NOT NULL, -- 請求年月
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+DROP TABLE IF EXISTS administorators;
+
+CREATE TABLE administorators (
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO administorators
+SET
+name = 'サンプル太郎',
+email = 'test@posse-ap.com',
+password = sha1('password');
