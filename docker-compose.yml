@@ -22,13 +22,16 @@ services:
   db:
     container_name: craft_db_dev
     platform: linux/amd64
-    image: mysql:8.0
+    image: mysql:5.7.16
     environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: password
     ports:
-      - "3306:3306"
+      - "13306:3306"
     volumes:
-      - ./mysql/data:/var/mysql
+      - ./mysql/data:/var/lib/mysql
+      # - mysql-data:/var/lib/mysql
       - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - ./mysql/etc/mysql/conf.d:/etc/mysql/conf.d
   mail:

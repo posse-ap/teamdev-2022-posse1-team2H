@@ -18,6 +18,7 @@ CREATE TABLE users (
   graduation_year INT(10) NOT NULL,
   gender BOOLEAN NOT NULL,
   address VARCHAR(255) NOT NULL,
+  address_num VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -41,6 +42,7 @@ CREATE TABLE agencies (
   representative VARCHAR(255) NOT NULL,
   contactor VARCHAR(255) NOT NULL,
   address VARCHAR(255) NOT NULL,
+  address_num VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -115,7 +117,7 @@ CREATE TABLE managers (
 
 DROP TABLE IF EXISTS contracts;
 
-CREATE TABLE contracts ( -- 契約情報のテーブル
+CREATE TABLE contracts ( -- 契約情報のテーブル v
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, -- 契約id
   agency_id INT NOT NULL, -- エージェンシーid 外部キー成約
   contract_year_month INT NOT NUll, -- 契約年月
