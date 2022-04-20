@@ -55,16 +55,20 @@ CREATE TABLE agency_articles (
   sentenses VARCHAR(255) NOT NULL,
   eyecatch_url VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY fk_agency_id(agency_id)
+  REFERENCES agencies(id)
 );
 
 DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
 
 CREATE TABLE users_agencies (
+  user_id INT,
+  agency_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  user_id INT,
-  agency_id INT
+  FOREIGN KEY fk_user_id(user_id) REFERENCES users(id),
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
 DROP TABLE IF EXISTS industries;
@@ -80,7 +84,7 @@ DROP TABLE IF EXISTS agency_type;
 
 CREATE TABLE agency_type (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  agency_typr VARCHAR(255) NOT NULL,
+  agency_type VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -88,10 +92,12 @@ CREATE TABLE agency_type (
 DROP TABLE IF EXISTS agencies_industories;
 
 CREATE TABLE agencies_industories (
+  agency_id INT,
+  industory_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  agency_id INT,
-  industory_id INT
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id),
+  FOREIGN KEY fk_industory_id(industory_id) REFERENCES industries(id)
 );
 
 DROP TABLE IF EXISTS agencies_types; -- 中間テーブル
@@ -100,7 +106,9 @@ CREATE TABLE agencies_types (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   agency_id INT,
-  type_id INT
+  type_id INT,
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id),
+  FOREIGN KEY fk_type_id(type_id) REFERENCES agency_type(id)
 );
 
 DROP TABLE IF EXISTS managers;
@@ -111,8 +119,10 @@ CREATE TABLE managers (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   is_representative BOOLEAN NOT NULL,
+  agency_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
 DROP TABLE IF EXISTS contracts;
@@ -123,7 +133,8 @@ CREATE TABLE contracts ( -- 契約情報のテーブル v
   contract_year_month INT NOT NUll, -- 契約年月
   claim_year_month INT NOT NULL, -- 請求年月
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
 DROP TABLE IF EXISTS administorators;
@@ -131,7 +142,7 @@ DROP TABLE IF EXISTS administorators;
 CREATE TABLE administorators (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
