@@ -1,0 +1,90 @@
+/* 全体 */
+html,body{
+    width: 100%;
+    background-color: #EAEDF2;
+    margin: 0;
+}
+
+title{
+    margin-top: 0;
+
+}
+
+/* ヘッダー */
+header{
+    background-color: #26A69A;
+    height: 75px;
+    margin-top: 0;
+}
+
+/* コンテンツ全体 */
+.content{
+    width: 100%;
+    border: solid 1px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 100px;
+}
+
+/* エージェント一覧 */
+.agency_list{
+    display: flex;
+    border: solid 1px;
+    gap:30px;
+    width: 50%;
+}
+
+/* サイドバー */
+.sidebar_wrapper{
+    border: solid 1px;
+    width: 20%;
+}
+
+/* カード */
+
+/* エージェンシーのタグ */
+.new_agency{
+    width: 55%;
+}
+.new_agency_card{
+    background-color: #ffff;
+    box-shadow: 0 2px 5px #ccc;
+    cursor: pointer;
+}
+
+.popular_agency{
+    width: 55%;
+}
+.popular_agency_card{
+    background-color: #ffff;
+    box-shadow: 0 2px 5px #ccc;
+    cursor: pointer;
+}
+.agency_img img{
+    width: 100%;
+}
+.agency_feature{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.slogan{
+    text-align: center;
+}
+.name_and_favorite{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ここからサイドバー */
+.sidebar_favorite{
+    background-color: #26A69A;
+    color: #ffff;
+    text-align: center;
+}
+.sidebar_search{
+    background-color: #26A69A;
+    color: #ffff;
+    text-align: center;
+}
