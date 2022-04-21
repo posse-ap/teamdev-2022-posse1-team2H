@@ -35,56 +35,92 @@ header{
     width: 50%;
 }
 
-/* サイドバー */
-.sidebar_wrapper{
-    border: solid 1px;
-    width: 20%;
-}
 
-/* カード */
-
-/* エージェンシーのタグ */
+/* 新着エージェンシー */
 .new_agency{
     width: 55%;
 }
+/* 新着エージェンシーのカード */
 .new_agency_card{
     background-color: #ffff;
     box-shadow: 0 2px 5px #ccc;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
-
+/* 人気のエージェンシー */
 .popular_agency{
     width: 55%;
 }
+/* 人気のエージェンシーのカード */
 .popular_agency_card{
     background-color: #ffff;
     box-shadow: 0 2px 5px #ccc;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
+/* エージェンシーのイメージ */
 .agency_img img{
     width: 100%;
+    cursor: pointer;
 }
+/* エージェンシーの特徴 */
 .agency_feature{
     display: flex;
     justify-content: center;
     gap: 10px;
 }
+/* キャッチコピー */
 .slogan{
     text-align: center;
 }
+/* 企業名とお気に入り追加ボタン */
 .name_and_favorite{
     display: flex;
     justify-content: space-between;
 }
 
 /* ここからサイドバー */
+
+/* サイドバー 全体*/
+.sidebar_wrapper{
+    border: solid 1px;
+    width: 20%;
+}
+
+/* サイドバーの中身全て */
+.sidebar_inner{
+    position: sticky;
+    top: 0;
+}
+
+/* お気に入り */
 .sidebar_favorite{
     background-color: #26A69A;
     color: #ffff;
     text-align: center;
 }
+/* 検索 */
 .sidebar_search{
     background-color: #26A69A;
     color: #ffff;
     text-align: center;
+}
+
+.business_type_tag{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    justify-content: center;
+}
+
+.business_type_tag div{
+    border: solid 1px transparent;
+    border-radius: 15px;
+    text-align: center;
+    width: 40%;
+    background-color: #26A69A;
+}
+
+/* a`タグのリンクと下線を変更 */
+.business_type_tag div a{
+    text-decoration: none;
+    color:#ffff;
 }
