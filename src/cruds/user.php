@@ -8,6 +8,7 @@ class User
     {
         $this->db = $db;
     }
+    // TOPページの表示
     public function getAgenciesByNew()
     {
         $stmt = $this->db->prepare('SELECT
