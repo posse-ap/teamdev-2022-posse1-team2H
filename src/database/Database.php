@@ -1,6 +1,7 @@
 <?php
 
-namespace Craft;
+namespace database;
+
 class Database
 {
   private static $instance;

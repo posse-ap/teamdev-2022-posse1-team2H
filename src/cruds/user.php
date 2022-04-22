@@ -1,6 +1,6 @@
 <?php
 
-namespace Craft\Cruds;
+namespace cruds;
 
 class User
 {
@@ -21,8 +21,25 @@ class User
         ON agency.id = article.agency_id
         ORDER BY article.updated_at DESC');
         $stmt->execute();
-        $values = $stmt->fetchAll();
 
-        return json_encode($values);
+        $num = $stmt->rowCount();
+
+        if ($num > 0) {
+            $values = array();
+
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                extract($row);
+
+                $item = array(
+                    'name'=> $name,
+                    'title' => $title,
+                    'sentenses' => $sentenses,
+                    'eyecatch_url' => $eyecatch_url
+                );
+                array_push($values, $item);
+            }
+        }
+
+        return json_encode($values,JSON_UNESCAPED_UNICODE);
     }
 }
