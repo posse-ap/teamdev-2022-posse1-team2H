@@ -1,6 +1,5 @@
 <?php
-session_start();
-require('../dbconnect.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 
 if (!empty($_POST)) {
   $login = $db->prepare('SELECT * FROM users WHERE email=? AND password=?');
