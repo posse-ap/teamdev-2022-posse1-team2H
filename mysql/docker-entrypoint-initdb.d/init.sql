@@ -47,6 +47,149 @@ CREATE TABLE agencies (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+INSERT INTO agencies SET
+name = '株式会社〇〇',
+email = 'marumaru@example.com',
+password = sha1('marumaru'),
+email_for_notification = 'marumarun@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = '〇〇丸',
+contactor = '武田鉄矢',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('株式会社菅田将暉', 'suda@example.com', sha1('sudamasaki'), 'sudan@example.com', '08000001111', 'https://google.com', 'すだ', '菅生大将', '199-9999'),
+INSERT INTO agencies SET
+name = '株式会社菅田将暉',
+email = 'suda@example.com',
+password = sha1('sudamasaki'),
+email_for_notification = 'sudan@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'すだ',
+contactor = '菅生大将',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('株式会社竹内涼真', 'takeuti@example.com', sha1('takeuti'), 'takeutin@example.com', '08000001111', 'https://google.com', 'たけうち', 'たけうち', '199-9999'),
+INSERT INTO agencies SET
+name = '株式会社竹内涼真',
+email = 'takeuti@example.com',
+password = sha1('takeuti'),
+email_for_notification = 'takeutin@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'たけうち',
+contactor = 'たけうち',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('', 'mamiya@example.com', sha1('mamiya'), 'mamiyan@example.com', '08000001111', 'https://google.com', 'まみや', 'まみや', '199-9999'),
+INSERT INTO agencies SET
+name = '株式会社間宮祥太朗',
+email = 'mamiya@example.com',
+password = sha1('mamiya'),
+email_for_notification = 'mamiyan@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'まみや',
+contactor = 'まみや',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('株式会社仲野太賀', 'nakano@example.com', sha1('nakano'), 'nakano@example.com', '08000001111', 'https://google.com', 'なかの', 'なかの', '199-9999'),
+INSERT INTO agencies SET
+name = '株式会社仲野太賀',
+email = 'nakano@example.com',
+password = sha1('nakano'),
+email_for_notification = 'nakano@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'なかの',
+contactor = 'なかの',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('株式会社神木隆之介', 'kamiki@example.com', sha1('kamiki'), 'kamikin@example.com', '08000001111', 'https://google.com', 'かみき', 'かみき', '199-9999'),
+INSERT INTO agencies SET
+name = '株式会社神木隆之介',
+email = 'kamiki@example.com',
+password = sha1('kamiki'),
+email_for_notification = 'kamikin@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'かみき',
+contactor = 'かみき',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('株式会社松坂桃李', 'matuzaka@example.com', sha1('matuzaka'), 'matuzaka@example.com', '08000001111', 'https://google.com', 'まつざか', 'まつざか', '199-9999'),
+INSERT INTO agencies SET
+name = '株式会社松坂桃李',
+email = 'matuzaka@example.com',
+password = sha1('matuzaka'),
+email_for_notification = 'matuzakan@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'まつざか',
+contactor = 'まつざか',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('株式会社山田裕貴', 'yamada@example.com', sha1('yamada'), 'yamada@example.com', '08000001111', 'https://google.com', 'やまだ', 'やまだ', '199-9999'),
+INSERT INTO agencies SET
+name = '株式会社山田裕貴',
+email = 'yamada@example.com',
+password = sha1('yamada'),
+email_for_notification = 'yamadan@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'やまだ',
+contactor = 'やまだ',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('株式会社吉沢亮', 'yosizawa@example.com', sha1('yosizawa'), 'yosizawan@example.com', '08000001111', 'https://google.com', 'よしざわ', 'よしざわ', '199-9999'),
+INSERT INTO agencies SET
+name = '株式会社吉沢亮',
+email = 'yosizawa@example.com',
+password = sha1('yosizawa'),
+email_for_notification = 'yosizawan@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'よしざわ',
+contactor = 'よしざわ',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('株式会社DJ松永', 'matsunaga@example.com', sha1('matsunaga'), 'matsunagan@example.com', '08000001111', 'https://google.com', 'くにひこ', 'くにひこ', '199-9999'),
+INSERT INTO agencies SET
+name = '株式会社DJ松永',
+email = 'matsunaga@example.com',
+password = sha1('matsunaga'),
+email_for_notification = 'matsunagan@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'くにひこ',
+contactor = 'くにひこ',
+address = '東京都港区',
+address_num = '199-9999';
+
+-- ('株式会社常田大希', 'tuneta@example.com', sha1('tuneta'), 'tunetan@example.com', '08000001111', 'https://google.com', 'つねた', 'つねた', '199-9999');
+INSERT INTO agencies SET
+name = '株式会社常田大希',
+email = 'tuneta@example.com',
+password = sha1('uneta'),
+email_for_notification = 'tunetan@example.com',
+tel = '08000001111',
+url = 'https://google.com',
+representative = 'つねた',
+contactor = 'つねた',
+address = '東京都港区',
+address_num = '199-9999';
+
+
 DROP TABLE IF EXISTS agency_articles;
 CREATE TABLE agency_articles (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -55,16 +198,20 @@ CREATE TABLE agency_articles (
   sentenses VARCHAR(255) NOT NULL,
   eyecatch_url VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY fk_agency_id(agency_id)
+  REFERENCES agencies(id)
 );
 
 DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
 
 CREATE TABLE users_agencies (
+  user_id INT,
+  agency_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  user_id INT,
-  agency_id INT
+  FOREIGN KEY fk_user_id(user_id) REFERENCES users(id),
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
 DROP TABLE IF EXISTS industries;
@@ -80,7 +227,7 @@ DROP TABLE IF EXISTS agency_type;
 
 CREATE TABLE agency_type (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  agency_typr VARCHAR(255) NOT NULL,
+  agency_type VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -88,10 +235,12 @@ CREATE TABLE agency_type (
 DROP TABLE IF EXISTS agencies_industories;
 
 CREATE TABLE agencies_industories (
+  agency_id INT,
+  industory_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  agency_id INT,
-  industory_id INT
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id),
+  FOREIGN KEY fk_industory_id(industory_id) REFERENCES industries(id)
 );
 
 DROP TABLE IF EXISTS agencies_types; -- 中間テーブル
@@ -100,7 +249,9 @@ CREATE TABLE agencies_types (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   agency_id INT,
-  type_id INT
+  type_id INT,
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id),
+  FOREIGN KEY fk_type_id(type_id) REFERENCES agency_type(id)
 );
 
 DROP TABLE IF EXISTS managers;
@@ -111,8 +262,10 @@ CREATE TABLE managers (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   is_representative BOOLEAN NOT NULL,
+  agency_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
 DROP TABLE IF EXISTS contracts;
@@ -123,7 +276,8 @@ CREATE TABLE contracts ( -- 契約情報のテーブル v
   contract_year_month INT NOT NUll, -- 契約年月
   claim_year_month INT NOT NULL, -- 請求年月
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
 DROP TABLE IF EXISTS administorators;
@@ -131,7 +285,7 @@ DROP TABLE IF EXISTS administorators;
 CREATE TABLE administorators (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
