@@ -1,6 +1,5 @@
 <?php
-session_start();
-require('../dbconnect.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 if (isset($_SESSION['user_id']) && $_SESSION['time'] + 60 * 60 * 24 > time()) {
     $_SESSION['time'] = time();
 
