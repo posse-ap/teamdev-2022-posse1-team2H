@@ -10,7 +10,6 @@ class User
     }
     public function getAgenciesByNew()
     {
-        // TODO
         $stmt = $this->db->prepare('SELECT
         agency.name,
         article.title,
