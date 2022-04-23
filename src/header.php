@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./static/css/user.css">
     <script src="./static/js/ajax.js"></script>
 
-    <title>CRAFT</title>
+    <title>TOP画面</title>
 </head>
 <body>
     <!-- ヘッダー -->

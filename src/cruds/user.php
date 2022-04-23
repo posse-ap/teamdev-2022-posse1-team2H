@@ -8,11 +8,10 @@ class User
     {
         $this->db = $db;
     }
-    // TOPページの表示
-    public function getAgenciesByNew()
+    public function getAgencies($types = null, $industries = null)
     {
-        $stmt = $this->db->prepare('SELECT
-        agency.id,
+        if ($types === null && $industries === null) {
+            $stmt = $this->db->prepare('SELECT
         agency.name,
         article.title,
         article.sentenses,
@@ -21,7 +20,24 @@ class User
         LEFT JOIN agency_articles as article
         ON agency.id = article.agency_id
         ORDER BY article.updated_at DESC');
-        $stmt->execute();
+            $stmt->execute();
+        } else if ($types !== null && $industries === null) {
+            // TODO
+            $stmt = $this->db->prepare('SELECT
+        agency.name,
+        article.title,
+        article.sentenses,
+        article.eyecatch_url
+        FROM agencies as agency
+        LEFT JOIN agency_articles as article
+        ON agency.id = article.agency_id
+        ORDER BY article.updated_at DESC');
+            $stmt->execute();
+        } else if ($types === null && $industries !== null) {
+            // TODO
+        } else {
+            // TODO
+        }
 
         $num = $stmt->rowCount();
 
@@ -64,7 +80,8 @@ class User
         return json_encode($values, JSON_UNESCAPED_UNICODE);
     }
 
-    public function getType() {
+    public function getType()
+    {
         $stmt = $this->db->prepare('SELECT id, agency_type FROM agency_type LIMIT 20
         ');
         $stmt->execute();
@@ -72,7 +89,8 @@ class User
         return $result;
     }
 
-    public function getIndustries() {
+    public function getIndustries()
+    {
         $stmt = $this->db->prepare('SELECT id, industry FROM industries LIMIT 20
         ');
         $stmt->execute();

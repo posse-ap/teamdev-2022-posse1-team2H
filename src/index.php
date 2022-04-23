@@ -6,7 +6,7 @@ use cruds\User;
 
 $user_cruds = new User($db);
 
-$agencies = $user_cruds->getAgenciesByNew();
+$agencies = $user_cruds->getAgencies();
 
 $types = $user_cruds->getType();
 $industries = $user_cruds->getIndustries();
@@ -61,7 +61,9 @@ include dirname(__FILE__) . "/header.php";
                             <h3>業種</h3>
                             <div class="business_type_inner">
                                 <?php foreach ($industries as $industry) : ?>
-                                    <input class="business_type_tag" type="checkbox" name="types[]" value="<?= $industry['id'] ?>"><?= $industry['industry'] ?>
+                                    <label>
+                                        <input class="business_type_tag" type="checkbox" name="types[]" value="<?= $industry['id'] ?>"><?= $industry['industry'] ?>
+                                    </label>
                                 <?php endforeach ?>
                             </div>
                         </div>
@@ -69,7 +71,9 @@ include dirname(__FILE__) . "/header.php";
                             <h3>特徴</h3>
                             <div class="business_type_inner">
                                 <?php foreach ($types as $type) : ?>
-                                    <input class="business_type_tag" type="checkbox" name="types[]" value="<?= $type['id'] ?>"><?= $type['agency_type'] ?>
+                                    <label>
+                                        <input class="business_type_tag" type="checkbox" name="types[]" value="<?= $type['id'] ?>"><?= $type['agency_type'] ?>
+                                    </label>
                                 <?php endforeach ?>
                             </div>
                         </div>

@@ -223,6 +223,14 @@ CREATE TABLE industries (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+INSERT INTO industries (industry) VALUES
+("IT"),
+("広告"),
+("営業"),
+("コンサル"),
+("接客"),
+("医療");
+
 DROP TABLE IF EXISTS agency_type;
 
 CREATE TABLE agency_type (
@@ -232,7 +240,18 @@ CREATE TABLE agency_type (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS agencies_industries;
+=======
+INSERT INTO agency_type (agency_type) VALUES
+("文系に強い"),
+("理系に強い"),
+("ベンチャーが多い"),
+("カジュアル"),
+("しっかり");
+
+DROP TABLE IF EXISTS agencies_industories;
+>>>>>>> 89eb9c0... save code
 
 CREATE TABLE agencies_industries (
   agency_id INT,
