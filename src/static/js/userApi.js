@@ -20,7 +20,8 @@ const handleSearch = async () => {
   typesTarget.forEach((type) => {
     if (type.checked === true) types.push(type.value);
   });
-  searchAgencies(types, industries);
+  const { data } = await searchAgencies(types, industries);
+  console.log(data);
 };
 
 const searchAgencies = async (types, industries) => {
@@ -30,13 +31,14 @@ const searchAgencies = async (types, industries) => {
     types: types,
     industries: industries,
   };
-  await axios
-    .get(`${userPrefix}/searchAgencies.php`, {
-      params: params,
-    })
-    .then((res) => {
-      console.log(res.data);
-    });
+  const res = await axios.get(`${userPrefix}/searchAgencies.php`, {
+    params: params,
+  });
+
+  return {
+    data: res.data,
+    stauts: res.status,
+  };
 };
 
 window.onload = getAgenciesForFirstView();
