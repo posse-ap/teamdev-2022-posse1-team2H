@@ -232,9 +232,9 @@ CREATE TABLE agency_type (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-DROP TABLE IF EXISTS agencies_industories;
+DROP TABLE IF EXISTS agencies_industries;
 
-CREATE TABLE agencies_industories (
+CREATE TABLE agencies_industries (
   agency_id INT,
   industory_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,

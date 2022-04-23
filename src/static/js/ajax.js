@@ -1,7 +1,8 @@
-const prefix = "http://localhost/modules/ajax"
+const prefix = "http://localhost/modules/api";
 
+// TOPページのagency呼び出し
 const getAgencies = async () => {
-  // ローディング表示
+  // TODO ローディング表示
   await axios(`${prefix}/user/firstView.php`).then((res) => {
     console.log(res.data);
   });

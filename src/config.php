@@ -7,6 +7,7 @@ define('SITE_URL', 'http://' . $_SERVER['HTTP_HOST']);
 
 use database\Database;
 
+// クラスを自動ロードする関数
 spl_autoload_register(function ($classname){
     //クラス名を\で分割した配列を作成。
     $classNameArray = explode("\\", $classname);  // （2）
