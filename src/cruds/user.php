@@ -63,4 +63,20 @@ class User
 
         return json_encode($values, JSON_UNESCAPED_UNICODE);
     }
+
+    public function getType() {
+        $stmt = $this->db->prepare('SELECT id, agency_type FROM agency_type LIMIT 20
+        ');
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+
+    public function getIndustries() {
+        $stmt = $this->db->prepare('SELECT id, industry FROM industries LIMIT 20
+        ');
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
 }

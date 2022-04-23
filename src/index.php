@@ -1,12 +1,15 @@
 <?php
 
-require(dirname(__FILE__) . "/config.php");
+require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 
 use cruds\User;
 
 $user_cruds = new User($db);
 
 $agencies = $user_cruds->getAgenciesByNew();
+
+$types = $user_cruds->getType();
+$industries = $user_cruds->getIndustries();
 
 include dirname(__FILE__) . "/header.php";
 ?>
@@ -49,38 +52,29 @@ include dirname(__FILE__) . "/header.php";
                 <div class="favorite_content"></div>
             </div><br>
             <div class="sidebar_search_area">
-                <div class="sidebar_search">
-                    <h2>検索</h2>
-                </div>
-                <div class="serach_content">
-                    <div>
-                        <h3>地域</h3>
-                        <select name="" id="">
-                            <option value="">東京</option>
-                            <option value="">茨城</option>
-                        </select>
+                <form method="" action="" onsubmit="return false">
+                    <div class="sidebar_search">
+                        <h2>検索</h2>
                     </div>
-                    <div class="business_type_wrapper">
-                        <h3>業種</h3>
-                        <div class="business_type_inner">
-
-                            <div class="business_type_tag"><a href="https://posse-ap.com/">文系に強い</a></div>
-                            <div class="business_type_tag"><a href="https://posse-ap.com/">理系に強い</a></div>
-                            <div class="business_type_tag"><a href="https://posse-ap.com/">xxxxx</a></div>
-                            <div class="business_type_tag"><a href="https://posse-ap.com/">ttttt</a></div>
-                            <div class="business_type_tag"><a href="https://posse-ap.com/">ttttt</a></div>
-                            <div class="business_type_tag"><a href="https://posse-ap.com/">ttttt</a></div>
-
+                    <div class="serach_content">
+                        <div class="business_type_wrapper">
+                            <h3>業種</h3>
+                            <div class="business_type_inner">
+                                <?php foreach ($industries as $industry) : ?>
+                                    <input class="business_type_tag" type="checkbox" name="types[]" value="<?= $industry['id'] ?>"><?= $industry['industry'] ?>
+                                <?php endforeach ?>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>特徴</h3>
+                            <div class="business_type_inner">
+                                <?php foreach ($types as $type) : ?>
+                                    <input class="business_type_tag" type="checkbox" name="types[]" value="<?= $type['id'] ?>"><?= $type['agency_type'] ?>
+                                <?php endforeach ?>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <h3>特徴</h3>
-                        <select name="" id="">
-                            <option value="">東京</option>
-                            <option value="">茨城</option>
-                        </select>
-                    </div>
-                </div>
+                </form>
             </div>
         </aside>
     </div>
