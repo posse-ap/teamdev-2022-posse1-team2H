@@ -240,9 +240,6 @@ CREATE TABLE agency_type (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-<<<<<<< HEAD
-DROP TABLE IF EXISTS agencies_industries;
-=======
 INSERT INTO agency_type (agency_type) VALUES
 ("文系に強い"),
 ("理系に強い"),
@@ -250,16 +247,15 @@ INSERT INTO agency_type (agency_type) VALUES
 ("カジュアル"),
 ("しっかり");
 
-DROP TABLE IF EXISTS agencies_industories;
->>>>>>> 89eb9c0... save code
+DROP TABLE IF EXISTS agencies_industries;
 
 CREATE TABLE agencies_industries (
   agency_id INT,
-  industory_id INT,
+  industry_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id),
-  FOREIGN KEY fk_industory_id(industory_id) REFERENCES industries(id)
+  FOREIGN KEY fk_industory_id(industry_id) REFERENCES industries(id)
 );
 
 DROP TABLE IF EXISTS agencies_types; -- 中間テーブル

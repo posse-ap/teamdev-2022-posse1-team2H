@@ -52,7 +52,7 @@ include dirname(__FILE__) . "/header.php";
                 <div class="favorite_content"></div>
             </div><br>
             <div class="sidebar_search_area">
-                <form method="" action="" onsubmit="return false">
+                <form name="searchForm" method="" action="" onsubmit="return false">
                     <div class="sidebar_search">
                         <h2>検索</h2>
                     </div>
@@ -62,7 +62,7 @@ include dirname(__FILE__) . "/header.php";
                             <div class="business_type_inner">
                                 <?php foreach ($industries as $industry) : ?>
                                     <label>
-                                        <input class="business_type_tag" type="checkbox" name="types[]" value="<?= $industry['id'] ?>"><?= $industry['industry'] ?>
+                                        <input class="business_type_tag" type="checkbox" name="industries" value="<?= $industry['id'] ?>" onclick="handleSearch()"><?= $industry['industry'] ?>
                                     </label>
                                 <?php endforeach ?>
                             </div>
@@ -72,7 +72,7 @@ include dirname(__FILE__) . "/header.php";
                             <div class="business_type_inner">
                                 <?php foreach ($types as $type) : ?>
                                     <label>
-                                        <input class="business_type_tag" type="checkbox" name="types[]" value="<?= $type['id'] ?>"><?= $type['agency_type'] ?>
+                                        <input class="business_type_tag" type="checkbox" name="types" value="<?= $type['id'] ?>" onclick="handleSearch()"><?= $type['agency_type'] ?>
                                     </label>
                                 <?php endforeach ?>
                             </div>
