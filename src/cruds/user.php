@@ -117,10 +117,9 @@ class User
                 );
                 array_push($values, $item);
             }
-        } else {
-            return json_encode(array());
+            return json_encode($values, JSON_UNESCAPED_UNICODE);
         }
-        return json_encode($values, JSON_UNESCAPED_UNICODE);
+        return json_encode(array());
     }
 
     public function getType()
