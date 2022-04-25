@@ -78,7 +78,7 @@ class User
             article.sentenses,
             article.eyecatch_url
             FROM agencies as agency
-            INNER JOIN agency_articles as article
+            LEFT JOIN agency_articles as article
             ON agency.id = article.agency_id
             WHERE agency.id = :id
         ');
@@ -108,7 +108,6 @@ class User
         $industry_stmt->bindValue(':id', $id, \PDO::PARAM_INT);
         $industry_stmt->execute();
         $industries = $industry_stmt->fetchAll(\PDO::FETCH_ASSOC);
-
         extract($item);
         $result = array(
             'id' => $id,
