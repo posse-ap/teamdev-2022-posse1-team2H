@@ -140,7 +140,8 @@ class User
         return $result;
     }
 
-    public function insertUser($user, $agencies) {
+    public function insertUser($user, $agencies)
+    {
         // $agencies = array(id);
 
         $stmt = $this->db->prepare('INSERT
@@ -159,19 +160,23 @@ class User
         $stmt->vindValue(':gender', $user->gender);
         $stmt->vindValue(':address', $user->address);
         $stmt->vindValue('address_num', $user->address_num);
-        $success = $stmt->execute();
+        $user_success = $stmt->execute();
 
-        $user_id = $this->db->lastInsertId();
+        if ($user_success) {
+            $user_id = $this->db->lastInsertId();
 
-        foreach ($agencies as $agency) {
-            $agencies_stmt = $this->db->prepare('INSERT INTO users_agencies () VALUES (:user_id, :agency_id)');
-            $agencies_stmt->bindValue(':user_id', $user_id);
-            $agencies_stmt->bindValue(':agency_id', $agency);
-            $success = $agencies_stmt->execute();
-            if (!$success) {
-                exit;
+            foreach ($agencies as $agency) {
+                $agencies_stmt = $this->db->prepare('INSERT INTO users_agencies (user_id, agency_id) VALUES (:user_id, :agency_id)');
+                $agencies_stmt->bindValue(':user_id', $user_id);
+                $agencies_stmt->bindValue(':agency_id', $agency);
+                $success = $agencies_stmt->execute();
+                if (!$success) {
+                    exit;
+                }
             }
         }
-        return $success;
+
+        return true;
     }
 }
+`
