@@ -180,7 +180,7 @@ address_num = '199-9999';
 INSERT INTO agencies SET
 name = '株式会社常田大希',
 email = 'tuneta@example.com',
-password = sha1('uneta'),
+password = sha1('tuneta'),
 email_for_notification = 'tunetan@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -223,6 +223,14 @@ CREATE TABLE industries (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+INSERT INTO industries (industry) VALUES
+("IT"),
+("広告"),
+("営業"),
+("コンサル"),
+("接客"),
+("医療");
+
 DROP TABLE IF EXISTS agency_type;
 
 CREATE TABLE agency_type (
@@ -232,16 +240,35 @@ CREATE TABLE agency_type (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+INSERT INTO agency_type (agency_type) VALUES
+("文系に強い"),
+("理系に強い"),
+("ベンチャーが多い"),
+("カジュアル"),
+("しっかり");
+
 DROP TABLE IF EXISTS agencies_industries;
 
 CREATE TABLE agencies_industries (
   agency_id INT,
-  industory_id INT,
+  industry_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id),
-  FOREIGN KEY fk_industory_id(industory_id) REFERENCES industries(id)
+  FOREIGN KEY fk_industory_id(industry_id) REFERENCES industries(id)
 );
+
+INSERT INTO agencies_industries (agency_id, industry_id) VALUES
+(1, 1),
+(2, 2),
+(3, 1),
+(3, 3),
+(4, 4),
+(4, 5),
+(5, 3),
+(6, 2),
+(7, 4);
+
 
 DROP TABLE IF EXISTS agencies_types; -- 中間テーブル
 
@@ -253,6 +280,17 @@ CREATE TABLE agencies_types (
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id),
   FOREIGN KEY fk_type_id(type_id) REFERENCES agency_type(id)
 );
+
+INSERT INTO agencies_types (agency_id, type_id) VALUES
+(1, 1),
+(2, 2),
+(3, 1),
+(3, 3),
+(4, 4),
+(4, 1),
+(5, 3),
+(6, 2),
+(7, 4);
 
 DROP TABLE IF EXISTS managers;
 
