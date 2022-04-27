@@ -17,29 +17,62 @@ include dirname(__FILE__) . "/header.php";
 <main id="content" class="content">
     <!-- エージェント一覧 -->
     <div class="agency_list">
-        <div class="new_agency">
+        <div class="new_agency_wrapper">
             <h1>新着</h1>
-            <?php for ($i = 0; $i < 10; $i++) : ?>
-                <article class="new_agency_card">
-                    <div class="agency_img">
-                        <a href="https://posse-ap.com/">
-                            <img src="https://reashu.com/wp-content/uploads/2022/01/1b6d9abbd870d9cc7205edfd07ed96ba.png" alt="">
+            <div class="new_agency_inner">
+                <?php for ($i = 0; $i < 6; $i++) : ?>
+                    <article class="new_agency_card">
+                        <div class="agency_img">
+                            <a href="https://posse-ap.com/">
+                                <img src="https://reashu.com/wp-content/uploads/2022/01/1b6d9abbd870d9cc7205edfd07ed96ba.png" alt="">
+                            </a>
+                        </div>
+                        <div class="agency_feature">
+                            <div>文系に強い</div>
+                            <div>カジュアル</div>
+                            <div>60エントリー</div>
+                        </div>
+                        <div class="slogan">
+                            <div>とにかく文系に強い！！</div>
+                        </div>
+                        <div class="name_and_favorite">
+                            <div class="agency_name">XXXX株式会社</div>
+                            <div id="star" class="star"><i class="fa-solid fa-star"></i></div>
+                        </div>
+                    </article>
+                <?php endfor ?>
+            </div>
+
+        </div>
+        <div class="popular_agency_wrapper">
+            <h1>人気</h1>
+            <div class="popular_agency_inner">
+                <?php for ($i = 0; $i < 6; $i++) : ?>
+                    <article class="popular_agency_card">
+                        <div class="agency_img">
+                            <a href="https://posse-ap.com/">
+
+                                <img src="https://reashu.com/wp-content/uploads/2022/01/1b6d9abbd870d9cc7205edfd07ed96ba.png" alt="">
+                        </div>
                         </a>
-                    </div>
-                    <div class="agency_feature">
-                        <div>文系に強い</div>
-                        <div>カジュアル</div>
-                        <div>60エントリー</div>
-                    </div>
-                    <div class="slogan">
-                        <div>とにかく文系に強い！！</div>
-                    </div>
-                    <div class="name_and_favorite">
-                        <div class="agency_name">XXXX株式会社</div>
-                        <div id="star" class="star"><i class="fa-solid fa-star"></i></div>
-                    </div>
-                </article>
-            <?php endfor ?>
+                        <div class="agency_feature">
+                            <div>理系に強い</div>
+                            <div>カジュアル</div>
+                            <div>30エントリー</div>
+                        </div>
+                        <div class="slogan">
+                            <div>とにかく理系に強い！！</div>
+                        </div>
+                        <div class="name_and_favorite">
+                            <div class="agency_name">○○○○株式会社</div>
+                            <div id="star" class="star"><i class="fa-solid fa-star"></i></div>
+
+                        </div>
+                    </article>
+
+                <?php endfor ?>
+            </div>
+
         </div>
     </div>
     <!-- サイドバー -->
@@ -47,7 +80,7 @@ include dirname(__FILE__) . "/header.php";
         <aside id="sidebar_inner" class="sidebar_inner">
             <div class="sidebar_favorite_area">
                 <div class="sidebar_favorite">
-                    <h2>お気に入り</h2>
+                    <h2>後で見る</h2>
                 </div>
                 <div class="favorite_content"></div>
             </div><br>

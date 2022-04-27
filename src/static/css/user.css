@@ -28,15 +28,15 @@ header{
     display: flex;
     justify-content: center;
     margin-top: 40px;
-    gap: 100px;
+    gap: 90px;
 }
 
 /* エージェント一覧 */
 .agency_list{
-    display: flex;
+    /* display: flex; */
     border: solid 1px;
-    gap:30px;
-    width: 50%;
+    /* gap:30px; */
+    width: 65%;
 }
 
 /* ★の色を変える */
@@ -46,14 +46,21 @@ header{
 
 
 /* 新着エージェンシー &人気のエージェンシー*/
-.new_agency,.popular_agency{
-    width: 55%;
+.new_agency_wrapper,.popular_agency_wrapper{
+    width: 100%;
+}
+
+.new_agency_inner,.popular_agency_inner{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
 }
 /* 新着エージェンシーのカード&人気のエージェンシーのカード */
 .new_agency_card,.popular_agency_card{
     background-color: #ffff;
     box-shadow: 0 2px 5px #ccc;
-    margin-top: 30px;
+    width: 30%;
 }
 /* エージェンシーのイメージ */
 .agency_img img{
