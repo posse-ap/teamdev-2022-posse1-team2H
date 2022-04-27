@@ -33,7 +33,7 @@ class User
                 article.sentenses,
                 article.eyecatch_url
                 FROM agencies as agency
-                INNER JOIN agency_articles as article
+                LEFT JOIN agency_articles as article
                 ON agency.id = article.agency_id
                 WHERE agency.id IN (
                     SELECT agency_id FROM agencies_types WHERE type_id IN (%s)
@@ -50,7 +50,7 @@ class User
                 article.sentenses,
                 article.eyecatch_url
                 FROM agencies as agency
-                INNEr JOIN agency_articles as article
+                LEFT JOIN agency_articles as article
                 ON agency.id = article.agency_id
                 WHERE agency.id IN (
                     SELECT agency_id FROM agencies_industries WHERE industry_id IN (%s)
@@ -89,22 +89,22 @@ class User
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
                 extract($row);
                 $typestmt = $this->db->prepare('SELECT type.agency_type FROM agency_type as type WHERE type.id IN (
-                    SELECT id FROM agencies_types WHERE agency_id=:agency_id
+                    SELECT type_id FROM agencies_types WHERE agency_id=:agency_id
                     )
                 ');
                 $typestmt->bindValue(':agency_id', $id, \PDO::PARAM_INT);
                 $typestmt->execute();
 
-                $types = $typestmt->fetchAll();
+                $types = $typestmt->fetchAll(\PDO::FETCH_ASSOC);
 
                 $industry_stmt = $this->db->prepare('SELECT industry FROM industries WHERE id IN (
-                    SELECT id FROM agencies_industries WHERE agency_id=:agency_id
+                    SELECT industry_id FROM agencies_industries WHERE agency_id=:agency_id
                     )
                 ');
                 $industry_stmt->bindValue(':agency_id', $id, \PDO::PARAM_INT);
                 $industry_stmt->execute();
 
-                $industries = $industry_stmt->fetchAll();
+                $industries = $industry_stmt->fetchAll(\PDO::FETCH_ASSOC);
 
                 $item = array(
                     'id' => $id,
