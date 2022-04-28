@@ -1,0 +1,21 @@
+.content_detail {
+    display: flex;
+}
+
+.content_detail_right {
+    width: 30%;
+}
+
+.content_detail_left {
+    width: 70%;
+}
+
+.content_detail_left_subcontent {
+    display: flex;
+}
+
+.content_detail_left_underRequest {
+    background-color: skyblue;
+    display: flex;
+    justify-content: space-around;
+}
