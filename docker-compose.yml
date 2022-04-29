@@ -15,6 +15,8 @@ services:
     platform: linux/amd64
     container_name: craft_api_dev
     build: ./php
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - db
     volumes:
@@ -33,9 +35,10 @@ services:
       - ./mysql/etc/mysql/conf.d:/etc/mysql/conf.d
 
   mail:
-    image: mailhog/mailhog
+    image: mailhog/mailhog:latest
     container_name: mailhog
     ports:
+      - '1025:1025'
       - '8025:8025'
     environment:
       MH_STORAGE: maildir

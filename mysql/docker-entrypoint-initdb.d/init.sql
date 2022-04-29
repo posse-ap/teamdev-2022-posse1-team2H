@@ -8,11 +8,12 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
   email VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
   tel VARChAR(255) NOT NULL,
   univercity VARCHAR(255) NOT NULL,
-  undergraduage VARCHAR(255) NOT NULL,
+  undergraduate VARCHAR(255) NOT NULL,
   department VARCHAR(255) NOT NULL,
   school_year INT(10) NOT NULL,
   graduation_year INT(10) NOT NULL,

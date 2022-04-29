@@ -6,6 +6,7 @@ define('DB_PASS', 'password');
 define('SITE_URL', 'http://' . $_SERVER['HTTP_HOST']);
 
 use database\Database;
+use modules\auth\Token;
 
 // クラスを自動ロードする関数
 spl_autoload_register(function ($classname){
@@ -25,5 +26,7 @@ spl_autoload_register(function ($classname){
         require_once  $filepath;  // （6）
     }
 });
+
+Token::create();
 
 $db = Database::getInstance();

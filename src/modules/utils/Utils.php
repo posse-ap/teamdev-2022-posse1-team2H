@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\Utils;
+namespace modules\utils;
 
 class Utils
 {

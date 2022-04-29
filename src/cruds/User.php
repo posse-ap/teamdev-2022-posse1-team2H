@@ -2,6 +2,8 @@
 
 namespace cruds;
 
+use modules\email\Email;
+
 class User
 {
     public function __construct($db)
@@ -138,5 +140,56 @@ class User
         $stmt->execute();
         $result = $stmt->fetchAll();
         return $result;
+    }
+
+    public function insertUser($user, $agencies)
+    {
+        // $agencies = array(id);
+
+        $stmt = $this->db->prepare('INSERT
+        INTO users (name, email, password, tel, univercity, undergraduate, department, school_year, graduation_year, gender, address, address_num) VALUES
+        (:name, :email, :password, :tel, :univercity, :undergraduate, :department, :school_year, :graduation_year, :gender, :address, :address_num)
+        ');
+        $stmt->bindValue(':name', $user->name);
+        $stmt->bindValue(':email', $user->email);
+        $stmt->bindValue(':password', sha1($user->password));
+        $stmt->bindValue(':tel', $user->tel);
+        $stmt->bindValue(':univercity', $user->univercity);
+        $stmt->bindValue(':undergraduate', $user->undergraduate);
+        $stmt->bindValue(':department', $user->department);
+        $stmt->bindValue(':school_year', $user->school_year);
+        $stmt->bindValue(':graduation_year', $user->graduation_year);
+        $stmt->bindValue(':gender', $user->gender);
+        $stmt->bindValue(':address', $user->address);
+        $stmt->bindValue('address_num', $user->address_num);
+        $user_success = $stmt->execute();
+
+        if ($user_success) {
+            $user_id = $this->db->lastInsertId();
+            foreach ($agencies as $agency) {
+                $agencies_stmt = $this->db->prepare('INSERT INTO users_agencies (user_id, agency_id) VALUES (:user_id, :agency_id)');
+                $agencies_stmt->bindValue(':user_id', $user_id);
+                $agencies_stmt->bindValue(':agency_id', $agency);
+                $success = $agencies_stmt->execute();
+                if (!$success) {
+                    return false;
+                }
+            }
+            // send email to user
+            Email::sendMail($user->email, "boozer@example.com", "お問い合わせを完了しました", "sample message");
+            //send email to each agencies
+            $inclause = substr(str_repeat(',?', count($agencies)), 1);
+            $stmt = $this->db->prepare(sprintf(
+                'SELECT email_for_notification FROM agencies WHERE id IN (%s)',
+                $inclause
+            ));
+            $stmt->execute($agencies);
+            $agencies_emails = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            foreach ($agencies_emails as $email) {
+                Email::sendMail($email['email_for_notification'], "boozer@example.com", "学生からお問い合わせが来ました", "sample message");
+            }
+        }
+
+        return true;
     }
 }
