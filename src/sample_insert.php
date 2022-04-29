@@ -17,9 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_REQUEST['email'])) {
         $error['email'] = 'email required';
     }
-    if (!isset($_REQUEST['password']) || strlen($_REQUEST['password']) <= 4) {
-        $error['password'] = 'password must be more than 4 length';
-    }
     if (!isset($_REQUEST['tel'])) {
         $error['tel'] = 'tel required';
     }
@@ -52,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = new Model(
             $_REQUEST['name'],
             $_REQUEST['email'],
-            $_REQUEST['password'],
             $_REQUEST['tel'],
             $_REQUEST['univercity'],
             $_REQUEST['undergraduate'],
@@ -76,7 +72,6 @@ include dirname(__FILE__) . '/header.php';
     <input type="hidden" name="token" value="<?= Utils::h($_SESSION['token']) ?>">
     <input type="text" name="name" placeholder="name">
     <input type="text" name="email" placeholder="email">
-    <input type="password" name="password" placeholder="password">
     <input type="text" name="tel" placeholder="tel">
     <input type="text" name="univercity" placeholder="univercity">
     <input type="text" name="undergraduate" placeholder="undergraduate">

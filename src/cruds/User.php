@@ -147,12 +147,11 @@ class User
         // $agencies = array(id);
 
         $stmt = $this->db->prepare('INSERT
-        INTO users (name, email, password, tel, univercity, undergraduate, department, school_year, graduation_year, gender, address, address_num) VALUES
-        (:name, :email, :password, :tel, :univercity, :undergraduate, :department, :school_year, :graduation_year, :gender, :address, :address_num)
+        INTO users (name, email, tel, univercity, undergraduate, department, school_year, graduation_year, gender, address, address_num) VALUES
+        (:name, :email, :tel, :univercity, :undergraduate, :department, :school_year, :graduation_year, :gender, :address, :address_num)
         ');
         $stmt->bindValue(':name', $user->name);
         $stmt->bindValue(':email', $user->email);
-        $stmt->bindValue(':password', sha1($user->password));
         $stmt->bindValue(':tel', $user->tel);
         $stmt->bindValue(':univercity', $user->univercity);
         $stmt->bindValue(':undergraduate', $user->undergraduate);
