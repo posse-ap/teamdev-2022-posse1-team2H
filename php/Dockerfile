@@ -6,5 +6,3 @@ RUN curl -sSL https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhs
     && mv mhsendmail /usr/local/bin/mhsendmail
 
 COPY ./php.ini /usr/local/etc/php/php.ini
-COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
-COPY ./mail.ini /etc/php.d/mail.ini:ro

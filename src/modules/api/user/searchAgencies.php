@@ -5,7 +5,7 @@ header('Access-Control-Allow-Origin: *');
 header("Content-Type: application/json; charset=UTF-8");
 
 use cruds\User;
-use modules\Utils\Utils;
+use utils\Utils;
 
 $user_cruds = new User($db);
 $types = null;

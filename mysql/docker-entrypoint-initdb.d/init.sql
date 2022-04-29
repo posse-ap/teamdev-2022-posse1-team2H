@@ -13,7 +13,7 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL,
   tel VARChAR(255) NOT NULL,
   univercity VARCHAR(255) NOT NULL,
-  undergraduage VARCHAR(255) NOT NULL,
+  undergraduate VARCHAR(255) NOT NULL,
   department VARCHAR(255) NOT NULL,
   school_year INT(10) NOT NULL,
   graduation_year INT(10) NOT NULL,
