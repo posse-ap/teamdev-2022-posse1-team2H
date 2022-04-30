@@ -5,9 +5,13 @@ html,body{
     margin: 0;
 }
 
+body{
+    font-family: "メイリオ";
+    letter-spacing:.04em;
+}
+
 /* title{
     margin-top: 0;
-
 } */
 
 /* ヘッダー */
@@ -38,7 +42,7 @@ header{
 /* コンテンツ全体 */
 .content{
     width: 100%;
-    border: solid 1px;
+    /* border: solid 1px; */
     display: flex;
     justify-content: center;
     margin-top: 40px;
@@ -48,7 +52,7 @@ header{
 /* エージェント一覧 */
 .agency_list{
     /* display: flex; */
-    border: solid 1px;
+    /* border: solid 1px; */
     /* gap:30px; */
     width: 65%;
 }
@@ -64,6 +68,9 @@ header{
     width: 100%;
 }
 
+.title{
+    margin-left: 10px;
+}
 .new_agency_inner,.popular_agency_inner{
     display: flex;
     justify-content: center;
@@ -74,19 +81,26 @@ header{
 .new_agency_card,.popular_agency_card{
     background-color: #ffff;
     box-shadow: 0 2px 5px #ccc;
-    width: 30%;
+    width: 47%;
+    /* padding-bottom: 20px; */
+    padding-bottom: 9px;
 }
 /* エージェンシーのイメージ */
 .agency_img img{
     width: 100%;
 }
+
+.agency_card_content{
+    margin: 3px auto auto auto;
+    width: 95%;
+}
 /* エージェンシーの特徴 */
 .agency_feature{
     display: flex;
     justify-content: center;
-    gap: 10px;
+    /* gap: 10px;
     flex-wrap: wrap;
-    color: #ffff;
+    color: #ffff; */
 }
 /* エージェンシーのタグ */
 .agency_feature div{
@@ -94,17 +108,82 @@ header{
     text-align: center;
     width: 30%;
     height: 25px;
-    background-color: #26A69A;
+    /* background-color: #26A69A; */
     margin-top: 3px;
+    font-size: 12px;
 }
+
+/* 一言と企業目 */
+.agency_infromation{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    /* width: 95%; */
+    /* margin: 15px auto auto auto; */
+}
+
+/* キャッチコピー */
+.agency_slogan_wrapper{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.agency_name_wrapper{
+    width: 100%;
+    margin-top: 4px;   
+}
+
+.agency_tags_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 10px;
+    margin-top: 15px;
+    /* display: none; */
+}
+.agency_tags_wrapper a{
+    text-decoration: none;
+    border: solid 0.5px;
+    border-color:#9E9E9E;
+    color: #9E9E9E;
+    padding: 0px 9px;
+    font-size: 14px;
+}
+.agency_tags_wrapper a:hover{
+    /* border-color:#0000ee; */
+    border-color:#26A69A;
+    /* color: #0000ee; */
+    color: #26A69A;
+    padding: 0px 9px;
+    font-size: 14px;
+    /* background-color: #EAEDF2; */
+    font-weight: bold;
+    border: solid 3px;
+}
+
 /* キャッチコピー */
 .slogan{
-    text-align: center;
+    /* text-align: center; */
+    font-size: 16px;
+}
+
+.agency_name{
+    font-size: 18px;
+    /* color: #9E9E9E; */
+}
+
+.agency_name::after{
+    content: "";
+    display: block;
+    border: solid 1px;
+    border-color: #26A69A;
+    width: 15%;
+    color: #9E9E9E;
+    margin-top: -4px;
 }
 /* 企業名とお気に入り追加ボタン */
 .name_and_favorite{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .star{
@@ -112,12 +191,13 @@ header{
     font-weight: 900;
     margin-right: 3px;
     font-size: 19px;
-    color: gray;
+    color: #9E9E9E;
+    cursor: pointer;
 }
 
-.agency_name{
+/* .agency_name{
     margin-left: 10px;
-}
+} */
 
 /* ここからサイドバー */
 
@@ -169,4 +249,3 @@ header{
     text-align: center;
     font-weight: 500;
 }
-

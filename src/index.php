@@ -18,56 +18,66 @@ include dirname(__FILE__) . "/header.php";
     <!-- エージェント一覧 -->
     <div class="agency_list">
         <div class="new_agency_wrapper">
-            <h1>新着</h1>
+            <h1 class="title">新着</h1>
             <div class="new_agency_inner">
-                <?php for ($i = 0; $i < 6; $i++) : ?>
+                <?php for ($i = 0; $i < 4; $i++) : ?>
                     <article class="new_agency_card">
                         <div class="agency_img">
                             <a href="https://posse-ap.com/">
-                                <img src="https://reashu.com/wp-content/uploads/2022/01/1b6d9abbd870d9cc7205edfd07ed96ba.png" alt="">
+                                <img src="https://www.asahicom.jp/articles/images/AS20180803001882_comm.jpg" alt="">
                             </a>
                         </div>
-                        <div class="agency_feature">
-                            <div>文系に強い</div>
-                            <div>カジュアル</div>
-                            <div>60エントリー</div>
+                        <div class="agency_card_content">
+                            <div class="agency_infromation">
+                                <div class="name_and_favorite">
+                                    <div class="agency_name_wrapper"><span class="agency_name">三菱ufj信託銀行</span></div>
+                                    <div id="star" class="star"><i class="fa-solid fa-star"></i></div>
+
+                                </div>
+                                <div class="agency_slogan_wrapper"><span class="slogan">面接対策,ES添削で内定サポート！ 就活エージェントおすすめ15選</span></div>
+                            </div>
+                            <div class="agency_tags_wrapper">
+                                <i class="fa-solid fa-tags" style="color: #9E9E9E"></i>
+                                <a href="">#広告</a>
+                                <a href="">#コンサル</a>
+                                <a href="">#文系に強い</a>
+                                <a href="">#ベンチャーが多い</a>
+                            </div>
                         </div>
-                        <div class="slogan">
-                            <div>とにかく文系に強い！！</div>
-                        </div>
-                        <div class="name_and_favorite">
-                            <div class="agency_name">XXXX株式会社</div>
-                            <div id="star" class="star"><i class="fa-solid fa-star"></i></div>
-                        </div>
+
                     </article>
                 <?php endfor ?>
             </div>
 
         </div>
         <div class="popular_agency_wrapper">
-            <h1>人気</h1>
+            <h1 class="title">人気</h1>
             <div class="popular_agency_inner">
-                <?php for ($i = 0; $i < 6; $i++) : ?>
+                <?php for ($i = 0; $i < 4; $i++) : ?>
                     <article class="popular_agency_card">
                         <div class="agency_img">
                             <a href="https://posse-ap.com/">
-
                                 <img src="https://reashu.com/wp-content/uploads/2022/01/1b6d9abbd870d9cc7205edfd07ed96ba.png" alt="">
+                            </a>
                         </div>
-                        </a>
-                        <div class="agency_feature">
-                            <div>理系に強い</div>
-                            <div>カジュアル</div>
-                            <div>30エントリー</div>
-                        </div>
-                        <div class="slogan">
-                            <div>とにかく理系に強い！！</div>
-                        </div>
-                        <div class="name_and_favorite">
-                            <div class="agency_name">○○○○株式会社</div>
-                            <div id="star" class="star"><i class="fa-solid fa-star"></i></div>
+                        <div class="agency_card_content">
+                            <div class="agency_infromation">
+                                <div class="name_and_favorite">
+                                    <div class="agency_name_wrapper"><span class="agency_name">三菱UFJ銀行</span></div>
+                                    <div id="star" class="star"><i class="fa-solid fa-star"></i></div>
 
+                                </div>
+                                <div class="agency_slogan_wrapper"><span class="slogan">面接対策,ES添削で内定サポート！ 就活エージェントおすすめ15選</span></div>
+                            </div>
+                            <div class="agency_tags_wrapper">
+                                <i class="fa-solid fa-tags" style="color: #9E9E9E"></i>
+                                <a href="">#広告</a>
+                                <a href="">#コンサル</a>
+                                <a href="">#文系に強い</a>
+                                <a href="">#ベンチャーが多い</a>
+                            </div>
                         </div>
+
                     </article>
 
                 <?php endfor ?>
