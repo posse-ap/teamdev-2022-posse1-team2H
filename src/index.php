@@ -20,7 +20,7 @@ include dirname(__FILE__) . "/header.php";
         <div class="new_agency_wrapper">
             <h1 class="title">新着</h1>
             <div class="new_agency_inner">
-                <?php for ($i = 0; $i < 4; $i++) : ?>
+                <?php for ($i = 0; $i < 6; $i++) : ?>
                     <article class="new_agency_card">
                         <div class="agency_img">
                             <a href="https://posse-ap.com/">
@@ -90,7 +90,7 @@ include dirname(__FILE__) . "/header.php";
         <aside id="sidebar_inner" class="sidebar_inner">
             <div class="sidebar_favorite_area">
                 <div class="sidebar_favorite">
-                    <h2>後で見る</h2>
+                    <h2 onclick="">後で見る</h2>
                 </div>
                 <div class="favorite_content"></div>
             </div><br>

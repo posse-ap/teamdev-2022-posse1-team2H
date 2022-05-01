@@ -44,8 +44,7 @@ header{
     width: 100%;
     /* border: solid 1px; */
     display: flex;
-    justify-content: center;
-    margin-top: 40px;
+    justify-content: end;
     gap: 90px;
 }
 
@@ -205,12 +204,14 @@ header{
 .sidebar_wrapper{
     border: solid 1px;
     width: 20%;
+    background-color: #339999;
+    /* background: linear-gradient(to bottom, #339999, transparent); */
 }
 
 /* サイドバーの中身全て */
 .sidebar_inner{
     position: sticky;
-    top: 0;
+    top: 10px;
 }
 
 /* お気に入り&検索 */
@@ -218,6 +219,7 @@ header{
     background-color: #26A69A;
     color: #ffff;
     text-align: center;
+    cursor: pointer;
 }
 
 /* 業種タグ全てを含む箱 */
