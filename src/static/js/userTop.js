@@ -6,6 +6,7 @@ let appearing_format=function(A){
 
 function appearSidebar() {
     appearing_format("serach_content");
+    appearing_format("search_btn");
 };
 
 function appearIndustryTypes() {

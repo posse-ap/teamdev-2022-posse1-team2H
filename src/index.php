@@ -38,7 +38,7 @@ include dirname(__FILE__) . "/header.php";
                             </div>
                             <div class="agency_tags_wrapper">
                                 <i class="fa-solid fa-tags" style="color: #9E9E9E"></i>
-                                <a href=""><span class="filling"></span>#広告</a> 
+                                <a href=""><span class="filling"></span>#広告</a>
                                 <a href=""><span class="filling"></span>#コンサル</a>
                                 <a href=""><span class="filling"></span>#文系に強い</a>
                                 <a href=""><span class="filling"></span>#ベンチャーが多い</a>
@@ -48,7 +48,7 @@ include dirname(__FILE__) . "/header.php";
                     </article>
                 <?php endfor ?>
             </div>
-        </div>  
+        </div>
 
         <div class="popular_agency_wrapper">
             <h1 class="title">人気</h1>
@@ -118,6 +118,10 @@ include dirname(__FILE__) . "/header.php";
                                     <?php endforeach ?>
                                 </div>
                             </div>
+                        </div>
+                        <div class="serach__btn_wrapper">
+                            <input id="search_btn" class="serach_btn" type="submit" value="検索">
+
                         </div>
                     </div>
                 </form>
