@@ -202,7 +202,7 @@ header{
 
 /* サイドバー 全体*/
 .sidebar_wrapper{
-    border: solid 1px;
+    /* border: solid 1px; */
     width: 20%;
     background-color: #339999;
     /* background: linear-gradient(to bottom, #339999, transparent); */
@@ -215,12 +215,24 @@ header{
 }
 
 /* お気に入り&検索 */
-.sidebar_favorite,.sidebar_search{
+.sidebar_favorite{
     background-color: #26A69A;
     color: #ffff;
     text-align: center;
     cursor: pointer;
+    border-bottom: 1px solid black;
 }
+
+.sidebar_search{
+    background-color: #26A69A;
+    color: #ffff;
+    text-align: center;
+    cursor: pointer;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
 
 /* 業種タグ全てを含む箱 */
 .business_type_inner{
@@ -228,16 +240,17 @@ header{
     flex-wrap: wrap;
     gap: 10px 20px;
     justify-content: center;
+
 }
 
 /* 各業種タグ */
-.business_type_inner div{
+/* .business_type_inner div{
     border: solid 1px transparent;
     border-radius: 15px;
     text-align: center;
     width: 40%;
     background-color: #26A69A;
-}
+} */
 
 /* aタグのリンクと下線を変更 */
 .business_type_inner div a{
@@ -245,9 +258,19 @@ header{
     color:#ffff;
 }
 
-.serach_content select{
-    width: 100%;
-    height: 25px;
-    text-align: center;
-    font-weight: 500;
+.serach_content{
+    display: block;
+}
+
+.appearing{
+    display: none;
+}
+
+.sidebar_search h2,.sidebar_favorite h2{
+    margin: 0;
+}
+
+.sidebar_search h2,.business_type_wrapper h3,.business_features_wrapper h3{
+    border-bottom: 1px solid black;
+    margin: 0;
 }

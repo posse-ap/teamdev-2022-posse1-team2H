@@ -90,34 +90,34 @@ include dirname(__FILE__) . "/header.php";
         <aside id="sidebar_inner" class="sidebar_inner">
             <div class="sidebar_favorite_area">
                 <div class="sidebar_favorite">
-                    <h2 onclick="">後で見る</h2>
+                    <h2 onclick="transtioning()">後で見る</h2>
                 </div>
                 <div class="favorite_content"></div>
             </div><br>
             <div class="sidebar_search_area">
                 <form name="searchForm" method="" action="" onsubmit="return false">
                     <div class="sidebar_search">
-                        <h2>検索</h2>
-                    </div>
-                    <div class="serach_content">
-                        <div class="business_type_wrapper">
-                            <h3>業種</h3>
-                            <div class="business_type_inner">
-                                <?php foreach ($industries as $industry) : ?>
-                                    <label>
-                                        <input class="business_type_tag" type="checkbox" name="industries" value="<?= $industry['id'] ?>" onclick="handleSearch()"><?= $industry['industry'] ?>
-                                    </label>
-                                <?php endforeach ?>
+                        <h2 onclick="appearSidebar()">検索</h2>
+                        <div id="serach_content" class="serach_content">
+                            <div id="business_type_wrapper" class="business_type_wrapper">
+                                <h3 onclick="appearIndustryTypes()">業種</h3>
+                                <div id="business_type_items" class="business_type_inner">
+                                    <?php foreach ($industries as $industry) : ?>
+                                        <label>
+                                            <input class="business_type_tag" type="checkbox" name="industries" value="<?= $industry['id'] ?>" onclick="handleSearch()"><?= $industry['industry'] ?>
+                                        </label>
+                                    <?php endforeach ?>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <h3>特徴</h3>
-                            <div class="business_type_inner">
-                                <?php foreach ($types as $type) : ?>
-                                    <label>
-                                        <input class="business_type_tag" type="checkbox" name="types" value="<?= $type['id'] ?>" onclick="handleSearch()"><?= $type['agency_type'] ?>
-                                    </label>
-                                <?php endforeach ?>
+                            <div class="business_features_wrapper">
+                                <h3 onclick="appearTypes()">特徴</h3>
+                                <div id="business_features" class="business_type_inner">
+                                    <?php foreach ($types as $type) : ?>
+                                        <label>
+                                            <input class="business_type_tag" type="checkbox" name="types" value="<?= $type['id'] ?>" onclick="handleSearch()"><?= $type['agency_type'] ?>
+                                        </label>
+                                    <?php endforeach ?>
+                                </div>
                             </div>
                         </div>
                     </div>
