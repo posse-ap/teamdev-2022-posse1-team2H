@@ -147,6 +147,8 @@ header{
     padding: 0px 9px;
     font-size: 14px;
 }
+
+
 .agency_tags_wrapper a:hover{
     /* border-color:#0000ee; */
     border-color:#26A69A;
@@ -194,10 +196,6 @@ header{
     cursor: pointer;
 }
 
-/* .agency_name{
-    margin-left: 10px;
-} */
-
 /* ここからサイドバー */
 
 /* サイドバー 全体*/
@@ -212,6 +210,7 @@ header{
 .sidebar_inner{
     position: sticky;
     top: 10px;
+    margin-top: 15px;
 }
 
 /* お気に入り&検索 */
@@ -232,8 +231,6 @@ header{
     border-bottom: 1px solid black;
 }
 
-
-
 /* 業種タグ全てを含む箱 */
 .business_type_inner{
     display: flex;
@@ -244,13 +241,7 @@ header{
 }
 
 /* 各業種タグ */
-/* .business_type_inner div{
-    border: solid 1px transparent;
-    border-radius: 15px;
-    text-align: center;
-    width: 40%;
-    background-color: #26A69A;
-} */
+
 
 /* aタグのリンクと下線を変更 */
 .business_type_inner div a{
@@ -264,13 +255,21 @@ header{
 
 .appearing{
     display: none;
+    border: none;
+    outline: none;
+    /* border-bottom: 1px solid black; */
 }
 
 .sidebar_search h2,.sidebar_favorite h2{
     margin: 0;
 }
 
-.sidebar_search h2,.business_type_wrapper h3,.business_features_wrapper h3{
-    border-bottom: 1px solid black;
+.business_type_wrapper h3,.business_features_wrapper h3{
     margin: 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.chaning_color{
+    color: #0099FF;
 }
