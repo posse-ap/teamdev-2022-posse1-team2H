@@ -1,53 +1,50 @@
 "use strict";
 
-let appearing_format=function(A){
+const appearingFunction=(A)=>{
     document.getElementById(A).classList.toggle('appearing');
 }
 
-function appearSidebar() {
-    appearing_format("serach_content");
-    appearing_format("search_btn");
+const appearSidebar=()=> {
+    appearingFunction("serach_content");
+    appearingFunction("search_btn");
 };
 
-function appearIndustryTypes() {
-    appearing_format("business_type_items");
+const appearIndustryTypes=()=> {
+    appearingFunction("business_type_items");
 };
 
-function appearTypes() {
-    appearing_format("business_features");
+const appearTypes=()=> {
+    appearingFunction("business_features");
 };
-
-function transitioning() {
+// 後で見るに追加したモノ一覧を表示するページに遷移します
+const transitioning=()=> {
     window.location = "https://posse-ap.com/";
 };
 
-function changingColor(newColor) {
-    let functionStar=function(){
+const changingColor=(newColor)=> {
+    const functionStar=function(){
         
-        document.getElementById(newColor.id).classList.toggle('chaning_color');
+       let new_color=document.getElementById(newColor.id);
+        new_color.classList.toggle('chaning_color');
     };
     for(let i=0; i<6;i++){
-
-        switch (newColor.id) {
-            case 'star'+[i]+'':
-                functionStar();
-                break;
-        };
+        if(newColor.id=='star'+[i]+''){
+            functionStar();
+        }
     };
     
 };
 
-function changingColor2(newColor2) {
-    let functionStar2=function(){
+const changingColor2=(newColor2)=> {
+    const functionStar2=function(){
         
-        document.getElementById(newColor2.id).classList.toggle('chaning_color');
+        let new_color2=document.getElementById(newColor2.id);
+        new_color2.classList.toggle('chaning_color');
     };
     for(let i=6; i<12;i++){
 
-        switch (newColor2.id) {
-            case 'star'+[i]+'':
-                functionStar2();
-                break;
-        };
+        if(newColor2.id=='star'+[i]+''){
+            functionStar2();
+        }
     };
 };

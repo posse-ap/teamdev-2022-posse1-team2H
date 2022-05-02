@@ -269,7 +269,7 @@ header{
 
 }
 
-.business_type_wrapper h3,.business_features_wrapper h3{
+.business_type_wrapper p,.business_features_wrapper p{
     margin: 0;
     border-top: 1px solid black;
     border-bottom: 1px solid black;

@@ -99,7 +99,7 @@ include dirname(__FILE__) . "/header.php";
                         <h2 onclick="appearSidebar()">検索</h2>
                         <div id="serach_content" class="serach_content">
                             <div id="business_type_wrapper" class="business_type_wrapper">
-                                <h3 onclick="appearIndustryTypes()"><i class="fa-solid fa-building"></i>業種</h3>
+                                <p onclick="appearIndustryTypes()"><i class="fa-solid fa-building"></i>業種</p>
                                 <div id="business_type_items" class="business_type_inner">
                                     <?php foreach ($industries as $industry) : ?>
                                         <label>
@@ -109,7 +109,7 @@ include dirname(__FILE__) . "/header.php";
                                 </div>
                             </div>
                             <div class="business_features_wrapper">
-                                <h3 onclick="appearTypes()"><i class="fa-solid fa-glasses"></i>特徴</h3>
+                                <p onclick="appearTypes()"><i class="fa-solid fa-glasses"></i>特徴</p>
                                 <div id="business_features" class="business_type_inner">
                                     <?php foreach ($types as $type) : ?>
                                         <label>

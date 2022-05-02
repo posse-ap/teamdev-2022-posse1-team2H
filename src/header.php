@@ -18,6 +18,6 @@
     <header class="header">
         <header class="header_inner">
             <h1 class="header_inner_craft">CRAFT</h1>
-            <h3 class="header_inner_catchCopy">学生のための就職情報サイト</h3>            
+            <p class="header_inner_catchCopy">学生のための就職情報サイト</p>            
         </header>
     </header>
