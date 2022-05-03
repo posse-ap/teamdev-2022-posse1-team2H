@@ -6,7 +6,6 @@ const appearing = (appearing) => {
 
 const appearSidebar = () => {
     appearing("serach_content");
-    appearing("search_btn");
 };
 
 const appearIndustryTypes = () => {

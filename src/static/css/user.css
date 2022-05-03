@@ -278,18 +278,3 @@ header{
 .chaning_color{
     color: #0099FF;
 }
-
-.serach__btn_wrapper {
-    text-align: center;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-input.serach_btn {
-    background-color: #339999;
-    border: 1px solid black;
-    color: #ffff;
-    font-size: 20px;
-    padding: 0px 45px;
-    box-shadow: 0 3px 5px black;
-}
