@@ -124,6 +124,32 @@ class User
         return json_encode(array());
     }
 
+    public function getAgency($id)
+    {
+        $stmt = $this->db->prepare('SELECT * FROM agencies WHERE id = :id');
+        $stmt->bindValue(':id', $id, \PDO::PARAM_INT);
+        $stmt->execute();
+
+        $agency = $stmt->fetch(\PDO::FETCH_ASSOC);
+        extract($agency);
+        $result = array(
+            'id' => $id,
+            'name' => $name,
+            'email' => $email,
+            'password' => $password,
+            'email_for_notification' => $email_for_notification,
+            'tel' => $tel,
+            'url' => $url,
+            'representative' => $representative,
+            'contactor' => $contactor,
+            'address' => $address,
+            'address_num' => $address_num,
+            'created_at' => $created_at,
+            'updated_at' => $updated_at,
+        );
+        return json_encode($result, JSON_UNESCAPED_UNICODE);
+    }
+
     public function getType()
     {
         $stmt = $this->db->prepare('SELECT id, agency_type FROM agency_type LIMIT 20
