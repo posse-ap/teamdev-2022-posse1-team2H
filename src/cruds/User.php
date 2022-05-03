@@ -165,6 +165,4 @@ class User
         $result = $stmt->fetchAll();
         return $result;
     }
-
-
 }
