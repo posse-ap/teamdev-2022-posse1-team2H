@@ -1,0 +1,165 @@
+.header {
+    height: auto;
+    background-color: #26a69a;
+    padding: 0;
+}
+
+.header_inner {
+    max-width: 100%;
+    width: 92%;
+}
+
+.header_inner_craft {
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    line-height: 1.5;
+    color: #eaedf2;
+}
+
+.header_inner_catchCopy {
+    display: block;
+    float: none;
+    text-align: center;
+    color: #eaedf2;
+    padding: 0;
+}
+
+.content_detail {
+    background-color: #eaedf2;
+    padding: 0;
+    max-width: 2220px;
+}
+
+.content_detail_inner {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.content_detail_left_catchCopy_title {
+    font-family: 游ゴシック体, YuGothic, 游ゴシック, "Yu Gothic", メイリオ, sans-serif;
+    font-size: 600%;
+    font-weight: 700;
+    text-align: center;
+}
+
+.content_detail_agency_imgBig {
+    width: 100%;
+}
+
+.content_detail_inner {
+    max-width: 2220px;
+}
+
+.content_detail_subcontent {
+    display: flex;
+}
+
+.content_detail_subcontent_left {
+    padding: 7.6%;
+}
+
+.content_detail_subcontent_right {
+    float: inherit;
+    width: 40%;
+    margin-left: inherit;
+    max-width: 400px;
+    min-width: 325px;
+    margin-top: -100px;
+}
+
+.content_detail_subcontent_right_serch {
+    position: sticky;
+    top: 134px;
+    width: 100%;
+}
+
+.content_detail_recommendedAgent_bigBox {
+    display: flex;
+}
+
+.content_detail_recommendedAgent_bigBox {
+    width: 100%;
+}
+
+.content_detail_recommendedAgent_box1,
+.content_detail_recommendedAgent_box2,
+.content_detail_recommendedAgent_box3 {
+    width: 253px;
+    padding-bottom: 0;
+    height: 253px;
+    margin-right: 20px;
+}
+
+.content_detail_recommendedAgent_box1_img,
+.content_detail_recommendedAgent_box2_img,
+.content_detail_recommendedAgent_box3_img {
+    width: 253px;
+}
+
+.content_detail_underRequest {
+    background: rgba(255, 255, 255, .9);
+    left: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: fixed;
+    right: 0;
+    border-top: 1px solid #DDD;
+    bottom: 0;
+}
+
+.content_detail_action_bar {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 20px 0;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+}
+
+.content_detail_underRequest_seelaterBox {
+    display: table-cell;
+    vertical-align: top;
+    border-collapse: separate;
+    border-spacing: 20px 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 230px;
+    background: #FFF;
+    border: solid 3px #0087e6;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
+    color: #0087e6;
+}
+
+.content_detail_underRequest_inquiryBox {
+    display: table-cell;
+    vertical-align: top;
+    border-collapse: separate;
+    border-spacing: 20px 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 230px;
+    background: #FFF;
+    border: solid 3px #0087e6;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
+    color: #0087e6;
+}
+
+.content_detail_underRequest_seelaterBox,
+.content_detail_underRequest_inquiryBox {
+    max-width: 100%;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+    color: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 21px;
+    line-height: 1;
+    min-height: 56px;
+    padding: 18px 5px 17px;
+    text-align: center;
+}
