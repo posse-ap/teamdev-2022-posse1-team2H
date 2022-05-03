@@ -1,7 +1,7 @@
 "use strict";
 
-const appearing = (appearingArguments) => {
-    document.getElementById(appearingArguments).classList.toggle('appearing');
+const appearing = (appearing) => {
+    document.getElementById(appearing).classList.toggle('appearing');
 }
 
 const appearSidebar = () => {
