@@ -119,10 +119,6 @@ include dirname(__FILE__) . "/header.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="serach__btn_wrapper">
-                            <input id="search_btn" class="serach_btn" type="submit" value="検索">
-
-                        </div>
                     </div>
                 </form>
             </div>
