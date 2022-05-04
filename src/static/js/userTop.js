@@ -16,43 +16,87 @@ const appearTypes = () => {
     appearing("business_features");
 };
 
-const changingColor = (newColor) => {
-    let new_color_class_name = newColor.className;
-    console.log(new_color_class_name);
+// const savingData = () => {
+//     const changingColor = (newColor) => {
+//         let new_color_class_name = newColor.className;
+//         console.log(new_color_class_name);
+    
+//         const specifiedChangingColor = () => {
+//             let new_color = document.getElementById(newColor.id);
+//             new_color.classList.toggle('chaning_color');
+//         };
+//         for (let i = 0; i < 12; i++) {
+//             let new_color_id = `star${i}`;
+//             if (newColor.id == new_color_id) {
+//                 specifiedChangingColor();
+//                 let agency_element = document.getElementById('agency_name' + [i] + '');
+//                 console.log(agency_element);
+//             }
+//         };
+//     };
+    
+//     const checkingColor = () => {
+//         // 押した時の色で判別
+//         if (new_color_class_name !== 'star chaning_color') {
+//             console.log('青');
+//         } else {
+//             ;
+//         }
+//     }
+//     checkingColor();
+    
+//     console.log(agency_element)
+//     // document.cookie = `agencyName=${agency_name};max-age=60`;
+//     // // document.cookie = `agencyName=+${encodeURIComponent(agency_name)};max-age=60`;
+//     // let data = document.cookie.split(';');
+//     // data.forEach(function (value) {
+//     //     let content = value.split('=');
+//     //     console.log(content[1]);
+//     // })
 
-    const specifiedChangingColor = () => {
-        let new_color = document.getElementById(newColor.id);
-        new_color.classList.toggle('chaning_color');
-    };
-    for (let i = 0; i < 12; i++) {
-        let new_color_id = `star${i}`;
-        if (newColor.id == new_color_id) {
-            specifiedChangingColor();
-            let agency_element = document.getElementById('agency_name' + [i] + '');
-            console.log(agency_element);
-        }
-    };
+// }
+
+
+class mainUserFunction {
+    constructor(new_color) {
+        // this.new_color = new_color;
+        this.new_color = new_color;
+        
+    }
+
+    // specifiedChangingColor() {
+    //     this.new_color.classList.toggle('chaning_color');
+    // }
+
+    // B(agency_element) {
+    //     if (newColor.id == new_color_id) {
+    //         let agency_element = document.getElementById('agency_name' + [i] + '');
+    //         // console.log(agency_element);
+    //     }
+    // }
+
+    // c() {
+    //     if (new_color_class !== 'star changing_color') {
+    //         document.cookie = `agencyName=${agency_name};max-age=60`;
+    //         // // document.cookie = `agencyName=+${encodeURIComponent(agency_name)};max-age=60`;
+    //         let data = document.cookie.split(';');
+    //         data.forEach(function (value) {
+    //             let content = value.split('=');
+    //             console.log(content[1]);
+    //         })
+    //         // console.log('青');
+    //     } else {
+    //         ;
+    //     }
+    // }
+
+}
+
+const changingColor = (newColor) => {
+    let new_color = document.getElementById(newColor.id);
+    const mainUserFunction = new mainUserFunction(new_color);
+    // mainUserFunction.specifiedChangingColor();
 };
 
-const checkingColor = () => {
-    // 押した時の色で判別
-    if (new_color_class_name !== 'star chaning_color') {
-        console.log('青');
-    } else {
-        ;
-    }
-}
-
-const savingData = () => {
-    checkingColor();
-    
-    console.log(agency_element)
-    // document.cookie = `agencyName=${agency_name};max-age=60`;
-    // // document.cookie = `agencyName=+${encodeURIComponent(agency_name)};max-age=60`;
-    // let data = document.cookie.split(';');
-    // data.forEach(function (value) {
-    //     let content = value.split('=');
-    //     console.log(content[1]);
-    // })
-
-}
+// mainUserFunction.B();
+// mainUserFunction.c();
