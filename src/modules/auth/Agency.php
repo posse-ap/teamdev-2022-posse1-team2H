@@ -10,6 +10,7 @@ class Agency
         $this->crud = new Cruds($db);
     }
 
+
     public static function validate()
     {
         if (isset($_SESSION['agency_manager']['id']) && $_SESSION['agency_manager']['time'] + 3600 > time()) {
@@ -20,12 +21,10 @@ class Agency
         }
     }
 
+
     public function login($email, $password) {
         $manager = $this->crud->loginManager($email, $password);
-        if ($manager) {
-            $_SESSION['agency_manager']['id'] = $manager['id'];
-            $_SESSION['agency_manager']['time'] = time();
-        }
+        return $manager;
 
     }
 }

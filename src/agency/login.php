@@ -6,6 +6,10 @@ $auth = new Agency($db);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_POST['email'] !== '' && $_POST['password'] !== '') {
         $manager = $auth->login($_POST['email'], $_POST['password']);
+        if ($manager) {
+            $_SESSION['agency_manager']['id'] = $manager['id'];
+            $_SESSION['agency_manager']['time'] = time();
+        }
         if (isset($_SESSION['agency_manager']['id'])) {
             if ($_POST['save'] === 'on') {
                 setcookie('email', $_POST['email'], time() + 60 * 60 * 24 * 14);
