@@ -1,0 +1,88 @@
+/* 全体 */
+html,body{
+    width: 100%;
+    margin: 0;
+}
+
+body{
+    font-family: "メイリオ";
+    letter-spacing:.04em;
+}
+
+header{
+    font-size: 25px;
+    background-color: #C4C4C4;
+    height: 60px;
+}
+
+.header_inner{
+    height: 60px;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.header_inner,.for_transition{
+    display: flex;
+}
+
+.page_name{
+    margin-left: 30px;
+}
+
+.select_content{
+    font-size: 18px;
+}
+
+.for_serach{
+    margin-right: 30px;
+}
+
+.for_serach input{
+    font-size: 18px;
+}
+
+main{
+    margin-top: 5%;
+}
+
+.for_transition{
+    margin: 0;
+    gap: 0px 50px;
+}
+
+.for_transition li a{
+    text-decoration: none;
+    color: black;
+
+}
+
+.displayed_content{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.displayed_content form input{
+    
+    font-size: 20px;
+}
+.agency_list_inner{
+    text-align: center;
+}
+
+.agency_list_inner{
+    padding: 0;
+    font-size: 25px;
+}
+
+.agency_list_inner ol{
+    border: 1px solid black;
+    margin-top: 14px;
+   
+}
+
+.agency_list_inner ol a{
+    text-decoration: none;
+    color: black;
+}
