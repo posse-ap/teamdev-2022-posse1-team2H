@@ -3,7 +3,8 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 use modules\auth\Agency;
 
-Agency::validate();
+$auth = new Agency($db);
+$auth->validate();
 
 
 include dirname(__FILE__) . '/header.php' ?>

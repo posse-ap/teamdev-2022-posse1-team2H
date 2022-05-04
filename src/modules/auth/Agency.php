@@ -11,7 +11,7 @@ class Agency
     }
 
 
-    public static function validate()
+    public function validate()
     {
         if (isset($_SESSION['agency_manager']['id']) && $_SESSION['agency_manager']['time'] + 3600 > time()) {
             $_SESION['agency_manager']['time'] = time();
@@ -25,6 +25,5 @@ class Agency
     public function login($email, $password) {
         $manager = $this->crud->loginManager($email, $password);
         return $manager;
-
     }
 }

@@ -16,11 +16,14 @@ class Agency
         } else {
             $sort = "ASC";
         }
-        $stmt = $this->db->prepare('SELECT * FROM users
+        $stmt = $this->db->prepare(sprintf(
+            'SELECT * FROM users
         WHERE id IN (
             SELECT user_id FROM users_agencies WHERE agency_id = :agency_id
-            OEDER BY updated_at %s
-        )', $sort);
+            ORDER BY updated_at %s
+        )',
+            $sort
+        ));
         $stmt->bindValue(':agency_id', $agency_id);
         $stmt->execute();
 

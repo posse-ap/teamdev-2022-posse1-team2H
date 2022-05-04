@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($manager) {
             $_SESSION['agency_manager']['id'] = $manager['id'];
             $_SESSION['agency_manager']['time'] = time();
+            $_SESSION['agency']['id'] = $manager['agency_id'];
         }
         if (isset($_SESSION['agency_manager']['id'])) {
             if ($_POST['save'] === 'on') {
