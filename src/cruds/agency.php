@@ -80,9 +80,9 @@ class Agency
     {
         $stmt = $this->db->prepare('SELECT
          *
-         FROM manager
+         FROM managers
          WHERE email = :email
-         and passsword = :password');
+         and password = :password');
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':password', sha1($password));
         $stmt->execute();

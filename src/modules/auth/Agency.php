@@ -15,7 +15,7 @@ class Agency
         if (isset($_SESSION['agency_manager']['id']) && $_SESSION['agency_manager']['time'] + 3600 > time()) {
             $_SESION['agency_manager']['time'] = time();
         } else {
-            header('Location: ' . $_SERVER['DOCUMENT_ROOT'] . '/agency/login.php');
+            header('Location: login.php');
             exit();
         }
     }
