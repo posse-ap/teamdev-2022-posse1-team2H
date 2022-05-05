@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./static/css/sanitize.css">
     <script src="https://kit.fontawesome.com/727d59e43e.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="./static/css/user.css">
     <script src="./static/js/userApi.js"></script>
 
