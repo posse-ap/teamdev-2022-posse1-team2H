@@ -1,8 +1,13 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
-use modules\auth\Agency;
+use modules\auth\Agency as Auth;
+use cruds\Agency as Cruds;
 
-$auth = new Agency($db);
+$auth = new Auth($db);
+$cruds = new Cruds($db);
+// seed
+$cruds->insertManagers();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_POST['email'] !== '' && $_POST['password'] !== '') {
         $manager = $auth->login($_POST['email'], $_POST['password']);

@@ -35,7 +35,6 @@ CREATE TABLE agencies (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) UNIQUE NOT NULL,
-  password VARCHAR(255) NOT NULL,
   email_for_notification VARCHAR(255) NOT NULL,
   tel VARCHAR(255) NOT NULL,
   url TEXT NOT NULL,
@@ -50,7 +49,6 @@ CREATE TABLE agencies (
 INSERT INTO agencies SET
 name = '株式会社〇〇',
 email = 'marumaru@example.com',
-password = sha1('marumaru'),
 email_for_notification = 'marumarun@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -59,11 +57,10 @@ contactor = '武田鉄矢',
 address = '東京都港区',
 address_num = '199-9999';
 
--- ('株式会社菅田将暉', 'suda@example.com', sha1('sudamasaki'), 'sudan@example.com', '08000001111', 'https://google.com', 'すだ', '菅生大将', '199-9999'),
+-- ('株式会社菅田将暉', 'suda@example.com', password_hash('sudamasaki'), 'sudan@example.com', '08000001111', 'https://google.com', 'すだ', '菅生大将', '199-9999'),
 INSERT INTO agencies SET
 name = '株式会社菅田将暉',
 email = 'suda@example.com',
-password = sha1('sudamasaki'),
 email_for_notification = 'sudan@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -72,11 +69,10 @@ contactor = '菅生大将',
 address = '東京都港区',
 address_num = '199-9999';
 
--- ('株式会社竹内涼真', 'takeuti@example.com', sha1('takeuti'), 'takeutin@example.com', '08000001111', 'https://google.com', 'たけうち', 'たけうち', '199-9999'),
+-- ('株式会社竹内涼真', 'takeuti@example.com', password_hash('takeuti'), 'takeutin@example.com', '08000001111', 'https://google.com', 'たけうち', 'たけうち', '199-9999'),
 INSERT INTO agencies SET
 name = '株式会社竹内涼真',
 email = 'takeuti@example.com',
-password = sha1('takeuti'),
 email_for_notification = 'takeutin@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -85,11 +81,10 @@ contactor = 'たけうち',
 address = '東京都港区',
 address_num = '199-9999';
 
--- ('', 'mamiya@example.com', sha1('mamiya'), 'mamiyan@example.com', '08000001111', 'https://google.com', 'まみや', 'まみや', '199-9999'),
+-- ('', 'mamiya@example.com', password_hash('mamiya'), 'mamiyan@example.com', '08000001111', 'https://google.com', 'まみや', 'まみや', '199-9999'),
 INSERT INTO agencies SET
 name = '株式会社間宮祥太朗',
 email = 'mamiya@example.com',
-password = sha1('mamiya'),
 email_for_notification = 'mamiyan@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -98,11 +93,10 @@ contactor = 'まみや',
 address = '東京都港区',
 address_num = '199-9999';
 
--- ('株式会社仲野太賀', 'nakano@example.com', sha1('nakano'), 'nakano@example.com', '08000001111', 'https://google.com', 'なかの', 'なかの', '199-9999'),
+-- ('株式会社仲野太賀', 'nakano@example.com', password_hash('nakano'), 'nakano@example.com', '08000001111', 'https://google.com', 'なかの', 'なかの', '199-9999'),
 INSERT INTO agencies SET
 name = '株式会社仲野太賀',
 email = 'nakano@example.com',
-password = sha1('nakano'),
 email_for_notification = 'nakano@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -115,7 +109,6 @@ address_num = '199-9999';
 INSERT INTO agencies SET
 name = '株式会社神木隆之介',
 email = 'kamiki@example.com',
-password = sha1('kamiki'),
 email_for_notification = 'kamikin@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -128,7 +121,6 @@ address_num = '199-9999';
 INSERT INTO agencies SET
 name = '株式会社松坂桃李',
 email = 'matuzaka@example.com',
-password = sha1('matuzaka'),
 email_for_notification = 'matuzakan@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -141,7 +133,6 @@ address_num = '199-9999';
 INSERT INTO agencies SET
 name = '株式会社山田裕貴',
 email = 'yamada@example.com',
-password = sha1('yamada'),
 email_for_notification = 'yamadan@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -154,7 +145,6 @@ address_num = '199-9999';
 INSERT INTO agencies SET
 name = '株式会社吉沢亮',
 email = 'yosizawa@example.com',
-password = sha1('yosizawa'),
 email_for_notification = 'yosizawan@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -167,7 +157,6 @@ address_num = '199-9999';
 INSERT INTO agencies SET
 name = '株式会社DJ松永',
 email = 'matsunaga@example.com',
-password = sha1('matsunaga'),
 email_for_notification = 'matsunagan@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -180,7 +169,6 @@ address_num = '199-9999';
 INSERT INTO agencies SET
 name = '株式会社常田大希',
 email = 'tuneta@example.com',
-password = sha1('tuneta'),
 email_for_notification = 'tunetan@example.com',
 tel = '08000001111',
 url = 'https://google.com',
@@ -306,12 +294,6 @@ CREATE TABLE managers (
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
-INSERT INTO managers(name, email, password, is_representative, agency_id) VALUES
-('福場脩真', 'fukuba@example.com', sha1('fukuba'), true, 1),
-('加茂竜之介', 'kamochan@example.com', sha1('kamochan'), true, 2),
-('ぬのっち', 'fuse@example.com', sha1('fuse'), true, 4),
-('美玲', 'kubota@example.com', sha1('kubota'), true, 3);
-
 DROP TABLE IF EXISTS contracts;
 
 CREATE TABLE contracts ( -- 契約情報のテーブル v
@@ -335,8 +317,8 @@ CREATE TABLE administorators (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-INSERT INTO administorators
-SET
-name = 'サンプル太郎',
-email = 'test@posse-ap.com',
-password = sha1('password');
+-- INSERT INTO administorators
+-- SET
+-- name = 'サンプル太郎',
+-- email = 'test@posse-ap.com',
+-- password = password_hash('password', PASSWORD_DEFAULT);
