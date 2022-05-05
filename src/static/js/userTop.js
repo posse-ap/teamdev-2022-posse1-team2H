@@ -34,28 +34,6 @@ const changingColor = (newColor) => {
 
     };
 }
-
-// const checkingColor = (new_color_class_name) => {
-//     // 押した時の色で判別
-//     if (new_color_class_name !== 'star chaning_color') {
-//         console.log('青');
-//     } else {
-//         ;
-//     }
-// }
-
-// const A = () => {
-//     console.log(new_color_id);
-//     if(new_color_id){
-//         for (let i = 0; i < 12; i++) {
-//             var agency_element = document.getElementById('agency_name' + [i] + '');
-//         }
-//         let agency_name = agency_element.textContent;
-
-//     }
-
-// }
-
 // const savingData = (agency_name) => {
 //     A();
 //     // let agency_name= agency_element.textContent;
@@ -92,27 +70,42 @@ let array = [
 
 ]
 
-console.log(array[0].id);
+// console.log(array[0].id);
 
 
 let x = [];
 function savingData() {
     let A = document.getElementsByClassName('star changing_color');
     for (var L = 0; L < A.length; L++) {   
-        var B = A.item(L);
-        var C = B.id;
+        let B = A.item(L);
+        let C = B.id;
         x.push(C);
-        console.log(x);
-        console.log(x[L]);
-        let replaceing = x[L].replace('star', '');
-        console.log(replaceing);
-        if (x[L] == array[replaceing].id) {
-            let P = array[replaceing].class;
-            // console.log(P);
-            // console.log(document.getElementById(P).textContent);
-            let agency_name=document.getElementById(P).textContent;
-            document.cookie = `agencyName=${agency_name};max-age=60`;
-            // document.cookie = `agencyName=+${encodeURIComponent(agency_name)};max-age=60`;
+        // console.log(x);
+       let string = x.toString();
+        // console.log(string);
+        let replaceing=string.replaceAll('star','');
+        // console.log(replaceing);
+        let new_array = replaceing.split(',');
+        // console.log(new_array);
+        if (x[L] == array[new_array[L]].id) {
+            // console.log(string);
+            let M = string.replaceAll('star','agency_name');
+            // console.log(M);
+            let U = M.split(',');
+            console.log(U);
+            let n=U.toString();
+            console.log(n);
+            // let g=n.replaceAll(''+n+'','document.getElementById('+U[L]+').textContent');
+            // let g=n.replaceAll(''+n+'','document.getElementById(U[L]).textContent');
+            let g=n.replaceAll(''+[n]+'','document.getElementById(U[L]).textContent');
+            console.log(g);
+            // agency_name.push('document.getElementById('+U[L]+').textContent'); 
+            // console.log(agency_name);
+            // for(let v=0; v<U; v++){
+            //     document.cookie = 'agencyName'+[v]+'='+[]+';max-age=60';
+                
+            // }
+            // // document.cookie = `agencyName=+${encodeURIComponent(agency_name)};max-age=60`;
             let data = document.cookie.split(';');
             data.forEach(function(value){
                 let content = value.split('=');
