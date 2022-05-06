@@ -33,29 +33,30 @@ const changingColor = (newColor) => {
 }
 
 const savingData = () => {
-    let agency_name_class = document.getElementsByClassName('star changing_color');
-    for (var L = 0; L < agency_name_class.length; L++) {
-        let agency_name_element = agency_name_class.item(L);
-        let agency_name_id = agency_name_element.id;
-        let agency_name = $('#' + [agency_name_id] + '').prev('').text();
-        document.cookie = `agencName${L}=${agency_name};max-age=60`;
+    let agencyNameClass = document.getElementsByClassName('star changing_color');
+    for (var i = 0; i < agencyNameClass.length; i++) {
+        let agencyNameElement = agencyNameClass.item(i);
+        let agencyNameId = agencyNameElement.id;
+        console.log(agencyNameId);
+        let agencyName = $('#' + [agencyNameId] + '').prev('').text();
+        document.cookie = `agencyId${i}=${agencyName};max-age=60`;
         var data = document.cookie.split(';');
-        data.forEach(function (value) {
+        data.forEach(value=> {
             let content = value.split('=');
             console.log(content[1]);
         })
 
     }
-    displayingData(data);
+    // displayingData(data);
 
 
 }
 
-const displayingData = (data) => {
-    let cookies = data;
-    cookies.shift();
-    console.log(cookies);
-}
+// const displayingData = (data) => {
+//     let cookies = data;
+//     cookies.shift();
+//     console.log(cookies);
+// }
 
 
 
