@@ -74,7 +74,7 @@ class Agency
                 'is_representative' => $is_representative,
                 'agency_id' => $agency_id
             );
-            return json_encode($result);
+            return json_encode($result, JSON_UNESCAPED_UNICODE);
         }
         return null;
     }
@@ -104,5 +104,19 @@ class Agency
             password_hash('mirei', PASSWORD_DEFAULT)
         ));
         return true;
+    }
+
+    public function updateManager($manager) {
+        $stmt = $this->db->prepare("UPDATE managers
+        SET
+        name = :name,
+        email = :email
+        WHERE id = :id
+        ");
+        $stmt->bindValue(':name', $manager->name, \PDO::PARAM_STR);
+        $stmt->bindValue(':email', $manager->email, \PDO::PARAM_STR);
+        $stmt->bindValue(':id', $manager->id, \PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt;
     }
 }
