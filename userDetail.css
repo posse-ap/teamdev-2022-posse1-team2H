@@ -195,3 +195,37 @@ body {
     padding: 18px 5px 17px;
     text-align: center;
 }
+
+
+/* ここから右サイド */
+
+.content_detail_right_serch {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.content_detail_subcontent_right_serch_inquiryBox {
+    margin: 0;
+    background-position: center center;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+}
+
+.content_detail_subcontent_right_serch_seelaterField {
+    margin: 0;
+    background-position: center center;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+}
+
+.content_detail_subcontent_right_information {
+    margin: 0;
+    background-position: center center;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    ;
+}
