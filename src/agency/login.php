@@ -6,7 +6,7 @@ use cruds\Agency as Cruds;
 $auth = new Auth($db);
 $cruds = new Cruds($db);
 // seed
-$cruds->insertManagers();
+// $cruds->insertManagers();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_POST['email'] !== '' && $_POST['password'] !== '') {
