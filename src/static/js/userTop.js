@@ -50,6 +50,7 @@ const changingColor = (newColor) => {
 
 }
 
+}
 
 const savingData = () => {
     console.log(Cookies.get());
