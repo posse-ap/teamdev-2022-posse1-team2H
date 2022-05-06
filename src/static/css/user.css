@@ -269,6 +269,12 @@ header{
 
 }
 
+.sidebar_favorite h2:hover{
+    box-shadow: none;
+    transform: translate3d(0, 3px, 0);
+    transition-duration: 0.3s;
+}
+
 .business_type_wrapper p,.business_features_wrapper p{
     margin: 0;
     border-top: 1px solid black;
