@@ -37,22 +37,33 @@ const savingData = () => {
     for (let i = 0; i < starChangingClass.length; i++) {
         let starContent = starChangingClass.item(i);
         let starContentId = starContent.id;
+        let A = document.getElementById(starContentId);
         let agencyNameId = starContentId.replace('star', 'agency_name')
-        // console.log(agencyNameId);
         document.cookie = `agencyId${i}=${agencyNameId};max-age=60`;
         let data = document.cookie.split(';');
-        data.forEach(value => {
-            let content = value.split('=');
-            displayingData(content[1]);
-        })
+        let changedData = data.pop();
+        console.log(A);
+        console.log(A.className=starContentId);
+        backToColor(A);
+        displayingData(changedData);
+        // backToColor(starContent);
     }
 
 
 }
 
-const displayingData = (content) => {
-    let cookies = content;
-    console.log(cookies);
+// const backToColor=(starContentId)=>{
+    
+// }
+
+const displayingData = (changedData) => {
+    let data = changedData;
+    let arrayData = data.split('=');
+    console.log(arrayData);
+    let agencyName = arrayData.pop();
+    console.log(agencyName);
+
+
 }
 
 
