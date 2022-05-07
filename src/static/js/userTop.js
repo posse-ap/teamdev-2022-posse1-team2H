@@ -41,23 +41,24 @@ const savingData = () => {
         document.cookie = `agencyId${i}=${agencyNameId};max-age=60`;
         let data = document.cookie.split(';');
         let changedData = data.pop();
-        backToColor(starContent);
+        // backToColor(starContent);
         displayingData(changedData);
     }
 
 
 }
 
-const backToColor=(starContent)=>{
-    starContent.classList.toggle('changing_color');
-}
+// const backToColor=(starContent)=>{
+//     starContent.classList.toggle('changing_color');
+// }
 
 const displayingData = (changedData) => {
+    let arrayAllData = [];
     let data = changedData;
     let arrayData = data.split('=');
-    console.log(arrayData);
+    // console.log(arrayData);
     let agencyName = arrayData.pop();
     console.log(agencyName);
-
+    // console.log(arrayAllData.push(agencyName));
 
 }
