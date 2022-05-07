@@ -19,13 +19,9 @@ const appearTypes = () => {
 const A = async () => {
     await axios('http://localhost/modules/api/user/firstView.php').then((res) => {
 
-        res.data.forEach(elem => {
-            console.log(elem);
-        });
-        // console.log(res.data);
-        // console.log(res.data[0]['name']);
-        // console.log(res.data[1]);
-        // console.log(res.data[2]);
+        // res.data.forEach(elem => {
+        //     console.log(elem);
+        // });
     });
 };
 const changingColor = (newColor) => {
