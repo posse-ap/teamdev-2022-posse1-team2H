@@ -1,13 +1,13 @@
 const prefix = "http://localhost/modules/api";
 
-const userPrefix = `${prefix}/user`;
-// TOPページのagency呼び出し
-const getAgenciesForFirstView = async () => {
-  // TODO ローディング表示
-  await axios(`${userPrefix}/firstView.php`).then((res) => {
-    console.log(res.data);
-  });
-};
+// const userPrefix = `${prefix}/user`;
+// // TOPページのagency呼び出し
+// const getAgenciesForFirstView = async () => {
+//   // TODO ローディング表示
+//   await axios(`${userPrefix}/firstView.php`).then((res) => {
+//     console.log(res.data);
+//   });
+// };
 
 const handleSearch = async () => {
   let industries = [];
@@ -41,4 +41,4 @@ const searchAgencies = async (types, industries) => {
   };
 };
 
-window.onload = getAgenciesForFirstView();
+// window.onload = getAgenciesForFirstView();
