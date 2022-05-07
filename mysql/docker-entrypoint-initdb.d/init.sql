@@ -306,6 +306,12 @@ CREATE TABLE managers (
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
+INSERT INTO managers(name, email, password, is_representative, agency_id) VALUES
+('福場脩真', 'fukuba@example.com', sha1('fukuba'), true, 1),
+('加茂竜之介', 'kamochan@example.com', sha1('kamochan'), true, 2),
+('ぬのっち', 'fuse@example.com', sha1('fuse'), true, 4),
+('美玲', 'kubota@example.com', sha1('kubota'), true, 3);
+
 DROP TABLE IF EXISTS contracts;
 
 CREATE TABLE contracts ( -- 契約情報のテーブル v
