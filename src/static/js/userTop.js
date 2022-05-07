@@ -61,7 +61,3 @@ const displayingData = (changedData) => {
 
 
 }
-
-
-
-
