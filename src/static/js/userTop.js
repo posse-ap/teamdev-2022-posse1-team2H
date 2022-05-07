@@ -16,49 +16,25 @@ const appearTypes = () => {
     appearing("business_features");
 };
 
-const changingColor = (newColor) => {
-    const specifiedChangingColor = () => {
-        let new_color = document.getElementById(newColor.id);
-        new_color.classList.toggle('changing_color');
-    };
-    for (let i = 0; i < 12; i++) {
-        if (newColor.id == 'star' + [i] + '') {
-            var new_color_id = `star${i}`;
-            if (newColor.id == new_color_id) {
-                specifiedChangingColor();
-            }
-        };
+const A = async () => {
+    await axios('http://localhost/modules/api/user/firstView.php').then((res) => {
+      console.log(res.data);
+    });
+  };
+// const changingColor = (newColor,res) => {
+//     const specifiedChangingColor = () => {
+//         let new_color = document.getElementById(newColor.id);
+//         new_color.classList.toggle('changing_color');
+//     };
+//     for (let i = 0; i < 12; i++) {
+//         if (newColor.id == 'star' + [i] + '') {
+//             var new_color_id = `star${i}`;
+//             if (newColor.id == new_color_id) {
+//                 specifiedChangingColor();
+//             }
+//         };
 
-    };
-}
-
-const savingData = () => {
-    let starChangingClass = document.getElementsByClassName('star changing_color');
-    for (let i = 0; i < starChangingClass.length; i++) {
-        let starContent = starChangingClass.item(i);
-        let starContentId = starContent.id;
-        let agencyNameId = starContentId.replace('star', 'agency_name')
-        document.cookie = `agencyId${i}=${agencyNameId};max-age=60`;
-        let data = document.cookie.split(';');
-        let changedData = data.pop();
-        // backToColor(starContent);
-        displayingData(changedData);
-    }
-
-
-}
-
-// const backToColor=(starContent)=>{
-//     starContent.classList.toggle('changing_color');
+//     };
 // }
 
-const displayingData = (changedData) => {
-    let arrayAllData = [];
-    let data = changedData;
-    let arrayData = data.split('=');
-    // console.log(arrayData);
-    let agencyName = arrayData.pop();
-    console.log(agencyName);
-    // console.log(arrayAllData.push(agencyName));
-
-}
+window.onload = A();
