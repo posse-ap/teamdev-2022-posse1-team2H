@@ -18,23 +18,22 @@ const appearTypes = () => {
 
 const A = async () => {
     await axios('http://localhost/modules/api/user/firstView.php').then((res) => {
-      console.log(res.data);
+        console.log(res.data);
     });
-  };
-// const changingColor = (newColor,res) => {
-//     const specifiedChangingColor = () => {
-//         let new_color = document.getElementById(newColor.id);
-//         new_color.classList.toggle('changing_color');
-//     };
-//     for (let i = 0; i < 12; i++) {
-//         if (newColor.id == 'star' + [i] + '') {
-//             var new_color_id = `star${i}`;
-//             if (newColor.id == new_color_id) {
-//                 specifiedChangingColor();
-//             }
-//         };
+};
+const changingColor = (newColor) => {
+    const specifiedChangingColor = () => {
+        let new_color = document.getElementById(newColor.id);
+        new_color.classList.toggle('changing_color');
+    };
+    for (let i = 0; i < 12; i++) {
+        if (newColor.id == 'star' + [i] + '') {
+            var new_color_id = `star${i}`;
+            if (newColor.id == new_color_id) {
+                specifiedChangingColor();
+            }
+        };
 
-//     };
-// }
-
-window.onload = A();
+    };
+    window.onload = A();
+}
