@@ -4,7 +4,7 @@ namespace models;
 
 class User
 {
-    function __construct(
+    public function __construct(
         $name,
         $email,
         $tel,

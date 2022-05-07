@@ -74,22 +74,49 @@ class Agency
                 'is_representative' => $is_representative,
                 'agency_id' => $agency_id
             );
-            return json_encode($result);
+            return json_encode($result, JSON_UNESCAPED_UNICODE);
         }
         return null;
     }
 
-    public function loginManager($email, $password)
+    public function loginManager($email)
     {
         $stmt = $this->db->prepare('SELECT
          *
          FROM managers
-         WHERE email = :email
-         and password = :password');
+         WHERE email = :email');
         $stmt->bindValue(':email', $email);
-        $stmt->bindValue(':password', sha1($password));
         $stmt->execute();
 
         return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function insertManagers() {
+        $stmt = $this->db->prepare("INSERT INTO managers(name, email, password, is_representative, agency_id) VALUES
+        ('福場脩真', 'fukuba@example.com', ?, true, 1),
+        ('加茂竜之介', 'kamochan@example.com', ?, true, 2),
+        ('ぬのっち', 'fuse@example.com', ?, true, 4),
+        ('美玲', 'kubota@example.com', ?, true, 3)");
+        $stmt->execute(array(
+            password_hash('fukuba', PASSWORD_DEFAULT),
+            password_hash('kamo', PASSWORD_DEFAULT),
+            password_hash('nuno', PASSWORD_DEFAULT),
+            password_hash('mirei', PASSWORD_DEFAULT)
+        ));
+        return true;
+    }
+
+    public function updateManager($manager) {
+        $stmt = $this->db->prepare("UPDATE managers
+        SET
+        name = :name,
+        email = :email
+        WHERE id = :id
+        ");
+        $stmt->bindValue(':name', $manager->name, \PDO::PARAM_STR);
+        $stmt->bindValue(':email', $manager->email, \PDO::PARAM_STR);
+        $stmt->bindValue(':id', $manager->id, \PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt;
     }
 }
