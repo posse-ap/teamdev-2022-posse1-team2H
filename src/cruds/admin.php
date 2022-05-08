@@ -1,6 +1,6 @@
 <?php
 
-namespace Craft\Cruds;
+namespace Cruds;
 
 class Admin 
 {
@@ -22,19 +22,20 @@ class Admin
                 extract($row);
                 $item = array(
                     'id' => $id,
-                    'name' => $name,
-                    'title' => $title,
-                    'sentenses' => $sentenses,
-                    'eyecatch_url' => $eyecatch_url,
-                    'types' => $types,
-                    'industries' => $industries,
+                    'name' => $name,                   
+                    // '' => ,                   
+                    // '' => ,                   
+                    // '' => ,                   
                 );
                 array_push($values, $item);
             }
+            return json_encode($values, JSON_UNESCAPED_UNICODE);
         }
+        return json_encode(array());
     }
     
-    public function loginAdministrator($email){
+    public function loginAdministrator($email)
+    {
         $stmt = $this->db->prepare('SELECT
         *
         FROM administorators
@@ -45,19 +46,19 @@ class Admin
        return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
 
-    // public function insertManagers() {
-    //     $stmt = $this->db->prepare("INSERT INTO managers(name, email, password, is_representative, agency_id) VALUES
-    //     ('福場脩真', 'fukuba@example.com', ?, true, 1),
-    //     ('加茂竜之介', 'kamochan@example.com', ?, true, 2),
-    //     ('ぬのっち', 'fuse@example.com', ?, true, 4),
-    //     ('美玲', 'kubota@example.com', ?, true, 3)");
-    //     $stmt->execute(array(
-    //         password_hash('fukuba', PASSWORD_DEFAULT),
-    //         password_hash('kamo', PASSWORD_DEFAULT),
-    //         password_hash('nuno', PASSWORD_DEFAULT),
-    //         password_hash('mirei', PASSWORD_DEFAULT)
-    //     ));
-    //     return true;
-    // }
+    public function insertManagers() {
+        $stmt = $this->db->prepare("INSERT INTO administorators(name, email, password) VALUES
+        ('福場脩真', 'fukuba@example.com', ?),
+        ('加茂竜之介', 'kamochan@example.com', ?),
+        ('ぬのっち', 'fuse@example.com', ?),
+        ('美玲', 'kubota@example.com', ?)");
+        $stmt->execute(array(
+            password_hash('fukuba', PASSWORD_DEFAULT),
+            password_hash('kamo', PASSWORD_DEFAULT),
+            password_hash('nuno', PASSWORD_DEFAULT),
+            password_hash('mirei', PASSWORD_DEFAULT)
+        ));
+        return true;
+    }
 
 }

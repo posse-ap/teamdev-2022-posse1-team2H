@@ -1,30 +1,13 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 
+use Cruds\Admin as Cruds;
 use modules\auth\Admin as Auth;
-use Craft\Cruds\Admin as Cruds;
 
+$crud = new Cruds($db);
 $auth = new Auth($db);
-// $cruds = new Cruds($db);
 
-// if (!empty($_POST)) {
-//   $login = $db->prepare('SELECT * FROM users WHERE email=? AND password=?');
-//   $login->execute(array(
-//     $_POST['email'],
-//     sha1($_POST['password'])
-//   ));
-//   $user = $login->fetch();
-
-//   if ($user) {
-//     $_SESSION = array();
-//     $_SESSION['user_id'] = $user['id'];
-//     $_SESSION['time'] = time();
-//     header('Location: http://' . $_SERVER['HTTP_HOST'] . '/admin/index.php');
-//     exit();
-//   } else {
-//     $error = 'fail';
-//   }
-// }
+// $crud->insertManagers();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($_POST['email'] !== '' && $_POST['password'] !== '') {
@@ -47,6 +30,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $error['login'] = 'blank';
   }
 }
+// $cruds = new Cruds($db);
+
+// if (!empty($_POST)) {
+//   $login = $db->prepare('SELECT * FROM users WHERE email=? AND password=?');
+//   $login->execute(array(
+//     $_POST['email'],
+//     sha1($_POST['password'])
+//   ));
+//   $user = $login->fetch();
+
+//   if ($user) {
+//     $_SESSION = array();
+//     $_SESSION['user_id'] = $user['id'];
+//     $_SESSION['time'] = time();
+//     header('Location: http://' . $_SERVER['HTTP_HOST'] . '/admin/index.php');
+//     exit();
+//   } else {
+//     $error = 'fail';
+//   }
+// }
+
 ?>
 
 <!DOCTYPE html>

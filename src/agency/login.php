@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($_POST['save'] === 'on') {
                 setcookie('email', $_POST['email'], time() + 60 * 60 * 24 * 14);
             }
-
+            echo $_SESSION['agency_manager']['id'];
             header('Location: index.php');
             exit();
         } else {

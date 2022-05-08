@@ -1,7 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 
-use  Craft\Cruds\Admin;
+use  Cruds\Admin;
 
 $Admin_cruds = new admin($db);
 $agencies = $Admin_cruds->getAgencies();

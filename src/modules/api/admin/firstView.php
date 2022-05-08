@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 header('Access-Control-Allow-Origin: *');
 header("Content-Type: application/json; charset=UTF-8");
 
-use  Craft\Cruds\Admin;
+use  Cruds\Admin;
 
 $admin_cruds = new admin($db);
 $results = $admin_cruds->getAgencies();

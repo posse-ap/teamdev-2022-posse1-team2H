@@ -1,14 +1,14 @@
 <?php
 
 namespace modules\auth;
-use Craft\Cruds\Admin as Cruds;
+use Cruds\Admin as Cruds;
 
 class Admin
 {
-    // public function __construct($db)
-    // {
-    //     $this->crud = new Cruds($db);
-    // }
+    public function __construct($db)
+    {
+        $this->crud = new Cruds($db);
+    }
 
     public function login($email, $password) {
         $administrator = $this->crud->loginAdministrator($email);
