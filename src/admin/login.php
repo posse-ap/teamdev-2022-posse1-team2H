@@ -1,27 +1,50 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
+
 use modules\auth\Admin as Auth;
 use Craft\Cruds\Admin as Cruds;
 
 $auth = new Auth($db);
-$cruds = new Cruds($db);
+// $cruds = new Cruds($db);
 
-if (!empty($_POST)) {
-  $login = $db->prepare('SELECT * FROM users WHERE email=? AND password=?');
-  $login->execute(array(
-    $_POST['email'],
-    sha1($_POST['password'])
-  ));
-  $user = $login->fetch();
+// if (!empty($_POST)) {
+//   $login = $db->prepare('SELECT * FROM users WHERE email=? AND password=?');
+//   $login->execute(array(
+//     $_POST['email'],
+//     sha1($_POST['password'])
+//   ));
+//   $user = $login->fetch();
 
-  if ($user) {
-    $_SESSION = array();
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['time'] = time();
-    header('Location: http://' . $_SERVER['HTTP_HOST'] . '/admin/index.php');
-    exit();
+//   if ($user) {
+//     $_SESSION = array();
+//     $_SESSION['user_id'] = $user['id'];
+//     $_SESSION['time'] = time();
+//     header('Location: http://' . $_SERVER['HTTP_HOST'] . '/admin/index.php');
+//     exit();
+//   } else {
+//     $error = 'fail';
+//   }
+// }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if ($_POST['email'] !== '' && $_POST['password'] !== '') {
+    $administrator = $auth->login($_POST['email'], $_POST['password']);
+    if ($administrator) {
+      $_SESSION['administrator']['id'] = $administrator['id'];
+      $_SESSION['administrator']['time'] = time();
+    }
+    if (isset($_SESSION['administrator']['id'])) {
+      if ($_POST['save'] === 'on') {
+        setcookie('email', $_POST['email'], time() + 60 * 60 * 24 * 14);
+      }
+
+      header('Location: index.php');
+      exit();
+    } else {
+      $error['login'] = 'failed';
+    }
   } else {
-    $error = 'fail';
+    $error['login'] = 'blank';
   }
 }
 ?>
