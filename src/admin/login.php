@@ -1,5 +1,10 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
+use modules\auth\Admin as Auth;
+use Craft\Cruds\Admin as Cruds;
+
+$auth = new Auth($db);
+$cruds = new Cruds($db);
 
 if (!empty($_POST)) {
   $login = $db->prepare('SELECT * FROM users WHERE email=? AND password=?');

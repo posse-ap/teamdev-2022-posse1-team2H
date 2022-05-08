@@ -2,6 +2,11 @@
 
 namespace Craft\Cruds;
 
-class Admin {
-    
+class Admin 
+{
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+
 }
