@@ -9,6 +9,31 @@ class Admin
         $this->db = $db;
     }
 
+    public function getAgencies()
+    {
+        $stmt = $this->db->prepare('SELECT*from agencies');
+        $stmt->execute();
+        
+        $num = $stmt->rowcount();
+        
+        if($num > 0){
+            $values = array();
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                extract($row);
+                $item = array(
+                    'id' => $id,
+                    'name' => $name,
+                    'title' => $title,
+                    'sentenses' => $sentenses,
+                    'eyecatch_url' => $eyecatch_url,
+                    'types' => $types,
+                    'industries' => $industries,
+                );
+                array_push($values, $item);
+            }
+        }
+    }
+    
     public function loginAdministrator($email){
         $stmt = $this->db->prepare('SELECT
         *

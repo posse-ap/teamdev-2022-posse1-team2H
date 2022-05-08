@@ -1,5 +1,11 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
+
+use  Craft\Cruds\Admin;
+
+$Admin_cruds = new admin($db);
+$agencies = $Admin_cruds->getAgencies();
+
 if (isset($_SESSION['user_id']) && $_SESSION['time'] + 60 * 60 * 24 > time()) {
     $_SESSION['time'] = time();
 
@@ -24,6 +30,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['time'] + 60 * 60 * 24 > time()) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../static/js/adminApi.js"></script>
     <title>管理者ログイン</title>
 </head>
 
