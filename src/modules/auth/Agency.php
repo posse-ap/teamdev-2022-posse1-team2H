@@ -1,6 +1,7 @@
 <?php
 
 namespace modules\auth;
+
 use cruds\Agency as Cruds;
 
 class Agency
@@ -22,12 +23,21 @@ class Agency
     }
 
 
-    public function login($email, $password) {
+    public function login($email, $password)
+    {
         $manager = $this->crud->loginManager($email);
         if (password_verify($password, $manager['password'])) {
             return $manager;
         } else {
             return null;
+        }
+    }
+
+    public function validateRepreserntative($manager)
+    {
+        if (!$manager->is_representative) {
+            header('Location: index.php');
+            exit();
         }
     }
 }
