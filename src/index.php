@@ -30,6 +30,7 @@ include dirname(__FILE__) . "/header.php";
                             <div class="agency_infromation">
                                 <div class="name_and_favorite">
                                     <div class="agency_name_wrapper"><span id="agency_name<?php echo $i ?>" class="agency_name">三菱ufj信託銀行</span></div>
+                                    <span id="forSaving<?php echo $i ?>"></span>
                                     <div id="star<?php echo $i ?>" class="star" onclick="changingColor(this)"><i class="fa-solid fa-star"></i></div>
 
                                 </div>
