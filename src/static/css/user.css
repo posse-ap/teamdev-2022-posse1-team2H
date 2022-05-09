@@ -284,3 +284,7 @@ header{
 .changing_color{
     color: #0099FF;
 }
+
+#forSaving{
+    display: none;
+}
