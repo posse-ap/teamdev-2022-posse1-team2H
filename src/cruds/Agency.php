@@ -152,18 +152,13 @@ class Agency
     }
 
     public function addManager($manager) {
-        if ($manager->is_representative == 1) {
-            $representative = true;
-        } else {
-            $representative = false;
-        }
         $stmt = $this->db->prepare('INSERT INTO managers (name, email, password, is_representative, agency_id)
         VALUES
         (:name, :email, :password, :representative, :agency_id)');
         $stmt->bindValue(':name', $manager->name, \PDO::PARAM_STR);
         $stmt->bindValue(':email', $manager->email, \PDO::PARAM_STR);
         $stmt->bindValue(':password', password_hash($manager->password, PASSWORD_DEFAULT), \PDO::PARAM_STR);
-        $stmt->bindValue(':representative', $representative, \PDO::PARAM_BOOL);
+        $stmt->bindValue(':representative', $manager->is_representative, \PDO::PARAM_BOOL);
         $stmt->bindValue(':agency_id', $manager->agency_id, \PDO::PARAM_INT);
         $success = $stmt->execute();
 
