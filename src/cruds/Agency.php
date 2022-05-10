@@ -122,6 +122,32 @@ class Agency
             return json_encode($result, JSON_UNESCAPED_UNICODE);
         }
         return null;
+    public function getManagers($agency_id) {
+        $stmt = $this->db->prepare("SELECT
+        id,
+        name,
+        email,
+        is_representative
+        FROM managers
+        WHERE agency_id = ?");
+        $stmt->execute(array($agency_id));
+        $num = $stmt->rowCount();
+
+        if ($num > 0) {
+            $values = array();
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                extract($row);
+                $item = array(
+                    'id' => $id,
+                    'name' => $name,
+                    'email' => $email,
+                    'is_representative' => $is_representative
+                );
+                array_push($values, $item);
+            }
+            return json_encode($values, JSON_UNESCAPED_UNICODE);
+        }
+        return json_encode(array());
     }
 
     public function loginManager($email)

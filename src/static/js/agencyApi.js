@@ -22,7 +22,15 @@ const sortUsers = async () => {
   };
 };
 
+const getManagers = async () => {
+  await axios.get(`${agencyPrefix}/managers.php`).then((res) => {
+    console.log(res.data);
+  });
+};
+
 window.onload = () => {
   let agencyTop = document.getElementById("agency_top");
   if (agencyTop) agencyTop.onload = getUsersForFirstView();
+  let managersPage = document.getElementById("managers");
+  if (managersPage) managersPage.onload = getManagers();
 };
