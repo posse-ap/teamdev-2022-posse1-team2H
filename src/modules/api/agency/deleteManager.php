@@ -7,6 +7,6 @@ header("Content-Type: application/json; charset=UTF-8");
 use cruds\Agency;
 
 $crud = new Agency($db);
-
-echo $results;
+$result = $crud->deleteManager($_REQUEST['id']);
+echo $result;
 exit;
