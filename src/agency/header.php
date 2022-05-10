@@ -9,8 +9,6 @@
     <script src="https://kit.fontawesome.com/727d59e43e.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="../static/css/user.css">
-    <script src="../static/js/agencyApi.js"></script>
-
     <title>CRAFT for Agencies</title>
 </head>
 <body>

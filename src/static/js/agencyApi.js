@@ -23,6 +23,8 @@ const sortUsers = async () => {
 };
 
 const getManagers = async () => {
+  let main = document.getElementById("managers");
+  main.removeChild();
   await axios.get(`${agencyPrefix}/managers.php`).then((res) => {
     console.log(res.data);
   });
@@ -34,3 +36,31 @@ window.onload = () => {
   let managersPage = document.getElementById("managers");
   if (managersPage) managersPage.onload = getManagers();
 };
+
+const deleteManager = async (id) => {
+  const request = async (option) => {
+    const { url, params } = option;
+    try {
+      const res = await axios.delete(url, {
+        params,
+        url,
+      });
+      return {
+        data: res.data,
+        status: res.status,
+      };
+    } catch (error) {
+      throw handleError(error);
+    }
+  };
+  const params = {
+    id: id,
+  };
+  const res = await request({
+    url: `${agencyPrefix}/deleteManager.php`,
+    params: params,
+  });
+  return res;
+};
+
+// window.onload = getUsersForFirstView();

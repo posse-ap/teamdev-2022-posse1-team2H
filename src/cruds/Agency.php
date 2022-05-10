@@ -2,6 +2,8 @@
 
 namespace cruds;
 
+use Exception;
+
 class Agency
 {
     public function __construct($db)
@@ -122,7 +124,9 @@ class Agency
             return json_encode($result, JSON_UNESCAPED_UNICODE);
         }
         return null;
-    public function getManagers($agency_id) {
+    }
+    public function getManagers($agency_id)
+    {
         $stmt = $this->db->prepare("SELECT
         id,
         name,
@@ -162,7 +166,8 @@ class Agency
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function insertManagers() {
+    public function insertManagers()
+    {
         $stmt = $this->db->prepare("INSERT INTO managers(name, email, password, is_representative, agency_id) VALUES
         ('福場脩真', 'fukuba@example.com', ?, true, 1),
         ('加茂竜之介', 'kamochan@example.com', ?, true, 2),
@@ -191,7 +196,8 @@ class Agency
         return $success;
     }
 
-    public function updateManager($manager) {
+    public function updateManager($manager)
+    {
         $stmt = $this->db->prepare("UPDATE managers
         SET
         name = :name,
@@ -203,5 +209,28 @@ class Agency
         $stmt->bindValue(':id', $manager->id, \PDO::PARAM_INT);
         $stmt->execute();
         return $stmt;
+    }
+
+    public function deleteManager($manager_id)
+    {
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM managers WHERE id = ?");
+            $stmt->execute(array($manager_id));
+            $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
+        } catch (\Exception $e) {
+            throw $e;
+        }
+        if (!($manager->agency_id == $_SESSION['agency']['id'])) {
+            throw new \Exception();
+        }
+        try {
+            $stmt = $this->db->prepare("DELETE FROM managers
+            WHERE id = :manager_id");
+            $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (\Exception $e) {
+            throw $e;
+        }
+        return $manager_id;
     }
 }
