@@ -10,19 +10,18 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="../static/css/sanitize.css">
     <link rel="stylesheet" href="../static/css/agency.css">
-    <link rel="stylesheet" href="../static/css/user.css">
     <script src="../static/js/agencyApi.js"></script>
     <title>CRAFT for Agencies</title>
 </head>
 <body>
     <!-- ヘッダー -->
-    <header>
-        <div class="title_underline">◯◯株式会社様 管理画面</div>
+    <header class="header">
+        <div class="title_underline">◯◯株式会社様 管理画面 by CRAFT</div>
         <div class="subtitle">
             <ul class="menu">
-                <li class="menu-list"><a href="index.html">学生個人情報</a></li>
-                <li class="menu-list"><a href="admininfo.html">管理者様情報</a></li>
-                <li class="menu-list"><a href="contact.html">お問い合わせ</a></li>
+                <li class="menu-list"><a href="index.php">学生個人情報</a></li>
+                <li class="menu-list"><a href="admininfo.php">管理者様情報</a></li>
+                <li class="menu-list"><a href="contact.php">お問い合わせ</a></li>
             </ul>
         </div>
     </header>
