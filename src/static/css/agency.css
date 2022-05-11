@@ -1,0 +1,163 @@
+/*************** header ***************/
+.title_underline {
+  border-bottom: 2px solid black;
+  display: inline-block;
+  font-size: 30px;
+  margin: 20px 0px 10px 60px;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: space-evenly;
+    background: silver;
+    box-shadow: 3px 3px 3px rgb(204 204 204);
+}
+
+.menu {
+  /* justify-content: space-evenly; */
+  display: flex;
+  font-weight: bold;
+  font-size: 18px;
+  /* flex-grow: 1; */
+}
+
+.menu-list {
+  list-style: none;
+}
+
+/* ヘッダー内の文字に触れた時 */
+.menu-list a:hover {
+  background-color: skyblue;
+  color: white;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+/* ヘッダー内文字 */
+.menu-list a {
+    text-decoration: none;
+    color: black;
+    padding: 0 10vw;
+}
+
+/* .underline {
+  border-bottom: 2px solid black;
+  width: 500px;
+} */
+
+/*************** index ***************/
+.export-button a {
+  display: inline-block;
+}
+
+.export-button {
+  text-align: right;
+}
+
+.export-button a {
+  border: solid 4px green;
+  padding: 10px 20px;
+  margin: 10px 40px 0 0;
+  text-decoration: none;
+  color: black;
+}
+
+.private-big-box {
+  margin-top: -35px;
+}
+
+.private-small-box {
+  list-style: none;
+  background-color: silver;
+  text-align: center;
+  padding: 8px 0;
+  margin: 20px 0;
+}
+
+.private-small-box a {
+  text-decoration: none;
+  color: black;
+}
+
+/*************** detail ***************/
+.detail-box {
+  background-color: silver;
+  margin: 50px 150px 0 150px;
+  padding: 20px 0 20px 50px;
+}
+
+.button {
+  text-align: right;
+  padding-right: 25px;
+  margin-top: -40px;
+}
+
+.button a {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  padding: 5px 20px;
+}
+
+/*************** admininfo ***************/
+.edit-button {
+  display: block;
+  padding: 5px 20px;
+  background-color: white;
+  color: black;
+  border-radius: 20rem;
+  cursor: pointer;
+  margin: -150px 180px 0 auto;
+}
+
+/* .edit-button a {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-radius: 30px;
+  padding: 5px 20px;
+} */
+
+.list-box {
+  background-color: silver;
+  margin: 200px 150px 0 150px;
+  padding: 20px 0 20px 50px;
+}
+
+/* 開くボタン */
+.button-open {
+  display: block;
+  padding: 5px 20px;
+  background-color: white;
+  color: black;
+  border-radius: 20rem;
+  cursor: pointer;
+  margin: -180px 180px 0 auto;
+}
+
+/* モーダルウィンドウ */
+.modal-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background-color: #dfdddd;
+  border-radius: 5px;
+  z-index: 11;
+  padding: 2rem;
+}
+/* 閉じるボタン */
+.button-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  padding: 1em;
+  background-color: #c96931;
+  color: #eaeaea;
+  border-radius: 20rem;
+  cursor: pointer;
+}
