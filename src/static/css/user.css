@@ -293,19 +293,3 @@ header{
 .changing_color{
     color: #0099FF;
 }
-
-.gray_star{
-    color: #9E9E9E;
-}
-
-.blue_star{
-    color: #0099FF;
-}
-
-.showing_blue_star{
-    display: block;
-}
-
-.showing{
-    display: block;
-}
