@@ -24,9 +24,13 @@ const sortUsers = async () => {
 
 const getManagers = async () => {
   let main = document.getElementById("managers");
-  main.removeChild();
-  await axios.get(`${agencyPrefix}/managers.php`).then((res) => {
-    console.log(res.data);
+  let container = main.getElementById("container");
+  container.removeChild();
+  const res = await axios.get(`${agencyPrefix}/managers.php`);
+  const { data } = res.data;
+  let html = ``;
+  data.forEach(elem => {
+    html += ``;
   });
 };
 
