@@ -9,17 +9,20 @@ const getUsersForFirstView = async () => {
 };
 
 const sortUsers = async () => {
-    const sortMode = document.getElementById("sort").value;
-    const params = {
-        sortMode: sortMode
-    }
-    const res = await axios.get(`${agencyPrefix}/sort.php`, {
-        params: params
-    })
-    return {
-        data: res.data,
-        status: res.status
-    }
-}
+  const sortMode = document.getElementById("sort").value;
+  const params = {
+    sortMode: sortMode,
+  };
+  const res = await axios.get(`${agencyPrefix}/sort.php`, {
+    params: params,
+  });
+  return {
+    data: res.data,
+    status: res.status,
+  };
+};
 
-window.onload = getUsersForFirstView();
+window.onload = () => {
+  let agencyTop = document.getElementById("agency_top");
+  if (agencyTop) agencyTop.onload = getUsersForFirstView();
+};

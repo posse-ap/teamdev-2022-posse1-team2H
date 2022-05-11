@@ -8,7 +8,7 @@ $auth->validate();
 
 
 include dirname(__FILE__) . '/header.php' ?>
-<main class="content" id="content">
+<main class="content" id="agency_top">
 
 </main>
 <?php include dirname(__FILE__) . '/footer.php' ?>

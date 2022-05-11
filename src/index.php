@@ -13,8 +13,7 @@ $industries = $user_cruds->getIndustries();
 
 include dirname(__FILE__) . "/header.php";
 ?>
-<div id="root"></div>
-<main id="content" class="content">
+<main id="user_top" class="content">
     <!-- エージェント一覧 -->
     <div class="agency_list">
         <div class="new_agency_wrapper">

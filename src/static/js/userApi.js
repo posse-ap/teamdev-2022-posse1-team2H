@@ -41,4 +41,7 @@ const searchAgencies = async (types, industries) => {
   };
 };
 
-window.onload = getAgenciesForFirstView();
+window.onload = () => {
+  let userTop = document.getElementById("user_top");
+  if (userTop) userTop.onload = getAgenciesForFirstView();
+};

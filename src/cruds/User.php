@@ -136,7 +136,6 @@ class User
             'id' => $id,
             'name' => $name,
             'email' => $email,
-            'password' => $password,
             'email_for_notification' => $email_for_notification,
             'tel' => $tel,
             'url' => $url,

@@ -79,6 +79,51 @@ class Agency
         return null;
     }
 
+    public function getManagerWithAgency($manager_id) {
+        $stmt = $this->db->prepare("SELECT
+            manager.id manager_id,
+            manager.name manager_name,
+            manager.email manager_email,
+            manager.is_representative manager_representative,
+            agencies.name agency_name,
+            agencies.email agency_email,
+            agencies.email_for_notification email_for_notice,
+            agencies.tel agency_tel,
+            agencies.url agency_url,
+            agencies.representative agency_representative,
+            agencies.contactor agency_contactor,
+            agencies.address agency_address,
+            agencies.address_num agency_address_num
+            FROM managers
+            LEFT JOIN agencies
+            ON managers.agency_id = agencies.id
+            WHERE manager.id = :manager_id
+        ");
+        $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
+        $success = $stmt->execute();
+        $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
+        if ($success) {
+            extract($manager);
+            $result = array(
+                "id" => $manager_id,
+                "name" => $manager_name,
+                "email" => $manager_email,
+                "manager_representative" => $manager_representative,
+                "agency_name" => $agency_name,
+                "agency_email" => $agency_email,
+                "email_for_notice" => $email_for_notice,
+                "agency_tel" => $agency_tel,
+                "agency_url" => $agency_url,
+                "agency_representative" => $agency_representative,
+                "agency_contactor" => $agency_contactor,
+                "agency_address" => $agency_address,
+                "agency_address_num", $agency_address_num
+            );
+            return json_encode($result, JSON_UNESCAPED_UNICODE);
+        }
+        return null;
+    }
+
     public function loginManager($email)
     {
         $stmt = $this->db->prepare('SELECT
@@ -104,6 +149,20 @@ class Agency
             password_hash('mirei', PASSWORD_DEFAULT)
         ));
         return true;
+    }
+
+    public function addManager($manager) {
+        $stmt = $this->db->prepare('INSERT INTO managers (name, email, password, is_representative, agency_id)
+        VALUES
+        (:name, :email, :password, :representative, :agency_id)');
+        $stmt->bindValue(':name', $manager->name, \PDO::PARAM_STR);
+        $stmt->bindValue(':email', $manager->email, \PDO::PARAM_STR);
+        $stmt->bindValue(':password', password_hash($manager->password, PASSWORD_DEFAULT), \PDO::PARAM_STR);
+        $stmt->bindValue(':representative', $manager->is_representative, \PDO::PARAM_BOOL);
+        $stmt->bindValue(':agency_id', $manager->agency_id, \PDO::PARAM_INT);
+        $success = $stmt->execute();
+
+        return $success;
     }
 
     public function updateManager($manager) {
