@@ -16,58 +16,46 @@ const appearTypes = () => {
     appearing("business_features");
 };
 
+let idArray = [];
 const A = async () => {
-    let idArray = [];
     await axios('http://localhost/modules/api/user/firstView.php').then((res) => {
 
         res.data.forEach(elem => {
             let eachId = elem['id'];
-            console.log(elem['id']);
+            // console.log(elem['id']);
             idArray.push(eachId);
 
         });
-        console.log(idArray);
-        for (let i = 0; i < 12; i++) {
-            switch (i) {
-                case 0:
-                    let id_zero = document.getElementById('forSaving' + [i] + '');
-                    id_zero.setAttribute("class", `${idArray[i]}`);
-                    id_zero.innerHTML = id_zero.className;
-                    id_zero.style.display = 'none';
-                    break;
-                case 1:
-                    let id_one = document.getElementById('forSaving' + [i] + '');
-                    id_one.setAttribute("class", `${idArray[i]}`);
-                    id_one.innerHTML = id_one.className;
-                    id_one.style.display = 'none';
-                    break;
-                case 2:
-                    let id_two = document.getElementById('forSaving' + [i] + '');
-                    id_two.setAttribute("class", `${idArray[i]}`);
-                    break;
-
-            }
-        };
+        // console.log(idArray);
     });
 };
 const changingColor = (newColor) => {
-    const specifiedChangingColor = (i) => {
-        let new_color = document.getElementById(newColor.id);
-        new_color.classList.toggle('changing_color');
-        let A = $(new_color).prev().text();
-        console.log(Cookies.set(`id${i}`, `${A}`, { expires: 1 / 60 }));
+    const specifiedChangingColor = (new_color,i) => {
+        let new_color_id = document.getElementById(new_color);
+        if(new_color_id.className=='star'+[i]+''){
+            new_color_id.classList.add('changing_color');
+            Cookies.set('id'+[i]+'',''+[idArray[i]]+'',{expires:1});       
+        }else{
+            new_color_id.classList.remove('changing_color');
+            Cookies.remove('id'+[i]+''); 
+        }
+
     };
     for (let i = 0; i < 12; i++) {
         if (newColor.id == 'star' + [i] + '') {
-            specifiedChangingColor(i);
+            specifiedChangingColor(newColor.id,i);
         };
 
     };
 
 }
 
+
 const savingData = () => {
     console.log(Cookies.get());
+    // console.log(Cookies.get('NAMEを入れて下さい'));
+    // 例↓
+    console.log(Cookies.get('id0'));
 }
 
 

@@ -30,8 +30,7 @@ include dirname(__FILE__) . "/header.php";
                             <div class="agency_infromation">
                                 <div class="name_and_favorite">
                                     <div class="agency_name_wrapper"><span id="agency_name<?php echo $i ?>" class="agency_name">三菱ufj信託銀行</span></div>
-                                    <span id="forSaving<?php echo $i ?>"></span>
-                                    <div id="star<?php echo $i ?>" class="star" onclick="changingColor(this)"><i class="fa-solid fa-star"></i></div>
+                                    <div id="star<?php echo $i ?>" class="star<?php echo $i ?>" onclick="changingColor(this)"><i class="fa-solid fa-star"></i></div>
 
                                 </div>
                                 <div class="agency_slogan_wrapper"><span class="slogan">面接対策,ES添削で内定サポート！ 就活エージェントおすすめ15選</span></div>
@@ -64,7 +63,7 @@ include dirname(__FILE__) . "/header.php";
                             <div class="agency_infromation">
                                 <div id="name_and_favorite" class="name_and_favorite">
                                     <div class="agency_name_wrapper"><span id="agency_name<?php echo $i ?>" class="agency_name">国際石油開発帝石ホールディングス</span></div>
-                                    <div id="star<?php echo $i ?>" class="star" onclick="changingColor(this)"><i class="fa-solid fa-star"></i></div>
+                                    <div id="star<?php echo $i ?>" class="star<?php echo $i?>" onclick="changingColor(this)"><i class="fa-solid fa-star"></i></div>
                                 </div>
                                 <div class="agency_slogan_wrapper"><span class="slogan">面接対策,ES添削で内定サポート！ 就活エージェントおすすめ15選</span></div>
                             </div>
