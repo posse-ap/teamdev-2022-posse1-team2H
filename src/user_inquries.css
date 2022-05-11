@@ -1,0 +1,218 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #e6e6e6;
+}
+
+.inquary_header_English,
+.inquary_header_jp {
+    margin: 0;
+}
+
+.inquary_header_prompt {
+    line-height: 1.64286;
+    margin: 0 70 70px;
+    padding: 0 15px;
+    font-family: montserrat, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.inquary {
+    background-color: #e6e6e6;
+}
+
+.inquary_header_bg {
+    background-color: #e6e6e6;
+}
+
+.inquary_header_title {
+    /* line-height: 1.57143;
+    margin: 0 0 40px;
+    padding: 0 15px; */
+    font-family: montserrat, sans-serif;
+    font-style: normal;
+    font-size: 21px;
+    text-align: center;
+}
+
+.inquary_content {
+    display: flex;
+    justify-content: center;
+}
+
+.inquary_content_innerFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inquary_content_inner {
+    box-sizing: border-box;
+    width: 70%;
+    box-sizing: border-box;
+    background-color: #e6e6e6;
+}
+
+.inquary_content_inner_name,
+.inquary_content_inner_mail,
+.inquary_content_inner_phone,
+.inquary_content_inner_college,
+.inquary_content_inner_faculty,
+.inquary_content_inner_message {
+    border-top: 1px solid #fff;
+    border-bottom: none;
+    font-family: montserrat, sans-serif;
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; */
+}
+
+.inquary_content_inner_graduation {
+    display: flex;
+    border-top: 1px solid #fff;
+    border-bottom: none;
+    font-family: montserrat, sans-serif;
+    width: 80%;
+    height: auto;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.inquary_content_inner_name_title,
+.inquary_content_inner_mail_title,
+.inquary_content_inner_phone_title,
+.inquary_content_inner_college_title,
+.inquary_content_inner_faculty_title,
+.inquary_content_inner_graduation_title,
+.inquary_content_inner_message_title {
+    color: #000;
+    line-height: 1.5;
+    font-size: 20px;
+    text-align: left;
+    width: 30%;
+}
+
+.inquary_contet_inner_name_enter,
+.inquary_contet_inner_mail_enter,
+.inquary_contet_inner_phone_enter,
+.inquary_contet_inner_college_enter,
+.inquary_contet_inner_faculty_enter,
+.inquary_contet_inner_graduation_enter,
+.inquary_contet_inner_messae_enter {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+.inquary_content_inner_name_enter_box,
+.inquary_content_inner_mail_enter_box,
+.inquary_content_inner_phone_enter_box,
+.inquary_content_inner_college_enter_box,
+.inquary_content_inner_faculty_enter_box,
+.inquary_content_inner_graduation_enter_box,
+.inquary_content_inner_message_enter_box {
+    width: 100%;
+    font-weight: inherit;
+}
+
+.inquary_content_inner_name_enter_text,
+.inquary_content_inner_mail_enter_text,
+.inquary_content_inner_phone_enter_text,
+.inquary_content_inner_college_enter_text,
+.inquary_content_inner_faculty_enter_text,
+.inquary_content_inner_graduation_enter_text,
+.inquary_content_inner_message_enter_text {
+    display: block;
+    width: auto;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.inquary_contet_inner_confirmation {
+    border-top: 1px solid #fff;
+    border-bottom: none;
+    font-family: montserrat, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.inquary_contet_inner_confirmation_check {
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+.PRIVACY {
+    color: #000;
+    text-decoration: none;
+}
+
+.inquary_contet_inner_confirmation_check {
+    margin: 0;
+}
+
+.inquary_content_inner_submit {
+    list-style-type: none;
+    font-weight: inherit;
+    width: 100%;
+    margin: 0;
+}
+
+.inquary_content_inner_submit:hover {
+    background-color: white;
+    margin: 0;
+}
+
+.inquary_content_inner_submit_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding: 0 1em;
+    border: 1px solid black;
+    border-radius: 0;
+    background-color: transparent;
+    color: black;
+    font-family: montserrat, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    padding: 0;
+}
+
+
+/*ここからモーダル*/
+
+.modal_overlay {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(68, 68, 68, 0.8);
+}
