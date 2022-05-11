@@ -187,7 +187,16 @@ header{
     /* justify-content: space-between; */
 }
 
-.star{
+.star0,.star1,.star2,.star3,.star4,.star5,.star6,.star7,.star8,.star9,.star10,.star11{
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 3px;
+    font-size: 19px;
+    color: #9E9E9E;
+    cursor: pointer;
+}
+
+.star_after{
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     margin-right: 3px;
@@ -285,6 +294,18 @@ header{
     color: #0099FF;
 }
 
-#forSaving{
-    display: none;
+.gray_star{
+    color: #9E9E9E;
+}
+
+.blue_star{
+    color: #0099FF;
+}
+
+.showing_blue_star{
+    display: block;
+}
+
+.showing{
+    display: block;
 }
