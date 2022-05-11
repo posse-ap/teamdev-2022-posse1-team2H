@@ -27,12 +27,14 @@ const displayingData = async () => {
         });
     });
 };
+let newIdArray=[];
 const changingColor = (newColor) => {
     const specifiedChangingColor = (new_color, i) => {
         let new_color_id = document.getElementById(new_color);
         if (new_color_id.className == 'star' + [i] + '') {
             new_color_id.classList.add('changing_color');
-            Cookies.set('id' + [i] + '', '' + [idArray[i]] + '', { expires: 1 });
+            newIdArray.push(idArray[i]);
+            Cookies.set('ids', '' + [newIdArray] + '', { expires: 1 });
         } else {
             new_color_id.classList.remove('changing_color');
             Cookies.remove('id' + [i] + '');
@@ -47,14 +49,17 @@ const changingColor = (newColor) => {
     };
 }
 
+let displayedData=[];
 const savingData = () => {
-    console.log(Cookies.get());
-    // console.log(Cookies.get('NAMEを入れて下さい'));
-    // 例↓
-    console.log(Cookies.get('id0'));
+    displayedData.push(Cookies.get('ids'));
+    console.log(displayedData);
+    let kamo = displayedData.join(',');
+    console.log(kamo);
+    // 二つ以上データを入れると文字列になる。
+    console.log(isNaN(kamo));
 
     for (let i = 0; i < 12; i++) {
-        Cookies.remove('id' + [i] + '');
+        Cookies.remove('ids');
     }
 }
 
