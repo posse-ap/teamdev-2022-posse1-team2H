@@ -23,7 +23,6 @@ const displayingData = async () => {
         res.data.forEach(elem => {
             let eachId = elem['id'];
             idArray.push(eachId);
-
         });
     });
 };
@@ -34,7 +33,9 @@ const changingColor = (newColor) => {
         if (new_color_id.className == 'star' + [i] + '') {
             new_color_id.classList.add('changing_color');
             newIdArray.push(idArray[i]);
-            Cookies.set('ids', '' + [newIdArray] + '', { expires: 1 });
+            console.log(newIdArray);
+            Cookies.set('ids', newIdArray, { expires: 1 });
+            // Cookies.set('ids', [1,2,4], { expires: 1 });
         } else {
             new_color_id.classList.remove('changing_color');
             Cookies.remove('id' + [i] + '');
@@ -51,12 +52,17 @@ const changingColor = (newColor) => {
 
 let displayedData=[];
 const savingData = () => {
-    displayedData.push(Cookies.get('ids'));
-    console.log(displayedData);
-    let kamo = displayedData.join(',');
-    console.log(kamo);
-    // 二つ以上データを入れると文字列になる。
-    console.log(isNaN(kamo));
+    // console.log(Cookies.get());
+    // console.log(Cookies.get('ids'));
+    let X = Cookies.get();
+    console.log(X);
+    // console.log(isNaN(Cookies.get('')));
+    // displayedData.push(Cookies.get('ids'));
+    // console.log(displayedData);
+    // let kamo = displayedData.join(',');
+    // console.log(kamo);
+    // // 二つ以上データを入れると文字列になる。
+    // console.log(isNaN(kamo));
 
     for (let i = 0; i < 12; i++) {
         Cookies.remove('ids');
@@ -65,3 +71,6 @@ const savingData = () => {
 
 
 window.onload = displayingData();
+
+Cookies.set('hoge',[1,2,3]);
+console.log(Cookies.get('hoge'));
