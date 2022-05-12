@@ -24,7 +24,6 @@ const A = async () => {
             let eachId = elem['id'];
             // console.log(elem['id']);
             idArray.push(eachId);
-
         });
         // console.log(idArray);
     });
@@ -35,14 +34,8 @@ const changingColor = (newColor) => {
         let new_color_id = document.getElementById(new_color);
         if(new_color_id.className=='star'+[i]+''){
             new_color_id.classList.add('changing_color');
-<<<<<<< HEAD
             Cookies.set('id'+[i]+'',''+[idArray[i]]+'',{expires:1});       
         }else{
-=======
-            newIdArray.push(idArray[i]);
-            Cookies.set('ids', '' + [newIdArray] + '', { expires: 1 });
-        } else {
->>>>>>> 2ca8cd0 (一旦保存)
             new_color_id.classList.remove('changing_color');
             Cookies.remove('id'+[i]+''); 
         }
