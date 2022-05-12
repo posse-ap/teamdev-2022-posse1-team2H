@@ -1,21 +1,13 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
-if (isset($_SESSION['user_id']) && $_SESSION['time'] + 60 * 60 * 24 > time()) {
-    $_SESSION['time'] = time();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+use modules\auth\Admin as Auth;
+use cruds\Admin as Cruds;
 
-    if (!empty($_POST)) {
-        $stmt = $db->prepare('INSERT INTO events SET title=?');
-        $stmt->execute(array(
-            $_POST['title']
-        ));
+$auth = new Auth($db);
+$cruds = new Cruds($db);
 
-        header('Location: http://' . $_SERVER['HTTP_HOST'] . '/admin/index.php');
-        exit();
-    }
-} else {
-    header('Location: http://' . $_SERVER['HTTP_HOST'] . '/admin/login.php');
-    exit();
-}
+$auth->validate();
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
