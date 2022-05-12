@@ -29,7 +29,7 @@ const getManagers = async () => {
   const res = await axios.get(`${agencyPrefix}/managers.php`);
   const { data } = res.data;
   let html = ``;
-  data.forEach(elem => {
+  data.forEach((elem) => {
     html += ``;
   });
 };
@@ -39,6 +39,16 @@ window.onload = () => {
   if (agencyTop) agencyTop.onload = getUsersForFirstView();
   let managersPage = document.getElementById("managers");
   if (managersPage) managersPage.onload = getManagers();
+};
+
+const handleDelete = async (id) => {
+  await deleteManager(id)
+    .then(() => {
+      getManagers();
+    })
+    .catch((e) => {
+      throw e;
+    });
 };
 
 const deleteManager = async (id) => {
@@ -57,6 +67,7 @@ const deleteManager = async (id) => {
       throw handleError(error);
     }
   };
+
   const params = {
     id: id,
   };
