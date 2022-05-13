@@ -53,7 +53,7 @@ class Admin
             SELECT id FROM users
             WHERE DATE_FORMAT(updated_at, '%Y%m') = DATE_FORMAT(now(), '%Y%m')
         )
-        ORDER BY %s
+        ORDER BY agencies.updated_at %s
         ", $sort_mode));
 
         $stmt->execute();
