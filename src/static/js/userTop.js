@@ -52,8 +52,8 @@ const changingColor = (newColor) => {
 
 let displayedData=[];
 const savingData = () => {
-    // console.log(Cookies.get());
-    // console.log(Cookies.get('ids'));
+    console.log(Cookies.get());
+    console.log(Cookies.get('ids'));
     let X = Cookies.get();
     console.log(X);
     // console.log(isNaN(Cookies.get('')));
@@ -73,4 +73,5 @@ const savingData = () => {
 window.onload = displayingData();
 
 Cookies.set('hoge',[1,2,3]);
+console.log(Cookies.get());
 console.log(Cookies.get('hoge'));
