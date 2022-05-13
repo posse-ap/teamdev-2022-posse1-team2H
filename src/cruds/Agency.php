@@ -81,7 +81,8 @@ class Agency
         return null;
     }
 
-    public function getManagerWithAgency($manager_id) {
+    public function getManagerWithAgency($manager_id)
+    {
         $stmt = $this->db->prepare("SELECT
             manager.id manager_id,
             manager.name manager_name,
@@ -182,7 +183,8 @@ class Agency
         return true;
     }
 
-    public function addManager($manager) {
+    public function addManager($manager)
+    {
         $stmt = $this->db->prepare('INSERT INTO managers (name, email, password, is_representative, agency_id)
         VALUES
         (:name, :email, :password, :representative, :agency_id)');
@@ -213,13 +215,9 @@ class Agency
 
     public function deleteManager($manager_id)
     {
-        try {
-            $stmt = $this->db->prepare("SELECT * FROM managers WHERE id = ?");
-            $stmt->execute(array($manager_id));
-            $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
-        } catch (\Exception $e) {
-            throw $e;
-        }
+        $stmt = $this->db->prepare("SELECT * FROM managers WHERE id = ?");
+        $stmt->execute(array($manager_id));
+        $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
         if (!($manager->agency_id == $_SESSION['agency']['id'])) {
             throw new \Exception();
         }

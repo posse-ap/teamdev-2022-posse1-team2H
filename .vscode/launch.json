@@ -9,9 +9,10 @@
             "type": "php",
             "request": "launch",
             "port": 9003,
+            "hostname": "0.0.0.0",
             "pathMappings": {
                 // Dockerコンテナのdocument root : 開発環境のdocument root
-                "/var/www/html":"${workspaceFolder}/www/html"
+                "/var/www/html":"${workspaceFolder}/src"
               }
         },
         {
