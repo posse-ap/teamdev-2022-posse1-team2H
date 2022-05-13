@@ -34,8 +34,11 @@ const changingColor = (newColor) => {
         let new_color_id = document.getElementById(new_color);
         if(new_color_id.className=='star'+[i]+''){
             new_color_id.classList.add('changing_color');
-            Cookies.set('id'+[i]+'',''+[idArray[i]]+'',{expires:1});       
-        }else{
+            newIdArray.push(idArray[i]);
+            // console.log(newIdArray);
+            // Cookies.set('ids', newIdArray, { expires: 1 });
+            Cookies.set('ids', `${newIdArray}`, { expires: 1 });
+        } else {
             new_color_id.classList.remove('changing_color');
             Cookies.remove('id'+[i]+''); 
         }
