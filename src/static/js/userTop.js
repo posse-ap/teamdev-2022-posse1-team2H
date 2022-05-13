@@ -26,19 +26,23 @@ const displayingData = async () => {
         });
     });
 };
-let newIdArray=[];
+let newIdArray = [];
 const changingColor = (newColor) => {
     const specifiedChangingColor = (new_color, i) => {
         let new_color_id = document.getElementById(new_color);
         if (new_color_id.className == 'star' + [i] + '') {
             new_color_id.classList.add('changing_color');
             newIdArray.push(idArray[i]);
-            // console.log(newIdArray);
-            // Cookies.set('ids', newIdArray, { expires: 1 });
+            Cookies.remove('ids');
             Cookies.set('ids', `${newIdArray}`, { expires: 1 });
+            console.log(Cookies.get());
         } else {
             new_color_id.classList.remove('changing_color');
-            Cookies.remove('id' + [i] + '');
+            Cookies.remove('ids');
+            let slicedArray = newIdArray.slice(0, i);
+            console.log(slicedArray);
+            Cookies.set('ids', `${slicedArray}`, { expires: 1 });
+            console.log(Cookies.get());
         }
 
     };
@@ -50,7 +54,7 @@ const changingColor = (newColor) => {
     };
 }
 
-let displayedData=[];
+let displayedData = [];
 const savingData = () => {
     // console.log(Cookies.get());
     console.log(Cookies.get('ids'));
