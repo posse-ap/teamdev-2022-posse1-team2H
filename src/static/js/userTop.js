@@ -30,12 +30,19 @@ let newIdArray = [];
 const changingColor = (newColor) => {
     const specifiedChangingColor = (new_color, i) => {
         let new_color_id = document.getElementById(new_color);
-        if (new_color_id.className == 'star' + [i] + '') {
+        if (new_color_id.className !== 'star' + [i] + '') {
             new_color_id.classList.add('changing_color');
-            newIdArray.push(idArray[i]);
-            Cookies.remove('ids');
-            Cookies.set('ids', `${newIdArray}`, { expires: 1 });
-            console.log(Cookies.get());
+            if (slicedArray) {
+                slicedArray.push(idArray[i]);
+                Cookies.set('ids', `${slicedArray}`, { expires: 1 });
+                console.log(Cookies.get());
+            } else {
+                newIdArray.push(idArray[i]);
+                Cookies.remove('ids');
+                Cookies.set('ids', `${newIdArray}`, { expires: 1 });
+                console.log(Cookies.get());
+            }
+
         } else {
             new_color_id.classList.remove('changing_color');
             Cookies.remove('ids');
