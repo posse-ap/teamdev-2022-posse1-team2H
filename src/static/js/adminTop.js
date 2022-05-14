@@ -1,6 +1,6 @@
 "use strict";
 const select = () => {
-    for (let i = 1; i < 6; i++) {
+    for (let i = 1; i < 7; i++) {
         let checkbox = document.getElementById(`checkbox${i}`);
         new Promise(resolve => {
             checkingStatus(checkbox,i);
@@ -12,7 +12,7 @@ const select = () => {
 }
 
 const edit = () => {
-    for (let i = 1; i < 6; i++) {
+    for (let i = 1; i < 7; i++) {
         let checkbox = document.getElementById(`checkbox${i}`);
         checkbox.type = "hidden";
     }
