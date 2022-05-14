@@ -23,10 +23,6 @@ CREATE TABLE users (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-INSERT INTO users (name, email, tel, univercity, undergraduate, department, school_year, graduation_year, gender, address, address_num, created_at, updated_ut)
-VALUES
-(),
-
 DROP TABLE IF EXISTS agencies;
 
 CREATE TABLE agencies (
