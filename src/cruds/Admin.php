@@ -28,14 +28,15 @@ class Admin
                 $request_amounts = self::STUDENT_UNIT_PRICE * $user_count;
                 $claim = date('Y-m-d', strtotime('last day of next month', $year_month));
                 $create_stmt = $this->db->prepare("INSERT INTO contracts
-                (agency_id, contract_year_month, claim_year_month, request_amounts)
+                (agency_id, contract_year_month, claim_year_month, request_amounts, student_unit_price)
                 VALUES
-                (:agency_id, :contract_year_month, :claim_year_month, :request_amounts)
+                (:agency_id, :contract_year_month, :claim_year_month, :request_amounts, :student_unit_price)
                 ");
                 $create_stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
                 $create_stmt->bindValue(":contract_year_month", $year_month, \PDO::PARAM_INT);
                 $create_stmt->bindValue(":claim_year_month", $claim);
                 $create_stmt->bindValue(":request_amounts", $request_amounts, \PDO::PARAM_INT);
+                $create_stmt->bindValue(":student_unit_price", self::STUDENT_UNIT_PRICE, \PDO::PARAM_INT);
                 $create_stmt->execute();
             }
         }
@@ -110,5 +111,11 @@ class Admin
             return json_encode($values, JSON_UNESCAPED_UNICODE);
         }
         return json_encode(array());
+    }
+
+    public function getAgencyContractsDetail($year, $month) {
+        $stmt = $this->db->prepare("SELECT
+
+         FROM agencies");
     }
 }
