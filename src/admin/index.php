@@ -24,15 +24,15 @@ include dirname(__FILE__) . '/header.php';
     </div>
     <div class="agency_list_wrapper">
         <ul class="agency_list_inner">
-            <ol><a href="">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="">○○○○llllllllllllll株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol><a href="./agencyInfo.php">○○○○llllllllllllll株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
         </ul>
     </div>
 </main>
