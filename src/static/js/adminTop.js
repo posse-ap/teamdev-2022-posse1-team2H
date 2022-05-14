@@ -2,8 +2,12 @@
 const select = () => {
     for (let i = 1; i < 6; i++) {
         let checkbox = document.getElementById(`checkbox${i}`);
-        checkbox.type="checkbox";
-        // checkingStatus(i);
+        new Promise(resolve => {
+            checkingStatus(checkbox,i);
+            resolve();
+        }).then(() => {
+            checkbox.type = "checkbox";
+        })
     }
 }
 
@@ -14,11 +18,12 @@ const edit = () => {
     }
 }
 
-// const checkingStatus = (i) => {
-//     let checkbox = document.getElementById(`checkbox${i}`);
-//     if(checkbox.textContent=='支払い済み'){
-//         checkbox.checked=true;
-//     }else{
-//         checkbox.checked=false;
-//     }
-// }
+const checkingStatus = (checkbox,i) => {
+    console.log('kamo');
+    let label = document.getElementById(`label${i}`);
+    if (label.textContent == '支払い済み') {
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
+}
