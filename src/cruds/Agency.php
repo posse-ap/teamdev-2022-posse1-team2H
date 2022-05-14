@@ -2,6 +2,8 @@
 
 namespace cruds;
 
+use Exception;
+
 class Agency
 {
     public function __construct($db)
@@ -79,7 +81,8 @@ class Agency
         return null;
     }
 
-    public function getManagerWithAgency($manager_id) {
+    public function getManagerWithAgency($manager_id)
+    {
         $stmt = $this->db->prepare("SELECT
             manager.id manager_id,
             manager.name manager_name,
@@ -123,6 +126,34 @@ class Agency
         }
         return null;
     }
+    public function getManagers($agency_id)
+    {
+        $stmt = $this->db->prepare("SELECT
+        id,
+        name,
+        email,
+        is_representative
+        FROM managers
+        WHERE agency_id = ?");
+        $stmt->execute(array($agency_id));
+        $num = $stmt->rowCount();
+
+        if ($num > 0) {
+            $values = array();
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                extract($row);
+                $item = array(
+                    'id' => $id,
+                    'name' => $name,
+                    'email' => $email,
+                    'is_representative' => $is_representative
+                );
+                array_push($values, $item);
+            }
+            return json_encode($values, JSON_UNESCAPED_UNICODE);
+        }
+        return json_encode(array());
+    }
 
     public function loginManager($email)
     {
@@ -136,7 +167,8 @@ class Agency
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function insertManagers() {
+    public function insertManagers()
+    {
         $stmt = $this->db->prepare("INSERT INTO managers(name, email, password, is_representative, agency_id) VALUES
         ('福場脩真', 'fukuba@example.com', ?, true, 1),
         ('加茂竜之介', 'kamochan@example.com', ?, true, 2),
@@ -151,7 +183,8 @@ class Agency
         return true;
     }
 
-    public function addManager($manager) {
+    public function addManager($manager)
+    {
         $stmt = $this->db->prepare('INSERT INTO managers (name, email, password, is_representative, agency_id)
         VALUES
         (:name, :email, :password, :representative, :agency_id)');
@@ -165,7 +198,8 @@ class Agency
         return $success;
     }
 
-    public function updateManager($manager) {
+    public function updateManager($manager)
+    {
         $stmt = $this->db->prepare("UPDATE managers
         SET
         name = :name,
@@ -177,5 +211,24 @@ class Agency
         $stmt->bindValue(':id', $manager->id, \PDO::PARAM_INT);
         $stmt->execute();
         return $stmt;
+    }
+
+    public function deleteManager($manager_id)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM managers WHERE id = ?");
+        $stmt->execute(array($manager_id));
+        $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
+        if (!($manager['agency_id'] == $_SESSION['agency']['id'])) {
+            throw new \Exception();
+        }
+        try {
+            $stmt = $this->db->prepare("DELETE FROM managers
+            WHERE id = :manager_id");
+            $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (\Exception $e) {
+            throw $e;
+        }
+        return $manager_id;
     }
 }
