@@ -23,12 +23,6 @@ CREATE TABLE users (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- INSERT INTO
---   users
--- SET
---   email = 'test@posse-ap.com',
---   password = sha1('password');
-
 DROP TABLE IF EXISTS agencies;
 
 CREATE TABLE agencies (
@@ -299,8 +293,9 @@ DROP TABLE IF EXISTS contracts;
 CREATE TABLE contracts ( -- 契約情報のテーブル v
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, -- 契約id
   agency_id INT NOT NULL, -- エージェンシーid 外部キー成約
-  contract_year_month INT NOT NUll, -- 契約年月
-  claim_year_month INT NOT NULL, -- 請求年月
+  contract_year_month INT NOT NUll, -- 契約年月 ex) 2022-3
+  claim_year_month DATE NOT NULL, -- 支払い期日 ex) 2022-4-30
+  request_amounts INT NOT NULL, -- 請求金額
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
