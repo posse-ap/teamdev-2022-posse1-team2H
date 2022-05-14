@@ -92,4 +92,3 @@ const deleteManager = async (id) => {
   return res;
 };
 
-// window.onload = getUsersForFirstView();

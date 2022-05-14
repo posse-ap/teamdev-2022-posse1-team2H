@@ -218,7 +218,7 @@ class Agency
         $stmt = $this->db->prepare("SELECT * FROM managers WHERE id = ?");
         $stmt->execute(array($manager_id));
         $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
-        if (!($manager->agency_id == $_SESSION['agency']['id'])) {
+        if (!($manager['agency_id'] == $_SESSION['agency']['id'])) {
             throw new \Exception();
         }
         try {
