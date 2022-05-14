@@ -25,7 +25,7 @@ class Admin
         if ($num > 0) {
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
                 extract($row);
-                $price = self::STUDENT_UNIT_PRICE * $user_count;
+                $request_amounts = self::STUDENT_UNIT_PRICE * $user_count;
                 $claim = date('Y-m-d', strtotime('last day of next month', $year_month));
                 $create_stmt = $this->db->prepare("INSERT INTO ccontracts
                 (agency_id, contract_year_month, claim_year_month, request_amounts)
