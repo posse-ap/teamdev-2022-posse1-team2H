@@ -10,6 +10,7 @@ body {
     background-color: rgba(0, 0, 0, 0.07);
 }
 
+
 a:link{
     text-decoration: none;
     color: black;
@@ -36,6 +37,9 @@ header {
     justify-content: space-between;
 }
 
+.header_inner{
+    width: 100%;
+}
 .header_inner, .for_transition {
     display: flex;
 }
@@ -46,6 +50,16 @@ header {
 
 .select_content {
     font-size: 18px;
+}
+
+.chaning_status{
+    display: flex;
+    gap: 45px;    
+}
+
+button{
+    font-size: 20px;
+    padding: 0px 20px;
 }
 
 .for_serach {
@@ -65,11 +79,6 @@ main {
     gap: 0px 50px;
 }
 
-/* .for_transition li a {
-    text-decoration: none;
-    color: black;
-
-} */
 
 .displayed_content {
     display: flex;
@@ -83,18 +92,69 @@ main {
     font-size: 20px;
 }
 
+.agency_list_wrapper{
+    margin-top: 40px;
+}
 .agency_list_inner {
     padding: 0;
+    margin: 0;
     font-size: 25px;
 }
 
 .agency_list_inner ol {
-    border: 1px solid black;
-    margin-top: 14px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin-top: 35px;
+    background-color: #ffff;
+    display: flex;
+    gap: 40px;
 
 }
 
-.agency_list_inner ol a {
-    /* text-decoration: none;
-    color: black; */
+.agency_list_inner ol:hover {
+    box-shadow: 4px 7px 1px rgba(0, 0, 0, 0.10);
+}
+
+.agency_list_inner input[type="checkbox"]{
+    display: none;
+}
+/* チェックボックスの代わりを成すラベル */
+.agency_list_inner input[type="checkbox"]+label{
+    display: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    padding-right: 10px;
+}
+/* ラベルの左に表示させる正方形のボックス□ */
+.agency_list_inner input[type="checkbox"]+label::before{
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 65px;
+    height: 20px;
+    margin-top: -10px;
+    left: 0;
+    top: 50%;
+    border: 1px solid;
+    border-color: black; /* 枠の色変更 お好きな色を */
+    background-color: #FFF; /* 背景の色変更 お好きな色を */
+}
+/* チェックが入った時のレ点 */
+.agency_list_inner input[type="checkbox"]:checked+label::after{
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 18px;
+    height: 9px;
+    margin-top: -9px;
+    top: 54%;
+    left: 24px;
+    transform: rotate(-45deg);
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-color:  black; /* チェックの色変更 お好きな色を */
 }

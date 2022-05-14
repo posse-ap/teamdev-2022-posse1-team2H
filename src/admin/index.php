@@ -23,16 +23,24 @@ include dirname(__FILE__) . '/header.php';
         <div class="total_amount">合計金額：2000</div>
     </div>
     <div class="agency_list_wrapper">
+        <!-- label forとinputのidが同じ値である必要があります -->
         <ul class="agency_list_inner">
-            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="./agencyInfo.php">○○○○llllllllllllll株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
-            <ol><a href="./agencyInfo.php">○○○○株式会社　情報獲得数 ２件　期限4/30　金額xxxx</a></ol>
+            <ol>
+                <a href="./agencyInfo.php">○○○○株式会社</a>
+                <div>情報獲得数　2件</div>
+                <div>期限　4/30</div>
+                <div>金額xxxx</div>
+                <input id="checkbox_one" type="checkbox">支払い済み<label for="checkbox_one"></label>
+            </ol>
+            <ol>
+                <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
+                <div>情報獲得数　2件</div>
+                <div>期限　4/30</div>
+                <div>金額xxxx</div>
+                <input id="checkbox_two" type="checkbox">未払い<label for="checkbox_two"></label>
+            </ol>
+
+
         </ul>
     </div>
 </main>
