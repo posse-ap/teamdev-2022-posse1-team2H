@@ -24,24 +24,18 @@ include dirname(__FILE__) . '/header.php';
     </div>
     <div class="agency_list_wrapper">
         <!-- label forとinputのidが同じ値である必要があります -->
-        <ul class="agency_list_inner">
-            <ol>
-                <a href="./agencyInfo.php">○○○○株式会社</a>
-                <div>情報獲得数　2件</div>
-                <div>期限　4/30</div>
-                <div>金額xxxx</div>
-                <input id="checkbox_one" type="checkbox">支払い済み<label for="checkbox_one"></label>
-            </ol>
-            <ol>
-                <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
-                <div>情報獲得数　2件</div>
-                <div>期限　4/30</div>
-                <div>金額xxxx</div>
-                <input id="checkbox_two" type="checkbox">未払い<label for="checkbox_two"></label>
-            </ol>
+        <?php for ($i = 1; $i < 6; $i++) : ?>
+            <ul class="agency_list_inner">
+                <ol>
+                    <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
+                    <div>情報獲得数　2件</div>
+                    <div>期限　4/30</div>
+                    <div>金額xxxx</div>
+                    <input id="checkbox<?php echo $i ?>" class="checkbox" type="hidden"></input><label id="label<?php echo $i ?>" for="checkbox<?php echo $i ?>">支払い済み</label>
+                </ol>
 
-
-        </ul>
+            </ul>
+        <?php endfor ?>
     </div>
 </main>
 

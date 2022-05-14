@@ -133,11 +133,11 @@ main {
     position: absolute;
     display: block;
     box-sizing: border-box;
-    width: 65px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     margin-top: -10px;
     left: 0;
-    top: 50%;
+    top: 42%;
     border: 1px solid;
     border-color: black; /* 枠の色変更 お好きな色を */
     background-color: #FFF; /* 背景の色変更 お好きな色を */
@@ -151,10 +151,18 @@ main {
     width: 18px;
     height: 9px;
     margin-top: -9px;
-    top: 54%;
-    left: 24px;
+    top: 50%;
+    left: 3px;
     transform: rotate(-45deg);
     border-bottom: 3px solid;
     border-left: 3px solid;
     border-color:  black; /* チェックの色変更 お好きな色を */
+}
+
+/* #label1,#label2,#label3,#label4,#label5,#label6{
+    display: none;
+} */
+
+.apear{
+    display: block;
 }

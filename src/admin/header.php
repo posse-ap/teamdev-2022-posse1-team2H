@@ -33,8 +33,8 @@
             </form>
 
             <div id="chaning_status" class="chaning_status">
-                <button>選択</button>
-                <button>編集</button>
+                <button onclick="select()">選択</button>
+                <button onclick="edit()">編集</button>
             </div>
             <form class="for_serach" action="">
                 <input type="text" value=""  placeholder='社名を入力してください'>
