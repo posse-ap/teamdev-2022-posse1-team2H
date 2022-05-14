@@ -8,7 +8,18 @@ $crud = new Crud($db);
 
 $auth->validate();
 
-include dirname(__FILE__) . '/header.php';
-?>
+$id = $_GET['id'];
+$year = $_GET['year'];
+$month = $_GET['month'];
+if (!isset($id) || !isset($year) || !isset($month)) {
+    header('Location: index.php');
+}
 
+$agency = json_decode($crud->getAgencyContractsDetail($id, $year, $month));
+
+include dirname(__FILE__) . '/header.php'
+?>
+<main id="agency">
+    <?= $agency ?>
+</main>
 <?php include dirname(__FILE__) . '/footer.php' ?>
