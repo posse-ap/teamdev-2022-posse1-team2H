@@ -298,6 +298,7 @@ CREATE TABLE contracts ( -- 契約情報のテーブル v
   claim_year_month DATE NOT NULL, -- 支払い期日 ex) 2022-4-30
   request_amounts INT NOT NULL, -- 請求金額
   student_unit_price INT NOT NULl, -- 学生単価
+  paied BOOLEAN DEFAULT FALSE, -- 支払われたか
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
