@@ -78,8 +78,10 @@ class Admin
         ON agencies.id = contracts.agency_id
         LEFT JOIN users_agencies
         ON agencies.id = users_agencies.agency_id
+        WHERE DATE_FORMAT(contracts.contract_year_month, '%Y%m') = :year_month
         ORDER BY agencies.updated_at " . $sort_mode ."";
         $stmt = $this->db->prepare($query);
+        $stmt->bindValue(":year_month", $date_format, \PDO::PARAM_STMT);
         $stmt->execute();
 
         $num = $stmt->rowCount();
@@ -88,11 +90,20 @@ class Admin
             $values = array();
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
                 extract($row);
+                $count_stmt = $this->db->prepare("SELECT COUNT(*) FROM users_agencies
+                WHERE agency_id = :agency_id
+                AND DATE_FORMAT(updated_at, '%Y%m') = :year_month
+                GROUP BY agency_id");
+                $count_stmt->bindValue(":agency_id", $agency_id. \PDO::PARAM_INT);
+                $count_stmt->bindValue(":year_month", $year_month, \PDO::PARAM_STR);
+                $count_stmt->execute();
+                $count = $count_stmt->fetch(\PDO::FETCH_ASSOC);
                 $item = array(
-                    'id' => $id,
-                    'name' => $name,
+                    'agency_id' => $agency_id,
+                    'agency_name' => $agency_name,
                     'claim' => $claim,
-                    'user_count' => $user_count,
+                    'amounts' => $amounts,
+                    'user_count' => $count
                 );
                 array_push($values, $item);
             }
