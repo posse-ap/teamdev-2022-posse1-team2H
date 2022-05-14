@@ -27,7 +27,7 @@ class Admin
                 extract($row);
                 $request_amounts = self::STUDENT_UNIT_PRICE * $user_count;
                 $claim = date('Y-m-d', strtotime('last day of next month', $year_month));
-                $create_stmt = $this->db->prepare("INSERT INTO ccontracts
+                $create_stmt = $this->db->prepare("INSERT INTO contracts
                 (agency_id, contract_year_month, claim_year_month, request_amounts)
                 VALUES
                 (:agency_id, :contract_year_month, :claim_year_month, :request_amounts)
