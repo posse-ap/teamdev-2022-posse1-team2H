@@ -31,6 +31,11 @@
                 <!-- <input type="submit"> -->
             </form>
             
+            <div id="changing_status" class="changing_status_and_delete">
+                <button onclick="choose()">選択</button>
+                <button onclick="edit()">編集</button>
+            </div>
+            
             <form class="for_serach" action="">
                 <input type="text" value=""  placeholder='社名を入力してください'>
                 <input id="serach_name" type="submit" value="社名検索">
