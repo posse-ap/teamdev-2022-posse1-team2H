@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,10 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Craft for Boozer</title>
 </head>
+
 <body>
     <header>
-    <div class="header_inner">
+        <div class="header_inner">
             <div class="page_name">管理画面</div>
         </div>
     </header>
