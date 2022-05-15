@@ -78,6 +78,36 @@ class Admin
         return json_encode(array());
     }
 
+    private function getContractsByAgencyId($agency_id) {
+        $stmt = $this->db->prepare("SELECT
+        id contract_id,
+        contract_year_month,
+        claim_year_month,
+        request_amounts
+        FROM contracts
+        WHERE agency_id = :id
+        ");
+        $stmt->bindValue(':id', $agency_id, \PDO::PARAM_INT);
+        $stmt->execute();
+
+        $num = $stmt->rowCount();
+        if ($num > 0) {
+            $values = array();
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                extract($row);
+                $item = array(
+                    "contract_id" => $contract_id,
+                    "contract_year_month" => $contract_year_month,
+                    "claim_year_month" => $claim_year_month,
+                    "request_amounts" => $request_amounts
+                );
+                array_push($values, $item);
+            }
+            return $values;
+        }
+        return null;
+    }
+
     public function createContract()
     {
         $year_month = date("Y-m", strtotime('last month'));
@@ -286,5 +316,54 @@ class Admin
             );
             return json_encode($value, JSON_UNESCAPED_UNICODE);
         }
+    }
+
+    public function getAgencyDetail($agency_id) {
+        $stmt = $this->db->prepare("SELECT
+        agencies.id agency_id,
+        agencies.name name,
+        agencies.email email,
+        agencies.email_for_notification email_for_notice,
+        agencies.tel tel,
+        agencies.url url,
+        agencies.representative representative,
+        agencies.contactor contactor,
+        agencies.address address,
+        agencies.address_num address_num,
+        agency_articles.title title,
+        agency_articles.sentenses sentenses,
+        agency_articles.eyecatch_url eyecatch
+        FROM agencies
+        LEFT JOIN agency_articles
+        ON agencies.id = agency_articles.agency_id
+        WHERE agencies.id = :id
+        ");
+        $stmt->bindValue(":id", $agency_id, \PDO::PARAM_INT);
+        $success = $stmt->execute();
+        if (!$success) {
+            return json_encode(array(), JSON_UNESCAPED_UNICODE);
+        }
+        $agency = $stmt->fetch();
+
+        $contracts = self::getContractsByAgencyId($agency_id);
+
+        extract($agency);
+        $res = array(
+            "agency_id" => $agency_id,
+            "name" => $name,
+            "email" => $email,
+            "email_for_notice" => $email_for_notice,
+            "tel" => $tel,
+            "url" => $url,
+            "representative" => $representative,
+            "contactor" => $contactor,
+            "address" => $address,
+            "address_num" => $address_num,
+            "title" => $title,
+            "sentenses" => $sentenses,
+            "eyecatch" => $eyecatch,
+            "contracts" => $contracts
+        );
+        return json_encode($res, JSON_UNESCAPED_UNICODE);
     }
 }
