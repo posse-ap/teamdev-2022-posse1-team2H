@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
-include dirname(__FILE__) . '/headerAgencyDetailed.php';
+include dirname(__FILE__) . '/headerUserDetailed.php';
 ?>
 
 <main>
@@ -13,7 +13,7 @@ include dirname(__FILE__) . '/headerAgencyDetailed.php';
             <li>大学名：早稲田大学</li>
             <li>学科：教育学科</li>
             <li>卒業年：25年卒</li>
-            <li>東京都xx区xx-xx-xx</li>
+            <li>住所：東京都xx区xx-xx-xx</li>
          </ul>
          <div class="num_sent_infromation">企業に応募した件数：４件</div>
 
@@ -21,4 +21,4 @@ include dirname(__FILE__) . '/headerAgencyDetailed.php';
 </main>
 
 
-<?php include dirname(__FILE__) . '/footerDetailed.php' ?>
+<?php include dirname(__FILE__) . '/footerUserDetailed.php' ?>
