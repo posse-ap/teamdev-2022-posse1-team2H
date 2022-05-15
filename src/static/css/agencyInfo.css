@@ -150,9 +150,9 @@ main{
     border-color:  black; /* チェックの色変更 お好きな色を */
 }
 
-/* #label1,#label2,#label3,#label4,#label5,#label6{
-    display: none;
-} */
+.select_content{
+    font-size: 18px;
+}
 
 .apear{
     display: block;
