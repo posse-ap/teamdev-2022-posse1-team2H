@@ -56,12 +56,11 @@ const changingColor = (newColor) => {
 
 }
 
-let displayedData = [];
 const savingData = () => {
     console.log(Cookies.get());
     // console.log(Cookies.get('NAMEを入れて下さい'));
     // 例↓
-    console.log(Cookies.get('id0'));
+    console.log(Cookies.get('ids'));
 }
 
 
