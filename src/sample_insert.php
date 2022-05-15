@@ -26,6 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_REQUEST['undergraduate'])) {
         $error['undergraduate'] = 'undergraduate required';
     }
+    if (!isset($_REQUEST['age'])) {
+        $error['age'] = 'age required';
+    }
     if (!isset($_REQUEST['department'])) {
         $error['department'] = 'department required';
     }
@@ -74,6 +77,7 @@ include dirname(__FILE__) . '/header.php';
     <input type="text" name="email" placeholder="email">
     <input type="text" name="tel" placeholder="tel">
     <input type="text" name="univercity" placeholder="univercity">
+    <input type="text" name="age" placeholder="age">
     <input type="text" name="undergraduate" placeholder="undergraduate">
     <input type="text" name="department" placeholder="department">
     <input type="text" name="school_year" placeholder="school_year">

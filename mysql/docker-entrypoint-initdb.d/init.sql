@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
+  age INT(10) NOT NULL,
   email VARCHAR(255) UNIQUE NOT NULL,
   tel VARChAR(255) NOT NULL,
   univercity VARCHAR(255) NOT NULL,
@@ -296,6 +297,8 @@ CREATE TABLE contracts ( -- 契約情報のテーブル v
   contract_year_month INT NOT NUll, -- 契約年月 ex) 2022-3
   claim_year_month DATE NOT NULL, -- 支払い期日 ex) 2022-4-30
   request_amounts INT NOT NULL, -- 請求金額
+  student_unit_price INT NOT NULl, -- 学生単価
+  paied BOOLEAN DEFAULT FALSE, -- 支払われたか
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
