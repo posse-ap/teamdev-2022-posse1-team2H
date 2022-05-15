@@ -32,7 +32,7 @@ button{
     padding: 0px 20px;
 }
 
-.delete{
+.chaning_status_and_delete{
     display: flex;
     gap: 40px;
 }
