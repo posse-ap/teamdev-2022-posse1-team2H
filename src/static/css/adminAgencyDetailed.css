@@ -1,0 +1,51 @@
+/* 全体 */
+html, body {
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: "メイリオ";
+    letter-spacing: .04em;
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+header {
+    font-size: 25px;
+    background-color: #C4C4C4;
+    height: 65px;
+}
+
+.header_inner {
+    display: flex;
+    height: 60px;
+    align-items: end;
+    gap: 70%;
+}
+
+.page_name{
+    margin-left: 20px;
+}
+
+main{
+    margin-top: 30px;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+}
+.content_wrapper{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.num_sent_infromation{
+    font-weight: bold;
+}
+
+button{
+    font-size: 20px;
+    padding: 0px 20px;
+}
+
