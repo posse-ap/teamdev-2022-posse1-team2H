@@ -36,3 +36,14 @@ button{
     display: flex;
     gap: 40px;
 }
+
+main{
+    margin-top: 5%;
+}
+
+.displayed_content {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    font-size: 30px;
+}
