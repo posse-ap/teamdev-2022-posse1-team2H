@@ -2,6 +2,9 @@
 
 namespace cruds;
 
+use models\Agency;
+use models\Article;
+
 class Admin
 {
     // 学生単価
@@ -78,7 +81,8 @@ class Admin
         return json_encode(array());
     }
 
-    private function getContractsByAgencyId($agency_id) {
+    private function getContractsByAgencyId($agency_id)
+    {
         $stmt = $this->db->prepare("SELECT
         id contract_id,
         contract_year_month,
@@ -318,7 +322,8 @@ class Admin
         }
     }
 
-    public function getAgencyDetail($agency_id) {
+    public function getAgencyDetail($agency_id, $contract_mode = true)
+    {
         $stmt = $this->db->prepare("SELECT
         agencies.id agency_id,
         agencies.name name,
@@ -345,8 +350,6 @@ class Admin
         }
         $agency = $stmt->fetch();
 
-        $contracts = self::getContractsByAgencyId($agency_id);
-
         extract($agency);
         $res = array(
             "agency_id" => $agency_id,
@@ -361,9 +364,61 @@ class Admin
             "address_num" => $address_num,
             "title" => $title,
             "sentenses" => $sentenses,
-            "eyecatch" => $eyecatch,
-            "contracts" => $contracts
+            "eyecatch" => $eyecatch
         );
+
+        if ($contract_mode) {
+            $contracts = self::getContractsByAgencyId($agency_id);
+            $res['contracts'] = $contracts;
+        }
+
         return json_encode($res, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function updateAgency(Agency $agency) {
+        $stmt = $this->db->prepare("UPDATE agencies
+        SET
+        name = :name,
+        email = :email,
+        email_for_notification = :email_for_notification,
+        tel = :tel,
+        url = :url,
+        representative = :representative,
+        contactor = :contactor,
+        address = :address,
+        address_num = :address_num
+        WHERE id = :id
+        ");
+        $stmt->bindValue(":name", $agency->name, \PDO::PARAM_STR);
+        $stmt->bindValue(":email", $agency->email, \PDO::PARAM_STR);
+        $stmt->bindValue(":email_for_notification", $agency->email_for_notification, \PDO::PARAM_STR);
+        $stmt->bindValue(":tel", $agency->tel, \PDO::PARAM_STR);
+        $stmt->bindValue(":url", $agency->url, \PDO::PARAM_STR);
+        $stmt->bindValue(":representative", $agency->representative, \PDO::PARAM_STR);
+        $stmt->bindValue(":contactor", $agency->contactor, \PDO::PARAM_STR);
+        $stmt->bindValue(":address", $agency->address, \PDO::PARAM_STR);
+        $stmt->bindValue(":address_num", $agency->address_num, \PDO::PARAM_STR);
+        $stmt->bindValue(":id", $agency->id, \PDO::PARAM_INT);
+
+        $stmt->execute();
+        return $agency;
+    }
+
+    public function updateArticle(Article $article) {
+        $stmt = $this->db->prepare("UPDATE agency_articles
+        SET
+        title = :title,
+        sentenses = :sentenses,
+        eyecatch_url = :eyecatch_url
+        WHERE agency_id = :agency_id
+        ");
+        $stmt->bindValue(":title", $article->title, \PDO::PARAM_STR);
+        $stmt->bindValue(":sentenses", $article->sentenses, \PDO::PARAM_STR);
+        $stmt->bindValue(":eyecatch_url", $article->eyecatch_url, \PDO::PARAM_STR);
+        $stmt->bindValue(":agency_id", $article->agency_id, \PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        return $article;
     }
 }
