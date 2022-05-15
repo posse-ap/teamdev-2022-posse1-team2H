@@ -24,7 +24,6 @@
             </nav>
             <form class="for_name_sort" action="">
                 <select class="select_content" name="" id="">
-                    <option value="">社名順</option>
                     <option value="">売上順</option>
                     <option value="">支払い済み</option>
                     <option value="">未払い</option>
