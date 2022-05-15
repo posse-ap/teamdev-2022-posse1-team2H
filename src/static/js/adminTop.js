@@ -37,7 +37,6 @@ const checkingStatusSecondTime = (checkbox, label) => {
     if (checkbox.checked) {
         label.textContent = '支払い済み';
     } else {
-        console.log('ryu');
         label.textContent = '未払い'
     }
 }
