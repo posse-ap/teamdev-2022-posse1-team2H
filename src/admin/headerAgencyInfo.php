@@ -17,7 +17,7 @@
     <header>
         <div class="header_inner">
             <div class="page_name">管理画面</div>
-            <div id="delete" class="delete">
+            <div id="chaning_status" class="chaning_status_and_delete">
                 <button onclick="select()">選択</button>
                 <button onclick="edit()">編集</button>
                 <button onclick="deleting()">消去</button>
