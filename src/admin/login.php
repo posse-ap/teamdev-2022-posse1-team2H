@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 
-include dirname(__FILE__) . '/header.php';
+// include dirname(__FILE__) . '/header.php';
 ?>
 
 <h1>ログイン</h1>
