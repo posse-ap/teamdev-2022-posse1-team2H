@@ -44,7 +44,7 @@ const getAgenciesForFirstView = async () => {
   console.log(data);
 };
 
-const getUsersFromContract = (contractId) => {
+const getUsersFromContract = async (contractId) => {
   const params = {
     contract_id: contractId,
   }
