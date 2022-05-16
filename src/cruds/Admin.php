@@ -21,7 +21,8 @@ class Admin
         request_amounts,
         student_unit_price,
         paied
-        FROM contracts WHERE id = :contract_id");
+        FROM contracts
+        WHERE id = :contract_id");
         $contract_stmt->bindValue(":contract_id", $contract_id, \PDO::PARAM_INT);
         $contract_stmt->execute();
 
@@ -35,10 +36,12 @@ class Admin
         user_id FROM users_agencies
         WHERE agency_id = :agency_id
         AND DATE_FORMAT(created_at, '%Y%m') = :year_month");
+
         $stmt->bindValue(':agency_id', $agency_id, \PDO::PARAM_INT);
         $stmt->bindValue(':year_month', $year_month, \PDO::PARAM_INT);
         $stmt->execute();
         $ids = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
         $inclause = substr(str_repeat(',?', count($ids)), 1);
 
         $query = sprintf("SELECT
@@ -78,10 +81,16 @@ class Admin
     public function createContract()
     {
         $year_month = date("Y-m", strtotime('last month'));
-        $stmt = $this->db->prepare("SELECT agency_id, COUNT(*) users_count FROM users_agenciees WHERE user_id IN (
+        $stmt = $this->db->prepare("SELECT
+        agency_id,
+        COUNT(*)
+        users_count
+        FROM users_agenciees
+        WHERE user_id IN (
             SELECT id FROM users
             WHERE DATE_FORMAT(updated_at, '%Y%m') = :year_month
         ) GROUP BY agency_id");
+
         $stmt->bindValue(":year_month", $year_month, \PDO::PARAM_INT);
         $stmt->execute();
         $num = $stmt->rowCount();
@@ -92,9 +101,17 @@ class Admin
                 $request_amounts = self::STUDENT_UNIT_PRICE * $user_count;
                 $claim = date('Y-m-d', strtotime('last day of next month', $year_month));
                 $create_stmt = $this->db->prepare("INSERT INTO contracts
-                (agency_id, contract_year_month, claim_year_month, request_amounts, student_unit_price)
+                (agency_id,
+                contract_year_month,
+                claim_year_month,
+                request_amounts,
+                student_unit_price)
                 VALUES
-                (:agency_id, :contract_year_month, :claim_year_month, :request_amounts, :student_unit_price)
+                (:agency_id,
+                :contract_year_month,
+                :claim_year_month,
+                :request_amounts,
+                :student_unit_price)
                 ");
                 $create_stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
                 $create_stmt->bindValue(":contract_year_month", $year_month, \PDO::PARAM_INT);
@@ -119,7 +136,10 @@ class Admin
 
     public function insertAdmins()
     {
-        $stmt = $this->db->prepare("INSERT INTO administorators(name, email, password) VALUES
+        $stmt = $this->db->prepare("INSERT INTO
+        administorators
+        (name, email, password)
+        VALUES
         ('代表脩真', 'admin@example.com', ?)");
         $stmt->execute(array(
             password_hash('admin', PASSWORD_DEFAULT)
@@ -129,7 +149,11 @@ class Admin
 
     public function loginAdmin($email)
     {
-        $stmt = $this->db->prepare("SELECT * FROM administorators WHERE email = :email");
+        $stmt = $this->db->prepare("SELECT
+         *
+        FROM
+        administorators
+        WHERE email = :email");
         $stmt->bindValue(':email', $email, \PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_ASSOC);
@@ -140,7 +164,10 @@ class Admin
         $contract = self::getContract($this->db, $contract_id);
         extract($contract);
 
-        $stmt = $this->db->prepare("DELETE FROM users_agencies WHERE user_id = :user_id AND DATE_FORMAT(update_at, '%Y%m') = :claim_year_month");
+        $stmt = $this->db->prepare("DELETE
+        FROM users_agencies
+        WHERE user_id = :user_id
+        AND DATE_FORMAT(update_at, '%Y%m') = :claim_year_month");
         $stmt->bindValue(':user_id', $user_id, $claim_year_month);
 
         if ($stmt->execute()) {
@@ -200,10 +227,13 @@ class Admin
             $values = array();
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
                 extract($row);
-                $count_stmt = $this->db->prepare("SELECT COUNT(*) FROM users_agencies
+                $count_stmt = $this->db->prepare("SELECT
+                COUNT(*)
+                FROM users_agencies
                 WHERE agency_id = :agency_id
                 AND DATE_FORMAT(updated_at, '%Y%m') = :year_month
                 GROUP BY agency_id");
+                
                 $count_stmt->bindValue(":agency_id", $agency_id . \PDO::PARAM_INT);
                 $count_stmt->bindValue(":year_month", $year_month, \PDO::PARAM_STR);
                 $count_stmt->execute();
