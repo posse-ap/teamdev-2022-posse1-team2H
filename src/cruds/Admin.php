@@ -12,6 +12,23 @@ class Admin
         $this->db = $db;
     }
 
+    private function getContract($db, $contract_id)
+    {
+        $contract_stmt = $db->prepare("SELECT
+        id contract_id,
+        contract_year_month,
+        claim_year_month,
+        request_amounts,
+        student_unit_price,
+        paied
+        FROM contracts WHERE id = :contract_id");
+        $contract_stmt->bindValue(":contract_id", $contract_id, \PDO::PARAM_INT);
+        $contract_stmt->execute();
+
+        $contract = $contract_stmt->fetch(\PDO::FETCH_ASSOC);
+        return $contract;
+    }
+
     private function getUsersInfo($db, $agency_id, $year_month)
     {
         $stmt = $db->prepare("SELECT
@@ -90,6 +107,16 @@ class Admin
         return;
     }
 
+    public function getUsersFromContract($contract_id)
+    {
+        $contract = self::getContract($this->db, $contract_id);
+        extract($contract);
+
+        $users = self::getUsersInfo($this->db, $agency_id, $claim_year_month);
+
+        return $users;
+    }
+
     public function insertAdmins()
     {
         $stmt = $this->db->prepare("INSERT INTO administorators(name, email, password) VALUES
@@ -106,6 +133,41 @@ class Admin
         $stmt->bindValue(':email', $email, \PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function deleteUserFromContract($user_id, $contract_id)
+    {
+        $contract = self::getContract($this->db, $contract_id);
+        extract($contract);
+
+        $stmt = $this->db->prepare("DELETE FROM users_agencies WHERE user_id = :user_id AND DATE_FORMAT(update_at, '%Y%m') = :claim_year_month");
+        $stmt->bindValue(':user_id', $user_id, $claim_year_month);
+
+        if ($stmt->execute()) {
+            $count_stmt = $this->db->prepare("SELECT
+            COUNT(user_id)
+            FROM users_agencies
+            WHERE agency_id = :agency_id
+            AND DATE_FORMAT(update_at, '%Y%m') = :claim_year_month
+            GROUP BY agency_id");
+            $count_stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
+            $count_stmt->bindValue(":claim_year_month", $claim_year_month, \PDO::PARAM_STR);
+            $count_stmt->execute();
+            $count = $count->fetch(\PDO::FETCH_ASSOC);
+
+            $new_amounts = $student_unit_price * (int)$count;
+            $update = $this->db->prepare("UPDATE contracts
+            SET
+            request_amounts = :amounts
+            WHERE id = :contract_id
+            ");
+            $update->bindValue(":amounts", $new_amounts, \PDO::PARAM_INT);
+            $update->bindValue(":contract_id", $contract_id, \PDO::PARAM_INT);
+            $update->execute();
+
+            return true;
+        }
+        return false;
     }
 
     public function getAgencies($year, $month, $sort = true)
