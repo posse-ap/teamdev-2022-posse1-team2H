@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="./static/css/user.css">
     <link rel="stylesheet" href="./static/css/contact.css">
+    <link rel="stylesheet" href="./static/css/contactAfter.css">
     <script src="./static/js/user.js"></script>
 
     <title>TOP画面</title>
