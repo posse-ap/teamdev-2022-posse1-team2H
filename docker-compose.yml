@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     container_name: craft_nginx_dev
-    platform: linux/amd64
+    platform: linux/x86_64
     image: nginx:1.21
     ports:
       - "80:80"
