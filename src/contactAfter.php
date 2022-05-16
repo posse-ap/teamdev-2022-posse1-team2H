@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./user_inquary_after.css">
-</head>
+require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 
-<body>
-    <div class="inquary">
-        <div class="inquary_inner">
-            <div class="inquary_header_bg">
-                <div class="inquary_header_title">
+use cruds\User;
 
-                    <h1 class="inquary_header_English">CONTACT</h1>
-                    <h2 class="inquary_header_jp">お問合せ</h2>
-                    <p class="inquary_header_prompt">個人情報内容確認</p>
-                </div>
-            </div>
-            <main class="inquary_content">
+$user_cruds = new User($db);
+
+include dirname(__FILE__) . "/header.php";
+?>
+
+<main class="inquary_content">
                 <form class="inquary_content_inner">
                     <div class="inquary_content_innerFrame">
                         <dl class="inquary_content_inner_name">
@@ -96,9 +85,5 @@
                     </div>
                 </form>
             </main>
-        </div>
-    </div>
 
-</body>
-
-</html>
+<?php include dirname(__FILE__) . '/footer.php' ?>
