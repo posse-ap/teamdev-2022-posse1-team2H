@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./static/css/user.css">
     <link rel="stylesheet" href="./static/css/contact.css">
+    <link rel="stylesheet" href="./static/css/contactAfter.css">
     <script src="./static/js/userApi.js"></script>
 
     <title>TOP画面</title>
