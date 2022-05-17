@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./static/css/contactAfter.css">
     <link rel="stylesheet" href="./static/css/thankyou.css">
     <script src="./static/js/user.js"></script>
+    <link rel="stylesheet" href="./static/css/seeLater.css">
+    <script src="./static/js/userApi.js"></script>
 
     <title>TOP画面</title>
 </head>
