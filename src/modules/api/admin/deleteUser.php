@@ -10,3 +10,6 @@ $user_id = $_GET['user_id'];
 $agency_id = $_GET['agency_id'];
 
 $crud = new Admin($db);
+
+echo $crud->deleteUserFromContract($user_id, $contract_id);
+exit();
