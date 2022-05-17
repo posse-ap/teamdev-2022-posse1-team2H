@@ -29,28 +29,33 @@ const A = async () => {
 };
 
 const handleClickStar = (agencyId) => {
-    toggleColor(agencyId)
-
-}
+  toggleColor(agencyId);
+  saveFav(agencyId);
+};
 
 const toggleColor = (agencyId) => {
   let target = document.getElementById(`star_${agencyId}`);
-    target.classList.toggle("toggle_star");
+  target.classList.toggle("toggle_star");
 };
 
 const saveFav = (agencyId) => {
-  const agencyIds = readFav()
-  if (!agencyIds.includes(agencyId)) {
-      // add
-      agencyIds.push(agencyId)
-  } else {
-      agencyIds.splice(agencyIds.indexOf(agencyId), 1)
+  let agencyIds = readFav();
+  if (agencyIds === undefined) {
+    agencyIds = [];
   }
+  if (!agencyIds.includes(agencyId)) {
+    agencyIds.push(agencyId);
+  } else {
+    agencyIds.splice(agencyIds.indexOf(agencyId), 1);
+  }
+  sessionStorage.setItem("ids", agencyIds);
 };
 
 const readFav = () => {
-    let agencyIds = sessionStorage.getItem('ids')
-    agencyIds = agencyIds.split(',')
-    agencyIds = agencyIds.map(x => Number(x))
-    return agencyIds
-}
+  let agencyIds = sessionStorage.getItem("ids");
+  if (agencyIds) {
+    agencyIds = agencyIds.split(",");
+    agencyIds = agencyIds.map((x) => Number(x));
+    return agencyIds;
+  }
+};
