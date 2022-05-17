@@ -1,0 +1,139 @@
+html,
+body {
+    width: 100%;
+    background-color: #EAEDF2;
+    margin: 0;
+    font-family: AvantGardeGothicITCW01Md;
+}
+
+.user_likeList_frame {
+    display: flex;
+    justify-content: center;
+}
+
+.user_likeList_topBar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.user_likeList_inner {
+    width: 80%;
+}
+
+.user_likeList_topBar_top,
+.user_likeList_topBar_inquiry {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 15%;
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #EAEDF2;
+    /* box-shadow: 0 0 10px rgba(0 0 0 / .2);
+    border-radius: 10px; */
+    transition: 0.3s;
+    border: 0px;
+    margin: 0;
+    padding: 8px;
+}
+
+.user_likeList_topBar_inquiry::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    transform: rotate(45deg);
+}
+
+.user_likeList_topBar_top::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    transform: rotate(45deg);
+}
+
+.user_likeList_topBar_inquiry:hover {
+    box-shadow: 0 0 10px rgba(0 0 0 / 0);
+    text-decoration: underline;
+    color: #AAAAAA;
+}
+
+.user_likeList_topBar_top:hover {
+    box-shadow: 0 0 10px rgba(0 0 0 / 0);
+    text-decoration: underline;
+    color: #AAAAAA;
+}
+
+.user_likeList_inner1Box {
+    border-bottom: 1px solid #ddd;
+}
+
+.user_likeList_inner1 {
+    padding: 28px 10px 30px 0;
+}
+
+.user_likeList_inner1_header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.user_likeList_inner1_trash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_likeList_inner1 {
+    border-bottom: 1px solid #ddd;
+}
+
+.user_likeList_inner1_body {
+    display: flex;
+    margin: 24px 0 0;
+}
+
+.user_likeList_inner1_body_img {
+    width: 25%;
+}
+
+.user_likeList_inner1_body_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 75%;
+}
+
+.user_likeList_inner1_body_under {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    text-decoration: none;
+}
+
+.user_likeList_inner1_body_under_contact,
+.user_likeList_inner1_body_under_detail {
+    width: 210px;
+    height: 50px;
+    border: #5a739c;
+    border-radius: 10px;
+    background-color: #26A69A;
+    color: white;
+}
+
+.user_likeList_inner1_body_under_contact {
+    margin-right: 2%;
+}
+
+.user_likeList_inner1_body_under_contact:hover {
+    color: #ddd;
+}
+
+.user_likeList_inner1_trash_text {
+    color: #5a739c;
+}
