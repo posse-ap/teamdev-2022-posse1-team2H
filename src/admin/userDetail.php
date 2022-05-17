@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
-include dirname(__FILE__) . '/headerUserDetailed.php';
+include dirname(__FILE__) . '/headerUserDetail.php';
 ?>
 
 <main>
@@ -21,4 +21,4 @@ include dirname(__FILE__) . '/headerUserDetailed.php';
 </main>
 
 
-<?php include dirname(__FILE__) . '/footerUserDetailed.php' ?>
+<?php include dirname(__FILE__) . '/footerUserDetail.php' ?>

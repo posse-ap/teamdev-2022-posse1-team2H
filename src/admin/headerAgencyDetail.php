@@ -14,6 +14,6 @@
     <header>
     <div class="header_inner">
             <div class="page_name">○○○○株式会社の詳細情報</div>
-            <button onclick="removingData()">消去</button>
+            <!-- <button onclick="editing()">編集</button> -->
         </div>
     </header>
