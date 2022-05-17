@@ -137,3 +137,13 @@ body {
 .user_likeList_inner1_trash_text {
     color: #5a739c;
 }
+
+.user_likeList_inner1_trash_text ::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(./userDetail_img/memo.png);
+    background-size: contain;
+    vertical-align: middle;
+}
