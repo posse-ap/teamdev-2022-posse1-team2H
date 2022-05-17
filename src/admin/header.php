@@ -22,24 +22,10 @@
                     <li><a href="">掲載・編集関連画面へ</a></li>
                 </ul>
             </nav>
-            <form class="for_name_sort" action="">
+            <div class="for_name_sort">
                 <select class="select_content" name="" id="">
                     <option value="">売上順</option>
-                    <option value="">支払い済み</option>
-                    <option value="">未払い</option>
                 </select>
-                <!-- <input type="submit"> -->
-            </form>
-            
-            <div id="changing_status" class="changing_status_and_delete">
-                <button onclick="choose()">選択</button>
-                <button onclick="edit()">編集</button>
             </div>
-            
-            <form class="for_serach" action="">
-                <input type="text" value=""  placeholder='社名を入力してください'>
-                <input id="serach_name" type="submit" value="社名検索">
-            </form>
-
         </div>
     </header>
