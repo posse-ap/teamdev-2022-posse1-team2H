@@ -16,18 +16,6 @@ const appearTypes = () => {
   appearing("business_features");
 };
 
-let idArray = [];
-const A = async () => {
-  await axios("http://localhost/modules/api/user/firstView.php").then((res) => {
-    res.data.forEach((elem) => {
-      let eachId = elem["id"];
-      // console.log(elem['id']);
-      idArray.push(eachId);
-    });
-    // console.log(idArray);
-  });
-};
-
 const handleClickStar = (agencyId) => {
   toggleColor(agencyId);
   saveFav(agencyId);
