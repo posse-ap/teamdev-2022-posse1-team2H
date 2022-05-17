@@ -1,35 +1,57 @@
 "use strict";
 
 const appearing = (appearing) => {
-    document.getElementById(appearing).classList.toggle('appearing');
-}
+  document.getElementById(appearing).classList.toggle("appearing");
+};
 
 const appearSidebar = () => {
-    appearing("serach_content");
+  appearing("serach_content");
 };
 
 const appearIndustryTypes = () => {
-    appearing("business_type_items");
+  appearing("business_type_items");
 };
 
 const appearTypes = () => {
-    appearing("business_features");
-};
-// 後で見るに追加した企業の一覧を表示するページに遷移します
-const transitioning = () => {
-    window.location = "https://posse-ap.com/";
+  appearing("business_features");
 };
 
-const changingColor = (newColor) => {
-    const specifiedChangingColor = () => {
-        let new_color = document.getElementById(newColor.id);
-        new_color.classList.toggle('chaning_color');
-    };
-    for (let i = 0; i < 12; i++) {
-        if (newColor.id == 'star' + [i] + '') {
-            specifiedChangingColor();
-        }
-    };
-
+const handleClickStar = (agencyId) => {
+  toggleColor(agencyId);
+  saveFav(agencyId);
 };
 
+const toggleColor = (agencyId) => {
+  let target = document.getElementById(`star_${agencyId}`);
+  target.classList.toggle("toggle_star");
+};
+
+const saveFav = (agencyId) => {
+  let agencyIds = readFav();
+  if (agencyIds === undefined) {
+    agencyIds = [];
+  }
+  if (!agencyIds.includes(agencyId)) {
+    agencyIds.push(agencyId);
+  } else {
+    agencyIds.splice(agencyIds.indexOf(agencyId), 1);
+  }
+  sessionStorage.setItem("ids", agencyIds);
+};
+
+const readFav = () => {
+  let agencyIds = sessionStorage.getItem("ids");
+  if (agencyIds) {
+    agencyIds = agencyIds.split(",");
+    agencyIds = agencyIds.map((x) => Number(x));
+    return agencyIds;
+  }
+};
+
+const deleteFav = () => {
+  sessionStorage.removeItem("ids");
+};
+
+window.onload = () => {
+    deleteFav();
+}
