@@ -47,3 +47,11 @@ const readFav = () => {
     return agencyIds;
   }
 };
+
+const deleteFav = () => {
+  sessionStorage.removeItem("ids");
+};
+
+window.onload = () => {
+    deleteFav();
+}
