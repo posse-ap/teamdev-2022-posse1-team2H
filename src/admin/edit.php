@@ -8,8 +8,8 @@ include dirname(__FILE__) . '/header.php';
     <header>
         <div class="header_inner">
             <div class="page_name">管理画面</div>
-            <a href="./editableAndUneditableInfo.php">基本情報・掲載情報</a>
             <div class="title_name">編集・掲載</div>
+            <a href="./agencyInfo.php">基本情報・掲載情報</a>
         </div>
     </header>
     <main>
