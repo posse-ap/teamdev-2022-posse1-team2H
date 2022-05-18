@@ -30,6 +30,8 @@ include dirname(__FILE__) . '/headerAgencyInfo.php';
                     <a href="">加茂竜之介</a>
                     <div>男性</div>
                     <div>21歳</div>
+                    <input id="checkbox<?php echo $i ?>" class="checkbox" type="hidden"></input><label id="label<?php echo $i ?>" for="checkbox<?php echo $i ?>"></label>
+
                 </ol>
 
             </ul>
