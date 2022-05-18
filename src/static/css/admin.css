@@ -199,3 +199,25 @@ userDetail
 .num_sent_infromation{
     font-weight: bold;
 }
+/* ---------------------------------------------------------------------------------------------------------------------
+adminEditableAndUneditablinfo.php
+*/
+
+.agency_info_wrapper{
+    margin-top: 40px;
+    border: 1px solid black;
+    width: 80%;
+    margin: 0px auto 0px auto;
+    font-size: 18px;
+}
+
+.agency_info_type{
+    font-weight: bold;
+}
+
+.uneditable_info_content{
+    margin-top: 18px;
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+*/
