@@ -1,52 +1,49 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
-
-
 include dirname(__FILE__) . '/header.php';
 ?>
 
 <body>
-
     <header>
         <div class="header_inner">
             <div class="page_name">管理画面</div>
-            <div id="changing_status" class="changing_status_and_delete">
-                <button onclick="select()">選択</button>
-                <button onclick="deleting()">消去</button>
-            </div>
+            <div style="font-weight:bold ;">基本情報・掲載情報</div>
+            <a href="./postEditAgencyInfo.php">編集・掲載</a>
         </div>
     </header>
     <main>
-        <div id="displayed_content" class="displayed_content">
-
-            <select class="select_content" name="" id="">
-                <option value="">date</option>
-            </select>
-
-            <div class="got_information">総情報獲得数：6件</div>
-            <div class="total_amount">合計金額：2000</div>
-        </div>
-        <div class="agency_list_wrapper">
-            <div class="the_agency_info">
-                <a href="./agencyDetail.php">○○○○llllllllllllll株式会社</a>
-                <div>情報獲得数　2件</div>
-                <div>期限　4/30</div>
-                <div>金額xxxx</div>
+        <div id="displayed_content" class="displayed_content">○○○○株式会社の基本情報と掲載情報</div>
+        <div class="agency_info_wrapper">
+            <div>
+                <div class="editable_info">
+                    <div class="agency_info_type">エージェンシー編集可能情報</div>
+                    <ul>
+                        <li id="name">企業名：</li>
+                        <li id="email">Email：</li>
+                        <li id="email_for_notification">通知用Email：</li>
+                        <li id="tel">電話番号：</li>
+                        <li id="url">url：</li>
+                        <li id="representative">代表者：</li>
+                        <li id="contactor">契約担当者：</li>
+                        <li id="address">住所：</li>
+                        <li id="address_num">番地：</li>
+                    </ul>
+                </div>
+                <div class="uneditable_info">
+                    <div class="agency_info_type">掲載されている情報</div>
+                    <div class="uneditable_info_content">
+                        むかしむかし、あるところに、おじいさんとおばあさんが住んでいました。
+                        　おじいさんは山へしばかりに、おばあさんは川へせんたくに行きました。
+                        　おばあさんが川で洗濯をしていると、ドンブラコ、ドンブラコと、大きな桃が流れてきました。
+                        「おや、これは良いおみやげになるわ」
+                        　おばあさんは大きな桃をひろいあげて、家に持ち帰りました。
+                        　そして、おじいさんとおばあさんが桃を食べようと桃を切ってみると、なんと、中から元気の良い男の赤ちゃんが飛び出してきました。
+                        「これはきっと、神さまがくださったにちがいない」
+                        　子どものいなかったおじいさんとおばあさんは、大喜びです。
+                    </div>
+                </div>
             </div>
-            <?php for ($i = 1; $i < 6; $i++) : ?>
-                <ul class="agency_list_inner">
-                    <ol>
-                        <div>情報登録日時:　2022年3月5日</div>
-                        <a href="./userDetail.php">加茂竜之介</a>
-                        <div>男性</div>
-                        <div>21歳</div>
-                        <input id="checkbox<?php echo $i ?>" class="checkbox" type="hidden" name=""></input><label id="label<?php echo $i ?>" for="checkbox<?php echo $i ?>"></label>
-
-                    </ol>
-
-                </ul>
-            <?php endfor ?>
         </div>
     </main>
 
