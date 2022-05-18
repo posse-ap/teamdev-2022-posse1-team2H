@@ -185,25 +185,26 @@ main {
 userDetail
 */
 
-.content_wrapper{
+.content_wrapper {
     font-size: 20px;
     margin-left: 20px;
 }
 
-.content_inner{
+.content_inner {
     list-style: none;
     padding: 0px;
 }
 
 
-.num_sent_infromation{
+.num_sent_infromation {
     font-weight: bold;
 }
+
 /* ---------------------------------------------------------------------------------------------------------------------
 adminEditableAndUneditablinfo.php
 */
 
-.agency_info_wrapper{
+.agency_info_wrapper {
     margin-top: 40px;
     border: 1px solid black;
     width: 80%;
@@ -211,13 +212,42 @@ adminEditableAndUneditablinfo.php
     font-size: 18px;
 }
 
-.agency_info_type{
+.editable_info ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 2%;
+}
+
+.agency_info_type {
     font-weight: bold;
 }
 
-.uneditable_info_content{
+.uneditable_info_content {
     margin-top: 18px;
+    margin-left: 2%;
 }
-/* ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------
+editableAndUneditableInfo.php
 */
+.agency_info_inner {
+    padding: 0;
+    margin: 5px 0px 5px 20px;
+    font-size: 20px;
+    list-style: none;
+}
+
+.agency_info_inner li {
+    padding: 0;
+    margin: 5px 0px 5px 20px;
+    font-size: 20px;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.post_btn{
+    margin-left: 23%;
+    margin-top: 2%;
+    width: 51%;
+    cursor: pointer;
+}
