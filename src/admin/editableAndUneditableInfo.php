@@ -15,7 +15,7 @@ include dirname(__FILE__) . '/header.php';
     <main>
         <div id="displayed_content" class="displayed_content">○○○○株式会社の基本情報と掲載情報</div>
         <div class="agency_info_wrapper">
-            <div class="agency_info_inner">
+            <div>
                 <div class="editable_info">
                     <div class="agency_info_type">エージェンシー編集可能情報</div>
                     <ul>
