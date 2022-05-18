@@ -19,7 +19,7 @@ include dirname(__FILE__) . '/header.php';
             <div class="page_name">管理画面</div>
             <nav>
                 <ul class="for_transition">
-                    <li><a href="./postEditAgencyList.php">掲載・編集関連画面へ</a></li>
+                    <li><a href="./agencies.php">掲載・編集関連画面へ</a></li>
                 </ul>
             </nav>
             <div class="for_name_sort">
@@ -41,7 +41,7 @@ include dirname(__FILE__) . '/header.php';
             <?php for ($i = 1; $i < 7; $i++) : ?>
                 <ul class="agency_list_inner">
                     <ol>
-                        <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
+                        <a href="./agency.php">○○○○llllllllllllll株式会社</a>
                         <div>情報獲得数　2件</div>
                         <div>期限　4/30</div>
                         <div>金額xxxx</div>
