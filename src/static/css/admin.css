@@ -181,10 +181,21 @@ main {
     /* チェックの色変更 お好きな色を */
 }
 
-/* #label1,#label2,#label3,#label4,#label5,#label6{
-    display: none;
-} */
+/* -------------------------------------------------------------------------------------------------------- 
+userDetail
+*/
 
-.apear {
-    display: block;
+.content_wrapper{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.content_inner{
+    list-style: none;
+    padding: 0px;
+}
+
+
+.num_sent_infromation{
+    font-weight: bold;
 }
