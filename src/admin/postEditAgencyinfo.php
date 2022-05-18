@@ -16,9 +16,9 @@ include dirname(__FILE__) . '/header.php';
         <div id="displayed_content" class="displayed_content">○○○○株式会社の基本情報と掲載情報</div>
         <div class="agency_info_wrapper">
             <ul class="agency_info_inner">
-                <li id="title">タイトル：<input type="text" name="" id=""></li>
-                <li id="sentenses">文章：<input type="text" name="" id=""></li>
-                <li id="eyecatch">画像：<input type="text" name="" id=""></li>
+                <li id="title">タイトル：<input type="text" placeholder="タイトルを入力してください" name="" id=""></li>
+                <li id="sentenses">文章：<input type="text" placeholder="文章を入力してください" name="" id=""></li>
+                <li id="eyecatch">画像：<input type="text" placeholder="画像のurlを入力してください" name="" id=""></li>
             </ul>
         </div>
         <button class="post_btn" onclick="post()">掲載</button>
