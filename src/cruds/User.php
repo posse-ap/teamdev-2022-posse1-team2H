@@ -216,4 +216,40 @@ class User
 
         return true;
     }
+
+    public function getFav($agency_ids)
+    {
+        $inclause = substr(str_repeat(',?', count($agency_ids)), 1);
+        $query = sprintf(
+            "SELECT
+        * FROM agencies WHERE id IN (%s)",
+            $inclause
+        );
+        $stmt = $this->db->prepare($query);
+        $stmt->execute($agency_ids);
+
+        $num = $stmt->rowCount();
+
+        if ($num > 0) {
+            $values = array();
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                extract($row);
+                $item = array(
+                    "id" => $id,
+                    "name" => $name,
+                    "email" => $email,
+                    "email_for_notification" => $email_for_notification,
+                    "tel" => $tel,
+                    "url" => $url,
+                    "representative" => $representative,
+                    "contactor" => $contactor,
+                    "address" => $address,
+                    "address_num" => $address_num
+                );
+                array_push($values, $item);
+            }
+            return json_encode($values, JSON_UNESCAPED_UNICODE);
+        }
+        return json_encode(array());
+    }
 }
