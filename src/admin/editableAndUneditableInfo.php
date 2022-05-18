@@ -19,8 +19,15 @@ include dirname(__FILE__) . '/header.php';
                 <div class="editable_info">
                     <div class="agency_info_type">エージェンシー編集可能情報</div>
                     <ul>
-                        <li>メールアドレス：</li>
-                        <li>担当者：</li>
+                        <li id="name">企業名：</li>
+                        <li id="email">Email：</li>
+                        <li id="email_for_notification">通知用Email：</li>
+                        <li id="tel">電話番号：</li>
+                        <li id="url">url：</li>
+                        <li id="representative">代表者：</li>
+                        <li id="contactor">契約担当者：</li>
+                        <li id="address">住所：</li>
+                        <li id="address_num">番地：</li>
                     </ul>
                 </div>
                 <div class="uneditable_info">
