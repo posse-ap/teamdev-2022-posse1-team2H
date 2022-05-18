@@ -1,3 +1,3 @@
-<script src="../static/js/agencyInfo.js"></script>
+<script src="../static/js/adminTop.js"></script>
 </body>
 </html>
