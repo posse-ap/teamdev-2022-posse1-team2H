@@ -27,7 +27,7 @@ include dirname(__FILE__) . '/header.php'
         <div class="page_name">管理画面</div>
         <div id="changing_status" class="changing_status_and_delete">
             <button onclick="select()">選択</button>
-            <button onclick="deleting()">消去</button>
+            <button onclick="handleUserDelete(id)">消去</button>
         </div>
     </div>
 </header>
@@ -55,7 +55,7 @@ include dirname(__FILE__) . '/header.php'
                     <a href="./userDetail.php">加茂竜之介</a>
                     <div>男性</div>
                     <div>21歳</div>
-                    <input id="checkbox<?php echo $i ?>" class="checkbox" type="hidden" name=""></input><label id="label<?php echo $i ?>" for="checkbox<?php echo $i ?>"></label>
+                    <input id="checkbox<?php echo $i ?>" class="checkbox" type="hidden" name="contract_id" value=""></input><label id="label<?php echo $i ?>" for="checkbox<?php echo $i ?>"></label>
 
                 </ol>
 
