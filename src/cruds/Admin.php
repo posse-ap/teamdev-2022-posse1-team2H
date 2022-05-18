@@ -267,7 +267,7 @@ class Admin
                 WHERE agency_id = :agency_id
                 AND DATE_FORMAT(updated_at, '%Y%m') = :year_month
                 GROUP BY agency_id");
-                
+
                 $count_stmt->bindValue(":agency_id", $agency_id . \PDO::PARAM_INT);
                 $count_stmt->bindValue(":year_month", $year_month, \PDO::PARAM_STR);
                 $count_stmt->execute();
