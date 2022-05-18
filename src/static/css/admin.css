@@ -201,7 +201,7 @@ userDetail
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------
-adminEditableAndUneditablinfo.php
+agencyInfo.php
 */
 
 .agency_info_wrapper {
@@ -228,8 +228,13 @@ adminEditableAndUneditablinfo.php
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------
-editableAndUneditableInfo.php
+edit.php
 */
+
+.title_name{
+    font-weight: bold;
+}
+
 .agency_info_inner {
     padding: 0;
     margin: 5px 0px 5px 20px;

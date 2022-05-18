@@ -9,7 +9,7 @@ include dirname(__FILE__) . '/header.php';
         <div class="header_inner">
             <div class="page_name">管理画面</div>
             <a href="./editableAndUneditableInfo.php">基本情報・掲載情報</a>
-            <div style="font-weight:bold ;">編集・掲載</div>
+            <div class="title_name">編集・掲載</div>
         </div>
     </header>
     <main>
