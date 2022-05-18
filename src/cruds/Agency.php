@@ -2,8 +2,6 @@
 
 namespace cruds;
 
-use Exception;
-
 class Agency
 {
     public function __construct($db)
