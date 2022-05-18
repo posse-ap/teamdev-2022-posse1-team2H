@@ -34,7 +34,7 @@ header {
 .header_inner {
     height: 60px;
     align-items: end;
-    justify-content: space-between;
+    gap: 10%;    
 }
 
 .header_inner {
@@ -235,14 +235,14 @@ edit.php
     font-weight: bold;
 }
 
-.agency_info_inner {
+.info_for_post {
     padding: 0;
     margin: 5px 0px 5px 20px;
     font-size: 20px;
     list-style: none;
 }
 
-.agency_info_inner li {
+.info_for_post li {
     padding: 0;
     margin: 5px 0px 5px 20px;
     font-size: 20px;

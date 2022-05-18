@@ -44,6 +44,6 @@ include dirname(__FILE__) . '/header.php';
         </div>
     </main>
 
-    <?php var_dump($agency)  // for debug 
-    ?>
+    <!-- <?php var_dump($agency)  // for debug 
+    ?> -->
     <?php include dirname(__FILE__) . '/footer.php' ?>
