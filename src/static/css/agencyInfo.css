@@ -1,22 +1,10 @@
-/* 全体 */
-html, body {
-    width: 100%;
-    margin: 0;
-}
-
-body {
-    font-family: "メイリオ";
-    letter-spacing: .04em;
-    background-color: rgba(0, 0, 0, 0.07);
-}
-
-a:link{
+a:link {
     text-decoration: none;
     color: black;
 
 }
 
-a:visited{
+a:visited {
     color: black;
 }
 
@@ -37,21 +25,21 @@ header {
     gap: 70%;
 }
 
-.header_inner{
+.header_inner {
     width: 100%;
 }
 
-button{
+button {
     font-size: 20px;
     padding: 0px 20px;
 }
 
-.chaning_status_and_delete{
+.chaning_status_and_delete {
     display: flex;
     gap: 40px;
 }
 
-main{
+main {
     margin-top: 5%;
 }
 
@@ -67,11 +55,11 @@ main{
     font-size: 20px;
 }
 
-.agency_list_wrapper{
+.agency_list_wrapper {
     margin-top: 40px;
 }
 
-.the_agency_info{
+.the_agency_info {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     margin-top: 35px;
@@ -79,10 +67,10 @@ main{
     display: flex;
     gap: 40px;
     font-size: 25px;
-    padding-left:  40px;
+    padding-left: 40px;
 }
 
-.the_agency_info:hover{
+.the_agency_info:hover {
     box-shadow: 4px 7px 1px rgba(0, 0, 0, 0.10);
 }
 
@@ -106,54 +94,14 @@ main{
     box-shadow: 4px 7px 1px rgba(0, 0, 0, 0.10);
 }
 
-.agency_list_inner input[type="checkbox"]{
+.agency_list_inner input[type="checkbox"] {
     display: none;
-}
-/* チェックボックスの代わりを成すラベル */
-.agency_list_inner input[type="checkbox"]+label{
-    display: none;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    padding-left: 25px;
-    padding-right: 10px;
-}
-/* ラベルの左に表示させる正方形のボックス□ */
-.agency_list_inner input[type="checkbox"]+label::before{
-    content: "";
-    position: absolute;
-    display: block;
-    box-sizing: border-box;
-    width: 22px;
-    height: 22px;
-    margin-top: -10px;
-    left: 0;
-    top: 42%;
-    border: 1px solid;
-    border-color: black; /* 枠の色変更 お好きな色を */
-    background-color: #FFF; /* 背景の色変更 お好きな色を */
-}
-/* チェックが入った時のレ点 */
-.agency_list_inner input[type="checkbox"]:checked+label::after{
-    content: "";
-    position: absolute;
-    display: block;
-    box-sizing: border-box;
-    width: 18px;
-    height: 9px;
-    margin-top: -9px;
-    top: 50%;
-    left: 3px;
-    transform: rotate(-45deg);
-    border-bottom: 3px solid;
-    border-left: 3px solid;
-    border-color:  black; /* チェックの色変更 お好きな色を */
 }
 
-.select_content{
+.select_content {
     font-size: 18px;
 }
 
-.apear{
+.apear {
     display: block;
 }
