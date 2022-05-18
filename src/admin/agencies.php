@@ -8,6 +8,7 @@ include dirname(__FILE__) . '/header.php';
     <header>
         <div class="header_inner">
             <div class="page_name">管理画面</div>
+            <a href="./index.php">初期画面へ</a>
         </div>
     </header>
     <main>
@@ -16,17 +17,14 @@ include dirname(__FILE__) . '/header.php';
             <ul class="agency_list_inner">
                 <ol>
                     <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
-                    <div>編集・掲載依頼 4/1</div>
                 </ol>
 
                 <ol>
                     <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
-                    <div>基本情報変更 4/1</div>
                 </ol>
 
                 <ol>
                     <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
-                    <div>基本情報変更 4/13 　編集・掲載依頼4/5</div>
                 </ol>
 
             </ul>

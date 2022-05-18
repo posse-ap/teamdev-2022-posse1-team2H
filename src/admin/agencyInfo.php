@@ -9,7 +9,8 @@ include dirname(__FILE__) . '/header.php';
         <div class="header_inner">
             <div class="page_name">管理画面</div>
             <div class="title_name">基本情報・掲載情報</div>
-            <a href="./edit.php">編集・掲載</a>
+            <a href="./edit.php">編集・掲載へ</a>
+            <a href="./agencies.php">企業一覧へ</a>
         </div>
     </header>
     <main>
