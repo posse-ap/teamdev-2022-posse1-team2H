@@ -19,7 +19,7 @@ include dirname(__FILE__) . '/header.php';
                 <li id="tel">電話番号：</li>
                 <li id="url">url：</li>
                 <li id="representative">代表者：</li>
-                <li id="contactor">契約当事者：</li>
+                <li id="contactor">契約担当者：</li>
                 <li id="address">住所：</li>
                 <li id="address_num">番地：</li>
             </ul>
