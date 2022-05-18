@@ -12,9 +12,3 @@
     <title>Craft for Boozer</title>
 </head>
 
-<body>
-    <header>
-        <div class="header_inner">
-            <div class="page_name">管理画面</div>
-        </div>
-    </header>
