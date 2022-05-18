@@ -13,13 +13,18 @@ include dirname(__FILE__) . '/header.php';
     <main>
         <div class="content_wrapper">
             <ul class="content_inner">
-                <li>氏名：加茂竜之介</li>
-                <li>Email：kamo@gamil.com</li>
-                <li>電話番号：090-3751-5188</li>
-                <li>大学名：早稲田大学</li>
-                <li>学科：教育学科</li>
-                <li>卒業年：25年卒</li>
-                <li>住所：東京都xx区xx-xx-xx</li>
+                <li id="name">氏名：加茂竜之介</li>
+                <li id="age">年齢：20</li>
+                <li id="email">Email：kamo@gamil.com</li>
+                <li id="tel">電話番号：090-3751-5188</li>
+                <li id="univercity">大学名：早稲田大学</li>
+                <li id="undergraduate">学部：教育学部</li>
+                <li id="department">学科：教育学科</li>
+                <li id="school_year">学年：2年生</li>
+                <li id="graduation_year">卒業年：2025年</li>
+                <li id="gender">性別：男性</li>
+                <li id="address">住所：東京都葛飾区亀有</li>
+                <li id="address_num">番地：５丁目３３</li>
             </ul>
             <div class="num_sent_infromation">企業に応募した件数：４件</div>
 
