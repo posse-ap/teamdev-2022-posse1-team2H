@@ -19,7 +19,7 @@ include dirname(__FILE__) . '/header.php';
             <div class="page_name">管理画面</div>
             <nav>
                 <ul class="for_transition">
-                    <li><a href="">掲載・編集関連画面へ</a></li>
+                    <li><a href="./postEditAgencyList.php">掲載・編集関連画面へ</a></li>
                 </ul>
             </nav>
             <div class="for_name_sort">
