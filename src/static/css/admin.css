@@ -2,12 +2,13 @@
 html, body {
     width: 100%;
     margin: 0;
+    background-color: #FAEBD7;
 }
 
 body {
     font-family: "メイリオ";
     letter-spacing: .04em;
-    background-color: rgba(0, 0, 0, 0.07);
+    background-color: #FAEBD7;
 }
 
 
@@ -27,7 +28,7 @@ a:hover {
 
 header {
     font-size: 25px;
-    background-color: #C4C4C4;
+    background-color: #FFE4B5;
     height: 65px;
 }
 
@@ -49,9 +50,16 @@ header {
     margin-right: 38px;
 }
 
+
 button {
     font-size: 20px;
     padding: 0px 20px;
+}
+
+.header_content button{
+    font-size: 20px;
+    padding: 0px 20px;
+
 }
 
 .page_name {

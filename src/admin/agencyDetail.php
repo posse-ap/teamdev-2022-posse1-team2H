@@ -26,6 +26,7 @@ include dirname(__FILE__) . '/header.php';
     <header>
         <div class="header_inner">
             <div class="page_name">○○○○株式会社の詳細情報</div>
+            <a href="./index.php">初期画面へ</a>
         </div>
     </header>
     <main>

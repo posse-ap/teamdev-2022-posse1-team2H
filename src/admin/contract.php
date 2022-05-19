@@ -25,9 +25,8 @@ include dirname(__FILE__) . '/header.php'
 <header>
     <div class="header_inner">
         <div class="page_name">管理画面</div>
-        <div id="changing_status" class="changing_status_and_delete">
-            <button onclick="select()">選択</button>
-            <button onclick="handleUserDelete(id)">消去</button>
+        <div id="header_content" class="header_content">
+            <a href="./index.php">初期画面へ</a>
         </div>
     </div>
 </header>
@@ -36,6 +35,8 @@ include dirname(__FILE__) . '/header.php'
         <input id="date_today" class="date_today" type="month">
         <div class="got_information">総情報獲得数：6件</div>
         <div class="total_amount">合計金額：2000</div>
+        <button onclick="select()">選択</button>
+        <button onclick="handleUserDelete(id)">消去</button>
     </div>
     <div class="agency_list_wrapper">
         <div class="the_agency_info">
