@@ -10,6 +10,7 @@ class User
     {
         $this->db = $db;
     }
+    
     public function getAgencies($types = null, $industries = null)
     {
         if ($types === null && $industries === null) {

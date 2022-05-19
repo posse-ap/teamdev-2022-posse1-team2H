@@ -6,10 +6,14 @@ header("Content-Type: application/json; charset=UTF-8");
 
 use cruds\Admin;
 
-$user_id = $_GET['user_id'];
+$user_ids= $_GET['user_ids'];
 $agency_id = $_GET['agency_id'];
 
 $crud = new Admin($db);
-
-echo $crud->deleteUserFromContract($user_id, $contract_id);
+$value = array();
+foreach ($user_ids as $id) {
+    $item = $crud->deleteUserFromContract($user_id, $contract_id);
+    array_push($value, $item);
+}
+echo $value;
 exit();
