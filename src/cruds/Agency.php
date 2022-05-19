@@ -238,10 +238,13 @@ class Agency
         $text = '
         以下の内容で掲載記事の編集を依頼します。
 
-        タイトル:'. $article->title .'
-        本文: ' . $article->sentenses . '
-        アイキャッチ: ' . $article->eyecatch . '
-        ';
+        タイトル:';
+        $text .= $article->title;
+        $text .= '本文: ';
+        $text .=  $article->sentenses;
+        $text .= '
+        アイキャッチ: ';
+        $text .= $article->eyecatch;
         $agency = json_decode(
             self::getManagerWithAgency($_SESSION['agency_manager']['id'])
         );
