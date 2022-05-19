@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./user_inquries.css">
-</head>
+require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 
-<body>
-    <main class="inquary_content">
+use cruds\User;
+
+$user_cruds = new User($db);
+
+
+
+include dirname(__FILE__) . "/header.php";
+?>
+<main class="inquary_content">
         <div class="inquary">
             <div class="inquary_inner">
                 <div class="inquary_header_bg">
@@ -120,9 +120,4 @@
                     </div>
                 </form>
             </main>
-        </div>
-    </div>
-
-</body>
-
-</html>
+<?php include dirname(__FILE__) . '/footer.php' ?>
