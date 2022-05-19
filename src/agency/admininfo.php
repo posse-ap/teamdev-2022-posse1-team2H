@@ -22,15 +22,15 @@ include dirname(__FILE__) . '/header.php' ?>
             <li class="menu-list">EE FF：ee.ff@gmail.com</li>
         </ul>
     </div>
-
-    <!-- オーバーレイ -->
+<!-- 
+    オーバーレイ
         <div id="overlay" class="overlay"></div>
-    <!-- モーダルウィンドウ -->
+    モーダルウィンドウ
         <div class="modal-window">
-            <!-- 閉じるボタン -->
+            閉じるボタン
             <button class="js-close button-close">Close</button>
         </div>
-    <!-- モーダルを開くボタン -->
+    モーダルを開くボタン -->
     <button class="js-open button-add">追加</button>
 
 

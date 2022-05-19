@@ -33,15 +33,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 
-
-include dirname(__FILE__) . '/header.php';
 ?>
 
-<h1>ログイン</h1>
-<form action="" method="POST">
-    <input type="text" name="email" placeholder="email">
-    <input type="password" name="password" placeholder="password">
-    <input type="submit" value="submit">
-</form>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/sanitize.css">
+    <script src="https://kit.fontawesome.com/727d59e43e.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="../static/css/sanitize.css">
+    <link rel="stylesheet" href="../static/css/agency.css">
+    <script src="../static/js/agencyApi.js"></script>
+    <title>CRAFT for Agencies</title>
+</head>
+<body>
+    <div class="login_whole">
+        <h1 class="login_title">エージェント様ログイン画面</h1>
+        <form action="" method="POST">
+            <div class="form_box">
+                <input class="form_small_box" type="text" name="email" placeholder="Email">
+                <input class="form_small_box" type="password" name="password" placeholder="Password">
+                <input class="login_box" type="submit" value="Log in">
+            </div>
+        </form>
+        <p class="password">Forgot your password? Click here!</p>
+    </div>
 
 <?php include dirname(__FILE__) . '/footer.php' ?>

@@ -25,8 +25,3 @@
             </ul>
         </div>
     </header>
-    <!-- <header class="header">
-        <div class="header_inner">
-            <h1 class="header_inner_craft">CRAFT</h1>
-        </div>
-    </header> -->
