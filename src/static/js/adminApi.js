@@ -55,17 +55,22 @@ const getUsersFromContract = async (contractId) => {
   return res.data
 };
 
-const handleUserDelete = async (userId) => {
+const handleUsersDelete = async () => {
   const contractId = document.getElementsByName("contract_id")[0];
-  await deleteUser(userId, contractId).then(() => {
+  let userIds = [];
+  const userTargets = document.getElementsByName("user_id")
+  userTargets.forEach(user => {
+    if (user.checked === true) userIds.push(user.value)
+  })
+  await deleteUsers(userIds, contractId).then(() => {
     const users = getUsersFromContract();
     console.log(users)
   });
 };
 
-const deleteUser = async (userId, contractId) => {
+const deleteUsers = async (userIds, contractId) => {
   const params = {
-    user_id: userId,
+    user_ids: userIds,
     contract_id: contractId,
   };
   const res = await request.delete({

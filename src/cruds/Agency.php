@@ -124,6 +124,7 @@ class Agency
         }
         return null;
     }
+    
     public function getManagers($agency_id)
     {
         $stmt = $this->db->prepare("SELECT

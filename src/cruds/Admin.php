@@ -371,7 +371,6 @@ class Admin
             $contracts = self::getContractsByAgencyId($agency_id);
             $res['contracts'] = $contracts;
         }
-
         return json_encode($res, JSON_UNESCAPED_UNICODE);
     }
 
