@@ -1,3 +1,40 @@
+/*************** login ***************/
+.login_whole {
+  padding: 100px 0;
+}
+
+.login_title {
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_small_box {
+  margin: 10px 0;
+  background-color: silver;
+  height: 35px;
+  width: 45%;
+}
+
+.login_box {
+  margin: 10px 0;
+  background-color: #DC143C;
+  color: white;
+  height: 35px;
+  width: 45%;
+}
+
+.password {
+  text-align: center;
+}
+
 /*************** header ***************/
 .title_underline {
   border-bottom: 2px solid black;
@@ -164,47 +201,26 @@
 
 
 /*************** contact ***************/
-body {
-  width: 100%;
-  height: 100%;
-  background-color: #e6e6e6;
-}
-
-.inquary_header_English,
-.inquary_header_jp {
-  margin: 0;
-}
-
-.inquary_header_prompt {
-  line-height: 1.64286;
-  margin: 0 70 70px;
-  padding: 0 15px;
-  font-family: montserrat, sans-serif;
-  font-size: 14px;
-  text-align: center;
-}
-
-.inquary {
-  background-color: #e6e6e6;
-}
-
 .inquary_header_bg {
-  background-color: #e6e6e6;
+  margin: auto;
+  width: 400px;
+  background: #C1E5E2;
 }
 
 .inquary_header_title {
-  /* line-height: 1.57143;
-  margin: 0 0 40px;
-  padding: 0 15px; */
-  font-family: montserrat, sans-serif;
-  font-style: normal;
-  font-size: 21px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.inquary_header_prompt {
+  font-size: 14px;
   text-align: center;
 }
 
 .inquary_content {
   display: flex;
   justify-content: center;
+  padding-bottom: 30px;
 }
 
 .inquary_content_innerFrame {
@@ -215,50 +231,46 @@ body {
 }
 
 .inquary_content_inner {
-  box-sizing: border-box;
   width: 70%;
-  box-sizing: border-box;
   background-color: #e6e6e6;
+}
+
+.input[type=checkbox] {
+	display: none;
+}
+
+.checkbox {
+  margin: 0 10px;
+}
+
+.checkbox_title {
+  font-size: 16px;
+}
+.inquary_content_inner_consul {
+  width: 80%;
+  height: auto;
+  display: flex;
+  align-items: center;
 }
 
 .inquary_content_inner_name,
 .inquary_content_inner_mail,
 .inquary_content_inner_phone,
-.inquary_content_inner_college,
-.inquary_content_inner_faculty,
-.inquary_content_inner_message {
-  border-top: 1px solid #fff;
-  border-bottom: none;
-  font-family: montserrat, sans-serif;
+.inquary_content_inner_message,
+.inquary_content_inner_message_detail {
   width: 80%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center; */
 }
 
-.inquary_content_inner_graduation {
-  display: flex;
-  border-top: 1px solid #fff;
-  border-bottom: none;
-  font-family: montserrat, sans-serif;
-  width: 80%;
-  height: auto;
-  align-items: center;
-  justify-content: flex-start;
-}
-
+.inquary_content_inner_consul_title,
 .inquary_content_inner_name_title,
 .inquary_content_inner_mail_title,
 .inquary_content_inner_phone_title,
-.inquary_content_inner_college_title,
-.inquary_content_inner_faculty_title,
-.inquary_content_inner_graduation_title,
-.inquary_content_inner_message_title {
+.inquary_content_inner_message_title,
+.inquary_content_inner_message_detail_title {
   color: #000;
   line-height: 1.5;
   font-size: 20px;
@@ -266,26 +278,24 @@ justify-content: center; */
   width: 30%;
 }
 
+.inquary_contet_inner_consul_enter,
 .inquary_contet_inner_name_enter,
 .inquary_contet_inner_mail_enter,
 .inquary_contet_inner_phone_enter,
-.inquary_contet_inner_college_enter,
-.inquary_contet_inner_faculty_enter,
-.inquary_contet_inner_graduation_enter,
-.inquary_contet_inner_messae_enter {
+.inquary_contet_inner_messae_enter,
+.inquary_contet_inner_messae_detail_enter {
   display: flex;
   align-items: center;
   line-height: 1.5;
   font-size: 12px;
 }
 
+/* .inquary_content_inner_consul_enter_box, */
 .inquary_content_inner_name_enter_box,
 .inquary_content_inner_mail_enter_box,
 .inquary_content_inner_phone_enter_box,
-.inquary_content_inner_college_enter_box,
-.inquary_content_inner_faculty_enter_box,
-.inquary_content_inner_graduation_enter_box,
-.inquary_content_inner_message_enter_box {
+.inquary_content_inner_message_enter_box,
+.inquary_content_inner_message_detail_enter_box {
   width: 100%;
   font-weight: inherit;
 }
@@ -293,10 +303,8 @@ justify-content: center; */
 .inquary_content_inner_name_enter_text,
 .inquary_content_inner_mail_enter_text,
 .inquary_content_inner_phone_enter_text,
-.inquary_content_inner_college_enter_text,
-.inquary_content_inner_faculty_enter_text,
-.inquary_content_inner_graduation_enter_text,
-.inquary_content_inner_message_enter_text {
+.inquary_content_inner_message_enter_text,
+.inquary_content_inner_message_detail_enter_text {
   display: block;
   width: auto;
   padding: 0.375rem 0.75rem;
@@ -311,7 +319,7 @@ justify-content: center; */
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.inquary_contet_inner_confirmation {
+/* .inquary_contet_inner_confirmation {
   border-top: 1px solid #fff;
   border-bottom: none;
   font-family: montserrat, sans-serif;
@@ -333,13 +341,15 @@ justify-content: center; */
 
 .inquary_contet_inner_confirmation_check {
   margin: 0;
-}
+} */
 
 .inquary_content_inner_submit {
   list-style-type: none;
   font-weight: inherit;
   width: 100%;
-  margin: 0;
+  padding: 0 85px;
+  padding-bottom: 10px;
+  margin: 0
 }
 
 .inquary_content_inner_submit:hover {
