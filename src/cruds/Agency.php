@@ -2,6 +2,9 @@
 
 namespace cruds;
 
+use models\Article;
+use modules\email\Email;
+
 class Agency
 {
     public function __construct($db)
@@ -82,10 +85,10 @@ class Agency
     public function getManagerWithAgency($manager_id)
     {
         $stmt = $this->db->prepare("SELECT
-            manager.id manager_id,
-            manager.name manager_name,
-            manager.email manager_email,
-            manager.is_representative manager_representative,
+            managers.id manager_id,
+            managers.name manager_name,
+            managers.email manager_email,
+            managers.is_representative manager_representative,
             agencies.name agency_name,
             agencies.email agency_email,
             agencies.email_for_notification email_for_notice,
@@ -98,7 +101,7 @@ class Agency
             FROM managers
             LEFT JOIN agencies
             ON managers.agency_id = agencies.id
-            WHERE manager.id = :manager_id
+            WHERE managers.id = :manager_id
         ");
         $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
         $success = $stmt->execute();
@@ -229,5 +232,39 @@ class Agency
             throw $e;
         }
         return $manager_id;
+    }
+
+    public function sendEditRequest(Article $article)
+    {
+        $text = '
+        以下の内容で掲載記事の編集を依頼します。
+
+        タイトル:';
+        $text .= $article->title;
+        $text .= '本文: ';
+        $text .=  $article->sentenses;
+        $text .= '
+        アイキャッチ: ';
+        $text .= $article->eyecatch;
+        $agency = json_decode(
+            self::getManagerWithAgency($_SESSION['agency_manager']['id'])
+        );
+        $to = Email::BOOZER_EMAIL_FOR_NOTICE;
+        Email::sendMail($to, $agency->agency_email, '掲載記事の編集依頼', $text);
+    }
+
+    public function sendContact($content)
+    {
+        $agency = json_decode(
+            self::getManagerWithAgency($_SESSION['agency_manager']['id'])
+        );
+        $to = Email::BOOZER_EMAIL_FOR_NOTICE;
+        $from = $agency->agency_email;
+        $title = 'お問い合わせ';
+        $message = $agency->name;
+        $message .= 'からお問い合わせです。
+        お問い合わせ内容: ';
+        $message .= $content;
+        Email::sendMail($to, $from, $title, $message);
     }
 }
