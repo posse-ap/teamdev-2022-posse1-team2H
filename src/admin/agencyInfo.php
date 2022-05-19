@@ -6,7 +6,7 @@ include dirname(__FILE__) . '/header.php';
 
 <body>
     <header>
-        <div class="header_inner">
+        <div class="inside_header">
             <div class="page_name">管理画面</div>
             <div class="title_name">基本情報・掲載情報</div>
             <a href="./edit.php">編集・掲載へ</a>

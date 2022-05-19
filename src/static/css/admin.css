@@ -34,7 +34,7 @@ header {
 .header_inner {
     height: 60px;
     align-items: end;
-    gap: 10%;    
+    justify-content: space-between;
 }
 
 .header_inner {
@@ -43,6 +43,10 @@ header {
 
 .header_inner, .for_transition {
     display: flex;
+}
+
+.header_inner a{
+    margin-right: 38px;
 }
 
 button {
@@ -261,4 +265,11 @@ edit.php
     margin-top: 2%;
     width: 51%;
     cursor: pointer;
+}
+
+.inside_header{
+    display: flex;
+    height: 60px;
+    align-items: end;
+    gap: 10%;    
 }
