@@ -33,11 +33,7 @@ include dirname(__FILE__) . '/header.php'
 </header>
 <main id="agency">
     <div id="displayed_content" class="displayed_content">
-
-        <select class="select_content" name="" id="">
-            <option value="">date</option>
-        </select>
-
+        <input id="date_today" class="date_today" type="month">
         <div class="got_information">総情報獲得数：6件</div>
         <div class="total_amount">合計金額：2000</div>
     </div>
