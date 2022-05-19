@@ -242,8 +242,26 @@ class Agency
         本文: ' . $article->sentenses . '
         アイキャッチ: ' . $article->eyecatch . '
         ';
-        $agency = json_decode(self::getManagerWithAgency($_SESSION['agency_manager']['id']));
+        $agency = json_decode(
+            self::getManagerWithAgency($_SESSION['agency_manager']['id'])
+        );
         $to = Email::BOOZER_EMAIL_FOR_NOTICE;
         Email::sendMail($to, $agency->agency_email, '掲載記事の編集依頼', $text);
+    }
+
+    public function sendContact($content)
+    {
+        $agency = json_decode(
+            self::getManagerWithAgency($_SESSION['agency_manager']['id'])
+        );
+        $to = Email::BOOZER_EMAIL_FOR_NOTICE;
+        $from = $agency->agency_email;
+        $title = 'お問い合わせ';
+        $message = '' . $agency->name . 'からお問い合わせです。
+
+        お問い合わせ内容: ' . $content . '
+
+        ';
+        Email::sendMail($to, $from, $title, $message);
     }
 }
