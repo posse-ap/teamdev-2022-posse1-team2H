@@ -138,12 +138,12 @@ body {
     color: #5a739c;
 }
 
-.user_likeList_inner1_trash_text ::after {
+.user_likeList_inner1_trash_text::after {
     content: "";
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-image: url(./static/img/trash.png);
+    background-image: url(../img/trash.png);
     background-size: contain;
     vertical-align: middle;
 }
