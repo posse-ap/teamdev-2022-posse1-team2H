@@ -26,9 +26,10 @@ include dirname(__FILE__) . '/header.php';
     </header>
     <main>
         <div id="displayed_content" class="displayed_content">
-            <select class="select_content" name="" id="">
+            <input id="date_today" class="date_today" type="date">
+            <!-- <select class="select_content" name="" id="">
                 <option value="">date</option>
-            </select>
+            </select> -->
             <div class="got_information">総情報獲得数：6件</div>
             <div class="total_amount">合計金額：2000</div>
         </div>
