@@ -11,7 +11,6 @@ const time = () => {
     let getTime = new Date();
     let year = getTime.getFullYear();
     let month = getTime.getMonth() + 1;
-    let date = getTime.getDate();
     today.push(year);
     if (month < 10) {
         let num = month;
@@ -20,15 +19,8 @@ const time = () => {
     } else {
         today.push(month)
     }
-
-    if (date < 10) {
-        let num = date;
-        let newDate = ('00' + num).slice(-2);
-        today.push(newDate);
-    } else {
-        today.push(date);
-    }
     let dateToday = today.join(',').replaceAll(',', '-')
+    console.log(dateToday);
     document.getElementById('date_today').value = dateToday;
 
 }
