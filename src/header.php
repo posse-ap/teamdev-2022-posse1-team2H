@@ -16,6 +16,7 @@
     <!-- <script src="./static/js/user.js"></script> -->
     <link rel="stylesheet" href="./static/css/seeLater.css">
 
+    <link rel="stylesheet" href="./static/css/contact.css">
     <title>TOP画面</title>
 </head>
 <body>
