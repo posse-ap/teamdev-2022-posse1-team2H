@@ -5,6 +5,8 @@ namespace modules\email;
 class Email
 {
 
+    public const BOOZER_EMAIL_FOR_NOTICE = 'boozer@example.jp';
+
     public static function sendMail($to, $from, $title, $message)
     {
         mb_language("Japanese");

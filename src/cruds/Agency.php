@@ -2,6 +2,9 @@
 
 namespace cruds;
 
+use models\Article;
+use modules\email\Email;
+
 class Agency
 {
     public function __construct($db)
@@ -228,5 +231,19 @@ class Agency
             throw $e;
         }
         return $manager_id;
+    }
+
+    public function sendEditRequest(Article $article)
+    {
+        $text = '
+        以下の内容で掲載記事の編集を依頼します。
+
+        タイトル:'. $article->title .'
+        本文: ' . $article->sentenses . '
+        アイキャッチ: ' . $article->eyecatch . '
+        ';
+        $agency = json_decode(self::getManagerWithAgency($_SESSION['agency_manager']['id']));
+        $to = Email::BOOZER_EMAIL_FOR_NOTICE;
+        Email::sendMail($to, $agency->agency_email, '掲載記事の編集依頼', $text);
     }
 }
