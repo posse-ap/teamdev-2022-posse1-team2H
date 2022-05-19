@@ -4,12 +4,12 @@ body {
     background-color: #e6e6e6;
 }
 
-.inquary_header_English,
-.inquary_header_jp {
+.user_inquaryAfter_header_English,
+.user_inquaryAfter_header_jp {
     margin: 0;
 }
 
-.inquary_header_prompt {
+.user_inquaryAfter_header_prompt {
     line-height: 1.64286;
     margin: 0 70 70px;
     padding: 0 15px;
@@ -18,190 +18,436 @@ body {
     text-align: center;
 }
 
-.inquary {
+.user_inquaryAfter {
     background-color: #e6e6e6;
 }
 
-.inquary_header_bg {
+.user_inquaryAfter_header {
     background-color: #e6e6e6;
+    display: flex;
+    justify-content: center;
 }
 
-.inquary_header_title {
+.user_inquaryAfter_header_title {
     /* line-height: 1.57143;
-  margin: 0 0 40px;
-  padding: 0 15px; */
+    margin: 0 0 40px;
+    padding: 0 15px; */
     font-family: montserrat, sans-serif;
     font-style: normal;
     font-size: 21px;
     text-align: center;
 }
 
-.inquary_content {
-    display: flex;
-    justify-content: center;
-}
 
-.inquary_content_innerFrame {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/*ここからBody*/
+
+@media screen and (min-width: 540px) {
+    .user_inquaryAfter_content {
+        display: flex;
+        justify-content: center;
+    }
+    .user_inquaryAfter_content_innerFrame {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+    .user_inquaryAfter_content_inner {
+        box-sizing: border-box;
+        width: 70%;
+        box-sizing: border-box;
+        background-color: #e6e6e6;
+    }
+    .user_inquaryAfter_content_inner_name,
+    .user_inquaryAfter_content_inner_mail,
+    .user_inquaryAfter_content_inner_phone,
+    .user_inquaryAfter_content_inner_college,
+    .user_inquaryAfter_content_inner_faculty,
+    .user_inquaryAfter_content_inner_graduation,
+    .user_inquaryAfter_content_inner_age,
+    .user_inquaryAfter_content_inner_undergraduate,
+    .user_inquaryAfter_content_inner_schoolYear,
+    .user_inquaryAfter_content_inner_gender,
+    .user_inquaryAfter_content_inner_addressNumber,
+    .user_inquaryAfter_content_inner_address,
+    .user_inquaryAfter_content_inner_message {
+        border-top: 1px solid #fff;
+        border-bottom: none;
+        font-family: montserrat, sans-serif;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        margin: 0;
+        /* display: flex;
+    flex-wrap: wrap;
     align-items: center;
-}
-
-.inquary_content_inner {
-    box-sizing: border-box;
-    width: 70%;
-    box-sizing: border-box;
-    background-color: #e6e6e6;
-}
-
-.inquary_content_inner_name,
-.inquary_content_inner_mail,
-.inquary_content_inner_phone,
-.inquary_content_inner_college,
-.inquary_content_inner_faculty,
-.inquary_content_inner_message {
+    justify-content: center; */
+    }
+    .user_inquaryAfter_content_inner_name,
+    .user_inquaryAfter_content_inner_mail,
+    .user_inquaryAfter_content_inner_phone,
+    .user_inquaryAfter_content_inner_college,
+    .user_inquaryAfter_content_inner_graduation,
+    .user_inquaryAfter_content_inner_age,
+    .user_inquaryAfter_content_inner_undergraduate,
+    .user_inquaryAfter_content_inner_schoolYear,
+    .user_inquaryAfter_content_inner_gender,
+    .user_inquaryAfter_content_inner_addressNumber,
+    .user_inquaryAfter_content_inner_address,
+    .user_inquaryAfter_content_inner_faculty {
+        height: 100px;
+    }
+    .user_inquaryAfter_content_inner_message {
+        height: 300px;
+    }
+    /* .user_inquaryAfter_content_inner_upperSpace {
     border-top: 1px solid #fff;
     border-bottom: none;
-    font-family: montserrat, sans-serif;
-    width: 80%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center; */
+    height: 10%;
 }
 
-.inquary_content_inner_graduation {
-    display: flex;
-    border-top: 1px solid #fff;
-    border-bottom: none;
-    font-family: montserrat, sans-serif;
-    width: 80%;
-    height: auto;
-    align-items: center;
-    justify-content: flex-start;
+.user_inquaryAfter_content_inner_underSpace {
+    height: 10%;
+} */
+    .user_inquaryAfter_content_inner_name_title,
+    .user_inquaryAfter_content_inner_mail_title,
+    .user_inquaryAfter_content_inner_phone_title,
+    .user_inquaryAfter_content_inner_college_title,
+    .user_inquaryAfter_content_inner_faculty_title,
+    .user_inquaryAfter_content_inner_graduation_title,
+    .user_inquaryAfter_content_inner_age_title,
+    .user_inquaryAfter_content_inner_undergraduate_title,
+    .user_inquaryAfter_content_inner_schoolYear_title,
+    .user_inquaryAfter_content_inner_gender_title,
+    .user_inquaryAfter_content_inner_addressNumber_title,
+    .user_inquaryAfter_content_inner_address_title,
+    .user_inquaryAfter_content_inner_message_title,
+    .user_inquaryAfter_content_inner_name_text,
+    .user_inquaryAfter_content_inner_mail_text,
+    .user_inquaryAfter_content_inner_phone_text,
+    .user_inquaryAfter_content_inner_college_text,
+    .user_inquaryAfter_content_inner_faculty_text,
+    .user_inquaryAfter_content_inner_graduation_text,
+    .user_inquaryAfter_content_inner_age_text,
+    .user_inquaryAfter_content_inner_undergraduate_text,
+    .user_inquaryAfter_content_inner_schoolYear_text,
+    .user_inquaryAfter_content_inner_gender_text,
+    .user_inquaryAfter_content_inner_addressNumber_text,
+    .user_inquaryAfter_content_inner_address_text,
+    .user_inquaryAfter_content_inner_message_text {
+        color: #000;
+        line-height: 1.5;
+        font-size: 20px;
+        text-align: left;
+        width: 50%;
+    }
+    .user_inquaryAfter_contet_inner_name_enter,
+    .user_inquaryAfter_contet_inner_mail_enter,
+    .user_inquaryAfter_contet_inner_phone_enter,
+    .user_inquaryAfter_contet_inner_college_enter,
+    .user_inquaryAfter_contet_inner_faculty_enter,
+    .user_inquaryAfter_contet_inner_graduation_enter,
+    .user_inquaryAfter_contet_inner_age_enter,
+    .user_inquaryAfter_contet_inner_undergraduate_enter,
+    .user_inquaryAfter_contet_inner_schoolYear_enter,
+    .user_inquaryAfter_contet_inner_gender_enter,
+    .user_inquaryAfter_contet_inner_addressNumber_enter,
+    .user_inquaryAfter_contet_inner_address_enter,
+    .user_inquaryAfter_contet_inner_messae_enter {
+        display: flex;
+        align-items: center;
+        line-height: 1.5;
+        font-size: 12px;
+    }
+    .user_inquaryAfter_content_inner_name_enter_box,
+    .user_inquaryAfter_content_inner_mail_enter_box,
+    .user_inquaryAfter_content_inner_phone_enter_box,
+    .user_inquaryAfter_content_inner_college_enter_box,
+    .user_inquaryAfter_content_inner_faculty_enter_box,
+    .user_inquaryAfter_content_inner_graduation_enter_box,
+    .user_inquaryAfter_content_inner_age_enter_box,
+    .user_inquaryAfter_content_inner_undergraduate_enter_box,
+    .user_inquaryAfter_content_inner_shoolYear_enter_box,
+    .user_inquaryAfter_content_inner_gender_enter_box,
+    .user_inquaryAfter_content_inner_addressNumber_enter_box1,
+    .user_inquaryAfter_content_inner_addressNumber_enter_box2,
+    .user_inquaryAfter_content_inner_address_enter_box,
+    .user_inquaryAfter_content_inner_message_enter_box {
+        width: 100%;
+        font-weight: inherit;
+    }
+    .user_inquaryAfter_content_inner_name_enter_text,
+    .user_inquaryAfter_content_inner_mail_enter_text,
+    .user_inquaryAfter_content_inner_phone_enter_text,
+    .user_inquaryAfter_content_inner_college_enter_text,
+    .user_inquaryAfter_content_inner_faculty_enter_text,
+    .user_inquaryAfter_content_inner_graduation_enter_text,
+    .user_inquaryAfter_content_inner_age_enter_text,
+    .user_inquaryAfter_content_inner_undergraduate_enter_text,
+    .user_inquaryAfter_content_inner_schoolYear_enter_text,
+    .user_inquaryAfter_content_inner_gender_enter_text,
+    .user_inquaryAfter_content_inner_addressNumber_enter_text1,
+    .user_inquaryAfter_content_inner_addressNumber_enter_text2,
+    .user_inquaryAfter_content_inner_address_enter_text,
+    .user_inquaryAfter_content_inner_message_enter_text {
+        display: block;
+        width: auto;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .user_inquaryAfter_contet_inner_confirmation {
+        border-top: 1px solid #fff;
+        border-bottom: none;
+        font-family: montserrat, sans-serif;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+    }
+    .user_inquaryAfter_contet_inner_confirmation_check {
+        line-height: 1.5;
+        font-size: 14px;
+    }
+    .PRIVACY {
+        color: #000;
+        text-decoration: none;
+    }
+    .user_inquaryAfter_contet_inner_confirmation_check {
+        margin: 0;
+    }
+    .user_inquaryAfter_content_inner_submit {
+        list-style-type: none;
+        font-weight: inherit;
+        width: 100%;
+        margin: 0;
+    }
+    .user_inquaryAfter_content_inner_submit:hover {
+        background-color: white;
+        margin: 0;
+    }
+    .user_inquaryAfter_content_inner_submit_button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50px;
+        padding: 0 1em;
+        border: 1px solid black;
+        border-radius: 0;
+        background-color: transparent;
+        color: black;
+        font-family: montserrat, sans-serif;
+        font-weight: normal;
+        font-size: 13px;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        appearance: none;
+        padding: 0;
+    }
+    @media screen and (max-width: 480px) {
+        .user_inquaryAfter_content {
+            display: flex;
+            justify-content: center;
+        }
+        .user_inquaryAfter_content_innerFrame {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+        }
+        .user_inquaryAfter_content_inner {
+            box-sizing: border-box;
+            width: 70%;
+            box-sizing: border-box;
+            background-color: #e6e6e6;
+        }
+        .user_inquaryAfter_content_inner_name,
+        .user_inquaryAfter_content_inner_mail,
+        .user_inquaryAfter_content_inner_phone,
+        .user_inquaryAfter_content_inner_college,
+        .user_inquaryAfter_content_inner_faculty,
+        .user_inquaryAfter_content_inner_graduation,
+        .user_inquaryAfter_content_inner_age,
+        .user_inquaryAfter_content_inner_undergraduate,
+        .user_inquaryAfter_content_inner_schoolYear,
+        .user_inquaryAfter_content_inner_gender,
+        .user_inquaryAfter_content_inner_addressNumber,
+        .user_inquaryAfter_content_inner_address,
+        .user_inquaryAfter_content_inner_message {
+            border-top: 1px solid #fff;
+            border-bottom: none;
+            font-family: montserrat, sans-serif;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        .user_inquaryAfter_content_inner_name,
+        .user_inquaryAfter_content_inner_mail,
+        .user_inquaryAfter_content_inner_phone,
+        .user_inquaryAfter_content_inner_college,
+        .user_inquaryAfter_content_inner_graduation,
+        .user_inquaryAfter_content_inner_age,
+        .user_inquaryAfter_content_inner_undergraduate,
+        .user_inquaryAfter_content_inner_schoolYear,
+        .user_inquaryAfter_content_inner_gender,
+        .user_inquaryAfter_content_inner_addressNumber,
+        .user_inquaryAfter_content_inner_address,
+        .user_inquaryAfter_content_inner_faculty {
+            height: 100px;
+        }
+        .user_inquaryAfter_content_inner_message {
+            height: 300px;
+        }
+        .user_inquaryAfter_content_inner_name_title,
+        .user_inquaryAfter_content_inner_mail_title,
+        .user_inquaryAfter_content_inner_phone_title,
+        .user_inquaryAfter_content_inner_college_title,
+        .user_inquaryAfter_content_inner_faculty_title,
+        .user_inquaryAfter_content_inner_graduation_title,
+        .user_inquaryAfter_content_inner_age_title,
+        .user_inquaryAfter_content_inner_undergraduate_title,
+        .user_inquaryAfter_content_inner_schoolYear_title,
+        .user_inquaryAfter_content_inner_gender_title,
+        .user_inquaryAfter_content_inner_addressNumber_title,
+        .user_inquaryAfter_content_inner_address_title,
+        .user_inquaryAfter_content_inner_message_title {
+            color: #000;
+            line-height: 1.5;
+            font-size: 20px;
+            text-align: left;
+            width: 30%;
+        }
+        .user_inquaryAfter_contet_inner_name_enter,
+        .user_inquaryAfter_contet_inner_mail_enter,
+        .user_inquaryAfter_contet_inner_phone_enter,
+        .user_inquaryAfter_contet_inner_college_enter,
+        .user_inquaryAfter_contet_inner_faculty_enter,
+        .user_inquaryAfter_contet_inner_graduation_enter,
+        .user_inquaryAfter_contet_inner_age_enter,
+        .user_inquaryAfter_contet_inner_undergraduate_enter,
+        .user_inquaryAfter_contet_inner_schoolYear_enter,
+        .user_inquaryAfter_contet_inner_gender_enter,
+        .user_inquaryAfter_contet_inner_addressNumber_enter,
+        .user_inquaryAfter_contet_inner_address_enter,
+        .user_inquaryAfter_contet_inner_messae_enter {
+            display: flex;
+            align-items: center;
+            line-height: 1.5;
+            font-size: 12px;
+        }
+        .user_inquaryAfter_content_inner_name_enter_box,
+        .user_inquaryAfter_content_inner_mail_enter_box,
+        .user_inquaryAfter_content_inner_phone_enter_box,
+        .user_inquaryAfter_content_inner_college_enter_box,
+        .user_inquaryAfter_content_inner_faculty_enter_box,
+        .user_inquaryAfter_content_inner_graduation_enter_box,
+        .user_inquaryAfter_content_inner_age_enter_box,
+        .user_inquaryAfter_content_inner_undergraduate_enter_box,
+        .user_inquaryAfter_content_inner_shoolYear_enter_box,
+        .user_inquaryAfter_content_inner_gender_enter_box,
+        .user_inquaryAfter_content_inner_addressNumber_enter_box1,
+        .user_inquaryAfter_content_inner_addressNumber_enter_box2,
+        .user_inquaryAfter_content_inner_address_enter_box,
+        .user_inquaryAfter_content_inner_message_enter_box {
+            width: 100%;
+            font-weight: inherit;
+        }
+        .user_inquaryAfter_content_inner_name_enter_text,
+        .user_inquaryAfter_content_inner_mail_enter_text,
+        .user_inquaryAfter_content_inner_phone_enter_text,
+        .user_inquaryAfter_content_inner_college_enter_text,
+        .user_inquaryAfter_content_inner_faculty_enter_text,
+        .user_inquaryAfter_content_inner_graduation_enter_text,
+        .user_inquaryAfter_content_inner_age_enter_text,
+        .user_inquaryAfter_content_inner_undergraduate_enter_text,
+        .user_inquaryAfter_content_inner_schoolYear_enter_text,
+        .user_inquaryAfter_content_inner_gender_enter_text,
+        .user_inquaryAfter_content_inner_addressNumber_enter_text1,
+        .user_inquaryAfter_content_inner_addressNumber_enter_text2,
+        .user_inquaryAfter_content_inner_address_enter_text,
+        .user_inquaryAfter_content_inner_message_enter_text {
+            display: block;
+            width: auto;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .user_inquaryAfter_contet_inner_confirmation {
+            border-top: 1px solid #fff;
+            border-bottom: none;
+            font-family: montserrat, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+        }
+        .user_inquaryAfter_contet_inner_confirmation_check {
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        .PRIVACY {
+            color: #000;
+            text-decoration: none;
+        }
+        .user_inquaryAfter_contet_inner_confirmation_check {
+            margin: 0;
+        }
+        .user_inquaryAfter_content_inner_submit {
+            list-style-type: none;
+            font-weight: inherit;
+            width: 100%;
+            margin: 0;
+        }
+        .user_inquaryAfter_content_inner_submit:hover {
+            background-color: white;
+            margin: 0;
+        }
+        .user_inquaryAfter_content_inner_submit_button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50px;
+            padding: 0 1em;
+            border: 1px solid black;
+            border-radius: 0;
+            background-color: transparent;
+            color: black;
+            font-family: montserrat, sans-serif;
+            font-weight: normal;
+            font-size: 13px;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            padding: 0;
+        }
+        /*ここからモーダル*/
+    }
 }
-
-.inquary_content_inner_name_title,
-.inquary_content_inner_mail_title,
-.inquary_content_inner_phone_title,
-.inquary_content_inner_college_title,
-.inquary_content_inner_faculty_title,
-.inquary_content_inner_graduation_title,
-.inquary_content_inner_message_title {
-    color: #000;
-    line-height: 1.5;
-    font-size: 20px;
-    text-align: left;
-    width: 30%;
-}
-
-.inquary_contet_inner_name_enter,
-.inquary_contet_inner_mail_enter,
-.inquary_contet_inner_phone_enter,
-.inquary_contet_inner_college_enter,
-.inquary_contet_inner_faculty_enter,
-.inquary_contet_inner_graduation_enter,
-.inquary_contet_inner_messae_enter {
-    display: flex;
-    align-items: center;
-    line-height: 1.5;
-    font-size: 12px;
-}
-
-.inquary_content_inner_name_enter_box,
-.inquary_content_inner_mail_enter_box,
-.inquary_content_inner_phone_enter_box,
-.inquary_content_inner_college_enter_box,
-.inquary_content_inner_faculty_enter_box,
-.inquary_content_inner_graduation_enter_box,
-.inquary_content_inner_message_enter_box {
-    width: 100%;
-    font-weight: inherit;
-}
-
-.inquary_content_inner_name_enter_text,
-.inquary_content_inner_mail_enter_text,
-.inquary_content_inner_phone_enter_text,
-.inquary_content_inner_college_enter_text,
-.inquary_content_inner_faculty_enter_text,
-.inquary_content_inner_graduation_enter_text,
-.inquary_content_inner_message_enter_text {
-    display: block;
-    width: auto;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-.inquary_contet_inner_confirmation {
-    border-top: 1px solid #fff;
-    border-bottom: none;
-    font-family: montserrat, sans-serif;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-}
-
-.inquary_contet_inner_confirmation_check {
-    line-height: 1.5;
-    font-size: 12px;
-}
-
-.PRIVACY {
-    color: #000;
-    text-decoration: none;
-}
-
-.inquary_contet_inner_confirmation_check {
-    margin: 0;
-}
-
-.inquary_content_inner_submit {
-    list-style-type: none;
-    font-weight: inherit;
-    width: 100%;
-    margin: 0;
-}
-
-.inquary_content_inner_submit:hover {
-    background-color: white;
-    margin: 0;
-}
-
-.inquary_content_inner_submit_button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 50px;
-    padding: 0 1em;
-    border: 1px solid black;
-    border-radius: 0;
-    background-color: transparent;
-    color: black;
-    font-family: montserrat, sans-serif;
-    font-weight: normal;
-    font-size: 13px;
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    appearance: none;
-    padding: 0;
-}
-
-
-/*ここからモーダル*/
