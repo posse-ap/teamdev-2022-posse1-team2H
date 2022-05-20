@@ -90,7 +90,7 @@ include dirname(__FILE__) . "/header.php";
         <dl class="user_inquaryAfter_content_inner_schoolYear">
           <dt class="user_inquaryAfter_content_inner_schoolYear_title">何回生
           </dt>
-          <dt class="user_inquaryAfter_content_inner_schoolYear_text">3年生
+          <dt class="user_inquaryAfter_content_inner_schoolYear_text">3回生
           </dt>
          
         </dl>
