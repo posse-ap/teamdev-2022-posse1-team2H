@@ -10,7 +10,7 @@ include dirname(__FILE__) . '/header.php' ?>
 <div class="subtitle span">
         <p>田中太郎さん 詳細情報</p>
     </div>
-    <div class="detail-box">
+    <div class="detail_box">
         <p>氏名： 田中太郎</p>
         <p>性別： 男</p>
         <p>年齢： 21歳</p>
