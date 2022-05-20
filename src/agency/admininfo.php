@@ -7,31 +7,64 @@ $auth->validate();
 
 include dirname(__FILE__) . '/header.php' ?>
 
-<div class="detail-box">
-        <p>田中太郎</p>
-        <p>メールアドレス： taro.tanaka@gmail.com</p>
-        <p>電話番号： 090-9999-999</p>
+<div class="detail_box">
+    <p>田中太郎</p>
+    <p>メールアドレス： taro.tanaka@gmail.com</p>
+    <p>電話番号： 090-9999-999</p>
+</div>
+<a class="edit_button" href="">編集</a>
+<!-- <p class="edit-button"><a href="">編集</a></p> -->
+<div class="list_box">
+    <p>個人担当者一覧</p>
+    <div class="small_list_box">
+        <li class="email">AA BB：aa.bb@gmail.com</li>
+        <button type="button" class="trash" onclick="clickEvent()">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
     </div>
-    <button class="edit-button">編集</button>
-    <!-- <p class="edit-button"><a href="">編集</a></p> -->
-    <div class="list-box">
-        <p>個人担当者一覧</p>
-        <ul>
-            <li class="menu-list">AA BB：aa.bb@gmail.com</li>
-            <li class="menu-list">CC DD：cc.dd@gmail.com</li>
-            <li class="menu-list">EE FF：ee.ff@gmail.com</li>
-        </ul>
+    <div class="small_list_box">
+        <li class="email">CC DD：cc.dd@gmail.com</li>
+        <button type="button" class="trash">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
     </div>
-<!-- 
-    オーバーレイ
-        <div id="overlay" class="overlay"></div>
-    モーダルウィンドウ
-        <div class="modal-window">
-            閉じるボタン
-            <button class="js-close button-close">Close</button>
-        </div>
-    モーダルを開くボタン -->
-    <button class="js-open button-add">追加</button>
-
+    <div class="small_list_box">
+        <li class="email">EE FF：ee.ff@gmail.com</li>
+        <button type="button" class="trash">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
+</div>
+<a class="modal_switch" href="#" data-target-selector="#modal">追加</a>
+<div id="modal">
+    <div class="modal_window">
+        個人担当者追加
+        <dl class="add_box">
+            <dt>お名前</dt>
+            <dd class="inquary_contet_inner_name_enter">
+                <span class="inquary_content_inner_name_enter_box">
+                    <input type="text" value size="40" class="inquary_content_inner_name_enter_text">
+                </span>
+            </dd>
+        </dl>
+        <dl class="add_box">
+            <dt>Email</dt>
+            <dd class="inquary_contet_inner_mail_enter">
+                <span class="inquary_content_inner_mail_enter_box">
+                    <input type="text" value size="40" class="inquary_content_inner_mail_enter_text" aria-required="true" aria-invalid="false" placeholder="※半角数字">
+                </span>
+            </dd>
+        </dl>
+        <dl class="add_box">
+            <dt>パスワード</dt>
+            <dd class="inquary_contet_inner_mail_enter">
+                <span class="inquary_content_inner_mail_enter_box">
+                    <input type="text" value size="40" class="inquary_content_inner_mail_enter_text" aria-required="true" aria-invalid="false" placeholder="※半角数字">
+                </span>
+            </dd>
+        </dl>
+        <a class="confirm_button" href="">確認</a>
+    </div>
+</div>
 
 <?php include dirname(__FILE__) . '/footer.php' ?>
