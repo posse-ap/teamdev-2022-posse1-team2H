@@ -48,14 +48,13 @@
     justify-content: space-evenly;
     background: silver;
     box-shadow: 3px 3px 3px rgb(204 204 204);
-}
+  }
 
 .menu {
-  /* justify-content: space-evenly; */
   display: flex;
   font-weight: bold;
   font-size: 18px;
-  /* flex-grow: 1; */
+  padding-top: 8px;
 }
 
 .menu-list {
@@ -77,29 +76,8 @@
     padding: 0 10vw;
 }
 
-/* .underline {
-  border-bottom: 2px solid black;
-  width: 500px;
-} */
-
 /*************** index ***************/
-/* .export-button a {
-  display: inline-block;
-}
-
-.export-button {
-  text-align: right;
-}
-
-.export-button a {
-  border: solid 4px green;
-  padding: 10px 20px;
-  margin: 10px 40px 0 0;
-  text-decoration: none;
-  color: black;
-} */
-
-.private-small-box {
+.private_small_box {
   list-style: none;
   background-color: silver;
   text-align: center;
@@ -107,7 +85,7 @@
   margin: 20px 0;
 }
 
-.private-small-box a {
+.private_small_box a {
   text-decoration: none;
   color: black;
 }
@@ -117,10 +95,11 @@
   margin: 30px 150px;
 }
 
-.detail-box {
+.detail_box {
   background-color: silver;
   margin: 50px 150px 0 150px;
   padding: 20px 0 20px 50px;
+  /* text-align: center; */
 }
 
 .button {
@@ -137,68 +116,150 @@
 }
 
 /*************** admininfo ***************/
-.edit-button {
+.edit_button {
   display: block;
   padding: 5px 20px;
   background-color: white;
-  color: black;
   border-radius: 20rem;
   cursor: pointer;
   margin: -150px 180px 0 auto;
+  color: #000;
+  text-decoration: none;
+  width: 5%;
 }
 
-/* .edit-button a {
-  text-decoration: none;
-  color: black;
-  background-color: white;
-  border-radius: 30px;
-  padding: 5px 20px;
-} */
-
-.list-box {
+.list_box {
   background-color: silver;
   margin: 180px 150px 0 150px;
   padding: 20px 0 20px 50px;
 }
 
-/* 開くボタン */
-.button-add {
+.small_list_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.email {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.trash {
+  margin-right: 50px
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.modal_switch {
   display: block;
   padding: 5px 20px;
   background-color: white;
-  color: black;
   border-radius: 20rem;
   cursor: pointer;
-  margin: -160px 180px 0 auto;
+  margin: -170px 180px 0 auto;
+  color: #000;
+  text-decoration: none;
+  width: 5%;
 }
 
-/* モーダルウィンドウ */
-.modal-window {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
-  background-color: #dfdddd;
-  border-radius: 5px;
-  z-index: 11;
-  padding: 2rem;
+#modal{
+  position:absolute;
+  display:none;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.7);
+  border:0;
+  margin:0;
+  padding:0;
 }
-/* 閉じるボタン */
-.button-close {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  padding: 1em;
-  background-color: #c96931;
-  color: #eaeaea;
+#modal[data-view="1"]{
+  display:block;
+  animation: modal-bg-view 0.3s linear forwards;
+}
+#modal[data-view="0"]{
+  display:block;
+  animation: modal-bg-hidden 0.3s linear forwards;
+}
+
+#modal > .modal_window{
+  position:absolute;
+  display:block;
+  border-radius:4px;
+  padding:10px 20px;
+  background-color:white;
+  white-space:nowrap;
+  margin: 250px 500px;
+}
+#modal[data-view="1"] > .modal-window{
+  animation: modal-window-view 0.3s linear forwards;
+}
+#modal[data-view="0"] > .modal-window{
+  animation: modal-window-hidden 0.3s linear forwards;
+}
+
+@keyframes modal-bg-view{
+  0%{
+    opacity:0.0;
+    visibility:hidden;
+  }
+  100%{
+    opacity:1.0;
+    visibility:visible;
+  }
+}
+@keyframes modal-bg-hidden{
+  0%{
+    opacity:1.0;
+    visibility:visible;
+  }
+  100%{
+    opacity:0.0;
+    visibility:hidden;
+  }
+}
+@keyframes modal-window-view{
+  0%{
+    transform:translate(0,-50%);
+  }
+  100%{
+    transform:translate(0,0);
+  }
+}
+@keyframes modal-window-hidden{
+  0%{
+    transform:translate(0,0);
+  }
+  100%{
+    transform:translate(0,-50%);
+  }
+}
+
+.add_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm_button {
+  display: block;
+  padding: 5px 10px;
+  background-color: silver;
   border-radius: 20rem;
   cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  width: 10%;
+  margin-right: 0;
+  margin-left: auto;
 }
-
 
 /*************** contact ***************/
 .inquary_header_bg {
@@ -246,13 +307,12 @@
 .checkbox_title {
   font-size: 16px;
 }
-.inquary_content_inner_consul {
-  width: 80%;
-  height: auto;
-  display: flex;
-  align-items: center;
+
+.consul {
+  margin-right: 40px;
 }
 
+.inquary_content_inner_consul,
 .inquary_content_inner_name,
 .inquary_content_inner_mail,
 .inquary_content_inner_phone,
@@ -290,7 +350,6 @@
   font-size: 12px;
 }
 
-/* .inquary_content_inner_consul_enter_box, */
 .inquary_content_inner_name_enter_box,
 .inquary_content_inner_mail_enter_box,
 .inquary_content_inner_phone_enter_box,
@@ -318,30 +377,6 @@
   border-radius: 0.25rem;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-
-/* .inquary_contet_inner_confirmation {
-  border-top: 1px solid #fff;
-  border-bottom: none;
-  font-family: montserrat, sans-serif;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-}
-
-.inquary_contet_inner_confirmation_check {
-  line-height: 1.5;
-  font-size: 12px;
-}
-
-.PRIVACY {
-  color: #000;
-  text-decoration: none;
-}
-
-.inquary_contet_inner_confirmation_check {
-  margin: 0;
-} */
 
 .inquary_content_inner_submit {
   list-style-type: none;
@@ -377,18 +412,4 @@
   transition: all 0.3s ease;
   appearance: none;
   padding: 0;
-}
-
-
-/*ここからモーダル*/
-
-.modal_overlay {
-  z-index: 1;
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(68, 68, 68, 0.8);
 }
