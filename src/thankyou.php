@@ -21,7 +21,7 @@ include dirname(__FILE__) . "/header.php";
           <h2 class="user_thankyou_inner_post">送信が完了いたしました</h2>
         </div>
         
-        <a href="#" class="user_thankyou_inner_top">
+        <a href="./index.php" class="user_thankyou_inner_top">
            <i class="fa fa-caret-right">TOP画面へ</i> 
         </a>
     </div>
