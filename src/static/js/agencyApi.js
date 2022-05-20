@@ -92,3 +92,81 @@ const deleteManager = async (id) => {
   return res;
 };
 
+//削除ボタン
+function clickEvent() {
+  alert('削除します。本当によろしいですか？');
+};
+
+// モーダル
+;(function(__w,__d){
+  var $$event = function(e, m, f){
+    if (typeof e.addEventListener !== "undefined"){
+      e.addEventListener(m, f, false);
+    }
+    else if(typeof e.attachEvent !== "undefined"){
+      e.attachEvent('on' + m, function(){f.call(e , __w.event)});
+    }
+  };
+  var $$error = function(m){
+    console.log("[Modal] Error : "+m);
+  };
+
+  var $$ = function(){
+    // start
+    if(__d.readyState === "complete"){
+      this.start();
+    }
+    else if(__d.readyState === "interactive"){
+      $$event(window , "DOMContentLoaded" , (function(e){this.start(e)}).bind(this));
+    }
+    else{
+      $$event(window , "load" , (function(e){this.start(e)}).bind(this));
+    }
+  };
+
+  $$.prototype.start = function(){
+    var switches = __d.querySelectorAll(".modal-switch");
+    for(var i=0; i<switches.length; i++){
+      $$event(switches[i] , "click" , (function(e){this.click_modalSwitch(e)}).bind(this));
+    }
+  };
+
+  $$.prototype.click_modalSwitch = function(e){
+    if(!e || !e.currentTarget){
+      $$error("Not event");
+      return;
+    }
+    var selector = e.currentTarget.getAttribute("data-target-selector");
+    if(!selector){
+      $$error("Not selector");
+      return;
+    }
+    var target = __d.querySelector(selector);
+    if(!target){
+      $$error("Not target");
+      return;
+    }
+    this.toggle_modalSwitch(target);
+
+    return false;
+  };
+
+  $$.prototype.toggle_modalSwitch = function(element){
+    if(!element){
+      $$error("Not switch-element");
+      return;
+    }
+    var currentValue = element.getAttribute("data-view");
+    if(!currentValue){
+      $$event(element , "click" , (function(e){this.toggle_modalSwitch(e.currentTarget)}).bind(this));
+    }
+    if(currentValue === "1"){
+      element.setAttribute("data-view","0");
+    }
+    else{
+      element.setAttribute("data-view","1");
+    }
+  };
+
+  new $$;
+})(window,document);
