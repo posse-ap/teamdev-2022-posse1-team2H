@@ -110,10 +110,10 @@ include dirname(__FILE__) . "/header.php";
             <span class="user_inquary_content_inner_schoolYear_enter_box">
               <select name="user_inquary_content_inner_schoolYear_enter_text" id="user_inquary_content_inner_schoolYear_enter_text" class="user_inquary_content_inner_schoolYear_enter_text" aria-invalid="false">
                 <option value="何回生">何回生</option>
-                <option value="1年生">1年生</option>
-                <option value="2年生">2年生</option>
-                <option value="3年生">3年生</option>
-                <option value="4年生">4年生</option>
+                <option value="1年生">1回生</option>
+                <option value="2年生">2回生</option>
+                <option value="3年生">3回生</option>
+                <option value="4年生">4回生</option>
                 <option value="その他">その他</option>
 
               </select>
@@ -123,7 +123,7 @@ include dirname(__FILE__) . "/header.php";
         </dl>
         <dl class="user_inquary_content_inner_graduation">
 
-          <dt class="user_inquary_content_inner_graduation_title">卒業予定日
+          <dt class="user_inquary_content_inner_graduation_title">卒業予定年
           </dt>
           <dd class="user_inquary_contet_inner_graduation_enter">
             <span class="user_inquary_content_inner_mail_enter_box">
