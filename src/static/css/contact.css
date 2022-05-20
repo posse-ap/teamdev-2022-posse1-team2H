@@ -46,7 +46,7 @@ body {
         display: flex;
         justify-content: center;
     }
-    .user_inquary_content_innerFrame {
+    .user_inquary_content_innerframe {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -67,9 +67,9 @@ body {
     .user_inquary_content_inner_graduation,
     .user_inquary_content_inner_age,
     .user_inquary_content_inner_undergraduate,
-    .user_inquary_content_inner_schoolYear,
+    .user_inquary_content_inner_schoolyear,
     .user_inquary_content_inner_gender,
-    .user_inquary_content_inner_addressNumber,
+    .user_inquary_content_inner_addressnumber,
     .user_inquary_content_inner_address,
     .user_inquary_content_inner_message {
         border-top: 1px solid #fff;
@@ -93,9 +93,9 @@ body {
     .user_inquary_content_inner_graduation,
     .user_inquary_content_inner_age,
     .user_inquary_content_inner_undergraduate,
-    .user_inquary_content_inner_schoolYear,
+    .user_inquary_content_inner_schoolyear,
     .user_inquary_content_inner_gender,
-    .user_inquary_content_inner_addressNumber,
+    .user_inquary_content_inner_addressnumber,
     .user_inquary_content_inner_address,
     .user_inquary_content_inner_faculty {
         height: 100px;
@@ -120,9 +120,9 @@ body {
     .user_inquary_content_inner_graduation_title,
     .user_inquary_content_inner_age_title,
     .user_inquary_content_inner_undergraduate_title,
-    .user_inquary_content_inner_schoolYear_title,
+    .user_inquary_content_inner_schoolyear_title,
     .user_inquary_content_inner_gender_title,
-    .user_inquary_content_inner_addressNumber_title,
+    .user_inquary_content_inner_addressnumber_title,
     .user_inquary_content_inner_address_title,
     .user_inquary_content_inner_message_title {
         color: #000;
@@ -139,9 +139,9 @@ body {
     .user_inquary_contet_inner_graduation_enter,
     .user_inquary_contet_inner_age_enter,
     .user_inquary_contet_inner_undergraduate_enter,
-    .user_inquary_contet_inner_schoolYear_enter,
+    .user_inquary_contet_inner_schoolyear_enter,
     .user_inquary_contet_inner_gender_enter,
-    .user_inquary_contet_inner_addressNumber_enter,
+    .user_inquary_contet_inner_addressnumber_enter,
     .user_inquary_contet_inner_address_enter,
     .user_inquary_contet_inner_messae_enter {
         display: flex;
@@ -159,8 +159,8 @@ body {
     .user_inquary_content_inner_undergraduate_enter_box,
     .user_inquary_content_inner_shoolYear_enter_box,
     .user_inquary_content_inner_gender_enter_box,
-    .user_inquary_content_inner_addressNumber_enter_box1,
-    .user_inquary_content_inner_addressNumber_enter_box2,
+    .user_inquary_content_inner_addressnumber_enter_box1,
+    .user_inquary_content_inner_addressnumber_enter_box2,
     .user_inquary_content_inner_address_enter_box,
     .user_inquary_content_inner_message_enter_box {
         width: 100%;
@@ -174,10 +174,10 @@ body {
     .user_inquary_content_inner_graduation_enter_text,
     .user_inquary_content_inner_age_enter_text,
     .user_inquary_content_inner_undergraduate_enter_text,
-    .user_inquary_content_inner_schoolYear_enter_text,
+    .user_inquary_content_inner_schoolyear_enter_text,
     .user_inquary_content_inner_gender_enter_text,
-    .user_inquary_content_inner_addressNumber_enter_text1,
-    .user_inquary_content_inner_addressNumber_enter_text2,
+    .user_inquary_content_inner_addressnumber_enter_text1,
+    .user_inquary_content_inner_addressnumber_enter_text2,
     .user_inquary_content_inner_address_enter_text,
     .user_inquary_content_inner_message_enter_text {
         display: block;
@@ -250,7 +250,7 @@ body {
             display: flex;
             justify-content: center;
         }
-        .user_inquary_content_innerFrame {
+        .user_inquary_content_innerframe {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -271,9 +271,9 @@ body {
         .user_inquary_content_inner_graduation,
         .user_inquary_content_inner_age,
         .user_inquary_content_inner_undergraduate,
-        .user_inquary_content_inner_schoolYear,
+        .user_inquary_content_inner_schoolyear,
         .user_inquary_content_inner_gender,
-        .user_inquary_content_inner_addressNumber,
+        .user_inquary_content_inner_addressnumber,
         .user_inquary_content_inner_address,
         .user_inquary_content_inner_message {
             border-top: 1px solid #fff;
@@ -292,9 +292,9 @@ body {
         .user_inquary_content_inner_graduation,
         .user_inquary_content_inner_age,
         .user_inquary_content_inner_undergraduate,
-        .user_inquary_content_inner_schoolYear,
+        .user_inquary_content_inner_schoolyear,
         .user_inquary_content_inner_gender,
-        .user_inquary_content_inner_addressNumber,
+        .user_inquary_content_inner_addressnumber,
         .user_inquary_content_inner_address,
         .user_inquary_content_inner_faculty {
             height: 100px;
@@ -310,9 +310,9 @@ body {
         .user_inquary_content_inner_graduation_title,
         .user_inquary_content_inner_age_title,
         .user_inquary_content_inner_undergraduate_title,
-        .user_inquary_content_inner_schoolYear_title,
+        .user_inquary_content_inner_schoolyear_title,
         .user_inquary_content_inner_gender_title,
-        .user_inquary_content_inner_addressNumber_title,
+        .user_inquary_content_inner_addressnumber_title,
         .user_inquary_content_inner_address_title,
         .user_inquary_content_inner_message_title {
             color: #000;
@@ -329,9 +329,9 @@ body {
         .user_inquary_contet_inner_graduation_enter,
         .user_inquary_contet_inner_age_enter,
         .user_inquary_contet_inner_undergraduate_enter,
-        .user_inquary_contet_inner_schoolYear_enter,
+        .user_inquary_contet_inner_schoolyear_enter,
         .user_inquary_contet_inner_gender_enter,
-        .user_inquary_contet_inner_addressNumber_enter,
+        .user_inquary_contet_inner_addressnumber_enter,
         .user_inquary_contet_inner_address_enter,
         .user_inquary_contet_inner_messae_enter {
             display: flex;
@@ -349,8 +349,8 @@ body {
         .user_inquary_content_inner_undergraduate_enter_box,
         .user_inquary_content_inner_shoolYear_enter_box,
         .user_inquary_content_inner_gender_enter_box,
-        .user_inquary_content_inner_addressNumber_enter_box1,
-        .user_inquary_content_inner_addressNumber_enter_box2,
+        .user_inquary_content_inner_addressnumber_enter_box1,
+        .user_inquary_content_inner_addressnumber_enter_box2,
         .user_inquary_content_inner_address_enter_box,
         .user_inquary_content_inner_message_enter_box {
             width: 100%;
@@ -364,10 +364,10 @@ body {
         .user_inquary_content_inner_graduation_enter_text,
         .user_inquary_content_inner_age_enter_text,
         .user_inquary_content_inner_undergraduate_enter_text,
-        .user_inquary_content_inner_schoolYear_enter_text,
+        .user_inquary_content_inner_schoolyear_enter_text,
         .user_inquary_content_inner_gender_enter_text,
-        .user_inquary_content_inner_addressNumber_enter_text1,
-        .user_inquary_content_inner_addressNumber_enter_text2,
+        .user_inquary_content_inner_addressnumber_enter_text1,
+        .user_inquary_content_inner_addressnumber_enter_text2,
         .user_inquary_content_inner_address_enter_text,
         .user_inquary_content_inner_message_enter_text {
             display: block;
