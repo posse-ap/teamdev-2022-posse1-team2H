@@ -21,7 +21,7 @@ include dirname(__FILE__) . "/header.php";
   </div>
   <div class="user_inquary_content">
 
-    <div class="user_inquary_content_innerFrame">
+    <div class="user_inquary_content_innerframe">
       <form class="user_inquary_content_inner">
         <dl class="user_inquary_content_inner_name">
 
@@ -35,7 +35,7 @@ include dirname(__FILE__) . "/header.php";
 
         </dl>
         <dl class="user_inquary_content_inner_age">
-          <dt class="user_inquary_content_inner_age_title">年齢
+          <dt class="user_inquary_content_inner_age_title">年齢 ※
           </dt>
           <dd class="user_inquary_contet_inner_age_enter">
             <span class="user_inquary_content_inner_age_enter_box">
@@ -74,7 +74,7 @@ include dirname(__FILE__) . "/header.php";
         </dl>
         <dl class="user_inquary_content_inner_college">
 
-          <dt class="user_inquary_content_inner_college_title">大学名
+          <dt class="user_inquary_content_inner_college_title">大学名 ※
           </dt>
           <dd class="user_inquary_contet_inner_college_enter">
             <span class="user_inquary_content_inner_college_enter_box">
@@ -83,7 +83,7 @@ include dirname(__FILE__) . "/header.php";
           </dd>
         </dl>
         <dl class="user_inquary_content_inner_undergraduate">
-          <dt class="user_inquary_content_inner_undergraduate_title">学部
+          <dt class="user_inquary_content_inner_undergraduate_title">学部 ※
           </dt>
           <dd class="user_inquary_contet_inner_undergraduate_enter">
             <span class="user_inquary_content_inner_undergraduate_enter_box">
@@ -93,7 +93,7 @@ include dirname(__FILE__) . "/header.php";
         </dl>
         <dl class="user_inquary_content_inner_faculty">
 
-          <dt class="user_inquary_content_inner_faculty_title">学科
+          <dt class="user_inquary_content_inner_faculty_title">学科 ※
           </dt>
           <dd class="user_inquary_contet_inner_faculty_enter">
             <span class="user_inquary_content_inner_faculty_enter_box">
@@ -101,13 +101,13 @@ include dirname(__FILE__) . "/header.php";
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_schoolYear">
-          <dt class="user_inquary_content_inner_schoolYear_title">何年生
+        <dl class="user_inquary_content_inner_schoolyear">
+          <dt class="user_inquary_content_inner_schoolyear_title">学年 ※
           </dt>
-          <dd class="user_inquary_contet_inner_schoolYear_enter">
-            <span class="user_inquary_content_inner_schoolYear_enter_box">
-              <select name="user_inquary_content_inner_schoolYear_enter_text" id="user_inquary_content_inner_schoolYear_enter_text" class="user_inquary_content_inner_schoolYear_enter_text" aria-invalid="false">
-                <option value="何回生">何年生</option>
+          <dd class="user_inquary_contet_inner_schoolyear_enter">
+            <span class="user_inquary_content_inner_schoolyear_enter_box">
+              <select name="user_inquary_content_inner_schoolyear_enter_text" id="user_inquary_content_inner_schoolyear_enter_text" class="user_inquary_content_inner_schoolyear_enter_text" aria-invalid="false">
+                <option value="何回生">学年</option>
                 <option value="1年生">1年生</option>
                 <option value="2年生">2年生</option>
                 <option value="3年生">3年生</option>
@@ -121,7 +121,7 @@ include dirname(__FILE__) . "/header.php";
         </dl>
         <dl class="user_inquary_content_inner_graduation">
 
-          <dt class="user_inquary_content_inner_graduation_title">卒業予定年
+          <dt class="user_inquary_content_inner_graduation_title">卒業予定年 ※
           </dt>
           <dd class="user_inquary_contet_inner_graduation_enter">
             <span class="user_inquary_content_inner_mail_enter_box">
@@ -137,7 +137,7 @@ include dirname(__FILE__) . "/header.php";
           </dd>
         </dl>
           <dl class="user_inquary_content_inner_gender">
-          <dt class="user_inquary_content_inner_gender_title">性別
+          <dt class="user_inquary_content_inner_gender_title">性別 ※
           </dt>
           <dd class="user_inquary_contet_inner_gender_enter">
             <span class="user_inquary_content_inner_gender_enter_box">
@@ -153,21 +153,21 @@ include dirname(__FILE__) . "/header.php";
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_addressNumber">
-          <dt class="user_inquary_content_inner_addressNumber_title">郵便番号
+        <dl class="user_inquary_content_inner_addressnumber">
+          <dt class="user_inquary_content_inner_addressnumber_title">郵便番号 ※
           </dt>
-          <dd class="user_inquary_contet_inner_addressNumber_enter">
-            <span class="user_inquary_content_inner_addressNumber_enter_box1">
-              <input type="text" value size="10" class="user_inquary_content_inner_addressNumber_enter_text1">
+          <dd class="user_inquary_contet_inner_addressnumber_enter">
+            <span class="user_inquary_content_inner_addressnumber_enter_box1">
+              <input type="text" value size="10" class="user_inquary_content_inner_addressnumber_enter_text1">
             </span>
             <span>-</span>
-            <span class="user_inquary_content_inner_addressNumber_enter_box2">
-              <input type="text" value size="25" class="user_inquary_content_inner_addressNumber_enter_text2">
+            <span class="user_inquary_content_inner_addressnumber_enter_box2">
+              <input type="text" value size="25" class="user_inquary_content_inner_addressnumber_enter_text2">
             </span>
           </dd>
         </dl>
         <dl class="user_inquary_content_inner_address">
-          <dt class="user_inquary_content_inner_address_title">住所
+          <dt class="user_inquary_content_inner_address_title">住所 ※
           </dt>
           <dd class="user_inquary_contet_inner_address_enter">
             <span class="user_inquary_content_inner_address_enter_box">
@@ -175,7 +175,7 @@ include dirname(__FILE__) . "/header.php";
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_message">
+        <!-- <dl class="user_inquary_content_inner_message">
 
           <dt class="user_inquary_content_inner_message_title">メッセージ
           </dt>
@@ -185,7 +185,7 @@ include dirname(__FILE__) . "/header.php";
 
             </span>
           </dd>
-        </dl>
+        </dl> -->
 
 
         <dl class="user_inquary_contet_inner_confirmation">
@@ -197,14 +197,7 @@ include dirname(__FILE__) . "/header.php";
               </span>
             </span>
           </dd>
-          <!-- <dd class="user_inquary_content_inner_cofirmation_policy">
-            <span class="user_inquary_content_inner_confirmation_policy_text">
-              <p>
-                &rarr;
-                <a href="https://spectron.tech/jp/" class="PRIVACY">PRIVACY POLICY</a>
-              </p>
-            </span>
-          </dd> -->
+    
         </dl>
         <p class="user_inquary_content_inner_submit" id="user_inquary_content_inner_submit">
           <a href="https://spectron.tech/jp/" class="user_inquary_content_inner_submit_button">確認画面へ</a>
