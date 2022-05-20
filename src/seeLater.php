@@ -26,9 +26,9 @@ include dirname(__FILE__) . "/header.php";
         <div class="user_likeList_inner1Box">
           <div class="user_likeList_inner1">
             <div class="user_likeList_inner1_header">
-                <p class="user_likeList_inner1_header_title">株式会社武田鉄</p>
+                <h2 class="user_likeList_inner1_header_title">株式会社武田鉄</h2>
                 <div class="user_likeList_inner1_trash">
-                    <a href="https://posse-ap.com/" class="user_likeList_inner1_trash_text">削除する</a>
+                    <p class="user_likeList_inner1_trash_text">削除する</p>
                 </div>
             </div>
             <div class="user_likeList_inner1_body">
