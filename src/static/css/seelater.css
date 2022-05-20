@@ -81,6 +81,7 @@ body {
 .user_likeList_inner1_header {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .user_likeList_inner1_trash {
@@ -134,8 +135,20 @@ body {
     color: #ddd;
 }
 
+.user_likeList_inner1_trash {
+    border: 1px solid #fff;
+    cursor: pointer;
+    /* border: none; */
+    /* margin-bottom: 5px; */
+    text-align: center;
+    padding: 0;
+    border-radius: 10px;
+    height: 5%;
+}
+
 .user_likeList_inner1_trash_text {
     color: #5a739c;
+    margin: 2px;
 }
 
 .user_likeList_inner1_trash_text::after {
@@ -146,4 +159,9 @@ body {
     background-image: url(../img/trash.png);
     background-size: contain;
     vertical-align: middle;
+    font-size: 16px;
+}
+
+.user_likeList_inner1_trash:hover {
+    background-color: ;
 }
