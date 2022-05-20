@@ -15,7 +15,7 @@ include dirname(__FILE__) . '/header.php' ?>
         <main class="inquary_content">
             <form class="inquary_content_inner">
                 <div class="inquary_content_innerFrame">
-                    <dl class="inquary_content_inner_consul">
+                    <dl class="consul inquary_content_inner_consul">
                             <dt class="inquary_content_inner_consul_title">ご相談内容</dt>
                             <dd class="inquary_contet_inner_consul_enter">
                                 <span class="checkbox">
@@ -72,24 +72,6 @@ include dirname(__FILE__) . '/header.php' ?>
                             </span>
                         </dd>
                     </dl>
-                    <!-- <dl class="inquary_contet_inner_confirmation">
-                        <dd class="inquary_contet_inner_confirmation_check">
-                            <span inquary_content_inner_confirmaiton_inner_check_box>
-                                <input type="checkbox" class="inquary_content_inner_confirmation_inner_checkBox" value="プライバシーポリシーに同意します">
-                                <span class="inquary_content_inner_confirmation_inner_label">
-                                  プライバシーポリシーに同意します
-                                </span>
-                            </span>
-                        </dd>
-                        <dd class="inquary_content_inner_cofirmation_policy">
-                            <span class="inquary_content_inner_confirmation_policy_text">
-                                <p>
-                                    &rarr;
-                                    <a href="https://spectron.tech/jp/" class="PRIVACY">PRIVACY POLICY</a>
-                                </p>
-                            </span>
-                        </dd>
-                    </dl> -->
                     <p class="inquary_content_inner_submit">
                         <a href="https://spectron.tech/jp/" class="inquary_content_inner_submit_button">この内容で送信する</a>
                     </p>
