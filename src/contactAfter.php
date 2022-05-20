@@ -24,7 +24,7 @@ include dirname(__FILE__) . "/header.php";
   </div>
   <div class="user_inquaryAfter_content">
 
-    <div class="user_inquaryAfter_content_innerFrame">
+    <div class="user_inquaryAfter_content_innerframe">
       <form class="user_inquaryAfter_content_inner">
         <dl class="user_inquaryAfter_content_inner_name">
 

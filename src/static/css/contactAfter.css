@@ -46,7 +46,7 @@ body {
         display: flex;
         justify-content: center;
     }
-    .user_inquaryAfter_content_innerFrame {
+    .user_inquaryAfter_content_innerframe {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -263,7 +263,7 @@ body {
             display: flex;
             justify-content: center;
         }
-        .user_inquaryAfter_content_innerFrame {
+        .user_inquaryAfter_content_innerframe {
             display: flex;
             flex-direction: column;
             justify-content: center;
