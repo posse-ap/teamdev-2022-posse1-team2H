@@ -13,7 +13,7 @@ $industries = $user_cruds->getIndustries();
 
 include dirname(__FILE__) . "/header.php";
 ?>
-<main class="use_thankyou">
+<main class="user_thankyou">
 <div class="user_thankyou_inner">
     <div class="user_thankyou_inner_box">
         <h1 class="user_thankyou_inner_text">Thank you!!</h1>
