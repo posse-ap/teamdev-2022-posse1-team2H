@@ -20,8 +20,11 @@ body {
     width: 80%;
 }
 
-.user_likeList_topBar_top,
-.user_likeList_topBar_inquiry {
+.user_likeList_topBar {
+    margin-top: 3%;
+}
+
+.user_likeList_topBar_top {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -29,7 +32,7 @@ body {
     padding: 1em 2em;
     width: 15%;
     color: #333;
-    font-size: 18px;
+    font-size: 100%;
     font-weight: 700;
     background-color: #EAEDF2;
     /* box-shadow: 0 0 10px rgba(0 0 0 / .2);
@@ -40,13 +43,69 @@ body {
     padding: 8px;
 }
 
-.user_likeList_topBar_inquiry::after {
+.user_likeList_topBar_inquiry {
+    border: #5a739c;
+    border-radius: 10px;
+    background-color: rgb(0, 135, 230);
+    color: white;
+}
+
+
+/* .user_likeList_topBar_inquiry::after {
     content: '';
     width: 5px;
     height: 5px;
     border-top: 3px solid #333333;
     border-right: 3px solid #333333;
     transform: rotate(45deg);
+} */
+
+.user_likeList_topBar_inquiry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 1em 2em;
+    color: #ddd;
+    font-size: 100%;
+    font-weight: 700;
+    background-color: rgb(0, 135, 230);
+    transition: 0.3s;
+    margin: 0;
+}
+
+.user_likeList_topBar_inquiry::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 2px);
+    right: -2em;
+    transform: translateY(calc(-50% - 2px)) rotate(30deg);
+    width: 12px;
+    height: 2px;
+    background-color: #2285b1;
+    transition: 0.3s;
+}
+
+.user_likeList_topBar_inquiry::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -2em;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 2px;
+    background-color: #2285b1;
+    transition: 0.3s;
+}
+
+.user_likeList_topBar_inquiry:hover {
+    text-decoration: none;
+}
+
+.user_likeList_topBar_inquiry::before,
+.user_likeList_topBar_inquiry::after {
+    right: -2.5em;
 }
 
 .user_likeList_topBar_top::after {
@@ -60,7 +119,6 @@ body {
 
 .user_likeList_topBar_inquiry:hover {
     box-shadow: 0 0 10px rgba(0 0 0 / 0);
-    text-decoration: underline;
     color: #AAAAAA;
 }
 
@@ -84,6 +142,10 @@ body {
     align-items: center;
 }
 
+.user_likeList_inner1_header_title {
+    color: rgb(0, 135, 230);
+}
+
 .user_likeList_inner1_trash {
     display: flex;
     justify-content: center;
@@ -92,6 +154,10 @@ body {
 
 .user_likeList_inner1 {
     border-bottom: 1px solid #ddd;
+}
+
+.user_likeList_number_Z {
+    color: red;
 }
 
 .user_likeList_inner1_body {
@@ -119,7 +185,7 @@ body {
 
 .user_likeList_inner1_body_under_contact,
 .user_likeList_inner1_body_under_detail {
-    width: 210px;
+    width: 28%;
     height: 50px;
     border: #5a739c;
     border-radius: 10px;
@@ -135,8 +201,13 @@ body {
     color: #ddd;
 }
 
+.user_likeList_inner1_body_under_detail:hover {
+    color: #ddd;
+}
+
 .user_likeList_inner1_trash {
     border: 1px solid #fff;
+    border: 0px;
     cursor: pointer;
     /* border: none; */
     /* margin-bottom: 5px; */
@@ -147,7 +218,7 @@ body {
 }
 
 .user_likeList_inner1_trash_text {
-    color: #5a739c;
+    color: black;
     margin: 2px;
 }
 
@@ -156,12 +227,12 @@ body {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-image: url(../img/trash.png);
+    background-image: url(../img/trash2.png);
     background-size: contain;
     vertical-align: middle;
     font-size: 16px;
 }
 
-.user_likeList_inner1_trash:hover {
-    background-color: ;
+.user_likeList_inner1_trash_text:hover {
+    color: rgb(0, 135, 230);
 }
