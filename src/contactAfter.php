@@ -18,7 +18,6 @@ include dirname(__FILE__) . "/header.php";
 
       <h1 class="user_inquaryAfter_header_English">CONTACT</h1>
       <h2 class="user_inquaryAfter_header_jp">お問合せ</h2>
-      <p class="user_inquaryAfter_header_prompt"></p>
     </div>
   </div>
   <div class="user_inquaryAfter_content">

@@ -155,28 +155,7 @@ body {
     margin: 0;
 }
 
-.user_inquaryAfter_header_prompt {
-    line-height: 1.64286;
-    margin: 0 70 70px;
-    padding: 0 15px;
-    font-family: montserrat, sans-serif;
-    font-size: 14px;
-    text-align: center;
-}
-
-.user_inquaryAfter {
-    background-color: #e6e6e6;
-}
-
-.user_inquaryAfter_header {
-    background-color: #e6e6e6;
-    display: flex;
-    justify-content: center;
-}
-
 .user_inquaryAfter_header_title {
-    font-family: montserrat, sans-serif;
-    font-style: normal;
     font-size: 21px;
     text-align: center;
 }
