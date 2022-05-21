@@ -59,6 +59,152 @@ body {
     background-color: #e6e6e6;
 }
 
+form dl {
+    border-top: 1px solid #fff;
+    border-bottom: none;
+    font-family: montserrat, sans-serif;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 100px;
+
+}
+
+.user_inquaryAfter_content_inner_message {
+    height: 300px;
+}
+
+
+form dt {
+    color: #000;
+    line-height: 1.5;
+    font-size: 20px;
+    text-align: left;
+    width: 50%;
+}
+
+.user_inquaryAfter_contet_inner_confirmation {
+    border-top: 1px solid #fff;
+    border-bottom: none;
+    font-family: montserrat, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+
+.user_inquaryAfter_contet_inner_confirmation_check {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.PRIVACY {
+    color: #000;
+    text-decoration: none;
+}
+
+.user_inquaryAfter_contet_inner_confirmation_check {
+    margin: 0;
+}
+
+.user_inquaryAfter_content_inner_submit {
+    list-style-type: none;
+    font-weight: inherit;
+    width: 100%;
+    margin: 0;
+}
+
+.user_inquaryAfter_content_inner_submit:hover {
+    background-color: white;
+    margin: 0;
+}
+
+.user_inquaryAfter_content_inner_submit_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding: 0 1em;
+    border: 1px solid black;
+    border-radius: 0;
+    background-color: transparent;
+    color: black;
+    font-family: montserrat, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #e6e6e6;
+}
+
+.user_inquaryAfter_header_English,
+.user_inquaryAfter_header_jp {
+    margin: 0;
+}
+
+.user_inquaryAfter_header_prompt {
+    line-height: 1.64286;
+    margin: 0 70 70px;
+    padding: 0 15px;
+    font-family: montserrat, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.user_inquaryAfter {
+    background-color: #e6e6e6;
+}
+
+.user_inquaryAfter_header {
+    background-color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+}
+
+.user_inquaryAfter_header_title {
+    font-family: montserrat, sans-serif;
+    font-style: normal;
+    font-size: 21px;
+    text-align: center;
+}
+
+
+/* ここからBody
+
+
+.user_inquaryAfter_content {
+    display: flex;
+    justify-content: center;
+}
+
+.user_inquaryAfter_content_innerFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.user_inquaryAfter_content_inner {
+    box-sizing: border-box;
+    width: 70%;
+    box-sizing: border-box;
+    background-color: #e6e6e6;
+}
+
 .user_inquaryAfter_content_inner_name,
 .user_inquaryAfter_content_inner_mail,
 .user_inquaryAfter_content_inner_phone,
@@ -258,4 +404,4 @@ body {
     transition: all 0.3s ease;
     appearance: none;
     padding: 0;
-}
+} */
