@@ -121,7 +121,18 @@ include dirname(__FILE__) . "/header.php";
 
           <dt class="user_inquaryAfter_content_inner_message_title">メッセージ
           </dt>
-          <dt class="user_inquaryAfter_content_inner_message_title">お腹すきま
+          <dt class="user_inquaryAfter_content_inner_message_title">
+            桃太郎さん 桃太郎さん
+            お腰につけた黍団子
+            一つわたしに下さいな
+
+            やりましょう やりましょう
+            これから鬼の征伐に
+            ついて行くならやりましょう
+
+            行きましょう 行きましょう
+            あなたについて何処までも
+            家来になって行きましょう
           </dt>
 
         </dl>
