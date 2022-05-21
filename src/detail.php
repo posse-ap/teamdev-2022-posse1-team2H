@@ -24,7 +24,8 @@ include dirname(__FILE__) . '/header.php';
                 <!-- キャッチコピーと写真 -->
                 <div class="content_detail_catchCopy_imgBig">
                     <div class="content_detail_catchCopy">
-                        <h1 class="content_detail_catchCopy_title">とにかく文系に強い！！</h1>
+                        <h2 class="content_detail_catchCopy_title">とにかく文系に強い！！</h2>
+                        <p class="content_detail_catchCopy_subtitle">#医療＃外資系</p>
                     </div>
                     <div class="content_detail_agency_imgBig">
                         <a href="https://posse-ap.com/" class="content_detail_agency_imgBig_">
@@ -39,6 +40,12 @@ include dirname(__FILE__) . '/header.php';
                     <div class="content_detail_subcontent_left">
                         <!-- <div class="content_detail_left_subcontent"> -->
                         <div class="content_detail_subcontent_left_agentStudent">
+                           <ul class="content_detail_subcontent_left_agentStudent_table">
+                               <li class="content_detail_subcontent_left_agentStudent_table_top">
+                                   <a href="./index.php" class="content_detail_subcontent_left_agentStudent_table_toptext">TOP画面</a>
+                               </li>
+                               <li class="content_detail_subcontent_left_agentStudent_table_detail">詳細ページ</li>
+                            </ul>
                             <div class="content_detail_subcontent_left_agentStudent_agent">
                                 <h1 class="content_detail_subcontent_left_agentRequest_agent_title">どんなエージェント企業か</h1>
                                 <p class="content_detail_subcontent_left_agentRequest_agent_text">
@@ -46,6 +53,7 @@ include dirname(__FILE__) . '/header.php';
                                     これもたいへんだったのですが）。 そこへいきなり、ピンクの目をした白うさぎが近くを走ってきたのです。 それだけなら、そんなにめずらしいことでもありませんでした。 さらにアリスとしては、そのうさぎが 「どうしよう！ どうしよう！ ちこくしちゃうぞ！」 とつぶやくのを聞いたときも、 それがそんなにへんてこだとは思いませんでした （あとから考えてみたら、これも不思議に思うべきだったのですけれど、 でもこのときには、それがごく自然なことに思えたのです）。
                                 </p>
                             </div>
+                            <div class="borderline"><hr></div>
                             <div class="content_detail_subcontent_left_agentStudent_Student">
                                 <h1 class="content_detail_subcontent_left_agentStudent_Student_title">どんな学生にオススメか</h1>
                                 <p class="content_detail_subcontent_left_agentStudent_Student_text">
@@ -53,7 +61,7 @@ include dirname(__FILE__) . '/header.php';
                                     これもたいへんだったのですが）。 そこへいきなり、ピンクの目をした白うさぎが近くを走ってきたのです。 それだけなら、そんなにめずらしいことでもありませんでした。 さらにアリスとしては、そのうさぎが 「どうしよう！どうしよう！ ちこくしちゃうぞ！」 とつぶやくのを聞いたときも、 それがそんなにへんてこだとは思いませんでした （あとから考えてみたら、これも不思議に思うべきだったのですけれど、 でもこのときには、それがごく自然なことに思えたのです）。</p>
                             </div>
                         </div>
-
+                        <div class="borderline"><hr></div>
                         <div class="content_detail_recommendedAgent">
                             <h2 class="content_detail_recommendedAgent_title">あなたにオススメのエージェンシー
                             </h2>
@@ -82,6 +90,9 @@ include dirname(__FILE__) . '/header.php';
                     <!-- ここからお問い合わとかの右側にある情報 -->
                     <div class="content_detail_subcontent_right">
                         <div class="content_detail_subcontent_right_serch">
+                            <div class="content_detail_subcontent_right_serch_menu">
+                                <div class="content_detail_subcontent_right_serch_menu_text">メニュー</div>
+                            </div>
                             <div class="content_detail_subcontent_right_serch_inquiryBox">
                                 <h3 class="content_detail_subcontent_right_serch_inquiryText">お問合せ</h3>
                             </div>
@@ -89,11 +100,11 @@ include dirname(__FILE__) . '/header.php';
                                 <div class="content_detail_subcontent_right_serch_seelaterField_add">
 
                                     <div class="content_detail_subcontent_right_serch_seelaterField_add_box">
-                                        <h3 class="content_detail_subcontent_right_serch_seelaterField_add_box_text">後でみるリストの追加</h3>
+                                        <h3 class="content_detail_subcontent_right_serch_seelaterField_add_box_text">気になるリストへの追加</h3>
                                     </div>
                                 </div>
                                 <div class="content_detail_subcontent_right_serch_seelaterField_seelaterBox">
-                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_seelaterBox_text">後で見る
+                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_seelaterBox_text">気になる
                                     </h3>
 
                                 </div>
@@ -105,11 +116,15 @@ include dirname(__FILE__) . '/header.php';
                                 </div>
 
                                 <div class="content_detail_subcontent_right_serch_information_details" id="content_detail_subcontent_right_serch_information_details">
-                                    <p>株式会社武田鉄</p>
-                                   <a href="https://google.com">https://google.com</a>
-                                    <p>2020年に創業</p>
-                                    <p>15000のメンバー</p>
-                                    <p>東京都港区表参道Harbors</p>
+                                    <div class="content_detail_subcontent_right_serch_information_details_companyname">
+
+                                        <a href="https://google.com" class="company_name">株式会社武田鉄</a>
+                                    </div>
+                                         <p class="content_detail_subcontent_right_serch_information_details_found">2020年に創業</p>
+                                         <p class="content_detail_subcontent_right_serch_information_details_member">15000のメンバー</p>
+                                         <p class="content_detail_subcontent_right_serch_information_details_address">東京都港区表参道Harbors</p>
+
+                                    </div>
                                 </div>
                                 <!-- <div class="content_detail_subcontent_right_iserch_nformation_map">
                                     まっぷ
@@ -138,5 +153,6 @@ include dirname(__FILE__) . '/header.php';
                 </div>
             </div>
         </div>
+        <div class="detail_blank"></div>
 </main>
 <?php include dirname(__FILE__) . '/footer.php' ?>
