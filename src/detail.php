@@ -99,14 +99,14 @@ include dirname(__FILE__) . '/header.php';
                                 </div>
                             </div>
                             <div class="content_detail_subcontent_right_serch_information">
-                                <div class="content_detail_subcontent_right_serch_information_box">
+                                <div class="content_detail_subcontent_right_serch_information_box" id="content_detail_subcontent_right_serch_information_box">
                                     <h3 class="content_detail_subcontent_right_serch_information_title">会社情報
                                     </h3>
                                 </div>
 
-                                <div class="content_detail_subcontent_right_serch_information_details">
+                                <div class="content_detail_subcontent_right_serch_information_details" id="content_detail_subcontent_right_serch_information_details">
                                     <p>株式会社武田鉄</p>
-                                    <p>https://google.com</p>
+                                   <a href="https://google.com">https://google.com</a>
                                     <p>2020年に創業</p>
                                     <p>15000のメンバー</p>
                                     <p>東京都港区表参道Harbors</p>

@@ -88,7 +88,7 @@
         }
         
         .content_detail_subcontent_left {
-            padding: 7.6%;
+            padding: .6%;
         }
         
         .content_detail_subcontent_right_serch {
@@ -239,7 +239,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            background-image: url(./userDetail_img/sign.png);
+            background-image: url(../img/sign.png);
             background-size: contain;
             vertical-align: middle;
         }
@@ -256,7 +256,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            background-image: url(./userDetail_img/add.png);
+            background-image: url(../img/add.png);
             background-size: contain;
             vertical-align: middle;
         }
@@ -273,7 +273,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            background-image: url(./userDetail_img/memo.png);
+            background-image: url(../img/memo.png);
             background-size: contain;
             vertical-align: middle;
         }
@@ -289,7 +289,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            background-image: url(./userDetail_img/information.png);
+            background-image: url(../img/information.png);
             background-size: contain;
             vertical-align: middle;
         }
@@ -347,4 +347,9 @@
         
         .content_detail_subcontent_right_serch_information_details {
             display: none;
+            /* border: solid 3px #0087e6; */
+        }
+        
+        .add {
+            display: block;
         }
