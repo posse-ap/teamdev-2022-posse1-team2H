@@ -162,3 +162,7 @@ dl input, dl select {
 .hyphen{
     margin-top: 8px;
 }
+
+.user_inquary_content_inner_confirmation_inner_checkBox{
+    display: inline;
+}
