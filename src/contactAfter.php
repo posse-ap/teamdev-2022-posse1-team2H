@@ -31,12 +31,7 @@ include dirname(__FILE__) . "/header.php";
           </dt>
           <dt class="user_inquaryAfter_content_inner_name_text">布施陸斗
           </dt>
-        
-          <!-- <dd class="user_inquaryAfter_contet_inner_name_enter">
-            <span class="user_inquaryAfter_content_inner_name_enter_box">
-              <input type="text" value size="40 " class="user_inquaryAfter_content_inner_name_enter_text">
-            </span>
-          </dd> -->
+
 
         </dl>
         <dl class="user_inquaryAfter_content_inner_age">
@@ -44,7 +39,7 @@ include dirname(__FILE__) . "/header.php";
           </dt>
           <dt class="user_inquaryAfter_content_inner_age_text">20歳
           </dt>
-        
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_mail">
 
@@ -52,7 +47,7 @@ include dirname(__FILE__) . "/header.php";
           </dt>
           <dt class="user_inquaryAfter_content_inner_mail_text">onakasuitana-.icloud
           </dt>
-         
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_phone">
 
@@ -60,23 +55,23 @@ include dirname(__FILE__) . "/header.php";
           </dt>
           <dt class="user_inquaryAfter_content_inner_phone_title">110
           </dt>
-       
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_college">
 
           <dt class="user_inquaryAfter_content_inner_college_title">大学名
           </dt>
-      
+
           <dt class="user_inquaryAfter_content_inner_college_text">立教大学
           </dt>
-      
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_undergraduate">
           <dt class="user_inquaryAfter_content_inner_undergraduate_title">学部
           </dt>
           <dt class="user_inquaryAfter_content_inner_undergraduate_text">経営学部
           </dt>
-          
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_faculty">
 
@@ -84,14 +79,14 @@ include dirname(__FILE__) . "/header.php";
           </dt>
           <dt class="user_inquaryAfter_content_inner_faculty_text">経営学科
           </dt>
-        
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_schoolYear">
           <dt class="user_inquaryAfter_content_inner_schoolYear_title">何回生
           </dt>
           <dt class="user_inquaryAfter_content_inner_schoolYear_text">3回生
           </dt>
-         
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_graduation">
 
@@ -99,28 +94,28 @@ include dirname(__FILE__) . "/header.php";
           </dt>
           <dt class="user_inquaryAfter_content_inner_graduation_text">24年卒
           </dt>
-        
+
         </dl>
-          <dl class="user_inquaryAfter_content_inner_gender">
+        <dl class="user_inquaryAfter_content_inner_gender">
           <dt class="user_inquaryAfter_content_inner_gender_title">性別
           </dt>
           <dt class="user_inquaryAfter_content_inner_gender_text">男
           </dt>
-        
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_addressNumber">
           <dt class="user_inquaryAfter_content_inner_addressNumber_title">郵便番号
           </dt>
           <dt class="user_inquaryAfter_content_inner_addressNumber_text">111-1111
           </dt>
-         
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_address">
           <dt class="user_inquaryAfter_content_inner_address_title">住所
           </dt>
           <dt class="user_inquaryAfter_content_inner_address_text">東京都渋谷区2-2-2
           </dt>
-         
+
         </dl>
         <dl class="user_inquaryAfter_content_inner_message">
 
@@ -128,21 +123,11 @@ include dirname(__FILE__) . "/header.php";
           </dt>
           <dt class="user_inquaryAfter_content_inner_message_title">お腹すきま
           </dt>
-         
+
         </dl>
 
 
-        <!-- <dl class="user_inquaryAfter_contet_inner_confirmation">
-          <dd class="user_inquaryAfter_contet_inner_confirmation_check">
-            <span user_inquaryAfter_content_inner_confirmaiton_inner_check_box>
-              <input type="checkbox" class="user_inquaryAfter_content_inner_confirmation_inner_checkBox" value="プライバシーポリシーに同意します">
-              <span class="user_inquaryAfter_content_inner_confirmation_inner_label">
-                プライバシーポリシーに同意します
-              </span>
-            </span>
-          </dd>
-     
-        </dl> -->
+
         <p class="user_inquaryAfter_content_inner_submit">
           <a href="https://spectron.tech/jp/" class="user_inquaryAfter_content_inner_submit_button">内容送信</a>
         </p>

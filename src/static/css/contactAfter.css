@@ -29,9 +29,6 @@ body {
 }
 
 .user_inquaryAfter_header_title {
-    /* line-height: 1.57143;
-    margin: 0 0 40px;
-    padding: 0 15px; */
     font-family: montserrat, sans-serif;
     font-style: normal;
     font-size: 21px;
@@ -46,6 +43,7 @@ body {
         display: flex;
         justify-content: center;
     }
+
     .user_inquaryAfter_content_innerFrame {
         display: flex;
         flex-direction: column;
@@ -53,12 +51,14 @@ body {
         align-items: center;
         width: 80%;
     }
+
     .user_inquaryAfter_content_inner {
         box-sizing: border-box;
         width: 70%;
         box-sizing: border-box;
         background-color: #e6e6e6;
     }
+
     .user_inquaryAfter_content_inner_name,
     .user_inquaryAfter_content_inner_mail,
     .user_inquaryAfter_content_inner_phone,
@@ -78,14 +78,11 @@ body {
         width: 100%;
         margin: auto;
         display: flex;
-        /* justify-content: center; */
         align-items: center;
         margin: 0;
-        /* display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center; */
+
     }
+
     .user_inquaryAfter_content_inner_name,
     .user_inquaryAfter_content_inner_mail,
     .user_inquaryAfter_content_inner_phone,
@@ -100,9 +97,11 @@ body {
     .user_inquaryAfter_content_inner_faculty {
         height: 100px;
     }
+
     .user_inquaryAfter_content_inner_message {
         height: 300px;
     }
+
     /* .user_inquaryAfter_content_inner_upperSpace {
     border-top: 1px solid #fff;
     border-bottom: none;
@@ -144,6 +143,7 @@ body {
         text-align: left;
         width: 50%;
     }
+
     .user_inquaryAfter_contet_inner_name_enter,
     .user_inquaryAfter_contet_inner_mail_enter,
     .user_inquaryAfter_contet_inner_phone_enter,
@@ -162,6 +162,7 @@ body {
         line-height: 1.5;
         font-size: 12px;
     }
+
     .user_inquaryAfter_content_inner_name_enter_box,
     .user_inquaryAfter_content_inner_mail_enter_box,
     .user_inquaryAfter_content_inner_phone_enter_box,
@@ -179,6 +180,7 @@ body {
         width: 100%;
         font-weight: inherit;
     }
+
     .user_inquaryAfter_content_inner_name_enter_text,
     .user_inquaryAfter_content_inner_mail_enter_text,
     .user_inquaryAfter_content_inner_phone_enter_text,
@@ -206,6 +208,7 @@ body {
         border-radius: 0.25rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
+
     .user_inquaryAfter_contet_inner_confirmation {
         border-top: 1px solid #fff;
         border-bottom: none;
@@ -216,27 +219,33 @@ body {
         width: 100%;
         height: 70px;
     }
+
     .user_inquaryAfter_contet_inner_confirmation_check {
         line-height: 1.5;
         font-size: 14px;
     }
+
     .PRIVACY {
         color: #000;
         text-decoration: none;
     }
+
     .user_inquaryAfter_contet_inner_confirmation_check {
         margin: 0;
     }
+
     .user_inquaryAfter_content_inner_submit {
         list-style-type: none;
         font-weight: inherit;
         width: 100%;
         margin: 0;
     }
+
     .user_inquaryAfter_content_inner_submit:hover {
         background-color: white;
         margin: 0;
     }
+
     .user_inquaryAfter_content_inner_submit_button {
         display: inline-flex;
         align-items: center;
@@ -258,11 +267,13 @@ body {
         appearance: none;
         padding: 0;
     }
+
     @media screen and (max-width: 480px) {
         .user_inquaryAfter_content {
             display: flex;
             justify-content: center;
         }
+
         .user_inquaryAfter_content_innerFrame {
             display: flex;
             flex-direction: column;
@@ -270,12 +281,14 @@ body {
             align-items: center;
             width: 80%;
         }
+
         .user_inquaryAfter_content_inner {
             box-sizing: border-box;
             width: 70%;
             box-sizing: border-box;
             background-color: #e6e6e6;
         }
+
         .user_inquaryAfter_content_inner_name,
         .user_inquaryAfter_content_inner_mail,
         .user_inquaryAfter_content_inner_phone,
@@ -298,6 +311,7 @@ body {
             align-items: center;
             margin: 0;
         }
+
         .user_inquaryAfter_content_inner_name,
         .user_inquaryAfter_content_inner_mail,
         .user_inquaryAfter_content_inner_phone,
@@ -312,9 +326,11 @@ body {
         .user_inquaryAfter_content_inner_faculty {
             height: 100px;
         }
+
         .user_inquaryAfter_content_inner_message {
             height: 300px;
         }
+
         .user_inquaryAfter_content_inner_name_title,
         .user_inquaryAfter_content_inner_mail_title,
         .user_inquaryAfter_content_inner_phone_title,
@@ -334,6 +350,7 @@ body {
             text-align: left;
             width: 30%;
         }
+
         .user_inquaryAfter_contet_inner_name_enter,
         .user_inquaryAfter_contet_inner_mail_enter,
         .user_inquaryAfter_contet_inner_phone_enter,
@@ -352,6 +369,7 @@ body {
             line-height: 1.5;
             font-size: 12px;
         }
+
         .user_inquaryAfter_content_inner_name_enter_box,
         .user_inquaryAfter_content_inner_mail_enter_box,
         .user_inquaryAfter_content_inner_phone_enter_box,
@@ -369,6 +387,7 @@ body {
             width: 100%;
             font-weight: inherit;
         }
+
         .user_inquaryAfter_content_inner_name_enter_text,
         .user_inquaryAfter_content_inner_mail_enter_text,
         .user_inquaryAfter_content_inner_phone_enter_text,
@@ -396,6 +415,7 @@ body {
             border-radius: 0.25rem;
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
+
         .user_inquaryAfter_contet_inner_confirmation {
             border-top: 1px solid #fff;
             border-bottom: none;
@@ -406,27 +426,33 @@ body {
             width: 100%;
             height: 70px;
         }
+
         .user_inquaryAfter_contet_inner_confirmation_check {
             line-height: 1.5;
             font-size: 14px;
         }
+
         .PRIVACY {
             color: #000;
             text-decoration: none;
         }
+
         .user_inquaryAfter_contet_inner_confirmation_check {
             margin: 0;
         }
+
         .user_inquaryAfter_content_inner_submit {
             list-style-type: none;
             font-weight: inherit;
             width: 100%;
             margin: 0;
         }
+
         .user_inquaryAfter_content_inner_submit:hover {
             background-color: white;
             margin: 0;
         }
+
         .user_inquaryAfter_content_inner_submit_button {
             display: inline-flex;
             align-items: center;
@@ -448,6 +474,7 @@ body {
             appearance: none;
             padding: 0;
         }
+
         /*ここからモーダル*/
     }
 }
