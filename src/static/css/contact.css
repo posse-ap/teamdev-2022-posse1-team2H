@@ -176,8 +176,8 @@ body {
     .user_inquary_content_inner_undergraduate_enter_text,
     .user_inquary_content_inner_schoolyear_enter_text,
     .user_inquary_content_inner_gender_enter_text,
-    .user_inquary_content_inner_addressnumber_enter_text1,
-    .user_inquary_content_inner_addressnumber_enter_text2,
+    .user_inquary_content_inner_addressNumber_enter_text1,
+    .user_inquary_content_inner_addressNumber_enter_text2,
     .user_inquary_content_inner_address_enter_text,
     .user_inquary_content_inner_message_enter_text {
         display: block;
