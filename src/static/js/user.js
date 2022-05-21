@@ -118,15 +118,6 @@ window.onload = () => {
     changeStarsColor();
 };
 
-// function checkfunction() {
-//     var user_inquary_content_inner_confirmation_inner_checkBox = document.getElementById("user_inquary_content_inner_confirmation_inner_checkBox");
-//     var user_inquary_content_inner_submit = document.getElementById("user_inquary_content_inner_submit");
-//     if (user_inquary_content_inner_confirmation_inner_checkBox.checked === false) {
-//         user_inquary_content_inner_submit.target.style.pointerEvents = "none"
-//     };
-
-// };
-
 const allowTransition = () => {
     let checkedCheckbox = document.getElementById('user_inquary_content_inner_confirmation_inner_checkBox');
     let link = document.getElementById('user_inquary_content_inner_submit_button');
