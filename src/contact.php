@@ -25,23 +25,23 @@ include dirname(__FILE__) . "/header.php";
 
     <div class="user_inquary_content_innerframe">
       <form class="user_inquary_content_inner">
-        <dl class="user_inquary_content_inner_name">
+        <dl class="user_inquary_content_inner_box">
 
-          <dt class="user_inquary_content_inner_name_title">お名前 ※
+          <dt class="user_inquary_content_inner_title">お名前 ※
           </dt>
           <dd class="user_inquary_contet_inner_name_enter">
-            <span class="user_inquary_content_inner_name_enter_box">
-              <input type="text" value size="40 " class="user_inquary_content_inner_name_enter_text">
+            <span class="user_inquary_content_inner_enter_box">
+              <input type="text" value size="40 " class="user_inquary_content_inner_enter_text">
             </span>
           </dd>
 
         </dl>
-        <dl class="user_inquary_content_inner_age">
-          <dt class="user_inquary_content_inner_age_title">年齢 ※
+        <dl class="user_inquary_content_inner_box">
+          <dt class="user_inquary_content_inner_title">年齢 ※
           </dt>
           <dd class="user_inquary_contet_inner_age_enter">
-            <span class="user_inquary_content_inner_age_enter_box">
-              <select name="user_inquary_content_inner_age_enter_text" id="user_inquary_content_inner_age_enter_text" class="user_inquary_content_inner_age_enter_text" aria-invalid="false">
+            <span class="user_inquary_content_inner_enter_box">
+              <select name="user_inquary_content_inner_age_enter_text" id="user_inquary_content_inner_age_enter_text" class="user_inquary_content_inner_enter_text" aria-invalid="false">
                 <option value="年齢">年齢</option>
                 <option value="18歳">18歳</option>
                 <option value="19歳">19歳</option>
@@ -54,61 +54,61 @@ include dirname(__FILE__) . "/header.php";
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_mail">
+        <dl class="user_inquary_content_inner_box">
 
-          <dt class="user_inquary_content_inner_mail_title">Email ※
+          <dt class="user_inquary_content_inner_title">Email ※
           </dt>
           <dd class="user_inquary_contet_inner_mail_enter">
-            <span class="user_inquary_content_inner_mail_enter_box">
-              <input type="text" value size="40 " class="user_inquary_content_inner_mail_enter_text" aria-required="true" aria-invalid="false" placeholder="※半角数字">
+            <span class="user_inquary_content_inner_enter_box">
+              <input type="text" value size="40 " class="user_inquary_content_inner_enter_text" aria-required="true" aria-invalid="false" placeholder="※半角数字">
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_phone">
+        <dl class="user_inquary_content_inner_box">
 
-          <dt class="user_inquary_content_inner_phone_title">電話番号 ※
+          <dt class="user_inquary_content_inner_title">電話番号 ※
           </dt>
-          <dd class="user_inquary_contet_inner_phone_enter">
+          <dd class="user_inquary_contet_inner_enter">
             <span class="user_inquary_content_inner_phopne_enter_box">
-              <input type="text" value size="40" class="user_inquary_content_inner_phone_enter_text" aria-required="true" aria-invalid="false" placeholder="※半角数字 (ハイフンなし)">
+              <input type="text" value size="40" class="user_inquary_content_inner_enter_text" aria-required="true" aria-invalid="false" placeholder="※半角数字 (ハイフンなし)">
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_college">
+        <dl class="user_inquary_content_inner_box">
 
-          <dt class="user_inquary_content_inner_college_title">大学名 ※
+          <dt class="user_inquary_content_inner_title">大学名 ※
           </dt>
           <dd class="user_inquary_contet_inner_college_enter">
-            <span class="user_inquary_content_inner_college_enter_box">
-              <input type="text" value size="40" class="user_inquary_content_inner_college_enter_text">
+            <span class="user_inquary_content_inner_enter_box">
+              <input type="text" value size="40" class="user_inquary_content_inner_enter_text">
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_undergraduate">
-          <dt class="user_inquary_content_inner_undergraduate_title">学部 ※
+        <dl class="user_inquary_content_inner_box">
+          <dt class="user_inquary_content_inner_title">学部 ※
           </dt>
           <dd class="user_inquary_contet_inner_undergraduate_enter">
-            <span class="user_inquary_content_inner_undergraduate_enter_box">
-              <input type="text" value size="40" class="user_inquary_content_inner_undergraduate_enter_text">
+            <span class="user_inquary_content_inner_enter_box">
+              <input type="text" value size="40" class="user_inquary_content_inner_enter_text">
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_faculty">
+        <dl class="user_inquary_content_inner_box">
 
-          <dt class="user_inquary_content_inner_faculty_title">学科 ※
+          <dt class="user_inquary_content_inner_title">学科 ※
           </dt>
           <dd class="user_inquary_contet_inner_faculty_enter">
-            <span class="user_inquary_content_inner_faculty_enter_box">
-              <input type="text" value size="40" class="user_inquary_content_inner_faculty_enter_text">
+            <span class="user_inquary_content_inner_enter_box">
+              <input type="text" value size="40" class="user_inquary_content_inner_enter_text">
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_schoolyear">
-          <dt class="user_inquary_content_inner_schoolyear_title">学年 ※
+        <dl class="user_inquary_content_inner_box">
+          <dt class="user_inquary_content_inner_title">学年 ※
           </dt>
           <dd class="user_inquary_contet_inner_schoolyear_enter">
-            <span class="user_inquary_content_inner_schoolyear_enter_box">
-              <select name="user_inquary_content_inner_schoolyear_enter_text" id="user_inquary_content_inner_schoolyear_enter_text" class="user_inquary_content_inner_schoolyear_enter_text" aria-invalid="false">
+            <span class="user_inquary_content_inner_enter_box">
+              <select name="user_inquary_content_inner_schoolyear_enter_text" id="user_inquary_content_inner_schoolyear_enter_text" class="user_inquary_content_inner_enter_text" aria-invalid="false">
                 <option value="何回生">学年</option>
                 <option value="1年生">1年生</option>
                 <option value="2年生">2年生</option>
@@ -121,13 +121,13 @@ include dirname(__FILE__) . "/header.php";
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_graduation">
+        <dl class="user_inquary_content_inner_box">
 
-          <dt class="user_inquary_content_inner_graduation_title">卒業予定年 ※
+          <dt class="user_inquary_content_inner_title">卒業予定年 ※
           </dt>
           <dd class="user_inquary_contet_inner_graduation_enter">
-            <span class="user_inquary_content_inner_mail_enter_box">
-              <select name="user_inquary_content_inner_mail_enter_text" id="user_inquary_content_inner_mail_enter_text" class="user_inquary_content_inner_mail_enter_text" aria-invalid="false">
+            <span class="user_inquary_content_inner_enter_box">
+              <select name="user_inquary_content_inner_mail_enter_text" id="user_inquary_content_inner_mail_enter_text" class="user_inquary_content_inner_enter_text" aria-invalid="false">
                 <option value="卒業予定年">卒業予定年</option>
                 <option value="2023年度">2023年度</option>
                 <option value="2024年度">2024年度</option>
@@ -138,12 +138,12 @@ include dirname(__FILE__) . "/header.php";
             </span>
           </dd>
         </dl>
-          <dl class="user_inquary_content_inner_gender">
-          <dt class="user_inquary_content_inner_gender_title">性別 ※
+          <dl class="user_inquary_content_inner_box">
+          <dt class="user_inquary_content_inner_title">性別 ※
           </dt>
           <dd class="user_inquary_contet_inner_gender_enter">
-            <span class="user_inquary_content_inner_gender_enter_box">
-              <select name="user_inquary_content_inner_gender_enter_text" id="user_inquary_content_inner_gender_enter_text" class="user_inquary_content_inner_gender_enter_text" aria-invalid="false">
+            <span class="user_inquary_content_inner_enter_box">
+              <select name="user_inquary_content_inner_gender_enter_text" id="user_inquary_content_inner_gender_enter_text" class="user_inquary_content_inner_enter_text" aria-invalid="false">
                 <option value="性別">性別</option>
                 <option value="男">男</option>
                 <option value="女">女</option>
@@ -155,40 +155,29 @@ include dirname(__FILE__) . "/header.php";
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_addressnumber">
-          <dt class="user_inquary_content_inner_addressnumber_title">郵便番号 ※
+        <dl class="user_inquary_content_inner_box">
+          <dt class="user_inquary_content_inner_title">郵便番号 ※
           </dt>
           <dd class="user_inquary_contet_inner_addressnumber_enter">
-            <span class="user_inquary_content_inner_addressnumber_enter_box1">
-              <input type="text" value size="10" class="user_inquary_content_inner_addressnumber_enter_text1">
+            <span class="user_inquary_content_inner_enter_box">
+              <input type="text" value size="10" class="user_inquary_content_inner_enter_text">
             </span>
             <span>-</span>
-            <span class="user_inquary_content_inner_addressnumber_enter_box2">
-              <input type="text" value size="25" class="user_inquary_content_inner_addressnumber_enter_text2">
+            <span class="user_inquary_content_inner_enter_box">
+              <input type="text" value size="25" class="user_inquary_content_inner_enter_text">
             </span>
           </dd>
         </dl>
-        <dl class="user_inquary_content_inner_address">
-          <dt class="user_inquary_content_inner_address_title">住所 ※
+        <dl class="user_inquary_content_inner_box">
+          <dt class="user_inquary_content_inner_title">住所 ※
           </dt>
           <dd class="user_inquary_contet_inner_address_enter">
-            <span class="user_inquary_content_inner_address_enter_box">
-              <input type="text" value size="40" class="user_inquary_content_inner_address_enter_text">
+            <span class="user_inquary_content_inner_enter_box">
+              <input type="text" value size="40" class="user_inquary_content_inner_enter_text">
             </span>
           </dd>
         </dl>
-        <!-- <dl class="user_inquary_content_inner_message">
-
-          <dt class="user_inquary_content_inner_message_title">メッセージ
-          </dt>
-          <dd class="user_inquary_contet_inner_message_enter">
-            <span class="user_inquary_content_inner_message_enter_box">
-              <textarea name="user_inquary_content_inner_message_enter_text" id="user_inquary_content_inner_message_enter_text" class="user_inquary_content_inner_message_enter_text" cols="40" rows="10" aria-invalid="false" placeholder="お問い合わせの内容をご記入ください。"></textarea>
-
-            </span>
-          </dd>
-        </dl> -->
-
+     
 
         <dl class="user_inquary_contet_inner_confirmation">
           <dd class="user_inquary_contet_inner_confirmation_check">
