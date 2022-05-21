@@ -122,6 +122,7 @@ include dirname(__FILE__) . "/header.php";
           </dt>
           <dd class="user_inquary_contet_inner_addressnumber_enter">
             <input type="text" value size="10" class="user_inquary_content_inner_addressnumber_enter_text1">
+            <div class="hyphen">-</div>
             <input type="text" value size="25" class="user_inquary_content_inner_addressnumber_enter_text2">
           </dd>
         </dl>
