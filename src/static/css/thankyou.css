@@ -1,0 +1,43 @@
+    body,
+    html {
+        font-family: AvantGardeGothicITCW01Md;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .user_thankyou {
+        width: 100%;
+        height: 90%;
+    }
+    
+    .user_thankyou_inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 80%;
+    }
+    
+    .user_thankyou_inner_box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .user_thankyou_inner_text {
+        font-size: 300%;
+        font-weight: 700;
+    }
+    
+    .user_thankyou_inner_top {
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: white;
+        background-color: rgb(0, 135, 230);
+        transition: .4s;
+    }
