@@ -2,14 +2,14 @@ const prefix = "http://localhost/modules/api";
 
 const userPrefix = `${prefix}/user`;
 // TOPページのagency呼び出し
-const getAgenciesForFirstView = async() => {
+const getAgenciesForFirstView = async () => {
     // TODO ローディング表示
     await axios(`${userPrefix}/firstView.php`).then((res) => {
         console.log(res.data);
     });
 };
 
-const handleSearch = async() => {
+const handleSearch = async () => {
     let industries = [];
     let types = [];
     const industriesTarget = document.getElementsByName("industries");
@@ -24,7 +24,7 @@ const handleSearch = async() => {
     console.log(data);
 };
 
-const searchAgencies = async(types, industries) => {
+const searchAgencies = async (types, industries) => {
     types = types.length === 0 ? null : types.join();
     industries = industries.length === 0 ? null : industries.join();
     const params = {
@@ -41,7 +41,7 @@ const searchAgencies = async(types, industries) => {
     };
 };
 
-const getFavs = async() => {
+const getFavs = async () => {
     const agencyIds = sessionStorage.getItem("ids");
     const params = {
         agency_ids: agencyIds,
@@ -126,3 +126,13 @@ window.onload = () => {
 //     };
 
 // };
+
+const allowTransition = () => {
+    let checkedCheckbox = document.getElementById('user_inquary_content_inner_confirmation_inner_checkBox');
+    let link = document.getElementById('user_inquary_content_inner_submit_button');
+    if (checkedCheckbox.checked) {
+        link.style.pointerEvents = 'auto';
+    } else {
+        link.style.pointerEvents = 'none';
+    }
+}
