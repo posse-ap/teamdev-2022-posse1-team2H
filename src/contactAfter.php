@@ -1,4 +1,3 @@
-一応 お問合せfo-mu
 <?php
 
 require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
