@@ -154,3 +154,11 @@ dl input, dl select {
     appearance: none;
     padding: 0;
 }
+
+.user_inquary_contet_inner_addressnumber_enter{
+    display: flex;
+}
+
+.hyphen{
+    margin-top: 8px;
+}
