@@ -244,6 +244,7 @@ body {
         transition: all 0.3s ease;
         appearance: none;
         padding: 0;
+        pointer-events: none;
     }
     @media screen and (max-width: 480px) {
         .user_inquary_content {
@@ -434,6 +435,7 @@ body {
             transition: all 0.3s ease;
             appearance: none;
             padding: 0;
+            pointer-events: none;
         }
         /*ここからモーダル*/
     }
