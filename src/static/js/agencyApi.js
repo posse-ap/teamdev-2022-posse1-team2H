@@ -92,14 +92,9 @@ const deleteManager = async (id) => {
   return res;
 };
 
-//削除ボタン
-function clickEvent() {
-  alert('削除します。本当によろしいですか？');
-};
-
 // モーダル
 ;(function(__w,__d){
-  var $$event = function(e, m, f){
+  let $$event = (e, m, f) => {
     if (typeof e.addEventListener !== "undefined"){
       e.addEventListener(m, f, false);
     }
@@ -107,11 +102,11 @@ function clickEvent() {
       e.attachEvent('on' + m, function(){f.call(e , __w.event)});
     }
   };
-  var $$error = function(m){
+  let $$error = (m) => {
     console.log("[Modal] Error : "+m);
   };
 
-  var $$ = function(){
+  let $$ = () => {
     // start
     if(__d.readyState === "complete"){
       this.start();
@@ -124,14 +119,14 @@ function clickEvent() {
     }
   };
 
-  $$.prototype.start = function(){
+  $$.prototype.start = () => {
     var switches = __d.querySelectorAll(".modal-switch");
-    for(var i=0; i<switches.length; i++){
+    for(let i=0; i<switches.length; i++){
       $$event(switches[i] , "click" , (function(e){this.click_modalSwitch(e)}).bind(this));
     }
   };
 
-  $$.prototype.click_modalSwitch = function(e){
+  $$.prototype.click_modalSwitch = (e) => {
     if(!e || !e.currentTarget){
       $$error("Not event");
       return;
@@ -151,12 +146,12 @@ function clickEvent() {
     return false;
   };
 
-  $$.prototype.toggle_modalSwitch = function(element){
+  $$.prototype.toggle_modalSwitch = (element) => {
     if(!element){
       $$error("Not switch-element");
       return;
     }
-    var currentValue = element.getAttribute("data-view");
+    let currentValue = element.getAttribute("data-view");
     if(!currentValue){
       $$event(element , "click" , (function(e){this.toggle_modalSwitch(e.currentTarget)}).bind(this));
     }
