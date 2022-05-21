@@ -138,7 +138,7 @@ include dirname(__FILE__) . "/header.php";
             </span>
           </dd>
         </dl>
-          <dl class="user_inquary_content_inner_gender">
+        <dl class="user_inquary_content_inner_gender">
           <dt class="user_inquary_content_inner_gender_title">性別 ※
           </dt>
           <dd class="user_inquary_contet_inner_gender_enter">
@@ -147,7 +147,7 @@ include dirname(__FILE__) . "/header.php";
                 <option value="性別">性別</option>
                 <option value="男">男</option>
                 <option value="女">女</option>
-              
+
                 <option value="その他">その他</option>
 
               </select>
@@ -193,16 +193,16 @@ include dirname(__FILE__) . "/header.php";
         <dl class="user_inquary_contet_inner_confirmation">
           <dd class="user_inquary_contet_inner_confirmation_check">
             <span user_inquary_content_inner_confirmaiton_inner_check_box>
-              <input type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="プライバシーポリシーに同意します">
+              <input onclick="allowTransition()" type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="プライバシーポリシーに同意します">
               <span class="user_inquary_content_inner_confirmation_inner_label">
                 プライバシーポリシーに同意します
               </span>
             </span>
           </dd>
-    
+
         </dl>
         <p class="user_inquary_content_inner_submit" id="user_inquary_content_inner_submit">
-          <a href="https://spectron.tech/jp/" class="user_inquary_content_inner_submit_button">確認画面へ</a>
+          <a href="https://spectron.tech/jp/" id="user_inquary_content_inner_submit_button" class="user_inquary_content_inner_submit_button">確認画面へ</a>
         </p>
       </form>
     </div>
