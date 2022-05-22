@@ -112,12 +112,13 @@ include dirname(__FILE__) . "/header.php";
                     <input type="text" value size="40" class="user_inquary_content_inner_address_enter_text">
                 </dl>
 
-                <dl class="user_inquary_contet_inner_confirmation">
-                    <input type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="プライバシーポリシーに同意します">
+                <!-- <dl class="user_inquary_contet_inner_confirmation">
+                    <input onclick="allowTransition();" type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="プライバシーポリシーに同意します">
                     プライバシーポリシーに同意します
-                </dl>
+                </dl> -->
+                <input onclick="allowTransition()" type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="プライバシーポリシーに同意します">
                 <p class="user_inquary_content_inner_submit" id="user_inquary_content_inner_submit">
-                    <a href="https://spectron.tech/jp/" class="user_inquary_content_inner_submit_button">確認画面へ</a>
+                    <a href="https://spectron.tech/jp/" id="user_inquary_content_inner_submit_button" class="user_inquary_content_inner_submit_button">確認画面へ</a>
                 </p>
             </form>
         </div>
