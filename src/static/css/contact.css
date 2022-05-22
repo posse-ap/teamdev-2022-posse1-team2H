@@ -1,4 +1,4 @@
-html,body {
+html, body {
     width: 100%;
     height: 100%;
     background-color: #e6e6e6;
@@ -57,7 +57,7 @@ html,body {
     background-color: #e6e6e6;
 }
 
-form dl {
+.user_inquary_content_inner dl {
     border-top: 1px solid #fff;
     border-bottom: none;
     font-family: montserrat, sans-serif;
@@ -75,7 +75,7 @@ form dl {
 }
 
 
-form dt{
+.user_inquary_content_inner dt {
     line-height: 1.5;
     font-size: 20px;
     text-align: left;
@@ -101,20 +101,14 @@ dl input, dl select {
     border-top: 1px solid #fff;
     border-bottom: none;
     font-family: montserrat, sans-serif;
-    display: flex;
     /* justify-content: space-around; */
     align-items: center;
     width: 100%;
     height: 70px;
 }
 
-.user_inquary_contet_inner_confirmation_check {
-    line-height: 1.5;
-    font-size: 14px;
-}
-
-.user_inquary_contet_inner_confirmation_check {
-    margin: 0;
+dl.user_inquary_contet_inner_confirmation{
+    display: block;
 }
 
 .user_inquary_content_inner_submit {
@@ -153,14 +147,34 @@ dl input, dl select {
     pointer-events: none;
 }
 
-.user_inquary_contet_inner_addressnumber_enter{
+.user_inquary_contet_inner_addressnumber_enter {
     display: flex;
 }
 
-.hyphen{
+.hyphen {
     margin-top: 8px;
 }
 
-.user_inquary_content_inner_confirmation_inner_checkBox{
+.user_inquary_content_inner_confirmation_inner_checkBox {
     display: inline;
+}
+
+@media(max-width:640px) {
+
+    .user_inquary_header_title{
+        font-size: 16px;
+    }
+
+    dl input, dl select {
+
+        width: 80%;
+    }
+    .user_inquary_content_inner dt {
+        font-size: 15px;
+        width: 30%;
+    }
+
+    .user_inquary_content_inner_confirmation_inner_checkBox{
+        width: 5%;
+    }
 }

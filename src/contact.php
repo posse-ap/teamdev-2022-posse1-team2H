@@ -109,7 +109,7 @@ include dirname(__FILE__) . "/header.php";
                 </dl>
 
                 <dl class="user_inquary_contet_inner_confirmation">
-                    <input onclick="allowTransition();" type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="プライバシーポリシーに同意します" name="">
+                    <input onclick="allowTransition();" type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="" name="">
                     プライバシーポリシーに同意します
                 </dl>
                 <p class="user_inquary_content_inner_submit" id="user_inquary_content_inner_submit">
