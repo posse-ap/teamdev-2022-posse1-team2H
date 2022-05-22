@@ -98,7 +98,7 @@ include dirname(__FILE__) . "/header.php";
                         <h2 onclick="appearSidebar()">検索</h2>
                         <div id="serach_content" class="serach_content">
                             <div id="business_type_wrapper" class="business_type_wrapper">
-                                <p onclick="appearIndustryTypes()"><i class="fa-solid fa-building"></i>業種</p>
+                                <h3 onclick="appearIndustryTypes()"><i class="fa-solid fa-building"> 業種</i></h3>
                                 <div id="business_type_items" class="business_type_inner">
                                     <?php foreach ($industries as $industry) : ?>
                                         <label>
@@ -108,7 +108,7 @@ include dirname(__FILE__) . "/header.php";
                                 </div>
                             </div>
                             <div class="business_features_wrapper">
-                                <p onclick="appearTypes()"><i class="fa-solid fa-glasses"></i>特徴</p>
+                                <h3 onclick="appearTypes()"><i class="fa-solid fa-glasses"></i> 特徴</h3>
                                 <div id="business_features" class="business_type_inner">
                                     <?php foreach ($types as $type) : ?>
                                         <label>
@@ -125,17 +125,26 @@ include dirname(__FILE__) . "/header.php";
     </div>
 
 </main>
+<div id="overlay" class="overlay"></div>
+<div class="bar_for_responsive">
+    <div class="bar_for_responsive_inner">
+        <a href="" class="back_to_top"><i id="home_icon" class="fa-solid fa-square-caret-up"></i> ホーム</a>
+        <a href="./seeLater.php" class="back_to_top"><i id="blue_star" class="fa-solid fa-star"></i> 後で見るリストに追加</a>
+        <div class="appearing_serach_area" onclick="dispalying_serach_area()"><i id="serach_icon" class="fa-solid fa-magnifying-glass"></i> 検索</div>
+    </div>
+</div>
+
 <div id="modal" class="modal">
     <div onclick="closingBtn()" id="close_btn" class="close_btn"></div>
-    
+
     <div id="modal_inner" class="modal_inner">
         <form name="searchForm" method="" action="" onsubmit="return false">
             <div class="modal_content">
-                <h2>検索</h2>
+                <h2><i id="serach_icon_modal" class="fa-solid fa-magnifying-glass">検索</i></h2>
                 <div class="modal_main_content">
-                    <div>
-                        <p><i class="fa-solid fa-building"></i>業種</p>
-                        <div class="business_type_items_modal">
+                    <div class="business_type_items_modal">
+                        <p class="business_type_title_modal"><i id="business_type_icon" class="fa-solid fa-building"></i> 業種</p>
+                        <div class="business_type_inner_modal">
                             <?php foreach ($industries as $industry) : ?>
                                 <label>
                                     <input class="business_type_tag" type="checkbox" name="industries" value="<?= $industry['id'] ?>" onclick="handleSearch()"><?= $industry['industry'] ?>
@@ -143,9 +152,9 @@ include dirname(__FILE__) . "/header.php";
                             <?php endforeach ?>
                         </div>
                     </div>
-                    <div>
-                        <p ><i class="fa-solid fa-glasses"></i>特徴</p>
-                        <div class="business_features_modal">
+                    <div class="business_features_modal">
+                        <p class="business_feature_title_modal"><i id="business_feature_icon" class="fa-solid fa-glasses"></i> 特徴</p>
+                        <div class="business_type_inner_modal">
                             <?php foreach ($types as $type) : ?>
                                 <label>
                                     <input class="business_type_tag" type="checkbox" name="types" value="<?= $type['id'] ?>" onclick="handleSearch()"><?= $type['agency_type'] ?>
@@ -159,12 +168,5 @@ include dirname(__FILE__) . "/header.php";
 
     </div>
 </div>
-<div id="overlay" class="overlay"></div>
-<div class="bar_for_responsive">
-    <div class="bar_for_responsive_inner">
-        <a href="./index.php" class="back_to_top">ホーム</a>
-        <a href="./seeLater.php" class="back_to_top">後で見るリストに追加</a>
-        <div class="appearing_serach_area" onclick="dispalying_serach_area()">検索</div>
-    </div>
-</div>
+
 <?php include dirname(__FILE__) . '/footer.php' ?>

@@ -43,10 +43,8 @@ header {
 
 /* コンテンツ全体 */
 .content {
-  width: 95%;
-  /* border: solid 1px; */
+  width: 88%;
   display: flex;
-  /* justify-content: end; */
   gap: 95px;
   margin: 0px auto;
 }
@@ -179,8 +177,9 @@ header {
 }
 
 .agency_name {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: bold;
+  border-bottom: 2px solid #00DD00;
 }
 
 /* .agency_name::after {
@@ -208,15 +207,6 @@ header {
   cursor: pointer;
 }
 
-/* .star_after {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  margin-right: 3px;
-  font-size: 19px;
-  color: #9e9e9e;
-  cursor: pointer;
-} */
-
 /* ここからサイドバー */
 
 /* サイドバー 全体*/
@@ -233,7 +223,7 @@ header {
   top: 10px;
   margin-top: 15px;
   margin-top: 84px;
-  /* background-color: #26A69A; */
+  background-color: #26A69A;
 }
 
 /* お気に入り&検索 */
@@ -261,6 +251,7 @@ header {
   gap: 10px 20px;
   justify-content: center;
   height: 200px;
+  font-size: 18px;
 }
 
 /* 各業種タグ */
@@ -284,10 +275,11 @@ header {
 .sidebar_search h2,
 .sidebar_favorite h2 {
   margin: 0;
+  font-size: 30px;
 }
 
 .sidebar_favorite h2 {
-  box-shadow: 0 3px 5px black;
+  box-shadow: 0 2px 5px black;
 }
 
 .sidebar_favorite h2:hover {
@@ -296,13 +288,13 @@ header {
   transition-duration: 0.3s;
 }
 
-.business_type_wrapper p,
-.business_features_wrapper p {
+.business_type_wrapper h3,
+.business_features_wrapper h3 {
   margin: 0;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   height: 50px;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .toggle_star {
@@ -311,10 +303,6 @@ header {
 
 .gray_star {
   color: #9e9e9e;
-}
-
-.blue_star {
-  color: #0099ff;
 }
 
 .showing_blue_star {
@@ -342,6 +330,11 @@ header {
 }
 
 @media(max-width:640px) {
+
+  .content{
+    width: 95%;
+  }
+
   .sidebar_wrapper {
     display: none;
   }
@@ -362,6 +355,10 @@ header {
     display: flex;
     justify-content: space-around;
     font-size: 25px;
+    color: #ffff;
+    font-weight: bold;
+    height: 46px;
+    align-items: end;
   }
 
   .overlay {
@@ -386,19 +383,21 @@ header {
     transform: translate(-50%, -50%);
   }
 
-  .modal_content h2{
+  .modal_content h2 {
     text-align: center;
     font-size: 28px;
   }
 
-  .modal_inner{
+  .modal_inner {
     margin-top: 13%;
   }
 
-  .modal_main_content{
+  .modal_main_content {
     font-size: 20px;
+    font-weight: bold;
   }
-  .modal_main_content p{
+
+  .modal_main_content p {
     margin-left: 19px;
   }
 
@@ -435,11 +434,63 @@ header {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 
-  .business_type_items_modal,.business_features_modal {
+  .business_type_inner_modal {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
+  }
+
+  .business_features_modal {
+    margin-top: 13%;
+  }
+
+  .bar_for_responsive_inner a:link {
+    text-decoration: none;
+  }
+
+  .bar_for_responsive_inner a:visited {
+    color: #ffff;
+  }
+
+  #blue_star, #home_icon, #serach_icon {
+    color: #DCDCDC;
+  }
+
+  #blue_star:hover {
+    color: #C2EEFF;
+  }
+
+  #home_icon:hover {
+    color: #ffff;
+  }
+
+  #serach_icon:hover {
+    color: #ffff;
+  }
+
+  #business_type_icon {
+    color: #0000FF;
+  }
+
+  #business_feature_icon {
+    color: #00CC00;
+  }
+
+  .business_type_title_modal {
+    width: 20%;
+    margin-left: 19px;
+    border-bottom: 1px solid #0000FF;
+  }
+
+  .business_feature_title_modal {
+    width: 20%;
+    margin-left: 19px;
+    border-bottom: 1px solid #00CC00;
+  }
+
+  .serach_icon_modal {
+    color: gray;
   }
 
 }
