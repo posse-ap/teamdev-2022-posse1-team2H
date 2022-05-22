@@ -222,7 +222,7 @@ header {
 /* サイドバー 全体*/
 .sidebar_wrapper {
   /* border: solid 1px; */
-  width: 25%;
+  width: 20%;
   /* background-color: #339999; */
   /* background: linear-gradient(to bottom, #339999, transparent); */
 }
@@ -232,6 +232,8 @@ header {
   position: sticky;
   top: 10px;
   margin-top: 15px;
+  margin-top: 84px;
+  /* background-color: #26A69A; */
 }
 
 /* お気に入り&検索 */
@@ -258,6 +260,7 @@ header {
   flex-wrap: wrap;
   gap: 10px 20px;
   justify-content: center;
+  height: 200px;
 }
 
 /* 各業種タグ */
@@ -276,7 +279,6 @@ header {
   display: none;
   border: none;
   outline: none;
-  /* border-bottom: 1px solid black; */
 }
 
 .sidebar_search h2,
@@ -299,6 +301,8 @@ header {
   margin: 0;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  height: 50px;
+  font-size: 18px;
 }
 
 .toggle_star {
