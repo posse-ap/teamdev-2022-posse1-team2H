@@ -6,17 +6,27 @@
             font-family: AvantGardeGothicITCW01Md;
         }
 
-        a:link {
+        .content_detail_catchcopy_subtitle a:link {
             text-decoration: none;
             color: black;
-
         }
-
-        a:visited {
+        .content_detail_agency_img a:link {
+            text-decoration: none;
             color: black;
         }
 
-        a:hover {
+        .content_detail_catchcopy_subtitle a:visited {
+            color: black;
+        }
+
+        .content_detail_agency_img:visited {
+            color: black;
+        }
+
+        .content_detail_catchcopy_subtitle a:hover {
+            color: red;
+        }
+        .content_detail_agency_img a:hover {
             color: red;
         }
 

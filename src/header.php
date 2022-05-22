@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./static/css/thankyou.css">
     <link rel="stylesheet" href="./static/css/userDetail.css">
     <!-- <script src="./static/js/user.js"></script> -->
+    <link rel="stylesheet" href="./static/css/seeLater.css">
 
     <title>TOP画面</title>
 </head>
