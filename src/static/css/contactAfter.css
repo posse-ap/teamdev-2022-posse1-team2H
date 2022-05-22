@@ -59,7 +59,7 @@ body {
     background-color: #e6e6e6;
 }
 
-form dl {
+.user_inquaryAfter_content_inner dl {
     border-top: 1px solid #fff;
     border-bottom: none;
     font-family: montserrat, sans-serif;
@@ -68,8 +68,6 @@ form dl {
     display: flex;
     align-items: center;
     margin: 0;
-    height: 100px;
-
 }
 
 .user_inquaryAfter_content_inner_message {
@@ -77,7 +75,7 @@ form dl {
 }
 
 
-form dt {
+.user_inquaryAfter_content_inner dt {
     font-size: 20px;
     width: 50%;
 }
@@ -97,6 +95,7 @@ form dt {
     line-height: 1.5;
     font-size: 14px;
 }
+
 
 .user_inquaryAfter_contet_inner_confirmation_check {
     margin: 0;
@@ -138,7 +137,7 @@ form dt {
 }
 
 @media(max-width:640px) {
-    form dt {
+    .user_inquaryAfter_content_inner dt {
         width: 50%;
         font-size: 16px;
     }
