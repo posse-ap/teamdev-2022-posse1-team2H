@@ -93,8 +93,6 @@ include dirname(__FILE__) . "/header.php";
                         <option value="">性別</option>
                         <option value="0">男</option>
                         <option value="1">女</option>
-
-                        <option value="その他">その他</option>
                     </select>
                 </dl>
                 <dl class="user_inquary_content_inner_addressnumber">
