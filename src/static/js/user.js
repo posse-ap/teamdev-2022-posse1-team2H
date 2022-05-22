@@ -134,3 +134,8 @@ const allowTransition = () => {
     }
 }
 
+const dispalying_serach_area = () => {
+    let overlay = document.getElementById('overlay');
+    overlay.classList.toggle('displaying_modal');
+    console.log('kamo');
+}

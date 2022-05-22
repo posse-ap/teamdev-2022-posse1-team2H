@@ -125,4 +125,13 @@ include dirname(__FILE__) . "/header.php";
     </div>
 
 </main>
+<div id="modal" class="modal"></div>
+<div id="overlay" class="overlay">kamo</div>
+<div class="bar_for_responsive">
+    <div class="bar_for_responsive_inner">
+        <a href="#user_top" class="back_to_top">ホーム</a>
+        <a href="./seeLater.php" class="back_to_top">後で見るリストに追加</a>
+        <div class="appearing_serach_area" onclick="dispalying_serach_area()">検索</div>
+    </div>
+</div>
 <?php include dirname(__FILE__) . '/footer.php' ?>

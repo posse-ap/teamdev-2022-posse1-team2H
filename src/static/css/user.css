@@ -324,3 +324,48 @@ header {
 .showing {
   display: block;
 }
+
+.bar_for_responsive{
+display: none;
+}
+
+.overlay{
+  display: none;
+}
+
+.displaying_modal{
+  display: block;
+}
+
+@media(max-width:640px){
+  .sidebar_wrapper{
+    display: none;
+  }
+
+  .agency_list{
+    width: 100%;
+  }
+
+  .bar_for_responsive{
+    display: block;
+    background-color: red;
+    position: sticky;
+    bottom: 0px;
+  }
+
+  .bar_for_responsive_inner{
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+  }
+
+  .overlay{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(68, 68, 68, 0.8);
+  }
+}
