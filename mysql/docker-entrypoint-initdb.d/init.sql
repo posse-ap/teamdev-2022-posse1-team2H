@@ -294,7 +294,7 @@ DROP TABLE IF EXISTS contracts;
 CREATE TABLE contracts ( -- 契約情報のテーブル v
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, -- 契約id
   agency_id INT NOT NULL, -- エージェンシーid 外部キー成約
-  contract_year_month INT NOT NUll, -- 契約年月 ex) 2022-3
+  contract_year_month DATE NOT NUll, -- 契約年月 ex) 2022-3-1 契約年月初めの日が入る
   claim_year_month DATE NOT NULL, -- 支払い期日 ex) 2022-4-30
   request_amounts INT NOT NULL, -- 請求金額
   student_unit_price INT NOT NULl, -- 学生単価
