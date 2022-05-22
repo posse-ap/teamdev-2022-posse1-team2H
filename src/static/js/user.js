@@ -114,6 +114,16 @@ const toggleColor = (agencyId) => {
   target.classList.toggle("toggle_star");
 };
 
+const handleSaveFav = (agencyId) => {
+    const favs = readFav()
+    if (!favs.includes(agencyId)) {
+        saveFav(agencyId)
+        alert("「後で見る」に保存しました")
+    } else {
+        alert("すでに「後で見る」に存在しています")
+    }
+}
+
 const saveFav = (agencyId) => {
   let agencyIds = readFav();
   if (agencyIds === undefined) {
@@ -144,24 +154,6 @@ const changeStarsColor = () => {
   const ids = readFav();
   for (let i = 0; i < ids.length; i++) {
     toggleColor(ids[i]);
-  }
-};
-
-window.onload = () => {
-  let userTop = document.getElementById("user_top");
-  if (userTop) userTop.onload = getAgenciesForFirstView();
-  getFavs();
-  changeStarsColor();
-  let checkedCheckbox = document.getElementById(
-    "user_inquary_content_inner_confirmation_inner_checkBox"
-  );
-  let link = document.getElementById(
-    "user_inquary_content_inner_submit_button"
-  );
-  if (checkedCheckbox.checked) {
-    link.style.pointerEvents = "auto";
-  } else {
-    link.style.pointerEvents = "none";
   }
 };
 
@@ -199,3 +191,9 @@ const closingBtn = () => {
     modal.style.display = "none";
     html.style.overflow = "auto";
 }
+window.onload = () => {
+    let userTop = document.getElementById("user_top");
+    if (userTop) userTop.onload = getAgenciesForFirstView();
+    getFavs();
+    changeStarsColor();
+  };

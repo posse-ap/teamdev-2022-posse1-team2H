@@ -107,12 +107,12 @@ include dirname(__FILE__) . '/header.php';
                         <div class="content_detail_subcontent_right_serch_seelaterField">
                             <div class="content_detail_subcontent_right_serch_seelaterField_add">
 
-                                <div class="content_detail_subcontent_right_serch_seelaterField_add_box">
-                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_add_box_text">後で見るリストへの追加</h3>
+                                <div class="content_detail_subcontent_right_serch_seelaterField_add_box" onclick="handleSaveFav(<?= $agency->id ?>)">
+                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_add_box_text">「後で見る」へ追加</h3>
                                 </div>
                                 <div class="content_detail_subcontent_right_serch_seelaterField_seelaterbox">
-                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_seelaterbox_text">後で見る
-                                    </h3>
+                                    <a href="seeLater.php" class="content_detail_subcontent_right_serch_seelaterField_seelaterbox_text">後で見る
+                                    </a>
 
                                 </div>
                             </div>
@@ -146,15 +146,13 @@ include dirname(__FILE__) . '/header.php';
             <div class="content_detail_action_bar">
 
                 <div class="content_detail_underrequest_seelaterbox">
-
-                    <h4 class="content_detail_underrequest_seelaterText">後で見るリストに追加
+                    <h4 class="content_detail_underrequest_seelaterText" onclick="handleSaveFav(<?= $agency->id ?>)">後で見るリストに追加
                     </h4>
                 </div>
-                <div class="content_detail_underrequest_inquirybox">
-
+                <a href="contact.php" class="content_detail_underrequest_inquirybox">
                     <h4 class="content_detail_underrequest_inquiryText">お問合せ
                     </h4>
-                </div>
+                </a>
             </div>
         </div>
     </div>
