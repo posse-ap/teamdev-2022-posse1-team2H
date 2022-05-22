@@ -117,7 +117,7 @@ include dirname(__FILE__) . '/header.php';
                             </div>
                         </div>
                         <div class="content_detail_subcontent_right_serch_information">
-                            <div class="content_detail_subcontent_right_serch_information_box" id="content_detail_subcontent_right_serch_information_box">
+                            <div onclick="diplayingCompanyInfo()" class="content_detail_subcontent_right_serch_information_box" id="content_detail_subcontent_right_serch_information_box">
                                 <h3 class="content_detail_subcontent_right_serch_information_title">会社情報
                                 </h3>
                             </div>
