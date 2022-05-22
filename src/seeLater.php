@@ -19,13 +19,13 @@ include dirname(__FILE__) . "/header.php";
   </div>
   <div class="user_likelist_frame">
     <div class="user_likelist_number">
-      <h3 class="user_likelist_number"><span class="user_likelist_number_Z">4</span>件</h3>
+      <h3 class="user_likelist_number"><span class="user_likelist_number_Z" id="fav_count"></span>件</h3>
     </div>
     <div class="user_likelist_inner">
       <div class="user_likelist_inquiry">
       </div>
       <div id="fav_target">
-        
+
       </div>
 
         </div>

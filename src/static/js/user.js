@@ -146,7 +146,6 @@ const getFavs = async () => {
       params: params,
     })
     .then((res) => {
-        console.log(res.data)
       drawHTMLs.favs(res.data);
     });
 };
@@ -212,6 +211,12 @@ const removeFromFav = (agencyId) => {
   sessionStorage.setItem("ids", favs);
 };
 
+const countFavs = () => {
+  const favs = readFav();
+  let target = document.getElementById("fav_count");
+  target.innerText = favs.length;
+};
+
 const readFav = () => {
   let agencyIds = sessionStorage.getItem("ids");
   if (agencyIds) {
@@ -219,6 +224,7 @@ const readFav = () => {
     agencyIds = agencyIds.map((x) => Number(x));
     return agencyIds;
   }
+  return [];
 };
 
 const deleteFav = () => {
@@ -275,6 +281,7 @@ window.onload = async () => {
   }
   const favPage = document.getElementById("fav_page");
   if (favPage) {
+    countFavs();
     await getFavs();
   }
 };
