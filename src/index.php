@@ -127,6 +127,37 @@ include dirname(__FILE__) . "/header.php";
 </main>
 <div id="modal" class="modal">
     <div onclick="closingBtn()" id="close_btn" class="close_btn"></div>
+    
+    <div id="modal_inner" class="modal_inner">
+        <form name="searchForm" method="" action="" onsubmit="return false">
+            <div class="modal_content">
+                <h2>検索</h2>
+                <div class="modal_main_content">
+                    <div>
+                        <p><i class="fa-solid fa-building"></i>業種</p>
+                        <div class="business_type_items_modal">
+                            <?php foreach ($industries as $industry) : ?>
+                                <label>
+                                    <input class="business_type_tag" type="checkbox" name="industries" value="<?= $industry['id'] ?>" onclick="handleSearch()"><?= $industry['industry'] ?>
+                                </label>
+                            <?php endforeach ?>
+                        </div>
+                    </div>
+                    <div>
+                        <p ><i class="fa-solid fa-glasses"></i>特徴</p>
+                        <div class="business_features_modal">
+                            <?php foreach ($types as $type) : ?>
+                                <label>
+                                    <input class="business_type_tag" type="checkbox" name="types" value="<?= $type['id'] ?>" onclick="handleSearch()"><?= $type['agency_type'] ?>
+                                </label>
+                            <?php endforeach ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
 </div>
 <div id="overlay" class="overlay"></div>
 <div class="bar_for_responsive">
