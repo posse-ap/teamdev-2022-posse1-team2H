@@ -14,7 +14,7 @@ const drawHTMLs = {
       text += `
     <article class="new_agency_card">
         <div class="agency_img">
-            <a href="https://posse-ap.com/">
+            <a href="detail.php?id=${id}">
                 <img src="${eyecatch_url}" alt="${name}">
             </a>
         </div>

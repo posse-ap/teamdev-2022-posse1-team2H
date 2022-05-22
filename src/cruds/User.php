@@ -10,7 +10,23 @@ class User
     {
         $this->db = $db;
     }
-    
+
+    private function getIndustriesWithAgency($db, $agency_id)
+    {
+        $stmt = $db->prepare("SELECT
+        industry
+        FROM industries
+        WHERE id IN (
+            SELECT industry_id FROM agencies_industries
+            WHERE agency_id = :agency_id
+        )
+        ");
+        $stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        $industries = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $industries;
+    }
+
     public function getAgencies($types = null, $industries = null)
     {
         if ($types === null && $industries === null) {
@@ -127,25 +143,45 @@ class User
 
     public function getAgency($id)
     {
-        $stmt = $this->db->prepare('SELECT * FROM agencies WHERE id = :id');
+        $stmt = $this->db->prepare('SELECT
+        agencies.id id,
+        agencies.name name,
+        agencies.email email,
+        agencies.email_for_notification email_for_notice,
+        agencies.tel tel,
+        agencies.url url,
+        agencies.representative representative,
+        agencies.contactor contactor,
+        agencies.address address,
+        agencies.address_num address_num,
+        article.title title,
+        article.sentenses sentenses,
+        article.eyecatch_url eyecatch
+        FROM agencies
+        LEFT JOIN agency_articles as article
+        ON agencies.id = article.agency_id
+        WHERE agencies.id = :id');
         $stmt->bindValue(':id', $id, \PDO::PARAM_INT);
         $stmt->execute();
 
         $agency = $stmt->fetch(\PDO::FETCH_ASSOC);
         extract($agency);
+        $industries = self::getIndustriesWithAgency($this->db, $id);
         $result = array(
             'id' => $id,
             'name' => $name,
             'email' => $email,
-            'email_for_notification' => $email_for_notification,
+            'email_for_notification' => $email_for_notice,
             'tel' => $tel,
             'url' => $url,
             'representative' => $representative,
             'contactor' => $contactor,
             'address' => $address,
             'address_num' => $address_num,
-            'created_at' => $created_at,
-            'updated_at' => $updated_at,
+            'title' => $title,
+            'sentenses' => $sentenses,
+            'eyecatch' => $eyecatch,
+            'industries' => $industries
         );
         return json_encode($result, JSON_UNESCAPED_UNICODE);
     }

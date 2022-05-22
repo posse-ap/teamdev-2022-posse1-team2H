@@ -25,15 +25,16 @@ include dirname(__FILE__) . '/header.php';
             <!-- キャッチコピーと写真 -->
             <div class="content_detail_catchCopy_imgbig">
                 <div class="content_detail_catchcopy">
-                    <h2 class="content_detail_catchcopy_title">今日から君も俺たちの仲間だ！！</h2>
+                    <h2 class="content_detail_catchcopy_title"><?= $agency->title ?></h2>
                     <div class="content_detail_catchcopy_subtitle">
-                        <a href="">#医療</a>
-                        <a href="">＃外資系</a>
+                        <?php foreach ($agency->industries as $industry) : ?>
+                            <a href="">#<?= $industry->industry ?></a>
+                        <?php endforeach ?>
                     </div>
                 </div>
                 <div class="content_detail_agency_img">
-                    <a href="https://posse-ap.com/" class="content_detail_agency_imgbig_">
-                        <img src="https://reashu.com/wp-content/uploads/2022/01/1b6d9abbd870d9cc7205edfd07ed96ba.png" alt="" class="content_detail_agency_imgbig">
+                    <a href="<?= $agency->url ?>" class="content_detail_agency_imgbig_">
+                        <img src="<?= $agency->eyecatch ?>" alt="<?= $agency->name ?>" class="content_detail_agency_imgbig">
                     </a>
                 </div>
 
