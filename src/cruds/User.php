@@ -27,6 +27,22 @@ class User
         return $industries;
     }
 
+    private function getTypesWithAgency($db, $agency_id)
+    {
+        $stmt = $db->prepare("SELECT
+        agency_type
+        FROM agency_type
+        WHERE id IN (
+            SELECT type_id FROM agencies_types
+            WHERE agency_id = :agency_id
+        )
+        ");
+        $stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        $types = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $types;
+    }
+
     public function getAgencies($types = null, $industries = null)
     {
         if ($types === null && $industries === null) {
@@ -259,7 +275,23 @@ class User
         $inclause = substr(str_repeat(',?', count($agency_ids)), 1);
         $query = sprintf(
             "SELECT
-        * FROM agencies WHERE id IN (%s)",
+            agencies.id id,
+            agencies.name name,
+            agencies.email email,
+            agencies.email_for_notification email_for_notice,
+            agencies.tel tel,
+            agencies.url url,
+            agencies.representative representative,
+            agencies.contactor contactor,
+            agencies.address address,
+            agencies.address_num address_num,
+            article.title title,
+            article.sentenses sentenses,
+            article.eyecatch_url eyecatch
+            FROM agencies
+            LEFT JOIN agency_articles as article
+            ON agencies.id = article.agency_id
+            WHERE agencies.id IN (%s)",
             $inclause
         );
         $stmt = $this->db->prepare($query);
@@ -271,17 +303,24 @@ class User
             $values = array();
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
                 extract($row);
+                $industries = self::getIndustriesWithAgency($this->db, $id);
+                $types = self::getTypesWithAgency($this->db, $id);
                 $item = array(
-                    "id" => $id,
-                    "name" => $name,
-                    "email" => $email,
-                    "email_for_notification" => $email_for_notification,
-                    "tel" => $tel,
-                    "url" => $url,
-                    "representative" => $representative,
-                    "contactor" => $contactor,
-                    "address" => $address,
-                    "address_num" => $address_num
+                    'id' => $id,
+                    'name' => $name,
+                    'email' => $email,
+                    'email_for_notification' => $email_for_notice,
+                    'tel' => $tel,
+                    'url' => $url,
+                    'representative' => $representative,
+                    'contactor' => $contactor,
+                    'address' => $address,
+                    'address_num' => $address_num,
+                    'title' => $title,
+                    'sentenses' => $sentenses,
+                    'eyecatch' => $eyecatch,
+                    "industries" => $industries,
+                    "types" => $types
                 );
                 array_push($values, $item);
             }

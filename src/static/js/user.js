@@ -37,13 +37,71 @@ const drawHTMLs = {
     let agencyTarget = document.getElementById("new_agencies_target");
     agencyTarget.innerHTML = text;
   },
+  favs: (data) => {
+    let text = ``;
+    if (data.length === 0) {
+      text = "後で見るには何もありません";
+    } else {
+      for (let i = 0; i < data.length; i++) {
+        const { id, name, title, industries, types, eyecatch } = data[i];
+        let industriesText = ``;
+        let typesText = ``;
+
+        industries.forEach((industry) => {
+          industriesText += `<a href="">#${industry.industry}</a>`;
+        });
+        types.forEach((type) => {
+          typesText += `<a href="">#${type.agency_type}</a>`;
+        });
+
+        text += `
+        <div class="user_likelist_inner1box">
+            <div class="user_likelist_inner1">
+              <div class="user_likelist_inner1_header">
+                <h2 class="user_likelist_inner1_header_title">${name}</h2>
+                <div class="user_likelist_inner1_trash">
+                  <h3 class="user_likelist_inner1_trash_text" onclick="handleRemoveFromFav(${id})">削除する</h3>
+                </div>
+              </div>
+              <div class="user_likelist_inner1_body">
+
+                <img src="${eyecatch}" alt="${name}" class="user_likelist_inner1_body_img">
+
+                <div class="user_likelist_inner1_body_right">
+                  <div class="user_likelist_inner1_body_text">
+                    <p class="user_likelist_inner1_body_text_catchcopy">${title}</p>
+                    <div class="user_likelist_inner1_body_text_connection">
+                        ${industriesText}
+                        ${typesText}
+                    </div>
+                  </div>
+
+                  <div class="user_likelist_inner1_body_under">
+                    <button class="user_likelist_inner1_body_under_contact">
+                      <a href="./contact.php">問い合わせる</a>
+                    </button>
+                    <button class="user_likelist_inner1_body_under_detail">
+                      <a href="./detail.php?id=${id}">詳細ページ</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>`;
+      }
+    }
+    let favTarget = document.getElementById("fav_target");
+    favTarget.innerHTML = text;
+  },
 };
 
 const getAgenciesForFirstView = async () => {
   // TODO ローディング表示
   const res = await axios(`${userPrefix}/firstView.php`);
   const { data } = res;
-  drawHTMLs.agencies(data)
+  drawHTMLs.agencies(data);
 };
 
 const handleSearch = async () => {
@@ -58,7 +116,7 @@ const handleSearch = async () => {
     if (type.checked === true) types.push(type.value);
   });
   const { data } = await searchAgencies(types, industries);
-  drawHTMLs.agencies(data)
+  drawHTMLs.agencies(data);
 };
 
 const searchAgencies = async (types, industries) => {
@@ -83,9 +141,14 @@ const getFavs = async () => {
   const params = {
     agency_ids: agencyIds,
   };
-  const res = await axios.get(`${userPrefix}/fav.php`, {
-    params: params,
-  });
+  await axios
+    .get(`${userPrefix}/fav.php`, {
+      params: params,
+    })
+    .then((res) => {
+        console.log(res.data)
+      drawHTMLs.favs(res.data);
+    });
 };
 
 const appearing = (appearing) => {
@@ -115,14 +178,14 @@ const toggleColor = (agencyId) => {
 };
 
 const handleSaveFav = (agencyId) => {
-    const favs = readFav()
-    if (!favs.includes(agencyId)) {
-        saveFav(agencyId)
-        alert("「後で見る」に保存しました")
-    } else {
-        alert("すでに「後で見る」に存在しています")
-    }
-}
+  const favs = readFav();
+  if (!favs.includes(agencyId)) {
+    saveFav(agencyId);
+    alert("「後で見る」に保存しました");
+  } else {
+    alert("すでに「後で見る」に存在しています");
+  }
+};
 
 const saveFav = (agencyId) => {
   let agencyIds = readFav();
@@ -135,6 +198,18 @@ const saveFav = (agencyId) => {
     agencyIds.splice(agencyIds.indexOf(agencyId), 1);
   }
   sessionStorage.setItem("ids", agencyIds);
+};
+
+const handleRemoveFromFav = async (agencyId) => {
+  removeFromFav(agencyId);
+  await getFavs();
+};
+
+const removeFromFav = (agencyId) => {
+  let favs = readFav();
+  if (!favs.includes(agencyId)) return;
+  favs.splice(favs.indexOf(agencyId), 1);
+  sessionStorage.setItem("ids", favs);
 };
 
 const readFav = () => {
@@ -191,9 +266,15 @@ const closingBtn = () => {
     modal.style.display = "none";
     html.style.overflow = "auto";
 }
-window.onload = () => {
-    let userTop = document.getElementById("user_top");
-    if (userTop) userTop.onload = getAgenciesForFirstView();
-    getFavs();
+
+window.onload = async () => {
+  const userTop = document.getElementById("user_top");
+  if (userTop) {
+    await getAgenciesForFirstView();
     changeStarsColor();
-  };
+  }
+  const favPage = document.getElementById("fav_page");
+  if (favPage) {
+    await getFavs();
+  }
+};
