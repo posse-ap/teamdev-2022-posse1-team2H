@@ -59,9 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_REQUEST['address'],
             $_REQUEST['address_num']
         );
-        $agencies = [];
-        $crud->insertUser($user, $agencies);
-        header('Location: index.php');
+        $agencies = $_REQUEST['agency_ids'];
+        $_SESSION['user_form']['user'] = $user;
+        $_SESION['user_form']['agencies'] = $agencies;
+        header('Location: contactAfter.php');
         exit;
     }
 }
