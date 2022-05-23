@@ -1,7 +1,6 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 
-use cruds\User as Crud;
 use models\User as Model;
 use modules\utils\Utils;
 use modules\auth\Token;
@@ -18,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_REQUEST['tel'])) {
         $error['tel'] = 'tel required';
     }
-    if (!isset($_REQUEST['univercity'])) {
-        $error['univercity'] = 'univercity required';
+    if (!isset($_REQUEST['university'])) {
+        $error['university'] = 'university required';
     }
     if (!isset($_REQUEST['undergraduate'])) {
         $error['undergraduate'] = 'undergraduate required';
@@ -46,26 +45,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error['address_num'] = 'address_num required';
     }
     if (empty($error)) {
-        $user = new Model(
-            $_REQUEST['name'],
-            $_REQUEST['email'],
-            $_REQUEST['tel'],
-            $_REQUEST['univercity'],
-            $_REQUEST['undergraduate'],
-            $_REQUEST['department'],
-            $_REQUEST['school_year'],
-            $_REQUEST['graduation_year'],
-            $_REQUEST['gender'],
-            $_REQUEST['address'],
-            $_REQUEST['address_num']
-        );
-        $agencies = $_REQUEST['agency_ids'];
-        $_SESSION['user_form']['user'] = $user;
-        $_SESION['user_form']['agencies'] = $agencies;
-        header('Location: contactAfter.php');
-        exit;
+    $user = new Model(
+        $_REQUEST['name'],
+        $_REQUEST['email'],
+        $_REQUEST['tel'],
+        $_REQUEST['university'],
+        $_REQUEST['undergraduate'],
+        $_REQUEST['department'],
+        $_REQUEST['age'],
+        $_REQUEST['school_year'],
+        $_REQUEST['graduation_year'],
+        $_REQUEST['gender'],
+        $_REQUEST['address'],
+        $_REQUEST['address_num']
+    );
+    $agencies = $_REQUEST['agency_ids'];
+    $_SESSION['user_form']['user'] = serialize($user);
+    $_SESSION['user_form']['agencies'] = $agencies;
+    header('Location:http://' . $_SERVER['HTTP_HOST'] . '/contactAfter.php');
+    exit();
     }
 }
+
 include dirname(__FILE__) . "/header.php";
 ?>
 <main class="user_inquary">
@@ -86,7 +87,13 @@ include dirname(__FILE__) . "/header.php";
                     <dt class="user_inquary_content_inner_name_title">お名前 ※
                     </dt>
 
-                    <input type="text" value size="40 " class="user_inquary_content_inner_name_enter_text" name="name">
+                    <input type="text" value size="40 " class="user_inquary_content_inner_name_enter_text" name="name" value="
+                        <?php
+                        if (isset($_REQUEST['name'])) {
+                            echo Utils::h($_REQUEST['name']);
+                        }
+                        ?>
+                    ">
 
                 </dl>
                 <dl class="user_inquary_content_inner_age">
@@ -115,7 +122,7 @@ include dirname(__FILE__) . "/header.php";
                 <dl class="user_inquary_content_inner_college">
                     <dt class="user_inquary_content_inner_college_title">大学名 ※
                     </dt>
-                    <input type="text" value size="40" class="user_inquary_content_inner_college_enter_text" name="university>
+                    <input type="text" value size="40" class="user_inquary_content_inner_college_enter_text" name="university">
                 </dl>
                 <dl class="user_inquary_content_inner_undergraduate">
                     <dt class="user_inquary_content_inner_undergraduate_title">学部 ※
@@ -132,7 +139,6 @@ include dirname(__FILE__) . "/header.php";
                     <dt class="user_inquary_content_inner_schoolyear_title">学年 ※
                     </dt>
                     <select name="school_year" id="user_inquary_content_inner_schoolyear_enter_text" class="user_inquary_content_inner_schoolyear_enter_text" aria-invalid="false">
-                        <option value="">学年</option>
                         <option value="1">1年生</option>
                         <option value="2">2年生</option>
                         <option value="3">3年生</option>
@@ -143,7 +149,6 @@ include dirname(__FILE__) . "/header.php";
                     <dt class="user_inquary_content_inner_graduation_title">卒業予定年 ※
                     </dt>
                     <select name="graduation_year" id="user_inquary_content_inner_mail_enter_text" class="user_inquary_content_inner_mail_enter_text" aria-invalid="false">
-                        <option value="">卒業予定年</option>
                         <option value="2023">2023年度</option>
                         <option value="2024">2024年度</option>
                         <option value="2025">2025年度</option>
@@ -154,7 +159,6 @@ include dirname(__FILE__) . "/header.php";
                     <dt class="user_inquary_content_inner_gender_title">性別 ※
                     </dt>
                     <select name="gender" id="user_inquary_content_inner_gender_enter_text" class="user_inquary_content_inner_gender_enter_text" aria-invalid="false">
-                        <option value="">性別</option>
                         <option value="0">男</option>
                         <option value="1">女</option>
                     </select>
@@ -175,7 +179,7 @@ include dirname(__FILE__) . "/header.php";
                     プライバシーポリシーに同意します
                 </dl>
                 <p class="user_inquary_content_inner_submit" id="user_inquary_content_inner_submit">
-                    <input type="submit" id="user_inquary_content_inner_submit_button" class="user_inquary_content_inner_submit_button" value="確認画面へ"></in>
+                    <input type="submit" id="user_inquary_content_inner_submit_button" class="user_inquary_content_inner_submit_button" value="確認画面へ">
                 </p>
             </form>
         </div>

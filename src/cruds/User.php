@@ -223,30 +223,34 @@ class User
     public function insertUser($user, $agencies)
     {
         // $agencies = array(id);
-
         $stmt = $this->db->prepare('INSERT
-        INTO users (name, email, tel, univercity, undergraduate, department, school_year, graduation_year, gender, address, address_num) VALUES
-        (:name, :email, :tel, :univercity, :undergraduate, :department, :school_year, :graduation_year, :gender, :address, :address_num)
+        INTO
+        users(name, age, email, tel, university, undergraduate, department, school_year, graduation_year, gender, address, address_num)
+        VALUES
+        (:name, :age, :email, :tel, :university, :undergraduate, :department, :school_year, :graduation_year, :gender, :address, :address_num)
         ');
-        $stmt->bindValue(':name', $user->name);
-        $stmt->bindValue(':email', $user->email);
-        $stmt->bindValue(':tel', $user->tel);
-        $stmt->bindValue(':univercity', $user->univercity);
-        $stmt->bindValue(':undergraduate', $user->undergraduate);
-        $stmt->bindValue(':department', $user->department);
-        $stmt->bindValue(':school_year', $user->school_year);
-        $stmt->bindValue(':graduation_year', $user->graduation_year);
-        $stmt->bindValue(':gender', $user->gender);
-        $stmt->bindValue(':address', $user->address);
-        $stmt->bindValue('address_num', $user->address_num);
+        $stmt->bindValue(':name', $user->name, \PDO::PARAM_STR);
+        $stmt->bindValue(':age', $user->age, \PDO::PARAM_INT);
+        $stmt->bindValue(':email', $user->email, \PDO::PARAM_STR);
+        $stmt->bindValue(':tel', $user->tel, \PDO::PARAM_STR);
+        $stmt->bindValue(':university', $user->university, \PDO::PARAM_STR);
+        $stmt->bindValue(':undergraduate', $user->undergraduate, \PDO::PARAM_STR);
+        $stmt->bindValue(':department', $user->department, \PDO::PARAM_STR);
+        $stmt->bindValue(':school_year', $user->school_year, \PDO::PARAM_INT);
+        $stmt->bindValue(':graduation_year', $user->graduation_year, \PDO::PARAM_INT);
+        $stmt->bindValue(':gender', $user->gender, \PDO::PARAM_BOOL);
+        $stmt->bindValue(':address', $user->address, \PDO::PARAM_STR);
+        $stmt->bindValue('address_num', $user->address_num, \PDO::PARAM_STR);
         $user_success = $stmt->execute();
 
         if ($user_success) {
             $user_id = $this->db->lastInsertId();
             foreach ($agencies as $agency) {
                 $agencies_stmt = $this->db->prepare('INSERT INTO users_agencies (user_id, agency_id) VALUES (:user_id, :agency_id)');
+
                 $agencies_stmt->bindValue(':user_id', $user_id);
                 $agencies_stmt->bindValue(':agency_id', $agency);
+
                 $success = $agencies_stmt->execute();
                 if (!$success) {
                     return false;

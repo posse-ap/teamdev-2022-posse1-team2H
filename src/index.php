@@ -62,7 +62,7 @@ include dirname(__FILE__) . "/header.php";
         <aside id="sidebar_inner" class="sidebar_inner">
             <div class="sidebar_favorite_area">
                 <div class="sidebar_favorite">
-                    <h2 onclick="savingData()">後で見る</h2>
+                    <a href="seeLater.php">後で見る</a>
                 </div>
                 <div class="favorite_content"></div>
             </div><br>

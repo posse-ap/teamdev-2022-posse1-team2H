@@ -12,7 +12,7 @@ CREATE TABLE users (
   age INT(10) NOT NULL,
   email VARCHAR(255) UNIQUE NOT NULL,
   tel VARChAR(255) NOT NULL,
-  univercity VARCHAR(255) NOT NULL,
+  university VARCHAR(255) NOT NULL,
   undergraduate VARCHAR(255) NOT NULL,
   department VARCHAR(255) NOT NULL,
   school_year INT(10) NOT NULL,
