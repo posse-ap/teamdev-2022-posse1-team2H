@@ -273,6 +273,12 @@ const closingBtn = () => {
     html.style.overflow = "auto";
 }
 
+const contactAll = () => {
+    let target = document.getElementById('contact_all')
+    const ids = sessionStorage.getItem("ids")
+    target.innerHTML = `<a href="./contact.php?ids=${ids}">まとめて問い合わせる</a>`
+}
+
 window.onload = async () => {
   const userTop = document.getElementById("user_top");
   if (userTop) {
@@ -282,6 +288,7 @@ window.onload = async () => {
   const favPage = document.getElementById("fav_page");
   if (favPage) {
     countFavs();
+    contactAll();
     await getFavs();
   }
 };

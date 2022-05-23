@@ -13,8 +13,7 @@ include dirname(__FILE__) . "/header.php";
   <div class="user_likelist_topbar">
     <a href="./index.php" class="user_likelist_topbar_top">TOP画面へ</a>
 
-    <button class="user_likelist_topbar_inquiry">
-      <a href="./contact.php">まとめて問い合わせる</a>
+    <button class="user_likelist_topbar_inquiry" id="contact_all">
     </button>
   </div>
   <div class="user_likelist_frame">
