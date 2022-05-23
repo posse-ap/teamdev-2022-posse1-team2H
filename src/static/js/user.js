@@ -134,3 +134,21 @@ const allowTransition = () => {
     }
 }
 
+const dispalyingSerachArea = () => {
+    let overlay = document.getElementById('overlay');
+    let modal = document.getElementById('modal');
+    let html = document.querySelector('html');
+    overlay.style.display = "block";
+    modal.style.display = "block";
+    html.style.overflow = "hidden";
+}
+
+const closingBtn = () => {
+    let overlay = document.getElementById('overlay');
+    let modal = document.getElementById('modal');
+    let html = document.querySelector('html');
+    overlay.style.display = "none";
+    modal.style.display = "none";
+    html.style.overflow = "auto";
+}
+
