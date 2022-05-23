@@ -92,7 +92,7 @@ const deleteManager = async (id) => {
   return res;
 };
 
-// モーダル
+//モーダル
 ;(function(__w,__d){
   let $$event = (e, m, f) => {
     if (typeof e.addEventListener !== "undefined"){
@@ -106,7 +106,7 @@ const deleteManager = async (id) => {
     console.log("[Modal] Error : "+m);
   };
 
-  let $$ = () => {
+  let $$ = function(){
     // start
     if(__d.readyState === "complete"){
       this.start();
@@ -119,24 +119,24 @@ const deleteManager = async (id) => {
     }
   };
 
-  $$.prototype.start = () => {
-    var switches = __d.querySelectorAll(".modal-switch");
+  $$.prototype.start = function(){
+    let switches = __d.querySelectorAll(".modal_switch");
     for(let i=0; i<switches.length; i++){
       $$event(switches[i] , "click" , (function(e){this.click_modalSwitch(e)}).bind(this));
     }
   };
 
-  $$.prototype.click_modalSwitch = (e) => {
+  $$.prototype.click_modalSwitch = function(e) {
     if(!e || !e.currentTarget){
       $$error("Not event");
       return;
     }
-    var selector = e.currentTarget.getAttribute("data-target-selector");
+    let selector = e.currentTarget.getAttribute("data-target-selector");
     if(!selector){
       $$error("Not selector");
       return;
     }
-    var target = __d.querySelector(selector);
+    let target = __d.querySelector(selector);
     if(!target){
       $$error("Not target");
       return;
