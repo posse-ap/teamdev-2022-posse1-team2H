@@ -112,8 +112,8 @@ include dirname(__FILE__) . '/header.php';
                                     <h3 class="content_detail_subcontent_right_serch_seelaterField_add_box_text">「後で見る」へ追加</h3>
                                 </div>
                                 <div class="content_detail_subcontent_right_serch_seelaterField_seelaterbox">
-                                    <a href="seeLater.php" class="content_detail_subcontent_right_serch_seelaterField_seelaterbox_text">後で見る
-                                    </a>
+                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_seelaterbox_text">気になるリスト
+                                    </h3>
 
                                 </div>
                             </div>
@@ -147,10 +147,12 @@ include dirname(__FILE__) . '/header.php';
             <div class="content_detail_action_bar">
 
                 <div class="content_detail_underrequest_seelaterbox">
-                    <h4 class="content_detail_underrequest_seelaterText" onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)">後で見るリストに追加
-                    </h4>
-                </div>
-                <a href="contact.php" class="content_detail_underrequest_inquirybox">
+
+                            <h4 class="content_detail_underrequest_seelaterText">気になるリストに追加
+                            </h4>
+                        </div>
+                        <div class="content_detail_underrequest_inquirybox">
+
                     <h4 class="content_detail_underrequest_inquiryText">お問合せ
                     </h4>
                 </a>
