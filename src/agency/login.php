@@ -59,7 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input class="login_box" type="submit" value="Log in">
             </div>
         </form>
-        <p class="password">Forgot your password? Click here!</p>
     </div>
 
 <?php include dirname(__FILE__) . '/footer.php' ?>

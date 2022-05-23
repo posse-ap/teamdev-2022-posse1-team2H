@@ -61,7 +61,6 @@
   list-style: none;
 }
 
-/* ヘッダー内の文字に触れた時 */
 .menu-list a:hover {
   background-color: skyblue;
   color: white;
@@ -69,7 +68,6 @@
   transition: 0.3s;
 }
 
-/* ヘッダー内文字 */
 .menu-list a {
     text-decoration: none;
     color: black;
@@ -197,6 +195,93 @@
   background-color:white;
   white-space:nowrap;
   margin: 250px 500px;
+}
+#modal[data-view="1"] > .modal_window{
+  animation: modal-window-view 0.3s linear forwards;
+}
+#modal[data-view="0"] > .modal_window{
+  animation: modal-window-hidden 0.3s linear forwards;
+}
+
+@keyframes modal-bg-view{
+  0%{
+    opacity:0.0;
+    visibility:hidden;
+  }
+  100%{
+    opacity:1.0;
+    visibility:visible;
+  }
+}
+@keyframes modal-bg-hidden{
+  0%{
+    opacity:1.0;
+    visibility:visible;
+  }
+  100%{
+    opacity:0.0;
+    visibility:hidden;
+  }
+}
+@keyframes modal_window-view{
+  0%{
+    transform:translate(0,-50%);
+  }
+  100%{
+    transform:translate(0,0);
+  }
+}
+@keyframes modal_window-hidden{
+  0%{
+    transform:translate(0,0);
+  }
+  100%{
+    transform:translate(0,-50%);
+  }
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+#modal{
+  position:absolute;
+  display:none;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.7);
+  border:0;
+  margin:0;
+  padding:0;
+}
+#modal[data-view="1"]{
+  display:block;
+  animation: modal-bg-view 0.3s linear forwards;
+}
+#modal[data-view="0"]{
+  display:block;
+  animation: modal-bg-hidden 0.3s linear forwards;
+}
+
+#modal > .modal-window{
+  position:absolute;
+  top:100px;
+  left:150px;
+  display:block;
+
+  border:1px solid #CCC;
+  border-top:20px solid #CCC;
+  border-radius:4px;
+  padding:10px 20px;
+  background-color:white;
+  white-space:nowrap;
 }
 #modal[data-view="1"] > .modal-window{
   animation: modal-window-view 0.3s linear forwards;

@@ -13,12 +13,11 @@ include dirname(__FILE__) . '/header.php' ?>
     <p>電話番号： 090-9999-999</p>
 </div>
 <a class="edit_button" href="">編集</a>
-<!-- <p class="edit-button"><a href="">編集</a></p> -->
 <div class="list_box">
     <p>個人担当者一覧</p>
     <div class="small_list_box">
         <li class="email">AA BB：aa.bb@gmail.com</li>
-        <button type="button" class="trash" onclick="clickEvent()">
+        <button type="button" class="trash">
             <i class="fa-solid fa-trash-can"></i>
         </button>
     </div>
