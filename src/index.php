@@ -93,7 +93,7 @@ include dirname(__FILE__) . "/header.php";
                 <div class="favorite_content"></div>
             </div><br>
             <div class="sidebar_search_area">
-                <form name="searchForm" method="" action="" onsubmit="return false">
+                <form name="searchform" method="" action="" onsubmit="return false">
                     <div class="sidebar_search">
                         <h2 onclick="appearSidebar()">検索</h2>
                         <div id="serach_content" class="serach_content">
@@ -128,9 +128,9 @@ include dirname(__FILE__) . "/header.php";
 <div id="overlay" class="overlay"></div>
 <div class="bar_for_responsive">
     <div class="bar_for_responsive_inner">
-        <a href="" class="back_to_top"><i id="home_icon" class="fa-solid fa-square-caret-up"></i> ホーム</a>
-        <a href="./seeLater.php" class="back_to_top"><i id="blue_star" class="fa-solid fa-star"></i> 後で見るリストに追加</a>
-        <div class="appearing_serach_area" onclick="dispalying_serach_area()"><i id="serach_icon" class="fa-solid fa-magnifying-glass"></i> 検索</div>
+        <a href="" class="back_to_top"><i id="home_icon" class="fa-solid fa-square-caret-up"></i></a>
+        <a href="./seeLater.php" class="back_to_top"><i id="book_mark" class="fa-solid fa-book-bookmark"></i></a>
+        <div class="appearing_serach_area" onclick="dispalyingSerachArea()"><i id="serach_icon" class="fa-solid fa-magnifying-glass"></i></div>
     </div>
 </div>
 
@@ -138,7 +138,7 @@ include dirname(__FILE__) . "/header.php";
     <div onclick="closingBtn()" id="close_btn" class="close_btn"></div>
 
     <div id="modal_inner" class="modal_inner">
-        <form name="searchForm" method="" action="" onsubmit="return false">
+        <form name="searchform" method="" action="" onsubmit="return false">
             <div class="modal_content">
                 <h2><i id="serach_icon_modal" class="fa-solid fa-magnifying-glass">検索</i></h2>
                 <div class="modal_main_content">

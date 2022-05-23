@@ -134,7 +134,7 @@ const allowTransition = () => {
     }
 }
 
-const dispalying_serach_area = () => {
+const dispalyingSerachArea = () => {
     let overlay = document.getElementById('overlay');
     let modal = document.getElementById('modal');
     let html = document.querySelector('html');

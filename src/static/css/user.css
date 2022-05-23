@@ -182,16 +182,6 @@ header {
   border-bottom: 2px solid #00DD00;
 }
 
-/* .agency_name::after {
-  content: "";
-  display: block;
-  border: solid 1px;
-  border-color: #26a69a;
-  width: 15%;
-  color: #9e9e9e;
-  margin-top: -4px;
-} */
-
 /* 企業名とお気に入り追加ボタン */
 .name_and_favorite {
   display: flex;
@@ -233,6 +223,16 @@ header {
   text-align: center;
   cursor: pointer;
   border-bottom: 1px solid black;
+}
+
+.sidebar_favorite h2 {
+  box-shadow: 0 2px 5px black;
+}
+
+.sidebar_favorite h2:hover {
+  box-shadow: none;
+  transform: translate3d(0, 3px, 0);
+  transition-duration: 0.3s;
 }
 
 .sidebar_search {
@@ -278,15 +278,6 @@ header {
   font-size: 30px;
 }
 
-.sidebar_favorite h2 {
-  box-shadow: 0 2px 5px black;
-}
-
-.sidebar_favorite h2:hover {
-  box-shadow: none;
-  transform: translate3d(0, 3px, 0);
-  transition-duration: 0.3s;
-}
 
 .business_type_wrapper h3,
 .business_features_wrapper h3 {
@@ -321,17 +312,13 @@ header {
   display: none;
 }
 
-/* .displaying_modal{
-  display: block;
-} */
-
 .modal {
   display: none;
 }
 
 @media(max-width:640px) {
 
-  .content{
+  .content {
     width: 95%;
   }
 
@@ -351,13 +338,17 @@ header {
     background-color: #26a69a;
   }
 
+  .agency_name {
+    font-size: 20px;
+  }
+
   .bar_for_responsive_inner {
     display: flex;
     justify-content: space-around;
-    font-size: 25px;
+    font-size: 31px;
     color: #ffff;
     font-weight: bold;
-    height: 46px;
+    height: 50px;
     align-items: end;
   }
 
@@ -453,11 +444,11 @@ header {
     color: #ffff;
   }
 
-  #blue_star, #home_icon, #serach_icon {
+  #book_mark, #home_icon, #serach_icon {
     color: #DCDCDC;
   }
 
-  #blue_star:hover {
+  #book_mark:hover {
     color: #C2EEFF;
   }
 
@@ -491,6 +482,14 @@ header {
 
   .serach_icon_modal {
     color: gray;
+  }
+
+  .star {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 22px;
+    color: #9e9e9e;
+    cursor: pointer;
   }
 
 }
