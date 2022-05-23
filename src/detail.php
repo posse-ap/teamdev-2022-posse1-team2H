@@ -112,8 +112,8 @@ include dirname(__FILE__) . '/header.php';
                                     <h3 class="content_detail_subcontent_right_serch_seelaterField_add_box_text">「後で見る」へ追加</h3>
                                 </div>
                                 <div class="content_detail_subcontent_right_serch_seelaterField_seelaterbox">
-                                    <a href="seeLater.php" class="content_detail_subcontent_right_serch_seelaterField_seelaterbox_text">後で見る
-                                    </a>
+                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_seelaterbox_text">気になるリスト
+                                    </h3>
 
                                 </div>
                             </div>
