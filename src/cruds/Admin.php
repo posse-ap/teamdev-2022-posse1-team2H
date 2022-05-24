@@ -231,6 +231,56 @@ class Admin
         return false;
     }
 
+    public function getUserDetail($user_id) {
+        $stmt = $this->db->prepare("SELECT
+        id,
+        name,
+        age,
+        email,
+        tel,
+        university,
+        undergraduate,
+        department,
+        school_year,
+        graduation_year,
+        gender,
+        address,
+        address_num
+        FROM users
+        WHERE id = :user_id
+        ");
+        $stmt->bindValue(":user_id", $user_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        $count_stmt = $this->db->prepare("SELECT COUNT(*) FROM users_agencies
+        WHERE user_id = :user_id
+        GROUP BY user_id
+        ");
+        $count_stmt->bindValue(":user_id", $user_id, \PDO::PARAM_INT);
+        $count_stmt->execute();
+
+        $count = $count_stmt->fetch(\PDO::FETCH_ASSOC);
+        extract($user);
+        $item = array(
+            "id" => $id,
+            "name" => $name,
+            "age" => $age,
+            "email" => $email,
+            "tel" => $tel,
+            "university" => $university,
+            "undergraduate" => $undergraduate,
+            "department" => $department,
+            "school_year" => $school_year,
+            "graduation_year" => $graduation_year,
+            "gender" => $gender,
+            "address" => $address,
+            "address_num" => $address_num,
+            "count" => $count,
+        );
+        return json_encode($item, JSON_UNESCAPED_UNICODE);
+    }
+
     public function getContracts($year, $month, $sort = true)
     {
         $date_format = (string)$year . sprintf('%02d', $month);

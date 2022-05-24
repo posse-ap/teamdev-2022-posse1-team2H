@@ -105,9 +105,9 @@ include dirname(__FILE__) . '/header.php';
     <label><input type="text" name="contactor" value="<?= Utils::h($agency->contactor) ?>"></label>
     <label><input type="text" name="address" value="<?= Utils::h($agency->address) ?>"></label>
     <label><input type="text" name="address_num" value="<?= Utils::h($agency->address_num) ?>"></label>
-    <label><input type="text" name="title" value="<?= Utils::h($agency->title) ?>"></label>
-    <label><input type="text" name="sentenses" value="<?= Utils::h($agency->sentenses) ?>"></label>
-    <label><input type="text" name="eyecatch" value="<?= Utils::h($agency->eyecatch) ?>"></label>
+    <label><input type="text" name="title"></label>
+    <label><input type="text" name="sentenses"></label>
+    <label><input type="text" name="eyecatch"></label>
     <input type="submit" value="submit">
 </form>
 <?php include dirname(__FILE__) . '/footer.php' ?>
