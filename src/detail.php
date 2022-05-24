@@ -3,6 +3,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
 use cruds\User;
+use modules\utils\Utils;
 
 $id = $_GET['id'];
 
@@ -25,15 +26,16 @@ include dirname(__FILE__) . '/header.php';
             <!-- キャッチコピーと写真 -->
             <div class="content_detail_catchCopy_imgbig">
                 <div class="content_detail_catchcopy">
-                    <h2 class="content_detail_catchcopy_title">今日から君も俺たちの仲間だ！！</h2>
+                    <h2 class="content_detail_catchcopy_title"><?= Utils::h($agency->title) ?></h2>
                     <div class="content_detail_catchcopy_subtitle">
-                        <a href="">#医療</a>
-                        <a href="">＃外資系</a>
+                        <?php foreach ($agency->industries as $industry) : ?>
+                            <a href="">#<?= Utils::h($industry->industry) ?></a>
+                        <?php endforeach ?>
                     </div>
                 </div>
                 <div class="content_detail_agency_img">
-                    <a href="https://posse-ap.com/" class="content_detail_agency_imgbig_">
-                        <img src="https://reashu.com/wp-content/uploads/2022/01/1b6d9abbd870d9cc7205edfd07ed96ba.png" alt="" class="content_detail_agency_imgbig">
+                    <a href="<?= $agency->url ?>" class="content_detail_agency_imgbig_">
+                        <img src="<?= $agency->eyecatch ?>" alt="<?= Utils::h($agency->name) ?>" class="content_detail_agency_imgbig">
                     </a>
                 </div>
 
@@ -101,17 +103,17 @@ include dirname(__FILE__) . '/header.php';
                             <div class="content_detail_subcontent_right_serch_menu_text">メニュー</div>
                         </div>
                         <div class="content_detail_subcontent_right_serch_inquirybox">
-                            <h3 class="content_detail_subcontent_right_serch_inquiryText">お問合せ</h3>
+                            <a href="./contact.php?ids=<?= Utils::h($agency->id) ?>" class="content_detail_subcontent_right_serch_inquiryText">お問合せ</a>
                         </div>
                         <div class="content_detail_subcontent_right_serch_seelaterField">
                             <div class="content_detail_subcontent_right_serch_seelaterField_add">
 
-                                <div class="content_detail_subcontent_right_serch_seelaterField_add_box">
-                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_add_box_text">後で見るリストへの追加</h3>
+                                <div class="content_detail_subcontent_right_serch_seelaterField_add_box" onclick="handleSaveFav(<?= Utils::h( $agency->id) ?>)">
+                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_add_box_text">「後で見る」へ追加</h3>
                                 </div>
                                 <div class="content_detail_subcontent_right_serch_seelaterField_seelaterbox">
-                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_seelaterbox_text">後で見る
-                                    </h3>
+                                    <a href="seeLater.php" class="content_detail_subcontent_right_serch_seelaterField_seelaterbox_text">後で見る
+                                    </a>
 
                                 </div>
                             </div>
@@ -145,15 +147,13 @@ include dirname(__FILE__) . '/header.php';
             <div class="content_detail_action_bar">
 
                 <div class="content_detail_underrequest_seelaterbox">
-
-                    <h4 class="content_detail_underrequest_seelaterText">後で見るリストに追加
+                    <h4 class="content_detail_underrequest_seelaterText" onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)">後で見るリストに追加
                     </h4>
                 </div>
-                <div class="content_detail_underrequest_inquirybox">
-
+                <a href="contact.php" class="content_detail_underrequest_inquirybox">
                     <h4 class="content_detail_underrequest_inquiryText">お問合せ
                     </h4>
-                </div>
+                </a>
             </div>
         </div>
     </div>

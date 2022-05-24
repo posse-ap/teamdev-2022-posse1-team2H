@@ -8,9 +8,10 @@ class User
         $name,
         $email,
         $tel,
-        $univercity,
+        $university,
         $undergraduate,
         $department,
+        $age,
         $school_year,
         $graduation_year,
         $gender,
@@ -20,9 +21,10 @@ class User
         $this->name = $name;
         $this->email = $email;
         $this->tel = $tel;
-        $this->univercity = $univercity;
+        $this->university = $university;
         $this->undergraduate = $undergraduate;
         $this->department = $department;
+        $this->age = $age;
         $this->school_year = $school_year;
         $this->graduation_year = $graduation_year;
         $this->gender = $gender;

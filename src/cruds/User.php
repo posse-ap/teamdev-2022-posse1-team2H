@@ -10,7 +10,39 @@ class User
     {
         $this->db = $db;
     }
-    
+
+    private function getIndustriesWithAgency($db, $agency_id)
+    {
+        $stmt = $db->prepare("SELECT
+        industry
+        FROM industries
+        WHERE id IN (
+            SELECT industry_id FROM agencies_industries
+            WHERE agency_id = :agency_id
+        )
+        ");
+        $stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        $industries = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $industries;
+    }
+
+    private function getTypesWithAgency($db, $agency_id)
+    {
+        $stmt = $db->prepare("SELECT
+        agency_type
+        FROM agency_type
+        WHERE id IN (
+            SELECT type_id FROM agencies_types
+            WHERE agency_id = :agency_id
+        )
+        ");
+        $stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        $types = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $types;
+    }
+
     public function getAgencies($types = null, $industries = null)
     {
         if ($types === null && $industries === null) {
@@ -127,25 +159,45 @@ class User
 
     public function getAgency($id)
     {
-        $stmt = $this->db->prepare('SELECT * FROM agencies WHERE id = :id');
+        $stmt = $this->db->prepare('SELECT
+        agencies.id id,
+        agencies.name name,
+        agencies.email email,
+        agencies.email_for_notification email_for_notice,
+        agencies.tel tel,
+        agencies.url url,
+        agencies.representative representative,
+        agencies.contactor contactor,
+        agencies.address address,
+        agencies.address_num address_num,
+        article.title title,
+        article.sentenses sentenses,
+        article.eyecatch_url eyecatch
+        FROM agencies
+        LEFT JOIN agency_articles as article
+        ON agencies.id = article.agency_id
+        WHERE agencies.id = :id');
         $stmt->bindValue(':id', $id, \PDO::PARAM_INT);
         $stmt->execute();
 
         $agency = $stmt->fetch(\PDO::FETCH_ASSOC);
         extract($agency);
+        $industries = self::getIndustriesWithAgency($this->db, $id);
         $result = array(
             'id' => $id,
             'name' => $name,
             'email' => $email,
-            'email_for_notification' => $email_for_notification,
+            'email_for_notification' => $email_for_notice,
             'tel' => $tel,
             'url' => $url,
             'representative' => $representative,
             'contactor' => $contactor,
             'address' => $address,
             'address_num' => $address_num,
-            'created_at' => $created_at,
-            'updated_at' => $updated_at,
+            'title' => $title,
+            'sentenses' => $sentenses,
+            'eyecatch' => $eyecatch,
+            'industries' => $industries
         );
         return json_encode($result, JSON_UNESCAPED_UNICODE);
     }
@@ -171,30 +223,34 @@ class User
     public function insertUser($user, $agencies)
     {
         // $agencies = array(id);
-
         $stmt = $this->db->prepare('INSERT
-        INTO users (name, email, tel, univercity, undergraduate, department, school_year, graduation_year, gender, address, address_num) VALUES
-        (:name, :email, :tel, :univercity, :undergraduate, :department, :school_year, :graduation_year, :gender, :address, :address_num)
+        INTO
+        users(name, age, email, tel, university, undergraduate, department, school_year, graduation_year, gender, address, address_num)
+        VALUES
+        (:name, :age, :email, :tel, :university, :undergraduate, :department, :school_year, :graduation_year, :gender, :address, :address_num)
         ');
-        $stmt->bindValue(':name', $user->name);
-        $stmt->bindValue(':email', $user->email);
-        $stmt->bindValue(':tel', $user->tel);
-        $stmt->bindValue(':univercity', $user->univercity);
-        $stmt->bindValue(':undergraduate', $user->undergraduate);
-        $stmt->bindValue(':department', $user->department);
-        $stmt->bindValue(':school_year', $user->school_year);
-        $stmt->bindValue(':graduation_year', $user->graduation_year);
-        $stmt->bindValue(':gender', $user->gender);
-        $stmt->bindValue(':address', $user->address);
-        $stmt->bindValue('address_num', $user->address_num);
+        $stmt->bindValue(':name', $user->name, \PDO::PARAM_STR);
+        $stmt->bindValue(':age', $user->age, \PDO::PARAM_INT);
+        $stmt->bindValue(':email', $user->email, \PDO::PARAM_STR);
+        $stmt->bindValue(':tel', $user->tel, \PDO::PARAM_STR);
+        $stmt->bindValue(':university', $user->university, \PDO::PARAM_STR);
+        $stmt->bindValue(':undergraduate', $user->undergraduate, \PDO::PARAM_STR);
+        $stmt->bindValue(':department', $user->department, \PDO::PARAM_STR);
+        $stmt->bindValue(':school_year', $user->school_year, \PDO::PARAM_INT);
+        $stmt->bindValue(':graduation_year', $user->graduation_year, \PDO::PARAM_INT);
+        $stmt->bindValue(':gender', $user->gender, \PDO::PARAM_BOOL);
+        $stmt->bindValue(':address', $user->address, \PDO::PARAM_STR);
+        $stmt->bindValue('address_num', $user->address_num, \PDO::PARAM_STR);
         $user_success = $stmt->execute();
 
         if ($user_success) {
             $user_id = $this->db->lastInsertId();
             foreach ($agencies as $agency) {
                 $agencies_stmt = $this->db->prepare('INSERT INTO users_agencies (user_id, agency_id) VALUES (:user_id, :agency_id)');
+
                 $agencies_stmt->bindValue(':user_id', $user_id);
                 $agencies_stmt->bindValue(':agency_id', $agency);
+
                 $success = $agencies_stmt->execute();
                 if (!$success) {
                     return false;
@@ -223,7 +279,23 @@ class User
         $inclause = substr(str_repeat(',?', count($agency_ids)), 1);
         $query = sprintf(
             "SELECT
-        * FROM agencies WHERE id IN (%s)",
+            agencies.id id,
+            agencies.name name,
+            agencies.email email,
+            agencies.email_for_notification email_for_notice,
+            agencies.tel tel,
+            agencies.url url,
+            agencies.representative representative,
+            agencies.contactor contactor,
+            agencies.address address,
+            agencies.address_num address_num,
+            article.title title,
+            article.sentenses sentenses,
+            article.eyecatch_url eyecatch
+            FROM agencies
+            LEFT JOIN agency_articles as article
+            ON agencies.id = article.agency_id
+            WHERE agencies.id IN (%s)",
             $inclause
         );
         $stmt = $this->db->prepare($query);
@@ -235,17 +307,24 @@ class User
             $values = array();
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
                 extract($row);
+                $industries = self::getIndustriesWithAgency($this->db, $id);
+                $types = self::getTypesWithAgency($this->db, $id);
                 $item = array(
-                    "id" => $id,
-                    "name" => $name,
-                    "email" => $email,
-                    "email_for_notification" => $email_for_notification,
-                    "tel" => $tel,
-                    "url" => $url,
-                    "representative" => $representative,
-                    "contactor" => $contactor,
-                    "address" => $address,
-                    "address_num" => $address_num
+                    'id' => $id,
+                    'name' => $name,
+                    'email' => $email,
+                    'email_for_notification' => $email_for_notice,
+                    'tel' => $tel,
+                    'url' => $url,
+                    'representative' => $representative,
+                    'contactor' => $contactor,
+                    'address' => $address,
+                    'address_num' => $address_num,
+                    'title' => $title,
+                    'sentenses' => $sentenses,
+                    'eyecatch' => $eyecatch,
+                    "industries" => $industries,
+                    "types" => $types
                 );
                 array_push($values, $item);
             }
