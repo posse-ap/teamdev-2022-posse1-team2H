@@ -24,24 +24,16 @@ include dirname(__FILE__) . '/header.php';
             </nav>
         </div>
     </header>
-    <main>
+    <main id="top_page">
         <div id="displayed_content" class="displayed_content">
             <input id="date_today" class="date_today" type="month">
             <div class="got_information">総情報獲得数: 6件</div>
             <div class="total_amount">合計金額: 2000</div>
         </div>
         <div class="agency_list_wrapper">
-            <?php for ($i = 1; $i < 7; $i++) : ?>
-                <ul class="agency_list_inner">
-                    <ol>
-                        <a href="./contract.php">○○○○llllllllllllll株式会社</a>
-                        <div>情報獲得数  2件</div>
-                        <div>期限  4/30</div>
-                        <div>金額xxxx</div>
-                    </ol>
-
+                <ul class="agency_list_inner" id="contracts_target">
+                    
                 </ul>
-            <?php endfor ?>
         </div>
     </main>
 

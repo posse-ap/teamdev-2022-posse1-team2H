@@ -10,17 +10,14 @@ $crud = new Crud($db);
 $auth->validate();
 
 $id = $_GET['id'];
-$year = $_GET['year'];
-$month = $_GET['month'];
-if (!isset($id) || !isset($year) || !isset($month)) {
+if (!isset($id)) {
     header('Location: index.php');
 }
 
-$agency = json_decode($crud->getAgencyContractsDetail($id, $year, $month));
+$agency = json_decode($crud->getAgencyContractsDetail($id));
 
 include dirname(__FILE__) . '/header.php'
 ?>
-<!-- <?= $agency ?> -->
 
 <header>
     <div class="header_inner">

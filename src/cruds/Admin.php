@@ -242,6 +242,8 @@ class Admin
         $query = "SELECT
         agencies.id agency_id,
         agencies.name agency_name,
+        contracts.id contract_id,
+        contracts.contract_year_month contract_year_month,
         contracts.claim_year_month claim,
         contracts.request_amounts amounts
         FROM agencies
@@ -275,6 +277,7 @@ class Admin
                 $item = array(
                     'agency_id' => $agency_id,
                     'agency_name' => $agency_name,
+                    'contract_year_month' => $contract_year_month,
                     'claim' => $claim,
                     'amounts' => $amounts,
                     'user_count' => $count
@@ -286,9 +289,9 @@ class Admin
         return json_encode(array());
     }
 
-    public function getAgencyContractsDetail($agency_id, $year, $month)
+    public function getAgencyContractsDetail($contract_id)
     {
-        $date_format = (string)$year . sprintf('%02d', $month);
+        // $date_format = (string)$year . sprintf('%02d', $month);
         $stmt = $this->db->prepare("SELECT
         agencies.id agency_id,
         agencies.name agency_name,
@@ -299,20 +302,20 @@ class Admin
         FROM agencies
         LEFT JOIN contracts
         ON agencies.id = contracts.agency_id
-        WHERE agencies.id = :agency_id
-        AND DATE_FORMAT(contracts.contract_year_month, '%Y%m') = :year_month
+        WHERE contracts.id = :contract_id
         ");
-        $stmt->bindValue(':agency_id', $agency_id, \PDO::PARAM_INT);
-        $stmt->bindValue(':year_month', $date_format, \PDO::PARAM_STR);
+        $stmt->bindValue(':contract_id', $contract_id, \PDO::PARAM_INT);
         $stmt->execute();
 
         while ($data = $stmt->fetch()) {
             extract($data);
+            $date_format = date('Y', $contract_year_month) + date('m', $contract_year_month);
             $users = self::getUsersInfo($this->db, $agency_id, $date_format);
             $value = array(
                 'agency_id' => $agency_id,
                 'agency_name' => $agency_name,
                 'agency_email' => $agency_email,
+                'contract_id', $contract_id,
                 'contract_year_month' => $contract_year_month,
                 'claim_year_month' => $claim_year_month,
                 'amounts' => $amounts,
