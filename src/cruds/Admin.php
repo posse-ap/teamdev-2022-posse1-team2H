@@ -231,7 +231,7 @@ class Admin
         return false;
     }
 
-    public function getAgencies($year, $month, $sort = true)
+    public function getContracts($year, $month, $sort = true)
     {
         $date_format = (string)$year . sprintf('%02d', $month);
         if ($sort) {
@@ -242,7 +242,6 @@ class Admin
         $query = "SELECT
         agencies.id agency_id,
         agencies.name agency_name,
-        contracts.id contract_id,
         contracts.contract_year_month contract_year_month,
         contracts.claim_year_month claim,
         contracts.request_amounts amounts
@@ -277,7 +276,6 @@ class Admin
                 $item = array(
                     'agency_id' => $agency_id,
                     'agency_name' => $agency_name,
-                    'contract_year_month' => $contract_year_month,
                     'claim' => $claim,
                     'amounts' => $amounts,
                     'user_count' => $count
@@ -289,9 +287,9 @@ class Admin
         return json_encode(array());
     }
 
-    public function getAgencyContractsDetail($contract_id)
+    public function getAgencyContractsDetail($agency_id, $year, $month)
     {
-        // $date_format = (string)$year . sprintf('%02d', $month);
+        $date_format = (string)$year . sprintf('%02d', $month);
         $stmt = $this->db->prepare("SELECT
         agencies.id agency_id,
         agencies.name agency_name,
@@ -302,20 +300,20 @@ class Admin
         FROM agencies
         LEFT JOIN contracts
         ON agencies.id = contracts.agency_id
-        WHERE contracts.id = :contract_id
+        WHERE agencies.id = :agency_id
+        AND DATE_FORMAT(contracts.contract_year_month, '%Y%m') = :year_month
         ");
-        $stmt->bindValue(':contract_id', $contract_id, \PDO::PARAM_INT);
+        $stmt->bindValue(':agency_id', $agency_id, \PDO::PARAM_INT);
+        $stmt->bindValue(':year_month', $date_format, \PDO::PARAM_STR);
         $stmt->execute();
 
         while ($data = $stmt->fetch()) {
             extract($data);
-            $date_format = date('Y', $contract_year_month) + date('m', $contract_year_month);
             $users = self::getUsersInfo($this->db, $agency_id, $date_format);
             $value = array(
                 'agency_id' => $agency_id,
                 'agency_name' => $agency_name,
                 'agency_email' => $agency_email,
-                'contract_id', $contract_id,
                 'contract_year_month' => $contract_year_month,
                 'claim_year_month' => $claim_year_month,
                 'amounts' => $amounts,
@@ -377,7 +375,8 @@ class Admin
         return json_encode($res, JSON_UNESCAPED_UNICODE);
     }
 
-    public function updateAgency(Agency $agency) {
+    public function updateAgency(Agency $agency)
+    {
         $stmt = $this->db->prepare("UPDATE agencies
         SET
         name = :name,
@@ -406,7 +405,8 @@ class Admin
         return $agency;
     }
 
-    public function updateArticle(Article $article) {
+    public function updateArticle(Article $article)
+    {
         $stmt = $this->db->prepare("UPDATE agency_articles
         SET
         title = :title,
@@ -422,5 +422,39 @@ class Admin
         $stmt->execute();
 
         return $article;
+    }
+
+    public function getAgencies()
+    {
+        $stmt = $this->db->prepare('SELECT
+                agency.id,
+                agency.name,
+                article.title,
+                article.sentenses,
+                article.eyecatch_url
+                FROM agencies as agency
+                LEFT JOIN agency_articles as article
+                ON agency.id = article.agency_id
+                ORDER BY article.updated_at DESC
+            ');
+        $stmt->execute();
+
+        $num = $stmt->rowCount();
+        if ($num > 0) {
+            $values = array();
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                extract($row);
+                $item = array(
+                    'id' => $id,
+                    'name' => $name,
+                    'title' => $title,
+                    'sentenses' => $sentenses,
+                    'eyecatch_url' => $eyecatch_url
+                );
+                array_push($values, $item);
+            }
+            return json_encode($values, JSON_UNESCAPED_UNICODE);
+        }
+        return json_encode(array(), JSON_UNESCAPED_UNICODE);
     }
 }

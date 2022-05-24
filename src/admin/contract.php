@@ -14,7 +14,7 @@ if (!isset($id)) {
     header('Location: index.php');
 }
 
-$agency = json_decode($crud->getAgencyContractsDetail($id));
+$agency = json_decode($crud->getAgencyContractsDetail($id, $year, $month));
 
 include dirname(__FILE__) . '/header.php'
 ?>
