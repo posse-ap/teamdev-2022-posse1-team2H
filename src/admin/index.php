@@ -32,7 +32,7 @@ include dirname(__FILE__) . '/header.php';
         </div>
         <div class="agency_list_wrapper">
                 <ul class="agency_list_inner" id="contracts_target">
-                    
+                    <!-- jsで描画されます -->
                 </ul>
         </div>
     </main>
