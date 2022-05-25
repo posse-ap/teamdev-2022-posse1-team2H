@@ -50,8 +50,26 @@ const drawHTMLs = {
         </ol>
       `;
     });
-    let target = document.getElementById("contracts_target")
-    target.innerHTML = text
+    let target = document.getElementById("contracts_target");
+    target.innerHTML = text;
+  },
+  users: (data) => {
+    let text = ``;
+    data.forEach((d) => {
+      const { created_at, name, gender, age, id } = d;
+      const genderText = gender == 1 ? "男性" : "女性";
+      text += `
+        <ol>
+            <div>情報登録日時: ${created_at}</div>
+            <a href="./userDetail.php">${name}</a>
+            <div>${genderText}</div>
+            <div>${age}歳</div>
+            <input id="checkbox${id}" class="checkbox" type="hidden" name="user_id" value="${id}"></input><label id="label${id}" for="checkbox${id}"></label>
+        </ol>
+      `;
+    });
+    let target = document.getElementById("users_target");
+    target.innerHTML = text;
   },
 };
 
@@ -87,7 +105,19 @@ const getContractId = () => {
 
 const getAgenciesForFirstView = async () => {
   const { data } = await request.get({ url: `${prefix}/firstView.php` });
-  drawHTMLs.contracts(data)
+  drawHTMLs.contracts(data);
+};
+
+const usersFromContractDetail = async () => {
+  const id = document.getElementsByName(id)[0];
+  const params = {
+    contract_id: id,
+  };
+  const { data } = await request.get({
+    url: `${prefix}/usersFromContract.php`,
+    params: params,
+  });
+  drawHTMLs.users(data);
 };
 
 const getUsersFromContract = async (contractId) => {
@@ -110,7 +140,7 @@ const handleUsersDelete = async () => {
   });
   await deleteUsers(userIds, contractId).then(() => {
     const users = getUsersFromContract();
-    console.log(users);
+    drawHTMLs.users(users);
   });
 };
 
@@ -145,6 +175,11 @@ const deleteUsers = async (userIds, contractId) => {
 
 window.onload = () => {
   let indexPage = document.getElementById("top_page");
-  if (indexPage) getAgenciesForFirstView();
-  time();
+  if (indexPage) {
+    getAgenciesForFirstView();
+    time();
+  }
+
+  let contractPage = document.getElementById("contract");
+  if (contractPage) usersFromContractDetail();
 };

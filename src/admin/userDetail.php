@@ -3,6 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
 use modules\auth\Admin as Auth;
 use cruds\Admin as Crud;
+use modules\utils\Utils;
 
 $auth = new Auth($db);
 $crud = new Crud($db);
@@ -39,13 +40,7 @@ include dirname(__FILE__) . '/header.php';
                 <li id="department">学科: <?= $user->department ?></li>
                 <li id="school_year">学年: <?= $user->school_year ?></li>
                 <li id="graduation_year">卒業年: <?= $user->graduation_year ?>年</li>
-                <li id="gender">性別:
-                    <?php if ($user->gender == 0): ?>
-                        男性
-                    <?php else: ?>
-                        女性
-                    <?php endif ?>
-                </li>
+                <li id="gender">性別:<?= Utils::gender($user->gender) ?></li>
                 <li id="address">住所: <?= $user->address ?></li>
                 <li id="address_num">郵便番号: <?= $user->address_num ?></li>
             </ul>

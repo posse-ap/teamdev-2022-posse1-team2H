@@ -14,7 +14,7 @@ if (!isset($id)) {
     header('Location: index.php');
 }
 
-$agency = json_decode($crud->getAgencyContractsDetail($id, $year, $month));
+$agency = json_decode($crud->getAgencyContractsDetail($id, $year, $month)); // TODO contract id で検索
 
 include dirname(__FILE__) . '/header.php'
 ?>
@@ -27,7 +27,8 @@ include dirname(__FILE__) . '/header.php'
         </div>
     </div>
 </header>
-<main id="agency">
+<main id="contract">
+    <input type="hidden" name="id" value="<?= $id ?>">
     <div id="displayed_content" class="displayed_content">
         <input id="date_today" class="date_today" type="month">
         <div class="got_information">総情報獲得数：6件</div>
@@ -42,19 +43,9 @@ include dirname(__FILE__) . '/header.php'
             <div>期限　4/30</div>
             <div>金額xxxx</div>
         </div>
-        <?php for ($i = 1; $i < 6; $i++) : ?>
-            <ul class="agency_list_inner">
-                <ol>
-                    <div>情報登録日時:　2022年3月5日</div>
-                    <a href="./userDetail.php">加茂竜之介</a>
-                    <div>男性</div>
-                    <div>21歳</div>
-                    <input id="checkbox<?php echo $i ?>" class="checkbox" type="hidden" name="contract_id" value=""></input><label id="label<?php echo $i ?>" for="checkbox<?php echo $i ?>"></label>
-
-                </ol>
-
+            <ul class="agency_list_inner" id="users_target">
+                <!-- TODO: contractが描画 -->
             </ul>
-        <?php endfor ?>
     </div>
 </main>
 <?php include dirname(__FILE__) . '/footer.php' ?>

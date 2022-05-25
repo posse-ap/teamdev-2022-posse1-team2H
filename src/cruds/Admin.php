@@ -292,6 +292,7 @@ class Admin
         $query = "SELECT
         agencies.id agency_id,
         agencies.name agency_name,
+        contracts.id contract_id,
         contracts.contract_year_month contract_year_month,
         contracts.claim_year_month claim,
         contracts.request_amounts amounts
@@ -326,6 +327,7 @@ class Admin
                 $item = array(
                     'agency_id' => $agency_id,
                     'agency_name' => $agency_name,
+                    'contract_id' => $contract_id,
                     'claim' => $claim,
                     'amounts' => $amounts,
                     'user_count' => $count
