@@ -674,24 +674,24 @@ user_id='15',
 agency_id='1';
 
 INSERT INTO users_agencies SET
-user_id='15',
-agency_id='8';
+user_id='1',
+agency_id='11';
 
 INSERT INTO users_agencies SET
-user_id='15',
-agency_id='8';
+user_id='2',
+agency_id='10';
 
 INSERT INTO users_agencies SET
-user_id='15',
-agency_id='8';
+user_id='3',
+agency_id='9';
 
 INSERT INTO users_agencies SET
-user_id='15',
-agency_id='8';
+user_id='4',
+agency_id='7';
 
 INSERT INTO users_agencies SET
-user_id='15',
-agency_id='8';
+user_id='5',
+agency_id='6';
 
 
 
@@ -787,8 +787,8 @@ CREATE TABLE managers (
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
+-- ダミーデータ11個分
 DROP TABLE IF EXISTS contracts;
-
 CREATE TABLE contracts ( -- 契約情報のテーブル v
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, -- 契約id
   agency_id INT NOT NULL, -- エージェンシーid 外部キー成約
@@ -802,8 +802,84 @@ CREATE TABLE contracts ( -- 契約情報のテーブル v
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
-DROP TABLE IF EXISTS administorators;
+INSERT INTO contracts SET
+agency_id = '1',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '5000',
+student_unit_price = '1000';
 
+INSERT INTO contracts SET
+agency_id = '2',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '3',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '4',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '5',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '6',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '7',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '8',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '9',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '10',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '11',
+contract_year_month = '2022-05-25',
+claim_year_month = '2022-06-30',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+DROP TABLE IF EXISTS administorators;
 CREATE TABLE administorators (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
