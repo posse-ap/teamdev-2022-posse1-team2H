@@ -27,7 +27,7 @@ include dirname(__FILE__) . '/header.php';
     </header>
     <main id="top_page">
         <div id="displayed_content" class="displayed_content">
-            <input id="date_today" class="date_today" type="month">
+            <input id="date_today" class="date_today" type="month" name="yearmonth" onchange="handleSearch()">
             <div class="got_information">総情報獲得数: 6件</div>
             <div class="total_amount">合計金額: 2000</div>
         </div>

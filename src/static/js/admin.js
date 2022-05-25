@@ -96,7 +96,7 @@ const time = () => {
     today.push(month);
   }
   let dateToday = today.join(",").replaceAll(",", "-");
-//   console.log(dateToday);
+  //   console.log(dateToday);
   document.getElementById("date_today").value = dateToday;
 };
 
@@ -108,6 +108,30 @@ const getContractId = () => {
 const getAgenciesForFirstView = async () => {
   const { data } = await request.get({ url: `${prefix}/contracts.php` });
   drawHTMLs.contracts(data);
+};
+
+const handleSearch = async () => {
+  let value = document.getElementsByName("yearmonth")[0]; // value = 2022-02
+  const yearMonth = value.value.split("-", 2);
+  const year = yearMonth[0];
+  const month = yearMonth[1];
+  const params = {
+    year: year,
+    month: month,
+  };
+  const { data } = await searchContracts(params);
+  drawHTMLs.contracts(data);
+};
+
+const searchContracts = async (params) => {
+  const res = await request.get({
+    url: `${prefix}/contracts.php`,
+    params: params,
+  });
+  return {
+    data: res.data,
+    status: res.status,
+  };
 };
 
 const usersFromContractDetail = async () => {

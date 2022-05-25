@@ -289,18 +289,30 @@ class Admin
         } else {
             $sort_mode = "ASC";
         }
+        // $query = "SELECT
+        // agencies.id agency_id,
+        // agencies.name agency_name,
+        // contracts.id contract_id,
+        // DATE_FORMAT(contracts.contract_year_month, '%Y%m') contract_year_month,
+        // contracts.claim_year_month claim,
+        // contracts.request_amounts amounts
+        // FROM agencies
+        // LEFT JOIN contracts
+        // ON agencies.id = contracts.agency_id
+        // LEFT JOIN users_agencies
+        // ON agencies.id = users_agencies.agency_id
+        // WHERE DATE_FORMAT(contracts.contract_year_month, '%Y%m') = :year_month
+        // ORDER BY agencies.updated_at " . $sort_mode . "";
         $query = "SELECT
-        agencies.id agency_id,
-        agencies.name agency_name,
         contracts.id contract_id,
-        contracts.contract_year_month contract_year_month,
+        DATE_FORMAT(contracts.contract_year_month, '%Y%m') contract_year_month,
         contracts.claim_year_month claim,
-        contracts.request_amounts amounts
-        FROM agencies
-        LEFT JOIN contracts
-        ON agencies.id = contracts.agency_id
-        LEFT JOIN users_agencies
-        ON agencies.id = users_agencies.agency_id
+        contracts.request_amounts amounts,
+        agencies.id agency_id,
+        agencies.name agency_name
+        FROM contracts
+        LEFT JOIN agencies
+        ON contracts.agency_id = agencies.id
         WHERE DATE_FORMAT(contracts.contract_year_month, '%Y%m') = :year_month
         ORDER BY agencies.updated_at " . $sort_mode . "";
         $stmt = $this->db->prepare($query);
@@ -317,17 +329,21 @@ class Admin
                 COUNT(*)
                 FROM users_agencies
                 WHERE agency_id = :agency_id
-                AND DATE_FORMAT(updated_at, '%Y%m') = :year_month
+                AND DATE_FORMAT(created_at, '%Y%m') = :year_month
                 GROUP BY agency_id");
 
                 $count_stmt->bindValue(":agency_id", $agency_id . \PDO::PARAM_INT);
-                $count_stmt->bindValue(":year_month", $year_month, \PDO::PARAM_STR);
+                $count_stmt->bindValue(":year_month", $contract_year_month, \PDO::PARAM_STR);
                 $count_stmt->execute();
                 $count = $count_stmt->fetch(\PDO::FETCH_ASSOC);
+                if ($count == false) {
+                    $count = 0;
+                }
                 $item = array(
                     'agency_id' => $agency_id,
                     'agency_name' => $agency_name,
                     'contract_id' => $contract_id,
+                    'contract_year_month' => $contract_year_month,
                     'claim' => $claim,
                     'amounts' => $amounts,
                     'user_count' => $count
