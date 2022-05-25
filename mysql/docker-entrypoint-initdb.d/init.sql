@@ -24,8 +24,218 @@ CREATE TABLE users (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-DROP TABLE IF EXISTS agencies;
+-- usersテーブルにデータを15件入れる。
+INSERT INTO users SET 
+name='中村俊輔', 
+age='23', 
+email = 'nakamura@example.com',
+tel = '08000001111',
+university = '早稲田大学',
+undergraduate='教育学部',
+department='教育学科',
+school_year = '3',
+graduation_year = '24',
+gender='1',
+address='東京都杉並区',
+address_num="199-9999";
 
+INSERT INTO users SET 
+name='香川真司', 
+age='22', 
+email = 'kagawa@example.com',
+tel = '08000001111',
+university = '慶応義塾大学',
+undergraduate='経済学部',
+department="経済学科",
+school_year = '4',
+graduation_year = '25',
+gender='1',
+address='東京都大田区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='ラモス瑠偉', 
+age='23', 
+email = 'ramos@example.com',
+tel = '08000001111',
+university = '横浜国立大学',
+undergraduate='理工学部',
+department="数物・電子情報学科",
+school_year = '3',
+graduation_year = '24',
+gender='1',
+address='東京都文京区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='マラドーナ', 
+age='22', 
+email = 'maradona@example.com',
+tel = '08000001111',
+university = '早稲田大学',
+undergraduate='法学部',
+department="法学科",
+school_year = '4',
+graduation_year = '25',
+gender='1',
+address='東京都練馬区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='メッシ', 
+age='22', 
+email = 'messi@example.com',
+tel = '08000001111',
+university = '立教大学',
+undergraduate='理学部',
+department="数学科",
+school_year = '4',
+graduation_year = '25',
+gender='1',
+address='東京都港区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='大谷翔平', 
+age='22', 
+email = 'ohtanisan@example.com',
+tel = '08000001111',
+university = '東京大学',
+undergraduate='医学部',
+department="医学科",
+school_year = '3',
+graduation_year = '25',
+gender='1',
+address='東京都足立区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='羽生 結弦', 
+age='23', 
+email = 'hanyu@example.com',
+tel = '08000001111',
+university = '東京大学',
+undergraduate='文学部',
+department="哲学科",
+school_year = '3',
+graduation_year = '24',
+gender='1',
+address='東京都杉並区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='新垣結衣', 
+age='23', 
+email = 'yui@example.com',
+tel = '08000001111',
+university = '京都大学',
+undergraduate='薬学部',
+department='薬学科',
+school_year = '3',
+graduation_year = '24',
+gender='2',
+address='東京都世田谷区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='長澤まさみ', 
+age='22', 
+email = 'nagasawa@example.com',
+tel = '08000001111',
+university = '一橋大学',
+undergraduate='経済学部',
+department="経済学科",
+school_year = '4',
+graduation_year = '25',
+gender='2',
+address='東京都目黒区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='広瀬すず', 
+age='23', 
+email = 'suzu@example.com',
+tel = '08000001111',
+university = '上智大学',
+undergraduate='国際教養学部',
+department="国際教養学科",
+school_year = '3',
+graduation_year = '24',
+gender='2',
+address='東京都北区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='有村架純', 
+age='23', 
+email = 'arimura@example.com',
+tel = '08000001111',
+university = '明治大学',
+undergraduate='農学部',
+department="農学科",
+school_year = '4',
+graduation_year = '24',
+gender='2',
+address='東京都江戸川区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='浜辺美波', 
+age='22', 
+email = 'minami@example.com',
+tel = '08000001111',
+university = '法政大学',
+undergraduate='生命科学部',
+department="数学科",
+school_year = '4',
+graduation_year = '25',
+gender='2',
+address='東京都港区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='綾瀬はるか', 
+age='22', 
+email = 'ayase@example.com',
+tel = '08000001111',
+university = '慶応大学',
+undergraduate='総合政策学部',
+department="総合政策学科",
+school_year = '3',
+graduation_year = '25',
+gender='2',
+address='東京都杉並区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='吉岡里帆', 
+age='23', 
+email = 'yoshioka@example.com',
+tel = '08000001111',
+university = '立教大学',
+undergraduate='現代心理学部',
+department="映像身体学科",
+school_year = '3',
+graduation_year = '24',
+gender='2',
+address='東京都豊島区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='橋本佳奈', 
+age='22', 
+email = 'hashimoto@example.com',
+tel = '08000001111',
+university = '横浜国立大学',
+undergraduate='理工学部',
+department="科学・生命系学科",
+school_year = '3',
+graduation_year = '25',
+gender='2',
+address='東京大田区',
+address_num="199-9999";
+
+DROP TABLE IF EXISTS agencies;
 CREATE TABLE agencies (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
@@ -172,7 +382,7 @@ contactor = 'つねた',
 address = '東京都港区',
 address_num = '199-9999';
 
-
+-- 11個分
 DROP TABLE IF EXISTS agency_articles;
 CREATE TABLE agency_articles (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -186,8 +396,94 @@ CREATE TABLE agency_articles (
   REFERENCES agencies(id)
 );
 
-DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
+INSERT INTO agency_articles SET
+agency_id = '1',
+title = '○○です',
+sentenses = '○○○○○○○○○○○○○○○○○○○○○○○○○○○○',
+eyecatch_url = '.png';
 
+INSERT INTO agency_articles SET
+agency_id = '2',
+title = '3年A組',
+sentenses = '過去の自分がいまの自分を作る！
+だから過去から逃げてるお前も！お前も！お前も！
+極めて幼稚なガキのまま成長が止まってるってわけだ！
+そんなやつらが一体なにから卒業するっていうんだよ！',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '3',
+title = '下町ロケット',
+sentenses = '会社の規模などという尺度ではなく
+その製品が本当に優れているかどうかという
+少なとくとも本質的な議論をすべきです！',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '4',
+title = 'まみやしょうたろう',
+sentenses = '同世代の俳優はライバルという意識はない。
+肩肘をはるより肩を組んだ方が
+いい作品なるだろうから。',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '5',
+title = 'なかのたいが',
+sentenses = '見向きもされない時間が
+とても苦しかったですね。10代の頃はとにかく、
+悔しくてしょうがなかったです',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '6',
+title = 'るろうに剣心',
+sentenses = '釣れない人だなぁ...
+遊んでくださいよ。せっかく、志々雄さんからの
+お許しがでたんだから',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '7',
+title = 'まつざかとおり',
+sentenses = 'わかったつもりにならず、
+わからないことがあったら、じゃあどうするの？と
+自分に問いかけ振り返り、考えたい。',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '8',
+title = 'やまだゆうき',
+sentenses = '自分を良く見せようとする過信はダメだけど、
+根拠のない自信を持つことは大切。',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '9',
+title = 'よしざわりょう',
+sentenses = '僕、顔しかイケてないですから',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '10',
+title = 'かつて天才だった俺たちへ',
+sentenses = 'かつて天才だった俺たちへ 神童だったあなたへ
+似たような形に整えられて見る影もない
+未だかつて無いほど入り組んだway
+悩めるだけ悩め 時が来たらかませ
+風任せ どっちみち茨のway',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '11',
+title = '白日',
+sentenses='時には誰かを知らず知らずのうちに
+傷つけてしまったり、失ったりして初めて
+犯した罪を知る',
+eyecatch_url = '.png';
+
+-- ダミーデータ50個追加
+DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
 CREATE TABLE users_agencies (
   user_id INT,
   agency_id INT,
@@ -196,6 +492,308 @@ CREATE TABLE users_agencies (
   FOREIGN KEY fk_user_id(user_id) REFERENCES users(id),
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
+
+INSERT INTO users_agencies SET
+user_id='1',
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
+
+INSERT INTO users_agencies SET
+user_id='2',
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
+
+INSERT INTO users_agencies SET
+user_id='3',
+agency_id='3',
+created_at='2020-03-01',
+updated_at='2020-03-01';
+
+INSERT INTO users_agencies SET
+user_id='4',
+agency_id='4',
+created_at='2020-04-01',
+updated_at='2020-04-01';
+
+INSERT INTO users_agencies SET
+user_id='5',
+agency_id='5',
+created_at='2020-05-01',
+updated_at='2020-05-01';
+
+INSERT INTO users_agencies SET
+user_id='6',
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
+
+INSERT INTO users_agencies SET
+user_id='7',
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
+
+INSERT INTO users_agencies SET
+user_id='8',
+agency_id='8',
+created_at='2020-08-01',
+updated_at='2020-08-01';
+
+INSERT INTO users_agencies SET
+user_id='9',
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
+
+INSERT INTO users_agencies SET
+user_id='10',
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
+
+INSERT INTO users_agencies SET
+user_id='11',
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
+
+INSERT INTO users_agencies SET
+user_id='12',
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
+
+INSERT INTO users_agencies SET
+user_id='13',
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
+
+INSERT INTO users_agencies SET
+user_id='14',
+agency_id='3',
+created_at='2020-03-01',
+updated_at='2020-03-01';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='4',
+created_at='2020-04-01',
+updated_at='2020-04-01';
+
+INSERT INTO users_agencies SET
+user_id='1',
+agency_id='5',
+created_at='2020-05-01',
+updated_at='2020-05-01';
+
+INSERT INTO users_agencies SET
+user_id='2',
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
+
+INSERT INTO users_agencies SET
+user_id='3',
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
+
+INSERT INTO users_agencies SET
+user_id='4',
+agency_id='8',
+created_at='2020-08-01',
+updated_at='2020-08-01';
+
+INSERT INTO users_agencies SET
+user_id='5',
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
+
+INSERT INTO users_agencies SET
+user_id='6',
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
+
+INSERT INTO users_agencies SET
+user_id='7',
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
+
+INSERT INTO users_agencies SET
+user_id='8',
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
+
+INSERT INTO users_agencies SET
+user_id='9',
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
+
+INSERT INTO users_agencies SET
+user_id='10',
+agency_id='3',
+created_at='2020-03-01',
+updated_at='2020-03-01';
+
+INSERT INTO users_agencies SET
+user_id='11',
+agency_id='4',
+created_at='2020-04-01',
+updated_at='2020-04-01';
+
+INSERT INTO users_agencies SET
+user_id='12',
+agency_id='5',
+created_at='2020-05-01',
+updated_at='2020-05-01';
+
+INSERT INTO users_agencies SET
+user_id='13',
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
+
+INSERT INTO users_agencies SET
+user_id='14',
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='8',
+created_at='2020-08-01',
+updated_at='2020-08-01';
+
+INSERT INTO users_agencies SET
+user_id='1',
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
+
+INSERT INTO users_agencies SET
+user_id='2',
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
+
+INSERT INTO users_agencies SET
+user_id='3',
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
+
+INSERT INTO users_agencies SET
+user_id='4',
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
+
+INSERT INTO users_agencies SET
+user_id='5',
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
+
+INSERT INTO users_agencies SET
+user_id='6',
+agency_id='3',
+created_at='2020-03-01',
+updated_at='2020-03-01';
+
+INSERT INTO users_agencies SET
+user_id='7',
+agency_id='4',
+created_at='2020-04-01',
+updated_at='2020-04-01';
+
+INSERT INTO users_agencies SET
+user_id='8',
+agency_id='5',
+created_at='2020-05-01',
+updated_at='2020-05-01';
+
+INSERT INTO users_agencies SET
+user_id='9',
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
+
+INSERT INTO users_agencies SET
+user_id='10',
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
+
+INSERT INTO users_agencies SET
+user_id='11',
+agency_id='8',
+created_at='2020-08-01',
+updated_at='2020-08-01';
+
+INSERT INTO users_agencies SET
+user_id='12',
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
+
+INSERT INTO users_agencies SET
+user_id='13',
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
+
+INSERT INTO users_agencies SET
+user_id='14',
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
+
+INSERT INTO users_agencies SET
+user_id='1',
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
+
+INSERT INTO users_agencies SET
+user_id='2',
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
+
+INSERT INTO users_agencies SET
+user_id='3',
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
+
+INSERT INTO users_agencies SET
+user_id='4',
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
+
+INSERT INTO users_agencies SET
+user_id='5',
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
+
+
 
 DROP TABLE IF EXISTS industries;
 
@@ -289,8 +887,8 @@ CREATE TABLE managers (
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
+-- ダミーデータ11個分
 DROP TABLE IF EXISTS contracts;
-
 CREATE TABLE contracts ( -- 契約情報のテーブル v
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, -- 契約id
   agency_id INT NOT NULL, -- エージェンシーid 外部キー成約
@@ -304,8 +902,84 @@ CREATE TABLE contracts ( -- 契約情報のテーブル v
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
 
-DROP TABLE IF EXISTS administorators;
+INSERT INTO contracts SET
+agency_id = '1',
+contract_year_month = '2020-01-01',
+claim_year_month = '2020-02-28',
+request_amounts = '5000',
+student_unit_price = '1000';
 
+INSERT INTO contracts SET
+agency_id = '2',
+contract_year_month = '2020-02-01',
+claim_year_month = '2020-03-31',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '3',
+contract_year_month = '2020-03-01',
+claim_year_month = '2020-04-30',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '4',
+contract_year_month = '2020-04-01',
+claim_year_month = '2020-05-31',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '5',
+contract_year_month = '2020-05-01',
+claim_year_month = '2020-06-30',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '6',
+contract_year_month = '2020-06-01',
+claim_year_month = '2020-07-31',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '7',
+contract_year_month = '2020-07-01',
+claim_year_month = '2020-08-31',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '8',
+contract_year_month = '2020-08-01',
+claim_year_month = '2020-09-30',
+request_amounts = '4000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '9',
+contract_year_month = '2020-09-01',
+claim_year_month = '2020-10-31',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '10',
+contract_year_month = '2020-10-01',
+claim_year_month = '2020-11-30',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+INSERT INTO contracts SET
+agency_id = '11',
+contract_year_month = '2020-11-01',
+claim_year_month = '2020-12-31',
+request_amounts = '5000',
+student_unit_price = '1000';
+
+DROP TABLE IF EXISTS administorators;
 CREATE TABLE administorators (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
