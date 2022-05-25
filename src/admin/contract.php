@@ -10,7 +10,9 @@ $crud = new Crud($db);
 $auth->validate();
 
 $id = $_GET['id'];
-if (!isset($id)) {
+$year = $_GET['year'];
+$month = $_GET['month'];
+if (!isset($id) || !isset($year) || !isset($month)) {
     header('Location: index.php');
 }
 
