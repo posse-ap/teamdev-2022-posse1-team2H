@@ -35,7 +35,7 @@ undergraduate='教育学部',
 department='教育学科',
 school_year = '3',
 graduation_year = '24',
-gender='0',
+gender='1',
 address='東京都杉並区',
 address_num="199-9999";
 
@@ -49,7 +49,7 @@ undergraduate='経済学部',
 department="経済学科",
 school_year = '4',
 graduation_year = '25',
-gender='0',
+gender='1',
 address='東京都大田区',
 address_num="199-9999";
 
@@ -63,7 +63,7 @@ undergraduate='理工学部',
 department="数物・電子情報学科",
 school_year = '3',
 graduation_year = '24',
-gender='0',
+gender='1',
 address='東京都文京区',
 address_num="199-9999";
 
@@ -77,7 +77,7 @@ undergraduate='法学部',
 department="法学科",
 school_year = '4',
 graduation_year = '25',
-gender='0',
+gender='1',
 address='東京都練馬区',
 address_num="199-9999";
 
@@ -91,7 +91,7 @@ undergraduate='理学部',
 department="数学科",
 school_year = '4',
 graduation_year = '25',
-gender='0',
+gender='1',
 address='東京都港区',
 address_num="199-9999";
 
@@ -105,7 +105,7 @@ undergraduate='医学部',
 department="医学科",
 school_year = '3',
 graduation_year = '25',
-gender='0',
+gender='1',
 address='東京都足立区',
 address_num="199-9999";
 
@@ -119,7 +119,7 @@ undergraduate='文学部',
 department="哲学科",
 school_year = '3',
 graduation_year = '24',
-gender='0',
+gender='1',
 address='東京都杉並区',
 address_num="199-9999";
 
@@ -133,7 +133,7 @@ undergraduate='薬学部',
 department='薬学科',
 school_year = '3',
 graduation_year = '24',
-gender='1',
+gender='2',
 address='東京都世田谷区',
 address_num="199-9999";
 
@@ -147,7 +147,7 @@ undergraduate='経済学部',
 department="経済学科",
 school_year = '4',
 graduation_year = '25',
-gender='1',
+gender='2',
 address='東京都目黒区',
 address_num="199-9999";
 
@@ -161,7 +161,7 @@ undergraduate='国際教養学部',
 department="国際教養学科",
 school_year = '3',
 graduation_year = '24',
-gender='1',
+gender='2',
 address='東京都北区',
 address_num="199-9999";
 
@@ -175,7 +175,7 @@ undergraduate='農学部',
 department="農学科",
 school_year = '4',
 graduation_year = '24',
-gender='1',
+gender='2',
 address='東京都江戸川区',
 address_num="199-9999";
 
@@ -189,7 +189,7 @@ undergraduate='生命科学部',
 department="数学科",
 school_year = '4',
 graduation_year = '25',
-gender='1',
+gender='2',
 address='東京都港区',
 address_num="199-9999";
 
@@ -203,7 +203,7 @@ undergraduate='総合政策学部',
 department="総合政策学科",
 school_year = '3',
 graduation_year = '25',
-gender='1',
+gender='2',
 address='東京都杉並区',
 address_num="199-9999";
 
@@ -217,7 +217,7 @@ undergraduate='現代心理学部',
 department="映像身体学科",
 school_year = '3',
 graduation_year = '24',
-gender='1',
+gender='2',
 address='東京都豊島区',
 address_num="199-9999";
 
@@ -231,7 +231,7 @@ undergraduate='理工学部',
 department="科学・生命系学科",
 school_year = '3',
 graduation_year = '25',
-gender='1',
+gender='2',
 address='東京大田区',
 address_num="199-9999";
 
@@ -395,6 +395,17 @@ CREATE TABLE agency_articles (
   FOREIGN KEY fk_agency_id(agency_id)
   REFERENCES agencies(id)
 );
+
+INSERT INTO agency_articles SET
+agency_id = '株式会社DJ松永',
+title = 'かつて天才だった俺たちへ',
+sentenses = 'かつて天才だった俺たちへ 神童だったあなたへ
+似たような形に整えられて見る影もない
+未だかつて無いほど入り組んだway
+悩めるだけ悩め 時が来たらかませ
+風任せ どっちみち茨のway',
+eyecatch_url = 'trash2.png';
+
 
 DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
 
