@@ -96,7 +96,7 @@ const time = () => {
     today.push(month);
   }
   let dateToday = today.join(",").replaceAll(",", "-");
-  console.log(dateToday);
+//   console.log(dateToday);
   document.getElementById("date_today").value = dateToday;
 };
 
@@ -106,7 +106,7 @@ const getContractId = () => {
 };
 
 const getAgenciesForFirstView = async () => {
-  const { data } = await request.get({ url: `${prefix}/firstView.php` });
+  const { data } = await request.get({ url: `${prefix}/contracts.php` });
   drawHTMLs.contracts(data);
 };
 
