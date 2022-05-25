@@ -495,203 +495,303 @@ CREATE TABLE users_agencies (
 
 INSERT INTO users_agencies SET
 user_id='1',
-agency_id='1';
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
 
 INSERT INTO users_agencies SET
 user_id='2',
-agency_id='2';
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
 
 INSERT INTO users_agencies SET
 user_id='3',
-agency_id='3';
+agency_id='3',
+created_at='2020-03-01',
+updated_at='2020-03-01';
 
 INSERT INTO users_agencies SET
 user_id='4',
-agency_id='4';
+agency_id='4',
+created_at='2020-04-01',
+updated_at='2020-04-01';
 
 INSERT INTO users_agencies SET
 user_id='5',
-agency_id='5';
+agency_id='5',
+created_at='2020-05-01',
+updated_at='2020-05-01';
 
 INSERT INTO users_agencies SET
 user_id='6',
-agency_id='6';
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
 
 INSERT INTO users_agencies SET
 user_id='7',
-agency_id='7';
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
 
 INSERT INTO users_agencies SET
 user_id='8',
-agency_id='8';
+agency_id='8',
+created_at='2020-08-01',
+updated_at='2020-08-01';
 
 INSERT INTO users_agencies SET
 user_id='9',
-agency_id='9';
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
 
 INSERT INTO users_agencies SET
 user_id='10',
-agency_id='10';
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
 
 INSERT INTO users_agencies SET
 user_id='11',
-agency_id='11';
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
 
 INSERT INTO users_agencies SET
 user_id='12',
-agency_id='1';
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
 
 INSERT INTO users_agencies SET
 user_id='13',
-agency_id='2';
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
 
 INSERT INTO users_agencies SET
 user_id='14',
-agency_id='3';
+agency_id='3',
+created_at='2020-03-01',
+updated_at='2020-03-01';
 
 INSERT INTO users_agencies SET
 user_id='15',
-agency_id='4';
+agency_id='4',
+created_at='2020-04-01',
+updated_at='2020-04-01';
 
 INSERT INTO users_agencies SET
 user_id='1',
-agency_id='5';
+agency_id='5',
+created_at='2020-05-01',
+updated_at='2020-05-01';
 
 INSERT INTO users_agencies SET
 user_id='2',
-agency_id='6';
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
 
 INSERT INTO users_agencies SET
 user_id='3',
-agency_id='7';
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
 
 INSERT INTO users_agencies SET
 user_id='4',
-agency_id='8';
+agency_id='8',
+created_at='2020-08-01',
+updated_at='2020-08-01';
 
 INSERT INTO users_agencies SET
 user_id='5',
-agency_id='9';
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
 
 INSERT INTO users_agencies SET
 user_id='6',
-agency_id='10';
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
 
 INSERT INTO users_agencies SET
 user_id='7',
-agency_id='11';
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
 
 INSERT INTO users_agencies SET
 user_id='8',
-agency_id='1';
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
 
 INSERT INTO users_agencies SET
 user_id='9',
-agency_id='2';
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
 
 INSERT INTO users_agencies SET
 user_id='10',
-agency_id='3';
+agency_id='3',
+created_at='2020-03-01',
+updated_at='2020-03-01';
 
 INSERT INTO users_agencies SET
 user_id='11',
-agency_id='4';
+agency_id='4',
+created_at='2020-04-01',
+updated_at='2020-04-01';
 
 INSERT INTO users_agencies SET
 user_id='12',
-agency_id='5';
+agency_id='5',
+created_at='2020-05-01',
+updated_at='2020-05-01';
 
 INSERT INTO users_agencies SET
 user_id='13',
-agency_id='6';
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
 
 INSERT INTO users_agencies SET
 user_id='14',
-agency_id='7';
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
 
 INSERT INTO users_agencies SET
 user_id='15',
-agency_id='8';
+agency_id='8',
+created_at='2020-08-01',
+updated_at='2020-08-01';
 
 INSERT INTO users_agencies SET
 user_id='1',
-agency_id='9';
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
 
 INSERT INTO users_agencies SET
 user_id='2',
-agency_id='10';
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
 
 INSERT INTO users_agencies SET
 user_id='3',
-agency_id='11';
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
 
 INSERT INTO users_agencies SET
 user_id='4',
-agency_id='1';
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
 
 INSERT INTO users_agencies SET
 user_id='5',
-agency_id='2';
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
 
 INSERT INTO users_agencies SET
 user_id='6',
-agency_id='3';
+agency_id='3',
+created_at='2020-03-01',
+updated_at='2020-03-01';
 
 INSERT INTO users_agencies SET
 user_id='7',
-agency_id='4';
+agency_id='4',
+created_at='2020-04-01',
+updated_at='2020-04-01';
 
 INSERT INTO users_agencies SET
 user_id='8',
-agency_id='5';
+agency_id='5',
+created_at='2020-05-01',
+updated_at='2020-05-01';
 
 INSERT INTO users_agencies SET
 user_id='9',
-agency_id='6';
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
 
 INSERT INTO users_agencies SET
 user_id='10',
-agency_id='7';
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
 
 INSERT INTO users_agencies SET
 user_id='11',
-agency_id='8';
+agency_id='8',
+created_at='2020-08-01',
+updated_at='2020-08-01';
 
 INSERT INTO users_agencies SET
 user_id='12',
-agency_id='9';
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
 
 INSERT INTO users_agencies SET
 user_id='13',
-agency_id='10';
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
 
 INSERT INTO users_agencies SET
 user_id='14',
-agency_id='11';
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
 
 INSERT INTO users_agencies SET
 user_id='15',
-agency_id='1';
+agency_id='1',
+created_at='2020-01-01',
+updated_at='2020-01-01';
 
 INSERT INTO users_agencies SET
 user_id='1',
-agency_id='11';
+agency_id='11',
+created_at='2020-11-01',
+updated_at='2020-11-01';
 
 INSERT INTO users_agencies SET
 user_id='2',
-agency_id='10';
+agency_id='10',
+created_at='2020-10-01',
+updated_at='2020-10-01';
 
 INSERT INTO users_agencies SET
 user_id='3',
-agency_id='9';
+agency_id='9',
+created_at='2020-09-01',
+updated_at='2020-09-01';
 
 INSERT INTO users_agencies SET
 user_id='4',
-agency_id='7';
+agency_id='7',
+created_at='2020-07-01',
+updated_at='2020-07-01';
 
 INSERT INTO users_agencies SET
 user_id='5',
-agency_id='6';
+agency_id='6',
+created_at='2020-06-01',
+updated_at='2020-06-01';
 
 
 
@@ -811,7 +911,7 @@ student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '2',
-contract_year_month = '2020-02-1',
+contract_year_month = '2020-02-01',
 claim_year_month = '2020-03-31',
 request_amounts = '4000',
 student_unit_price = '1000';
