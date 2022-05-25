@@ -7,6 +7,21 @@ header("Content-Type: application/json; charset=UTF-8");
 use cruds\Admin;
 
 $crud = new Admin($db);
-$results = $crud->getContracts($year=date('Y'), $month=date('m'));  //TODO 先月にする
+
+
+
+
+if (!isset($_GET['year'])) {
+    $year = date("Y");
+} else {
+    $year = $_GET['year'];
+}
+if (!isset($_GET['month'])) {
+    $month = date("m");  //TODO 先月にする
+} else {
+    $month = $_GET['month'];
+}
+
+$results = $crud->getContracts($year, $month);
 echo $results;
 exit;
