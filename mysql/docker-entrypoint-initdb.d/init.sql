@@ -397,15 +397,89 @@ CREATE TABLE agency_articles (
 );
 
 INSERT INTO agency_articles SET
-agency_id = '株式会社DJ松永',
+agency_id = '1',
+title = '○○です',
+sentenses = '○○○○○○○○○○○○○○○○○○○○○○○○○○○○',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '2',
+title = '3年A組',
+sentenses = '過去の自分がいまの自分を作る！
+だから過去から逃げてるお前も！お前も！お前も！
+極めて幼稚なガキのまま成長が止まってるってわけだ！
+そんなやつらが一体なにから卒業するっていうんだよ！',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '3',
+title = '下町ロケット',
+sentenses = '会社の規模などという尺度ではなく
+その製品が本当に優れているかどうかという
+少なとくとも本質的な議論をすべきです！',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '4',
+title = 'まみやしょうたろう',
+sentenses = '同世代の俳優はライバルという意識はない。
+肩肘をはるより肩を組んだ方が
+いい作品なるだろうから。',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '5',
+title = 'なかのたいが',
+sentenses = '見向きもされない時間が
+とても苦しかったですね。10代の頃はとにかく、
+悔しくてしょうがなかったです',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '6',
+title = 'るろうに剣心',
+sentenses = '釣れない人だなぁ...
+遊んでくださいよ。せっかく、志々雄さんからの
+お許しがでたんだから',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '7',
+title = 'まつざかとおり',
+sentenses = 'わかったつもりにならず、
+わからないことがあったら、じゃあどうするの？と
+自分に問いかけ振り返り、考えたい。',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '8',
+title = 'やまだゆうき',
+sentenses = '自分を良く見せようとする過信はダメだけど、
+根拠のない自信を持つことは大切。',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '9',
+title = 'よしざわりょう',
+sentenses = '僕、顔しかイケてないですから',
+eyecatch_url = '.png';
+
+INSERT INTO agency_articles SET
+agency_id = '10',
 title = 'かつて天才だった俺たちへ',
 sentenses = 'かつて天才だった俺たちへ 神童だったあなたへ
 似たような形に整えられて見る影もない
 未だかつて無いほど入り組んだway
 悩めるだけ悩め 時が来たらかませ
 風任せ どっちみち茨のway',
-eyecatch_url = 'trash2.png';
+eyecatch_url = '.png';
 
+INSERT INTO agency_articles SET
+agency_id = '11',
+title = '時には誰かを知らず知らずのうちに
+傷つけてしまったり、失ったりして初めて
+犯した罪を知る',
+eyecatch_url = '.png';
 
 DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
 
