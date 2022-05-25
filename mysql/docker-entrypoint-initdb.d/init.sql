@@ -382,7 +382,7 @@ contactor = 'つねた',
 address = '東京都港区',
 address_num = '199-9999';
 
-
+-- 11個分
 DROP TABLE IF EXISTS agency_articles;
 CREATE TABLE agency_articles (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -476,13 +476,14 @@ eyecatch_url = '.png';
 
 INSERT INTO agency_articles SET
 agency_id = '11',
-title = '時には誰かを知らず知らずのうちに
+title = '白日',
+sentenses='時には誰かを知らず知らずのうちに
 傷つけてしまったり、失ったりして初めて
 犯した罪を知る',
 eyecatch_url = '.png';
 
+-- ダミーデータ50個追加
 DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
-
 CREATE TABLE users_agencies (
   user_id INT,
   agency_id INT,
@@ -491,6 +492,208 @@ CREATE TABLE users_agencies (
   FOREIGN KEY fk_user_id(user_id) REFERENCES users(id),
   FOREIGN KEY fk_agency_id(agency_id) REFERENCES agencies(id)
 );
+
+INSERT INTO users_agencies SET
+user_id='1',
+agency_id='1';
+
+INSERT INTO users_agencies SET
+user_id='2',
+agency_id='2';
+
+INSERT INTO users_agencies SET
+user_id='3',
+agency_id='3';
+
+INSERT INTO users_agencies SET
+user_id='4',
+agency_id='4';
+
+INSERT INTO users_agencies SET
+user_id='5',
+agency_id='5';
+
+INSERT INTO users_agencies SET
+user_id='6',
+agency_id='6';
+
+INSERT INTO users_agencies SET
+user_id='7',
+agency_id='7';
+
+INSERT INTO users_agencies SET
+user_id='8',
+agency_id='8';
+
+INSERT INTO users_agencies SET
+user_id='9',
+agency_id='9';
+
+INSERT INTO users_agencies SET
+user_id='10',
+agency_id='10';
+
+INSERT INTO users_agencies SET
+user_id='11',
+agency_id='11';
+
+INSERT INTO users_agencies SET
+user_id='12',
+agency_id='1';
+
+INSERT INTO users_agencies SET
+user_id='13',
+agency_id='2';
+
+INSERT INTO users_agencies SET
+user_id='14',
+agency_id='3';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='4';
+
+INSERT INTO users_agencies SET
+user_id='1',
+agency_id='5';
+
+INSERT INTO users_agencies SET
+user_id='2',
+agency_id='6';
+
+INSERT INTO users_agencies SET
+user_id='3',
+agency_id='7';
+
+INSERT INTO users_agencies SET
+user_id='4',
+agency_id='8';
+
+INSERT INTO users_agencies SET
+user_id='5',
+agency_id='9';
+
+INSERT INTO users_agencies SET
+user_id='6',
+agency_id='10';
+
+INSERT INTO users_agencies SET
+user_id='7',
+agency_id='11';
+
+INSERT INTO users_agencies SET
+user_id='8',
+agency_id='1';
+
+INSERT INTO users_agencies SET
+user_id='9',
+agency_id='2';
+
+INSERT INTO users_agencies SET
+user_id='10',
+agency_id='3';
+
+INSERT INTO users_agencies SET
+user_id='11',
+agency_id='4';
+
+INSERT INTO users_agencies SET
+user_id='12',
+agency_id='5';
+
+INSERT INTO users_agencies SET
+user_id='13',
+agency_id='6';
+
+INSERT INTO users_agencies SET
+user_id='14',
+agency_id='7';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='8';
+
+INSERT INTO users_agencies SET
+user_id='1',
+agency_id='9';
+
+INSERT INTO users_agencies SET
+user_id='2',
+agency_id='10';
+
+INSERT INTO users_agencies SET
+user_id='3',
+agency_id='11';
+
+INSERT INTO users_agencies SET
+user_id='4',
+agency_id='1';
+
+INSERT INTO users_agencies SET
+user_id='5',
+agency_id='2';
+
+INSERT INTO users_agencies SET
+user_id='6',
+agency_id='3';
+
+INSERT INTO users_agencies SET
+user_id='7',
+agency_id='4';
+
+INSERT INTO users_agencies SET
+user_id='8',
+agency_id='5';
+
+INSERT INTO users_agencies SET
+user_id='9',
+agency_id='6';
+
+INSERT INTO users_agencies SET
+user_id='10',
+agency_id='7';
+
+INSERT INTO users_agencies SET
+user_id='11',
+agency_id='8';
+
+INSERT INTO users_agencies SET
+user_id='12',
+agency_id='9';
+
+INSERT INTO users_agencies SET
+user_id='13',
+agency_id='10';
+
+INSERT INTO users_agencies SET
+user_id='14',
+agency_id='11';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='1';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='8';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='8';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='8';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='8';
+
+INSERT INTO users_agencies SET
+user_id='15',
+agency_id='8';
+
+
 
 DROP TABLE IF EXISTS industries;
 
