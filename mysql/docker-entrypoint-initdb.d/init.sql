@@ -804,78 +804,78 @@ CREATE TABLE contracts ( -- 契約情報のテーブル v
 
 INSERT INTO contracts SET
 agency_id = '1',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-01-01',
+claim_year_month = '2020-02-28',
 request_amounts = '5000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '2',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-02-1',
+claim_year_month = '2020-03-31',
 request_amounts = '4000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '3',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-03-01',
+claim_year_month = '2020-04-30',
 request_amounts = '4000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '4',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-04-01',
+claim_year_month = '2020-05-31',
 request_amounts = '4000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '5',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-05-01',
+claim_year_month = '2020-06-30',
 request_amounts = '4000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '6',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-06-01',
+claim_year_month = '2020-07-31',
 request_amounts = '5000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '7',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-07-01',
+claim_year_month = '2020-08-31',
 request_amounts = '5000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '8',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-08-01',
+claim_year_month = '2020-09-30',
 request_amounts = '4000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '9',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-09-01',
+claim_year_month = '2020-10-31',
 request_amounts = '5000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '10',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-10-01',
+claim_year_month = '2020-11-30',
 request_amounts = '5000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
 agency_id = '11',
-contract_year_month = '2022-05-25',
-claim_year_month = '2022-06-30',
+contract_year_month = '2020-11-01',
+claim_year_month = '2020-12-31',
 request_amounts = '5000',
 student_unit_price = '1000';
 
