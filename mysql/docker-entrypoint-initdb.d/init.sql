@@ -24,8 +24,218 @@ CREATE TABLE users (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-DROP TABLE IF EXISTS agencies;
+-- usersテーブルにデータを15件入れる。
+INSERT INTO users SET 
+name='中村俊輔', 
+age='23', 
+email = 'nakamura@example.com',
+tel = '08000001111',
+university = '早稲田大学',
+undergraduate='教育学部',
+department='教育学科',
+school_year = '3',
+graduation_year = '24',
+gender='0',
+address='東京都杉並区',
+address_num="199-9999";
 
+INSERT INTO users SET 
+name='香川真司', 
+age='22', 
+email = 'kagawa@example.com',
+tel = '08000001111',
+university = '慶応義塾大学',
+undergraduate='経済学部',
+department="経済学科",
+school_year = '4',
+graduation_year = '25',
+gender='0',
+address='東京都大田区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='ラモス瑠偉', 
+age='23', 
+email = 'ramos@example.com',
+tel = '08000001111',
+university = '横浜国立大学',
+undergraduate='理工学部',
+department="数物・電子情報学科",
+school_year = '3',
+graduation_year = '24',
+gender='0',
+address='東京都文京区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='マラドーナ', 
+age='22', 
+email = 'maradona@example.com',
+tel = '08000001111',
+university = '早稲田大学',
+undergraduate='法学部',
+department="法学科",
+school_year = '4',
+graduation_year = '25',
+gender='0',
+address='東京都練馬区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='メッシ', 
+age='22', 
+email = 'messi@example.com',
+tel = '08000001111',
+university = '立教大学',
+undergraduate='理学部',
+department="数学科",
+school_year = '4',
+graduation_year = '25',
+gender='0',
+address='東京都港区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='大谷翔平', 
+age='22', 
+email = 'ohtanisan@example.com',
+tel = '08000001111',
+university = '東京大学',
+undergraduate='医学部',
+department="医学科",
+school_year = '3',
+graduation_year = '25',
+gender='0',
+address='東京都足立区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='羽生 結弦', 
+age='23', 
+email = 'hanyu@example.com',
+tel = '08000001111',
+university = '東京大学',
+undergraduate='文学部',
+department="哲学科",
+school_year = '3',
+graduation_year = '24',
+gender='0',
+address='東京都杉並区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='新垣結衣', 
+age='23', 
+email = 'yui@example.com',
+tel = '08000001111',
+university = '京都大学',
+undergraduate='薬学部',
+department='薬学科',
+school_year = '3',
+graduation_year = '24',
+gender='1',
+address='東京都世田谷区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='長澤まさみ', 
+age='22', 
+email = 'nagasawa@example.com',
+tel = '08000001111',
+university = '一橋大学',
+undergraduate='経済学部',
+department="経済学科",
+school_year = '4',
+graduation_year = '25',
+gender='1',
+address='東京都目黒区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='広瀬すず', 
+age='23', 
+email = 'suzu@example.com',
+tel = '08000001111',
+university = '上智大学',
+undergraduate='国際教養学部',
+department="国際教養学科",
+school_year = '3',
+graduation_year = '24',
+gender='1',
+address='東京都北区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='有村架純', 
+age='23', 
+email = 'arimura@example.com',
+tel = '08000001111',
+university = '明治大学',
+undergraduate='農学部',
+department="農学科",
+school_year = '4',
+graduation_year = '24',
+gender='1',
+address='東京都江戸川区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='浜辺美波', 
+age='22', 
+email = 'minami@example.com',
+tel = '08000001111',
+university = '法政大学',
+undergraduate='生命科学部',
+department="数学科",
+school_year = '4',
+graduation_year = '25',
+gender='1',
+address='東京都港区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='綾瀬はるか', 
+age='22', 
+email = 'ayase@example.com',
+tel = '08000001111',
+university = '慶応大学',
+undergraduate='総合政策学部',
+department="総合政策学科",
+school_year = '3',
+graduation_year = '25',
+gender='1',
+address='東京都杉並区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='吉岡里帆', 
+age='23', 
+email = 'yoshioka@example.com',
+tel = '08000001111',
+university = '立教大学',
+undergraduate='現代心理学部',
+department="映像身体学科",
+school_year = '3',
+graduation_year = '24',
+gender='1',
+address='東京都豊島区',
+address_num="199-9999";
+
+INSERT INTO users SET 
+name='橋本佳奈', 
+age='22', 
+email = 'hashimoto@example.com',
+tel = '08000001111',
+university = '横浜国立大学',
+undergraduate='理工学部',
+department="科学・生命系学科",
+school_year = '3',
+graduation_year = '25',
+gender='1',
+address='東京大田区',
+address_num="199-9999";
+
+DROP TABLE IF EXISTS agencies;
 CREATE TABLE agencies (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
