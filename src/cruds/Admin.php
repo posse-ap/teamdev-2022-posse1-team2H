@@ -289,20 +289,6 @@ class Admin
         } else {
             $sort_mode = "ASC";
         }
-        // $query = "SELECT
-        // agencies.id agency_id,
-        // agencies.name agency_name,
-        // contracts.id contract_id,
-        // DATE_FORMAT(contracts.contract_year_month, '%Y%m') contract_year_month,
-        // contracts.claim_year_month claim,
-        // contracts.request_amounts amounts
-        // FROM agencies
-        // LEFT JOIN contracts
-        // ON agencies.id = contracts.agency_id
-        // LEFT JOIN users_agencies
-        // ON agencies.id = users_agencies.agency_id
-        // WHERE DATE_FORMAT(contracts.contract_year_month, '%Y%m') = :year_month
-        // ORDER BY agencies.updated_at " . $sort_mode . "";
         $query = "SELECT
         contracts.id contract_id,
         DATE_FORMAT(contracts.contract_year_month, '%Y%m') contract_year_month,

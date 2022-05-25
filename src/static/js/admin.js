@@ -40,10 +40,13 @@ const drawHTMLs = {
   contracts: (data) => {
     let text = ``;
     data.forEach((d) => {
-      const { contract_id, agency_name, claim, amounts, user_count } = d;
+      const { contract_id, agency_name, claim, contract_year_month, amounts, user_count } = d;
+      console.log(contract_year_month)
+      const year = contract_year_month.substr(0, 4)
+      const month = contract_year_month.substr(4);
       text += `
       <ol>
-        <a href="./contract.php?id=${contract_id}">${agency_name}</a>
+        <a href="./contract.php?id=${contract_id}&year=${year}&month=${month}">${agency_name}</a>
         <div>学生獲得数  ${user_count}件</div>
         <div>期限: ${claim}</div>
         <div>金額: ${amounts}円</div>
