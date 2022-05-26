@@ -15,9 +15,11 @@
     <title>CRAFT for Agencies</title>
 </head>
 <body>
-    <!-- ヘッダー -->
-    <header class="header">
-        <div class="title_underline">◯◯株式会社様 管理画面 by CRAFT</div>
+    <header>
+        <div class="header_top">
+            <p class="title_underline">◯◯株式会社様 管理画面 by CRAFT</p>
+            <a class="logout" href="">ログアウト</a>
+        </div>
         <div class="subtitle">
             <ul class="menu">
                 <li class="menu-list"><a href="index.php">学生個人情報</a></li>
