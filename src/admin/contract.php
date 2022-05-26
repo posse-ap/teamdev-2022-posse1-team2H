@@ -17,7 +17,7 @@ if (!isset($id) || !isset($year) || !isset($month)) {
 }
 
 $agency = json_decode($crud->getAgencyContractsDetail($id, $year, $month)); // TODO contract id で検索
-var_dump($agency);
+
 include dirname(__FILE__) . '/header.php'
 ?>
 
@@ -32,6 +32,8 @@ include dirname(__FILE__) . '/header.php'
 </header>
 <main id="contract">
     <input type="hidden" name="contract_id" value="<?= $id ?>">
+    <input type="hidden" name="year" value="<?= $year ?>">
+    <input type="hidden" name="month" value="<?= $month ?>">
     <div id="displayed_content" class="displayed_content">
         <input id="date_today" class="date_today" type="month">
         <div class="got_information">総情報獲得数：6件</div>

@@ -49,10 +49,12 @@ class Admin
         $stmt->execute();
         $ids = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
+        $ids = array_column($ids, 'user_id');
+
         $inclause = substr(str_repeat(',?', count($ids)), 1);
 
         $query = sprintf("SELECT
-        id
+        id,
         name,
         age,
         gender,
@@ -63,6 +65,7 @@ class Admin
         )
         ", $inclause);
         $stmt = $db->prepare($query);
+        $stmt->execute($ids);
 
         $num = $stmt->rowCount();
 
@@ -162,11 +165,12 @@ class Admin
         return;
     }
 
-    public function getUsersFromContract($contract_id)
+    public function getUsersFromContract($contract_id, $year, $month)
     {
+        $date_format = (string)$year . sprintf('%02d', $month);
         $contract = self::getContract($this->db, $contract_id);
         extract($contract);
-        $users = self::getUsersInfo($this->db, $agency_id, $claim_year_month);
+        $users = self::getUsersInfo($this->db, $agency_id, $date_format);
 
         return $users;
     }
@@ -368,7 +372,7 @@ class Admin
         $values = array();
         while ($data = $stmt->fetch(\PDO::FETCH_ASSOC)) {
             extract($data);
-            $users = self::getUsersInfo($this->db, $agency_id, $date_format);
+            $users = json_decode(self::getUsersInfo($this->db, $agency_id, $date_format));
             $value = array(
                 'agency_id' => $agency_id,
                 'agency_name' => $agency_name,
