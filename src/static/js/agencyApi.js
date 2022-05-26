@@ -165,3 +165,52 @@ const deleteManager = async (id) => {
 
   new $$;
 })(window,document);
+
+//追加アラート
+function clickEvent() {
+  alert('この個人情報を追加します。よろしいですか？');
+};
+
+//お問い合わせ
+function buttonClick() {
+  let radioBox1 = document.getElementById("radio1");
+  let radioBox2 = document.getElementById("radio2");
+  let radioBox3 = document.getElementById("radio3");
+  let hidden1 = document.getElementById("hidden1");
+  let hidden2 = document.getElementById("hidden2");
+  let hidden3 = document.getElementById("hidden3");
+  let txt1 = document.getElementById("txt1");
+  let txt2 = document.getElementById("txt2");
+  let txt3 = document.getElementById("txt3");
+  let txt4 = document.getElementById("txt4");
+  let txt5 = document.getElementById("txt5");
+  let txt6 = document.getElementById("txt6");
+  let txt7 = document.getElementById("txt7");
+  let txt8 = document.getElementById("txt8");
+
+  if (radioBox1.checked) {
+    hidden1.style.display = "block";
+    txt1.value = "";
+    txt2.value = "";
+    txt3.value = "";
+  } else {
+    hidden1.style.display = "none";
+  }
+
+  if (radioBox2.checked) {
+    hidden2.style.display = "block";
+    txt4.value = "";
+    txt5.value = "";
+    txt6.value = "";
+  } else {
+    hidden2.style.display = "none";
+  }
+
+  if (radioBox3.checked) {
+    hidden3.style.display = "block";
+    txt7.value = "";
+    txt8.value = "";
+  } else {
+    hidden3.style.display = "none";
+  }
+}
