@@ -40,9 +40,16 @@ const drawHTMLs = {
   contracts: (data) => {
     let text = ``;
     data.forEach((d) => {
-      const { contract_id, agency_name, claim, contract_year_month, amounts, user_count } = d;
-      console.log(contract_year_month)
-      const year = contract_year_month.substr(0, 4)
+      const {
+        contract_id,
+        agency_name,
+        claim,
+        contract_year_month,
+        amounts,
+        user_count,
+      } = d;
+      console.log(contract_year_month);
+      const year = contract_year_month.substr(0, 4);
       const month = contract_year_month.substr(4);
       text += `
       <ol>
@@ -106,6 +113,16 @@ const getContractId = () => {
   return contractId.value;
 };
 
+const getContractYear = () => {
+  const year = document.getElementsByName("year")[0];
+  return year.value;
+};
+
+const getContractMonth = () => {
+  const month = document.getElementsByName("month")[0];
+  return month.value;
+};
+
 const getAgenciesForFirstView = async () => {
   const { data } = await request.get({ url: `${prefix}/contracts.php` });
   drawHTMLs.contracts(data);
@@ -136,15 +153,18 @@ const searchContracts = async (params) => {
 };
 
 const usersFromContractDetail = async () => {
-  const id = getContractId()
+  const id = getContractId();
+  const year = getContractYear();
+  const month = getContractMonth();
   const params = {
     contract_id: id,
+    year: year,
+    month: month,
   };
   const { data } = await request.get({
     url: `${prefix}/usersFromContract.php`,
     params: params,
   });
-  console.log(data)
   drawHTMLs.users(data);
 };
 
