@@ -17,7 +17,7 @@ if (!isset($id) || !isset($year) || !isset($month)) {
 }
 
 $agency = json_decode($crud->getAgencyContractsDetail($id, $year, $month)); // TODO contract id で検索
-
+var_dump($agency);
 include dirname(__FILE__) . '/header.php'
 ?>
 
@@ -30,7 +30,7 @@ include dirname(__FILE__) . '/header.php'
     </div>
 </header>
 <main id="contract">
-    <input type="hidden" name="id" value="<?= $id ?>">
+    <input type="hidden" name="contract_id" value="<?= $id ?>">
     <div id="displayed_content" class="displayed_content">
         <input id="date_today" class="date_today" type="month">
         <div class="got_information">総情報獲得数：6件</div>
@@ -40,13 +40,13 @@ include dirname(__FILE__) . '/header.php'
     </div>
     <div class="agency_list_wrapper">
         <div class="the_agency_info">
-            <a href="./agencyDetail.php">○○○○llllllllllllll株式会社</a>
-            <div>情報獲得数　2件</div>
-            <div>期限　4/30</div>
-            <div>金額xxxx</div>
+            <a href="./agencyDetail.php?agency_id=<?= $agency->agency_id ?>"><?= $agency->agency_name ?></a>
+            <div>情報獲得数: <?= count($agency->users) ?>件</div>
+            <div>期限: <?= $agency->claim_year_month ?></div>
+            <div>金額: <?= $agency->amounts ?></div>
         </div>
             <ul class="agency_list_inner" id="users_target">
-                <!-- TODO: contractが描画 -->
+                <!-- TODO: contractが描画 -->`
             </ul>
     </div>
 </main>
