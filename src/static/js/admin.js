@@ -63,12 +63,21 @@ const drawHTMLs = {
     let target = document.getElementById("contracts_target");
     target.innerHTML = text;
   },
-  users: (data) => {
-    let text = ``;
-    data.forEach((d) => {
+  contract: (data) => {
+    const {
+      agency_id,
+      agency_name,
+      agency_email,
+      contract_id,
+      contract_year_month,
+      amounts,
+      users,
+    } = data;
+    let usersText = ``;
+    users.forEach((d) => {
       const { created_at, name, gender, age, id } = d;
       const genderText = gender == 1 ? "男性" : "女性";
-      text += `
+      usersText += `
         <ol>
             <div>情報登録日時: ${created_at}</div>
             <a href="./userDetail.php">${name}</a>
@@ -78,19 +87,31 @@ const drawHTMLs = {
         </ol>
       `;
     });
-    let target = document.getElementById("users_target");
+    let text = `<div class="the_agency_info">
+    <a href="./agencyDetail.php?agency_id=${agency_id}">${agency_name}</a>
+    <div>情報獲得数: ${users.length}件</div>
+    <div>期限: ${contract_year_month}</div>
+    <div>金額: ${amounts}</div>
+</div>
+<ul class="agency_list_inner" id="users_target">
+${usersText}
+</ul>`;
+
+    let target = document.getElementById("contract_target");
     target.innerHTML = text;
   },
 };
 
-const select = () => {
+const enableSelect = () => {
   for (let i = 1; i < 6; i++) {
-      let checkbox = document.getElementById(`checkbox${i}`);
-      if (checkbox.type !== 'checkbox') {
-          checkbox.type = "checkbox";
-      } else {
-          checkbox.type = "hidden";
-      }
+    let checkbox = document.getElementById(`checkbox${i}`);
+    if (checkbox.type !== "checkbox") {
+      checkbox.type = "checkbox";
+    } else {
+      checkbox.type = "hidden";
+    }
+  }
+};
 
 let today = [];
 const time = () => {
@@ -167,7 +188,7 @@ const usersFromContractDetail = async () => {
     url: `${prefix}/usersFromContract.php`,
     params: params,
   });
-  drawHTMLs.users(data);
+  drawHTMLs.contract(data);
 };
 
 const getUsersFromContract = async (contractId) => {
@@ -181,6 +202,29 @@ const getUsersFromContract = async (contractId) => {
   return res.data;
 };
 
+const getAgencyContractsDetail = async () => {
+  const contractId = getContractId();
+  const year = getContractYear();
+  const month = getContractMonth();
+
+  const params = {
+    id: contractId,
+    year: year,
+    month: month,
+  };
+  const { data } = await request.get({
+    url: `${prefix}/agencyContractDetail.php`,
+    params: params,
+  });
+  drawHTMLs.contract(data);
+};
+
+const confirmUsersDelete = async () => {
+  if (confirm("本当に削除しますか？")) {
+    await handleUsersDelete();
+  }
+};
+
 const handleUsersDelete = async () => {
   const contractId = document.getElementsByName("contract_id")[0];
   let userIds = [];
@@ -188,16 +232,20 @@ const handleUsersDelete = async () => {
   userTargets.forEach((user) => {
     if (user.checked === true) userIds.push(user.value);
   });
-  await deleteUsers(userIds, contractId).then(() => {
-    const users = getUsersFromContract();
-    drawHTMLs.users(users);
-  });
+  userIds = userIds.join(",");
+  const { data } = await deleteUsers(userIds, contractId);
+  console.log(data);
+  drawHTMLs.contract(data);
 };
 
 const deleteUsers = async (userIds, contractId) => {
+  const year = getContractYear();
+  const month = getContractMonth();
   const params = {
     user_ids: userIds,
     contract_id: contractId,
+    year: year,
+    month: month,
   };
   const res = await request.delete({
     url: `${prefix}/deleteUser.php`,
@@ -231,5 +279,5 @@ window.onload = () => {
   }
 
   let contractPage = document.getElementById("contract");
-  if (contractPage) usersFromContractDetail();
+  if (contractPage) getAgencyContractsDetail();
 };

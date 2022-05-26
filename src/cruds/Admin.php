@@ -20,7 +20,7 @@ class Admin
         $contract_stmt = $db->prepare("SELECT
         contracts.id contract_id,
         contracts.contract_year_month contract_year_month,
-        contracts.claim_year_month claim_year_month,
+        FORMAT(contracts.claim_year_month, 'yyyyMM') claim_year_month,
         contracts.request_amounts request_amounts,
         contracts.student_unit_price student_unit_price,
         contracts.paied paied,
@@ -208,20 +208,21 @@ class Admin
         $stmt = $this->db->prepare("DELETE
         FROM users_agencies
         WHERE user_id = :user_id
-        AND DATE_FORMAT(update_at, '%Y%m') = :claim_year_month");
-        $stmt->bindValue(':user_id', $user_id, $claim_year_month);
+        AND DATE_FORMAT(updated_at, '%Y%m') = :claim_year_month");
+        $stmt->bindValue(':user_id', $user_id, \PDO::PARAM_INT);
+        $stmt->bindValue(':claim_year_month', $claim_year_month, \PDO::PARAM_STR);
 
         if ($stmt->execute()) {
             $count_stmt = $this->db->prepare("SELECT
             COUNT(user_id)
             FROM users_agencies
             WHERE agency_id = :agency_id
-            AND DATE_FORMAT(update_at, '%Y%m') = :claim_year_month
+            AND DATE_FORMAT(updated_at, '%Y%m') = :claim_year_month
             GROUP BY agency_id");
             $count_stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
             $count_stmt->bindValue(":claim_year_month", $claim_year_month, \PDO::PARAM_STR);
             $count_stmt->execute();
-            $count = $count->fetch(\PDO::FETCH_ASSOC);
+            $count = $count_stmt->fetch(\PDO::FETCH_ASSOC);
 
             $new_amounts = $student_unit_price * (int)$count;
             $update = $this->db->prepare("UPDATE contracts

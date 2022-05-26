@@ -925,7 +925,7 @@ INSERT INTO contracts SET
 agency_id = '2',
 contract_year_month = '2020-02-01',
 claim_year_month = '2020-03-31',
-request_amounts = '4000',
+request_amounts = '6000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET
