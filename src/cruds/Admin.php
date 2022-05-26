@@ -18,14 +18,18 @@ class Admin
     private function getContract($db, $contract_id)
     {
         $contract_stmt = $db->prepare("SELECT
-        id contract_id,
-        contract_year_month,
-        claim_year_month,
-        request_amounts,
-        student_unit_price,
-        paied
+        contracts.id contract_id,
+        contracts.contract_year_month contract_year_month,
+        contracts.claim_year_month claim_year_month,
+        contracts.request_amounts request_amounts,
+        contracts.student_unit_price student_unit_price,
+        contracts.paied paied,
+        agencies.id agency_id,
+        agencies.name name
         FROM contracts
-        WHERE id = :contract_id");
+        LEFT JOIN agencies
+        ON contracts.agency_id = agencies.id
+        WHERE contracts.id = :contract_id");
         $contract_stmt->bindValue(":contract_id", $contract_id, \PDO::PARAM_INT);
         $contract_stmt->execute();
 
@@ -162,7 +166,6 @@ class Admin
     {
         $contract = self::getContract($this->db, $contract_id);
         extract($contract);
-
         $users = self::getUsersInfo($this->db, $agency_id, $claim_year_month);
 
         return $users;
@@ -348,6 +351,7 @@ class Admin
         agencies.id agency_id,
         agencies.name agency_name,
         agencies.email agency_email,
+        contracts.id contract_id,
         contracts.contract_year_month contract_year_month,
         contracts.claim_year_month claim_year_month,
         contracts.request_amounts amounts
@@ -361,20 +365,23 @@ class Admin
         $stmt->bindValue(':year_month', $date_format, \PDO::PARAM_STR);
         $stmt->execute();
 
-        while ($data = $stmt->fetch()) {
+        $values = array();
+        while ($data = $stmt->fetch(\PDO::FETCH_ASSOC)) {
             extract($data);
             $users = self::getUsersInfo($this->db, $agency_id, $date_format);
             $value = array(
                 'agency_id' => $agency_id,
                 'agency_name' => $agency_name,
                 'agency_email' => $agency_email,
+                'contract_id' => $contract_id,
                 'contract_year_month' => $contract_year_month,
                 'claim_year_month' => $claim_year_month,
                 'amounts' => $amounts,
                 'users' => $users
             );
-            return json_encode($value, JSON_UNESCAPED_UNICODE);
+            array_push($values, $value);
         }
+        return json_encode($value, JSON_UNESCAPED_UNICODE);
     }
 
     public function getAgencyDetail($agency_id, $contract_mode = true)

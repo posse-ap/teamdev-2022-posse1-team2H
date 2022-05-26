@@ -105,7 +105,7 @@ const time = () => {
 
 const getContractId = () => {
   const contractId = document.getElementsByName("contract_id")[0];
-  return contractId;
+  return contractId.value;
 };
 
 const getAgenciesForFirstView = async () => {
@@ -138,7 +138,7 @@ const searchContracts = async (params) => {
 };
 
 const usersFromContractDetail = async () => {
-  const id = document.getElementsByName(id)[0];
+  const id = getContractId()
   const params = {
     contract_id: id,
   };
@@ -146,6 +146,7 @@ const usersFromContractDetail = async () => {
     url: `${prefix}/usersFromContract.php`,
     params: params,
   });
+  console.log(data)
   drawHTMLs.users(data);
 };
 
