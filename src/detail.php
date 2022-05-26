@@ -70,7 +70,8 @@ include dirname(__FILE__) . '/header.php';
                             <h2 class="content_detail_subcontent_left_agentstudent_student_title">どんな学生にオススメか</h2>
                             <p class="content_detail_subcontent_left_agentstudent_student_text">
                                 アリスは川辺でおねえさんのよこにすわって、なんにもすることがないのでとても退屈（たいくつ）しはじめていました。 一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。 「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは思いました。 そこでアリスは、頭のなかで、ひなぎくのくさりをつくったら楽しいだろうけれど、 起きあがってひなぎくをつむのもめんどくさいし、どうしようかと考えていました （といっても、昼間で暑いし、とってもねむくて頭もまわらなかったので、
-                                これもたいへんだったのですが）。 そこへいきなり、ピンクの目をした白うさぎが近くを走ってきたのです。 それだけなら、そんなにめずらしいことでもありませんでした。 さらにアリスとしては、そのうさぎが 「どうしよう！どうしよう！ ちこくしちゃうぞ！」 とつぶやくのを聞いたときも、 それがそんなにへんてこだとは思いませんでした （あとから考えてみたら、これも不思議に思うべきだったのですけれど、 でもこのときには、それがごく自然なことに思えたのです）。</p>
+                                これもたいへんだったのですが）。 そこへいきなり、ピンクの目をした白うさぎが近くを走ってきたのです。 それだけなら、そんなにめずらしいことでもありませんでした。 さらにアリスとしては、そのうさぎが 「どうしよう！どうしよう！ ちこくしちゃうぞ！」 とつぶやくのを聞いたときも、 それがそんなにへんてこだとは思いませんでした （あとから考えてみたら、これも不思議に思うべきだったのですけれど、 でもこのときには、それがごく自然なことに思えたのです
+                            </p>
                         </div>
                         <div class="content_detail_subcontent_left_responsive_company">
                                 <div class="borderline">
@@ -86,7 +87,8 @@ include dirname(__FILE__) . '/header.php';
                                     <p class="content_detail_subcontent_left_responsive_company_member">15000のメンバー</p>
                                     <p class="content_detail_subcontent_left_responsive_company_address">東京都港区表参道Harbors</p>
                                 </div>
-                            </div>
+                        </div>
+                    </div>
                     <div class="borderline">
                         <hr>
                     </div>
@@ -158,35 +160,35 @@ include dirname(__FILE__) . '/header.php';
 
                 </div>
             </div>
-           
+
+            <div class="content_detail_underrequest">
+                    <div class="content_detail_action_bar">
+    
+                        <div class="content_detail_underrequest_seelaterbox">
+    
+                            <h4 class="content_detail_underrequest_seelatertext">気になるリストに追加
+                            </h4>
+                        </div>
+                        <div class="content_detail_underrequest_likelistbox">
+    
+                            <h4 class="content_detail_underrequest_likelisttext">気になるリストへ
+                            </h4>
+                        </div>
+                        <div class="content_detail_underrequest_inquirybox">
+    
+                            <h4 class="content_detail_underrequest_inquirytext">お問合せ
+                            </h4>
+                        </div>
+                    </div>
+            </div>
+        </div>
     
         <!-- 一番下に固定しておく後で見るに追加とお問合せ -->
 
-        <div class="content_detail_underrequest">
-                <div class="content_detail_action_bar">
-
-                    <div class="content_detail_underrequest_seelaterbox">
-
-                        <h4 class="content_detail_underrequest_seelatertext">気になるリストに追加
-                        </h4>
-                    </div>
-                    <div class="content_detail_underrequest_likelistbox">
-
-                        <h4 class="content_detail_underrequest_likelisttext">気になるリストへ
-                        </h4>
-                    </div>
-                    <div class="content_detail_underrequest_inquirybox">
-
-                        <h4 class="content_detail_underrequest_inquirytext">お問合せ
-                        </h4>
-                    </div>
-                </div>
-            
-        </div>
-        </div>
-        </div>
-        <div class="detail_blank"></div>
-        </div>
+    </div>
+        
+<div class="detail_blank"></div>
+        
 
 </main>
 <?php include dirname(__FILE__) . '/footer.php' ?>
