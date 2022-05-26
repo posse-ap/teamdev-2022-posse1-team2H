@@ -7,7 +7,8 @@ $auth->validate();
 
 include dirname(__FILE__) . '/header.php' ?>
 
-<div class="subtitle span">
+<main>
+    <div class="subtitle span">
         <p>田中太郎さん 詳細情報</p>
     </div>
     <div class="detail_box">
@@ -21,5 +22,6 @@ include dirname(__FILE__) . '/header.php' ?>
         <p>卒業予定年： 2024年</p>
         <p class="button"><a href="index.php">戻る</a></p>
     </div>
+</main>
 
 <?php include dirname(__FILE__) . '/footer.php' ?>
