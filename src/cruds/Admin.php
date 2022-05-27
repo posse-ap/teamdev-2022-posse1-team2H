@@ -19,8 +19,8 @@ class Admin
     {
         $contract_stmt = $db->prepare("SELECT
         contracts.id contract_id,
-        contracts.contract_year_month contract_year_month,
-        FORMAT(contracts.claim_year_month, 'yyyyMM') claim_year_month,
+        DATE_FORMAT(contracts.contract_year_month, '%Y%m') contract_year_month,
+        DATE_FORMAT(contracts.claim_year_month, '%Y%m') claim_year_month,
         contracts.request_amounts request_amounts,
         contracts.student_unit_price student_unit_price,
         contracts.paied paied,
@@ -33,7 +33,7 @@ class Admin
         $contract_stmt->bindValue(":contract_id", $contract_id, \PDO::PARAM_INT);
         $contract_stmt->execute();
 
-        $contract = $contract_stmt->fetch(\PDO::FETCH_ASSOC);
+        $contract = $contract_stmt->fetch();
         return $contract;
     }
 
@@ -208,21 +208,21 @@ class Admin
         $stmt = $this->db->prepare("DELETE
         FROM users_agencies
         WHERE user_id = :user_id
-        AND DATE_FORMAT(updated_at, '%Y%m') = :claim_year_month");
+        AND DATE_FORMAT(updated_at, '%Y%m') = :contract_year_month");
         $stmt->bindValue(':user_id', $user_id, \PDO::PARAM_INT);
-        $stmt->bindValue(':claim_year_month', $claim_year_month, \PDO::PARAM_STR);
+        $stmt->bindValue(':contract_year_month', $contract_year_month, \PDO::PARAM_STR);
+        $success = $stmt->execute();
 
-        if ($stmt->execute()) {
+        if ($success) {
             $count_stmt = $this->db->prepare("SELECT
-            COUNT(user_id)
+            *
             FROM users_agencies
             WHERE agency_id = :agency_id
-            AND DATE_FORMAT(updated_at, '%Y%m') = :claim_year_month
-            GROUP BY agency_id");
+            AND DATE_FORMAT(updated_at, '%Y%m') = :contract_year_month");
             $count_stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
-            $count_stmt->bindValue(":claim_year_month", $claim_year_month, \PDO::PARAM_STR);
+            $count_stmt->bindValue(":contract_year_month", $contract_year_month, \PDO::PARAM_STR);
             $count_stmt->execute();
-            $count = $count_stmt->fetch(\PDO::FETCH_ASSOC);
+            $count = $count_stmt->rowCount();
 
             $new_amounts = $student_unit_price * (int)$count;
             $update = $this->db->prepare("UPDATE contracts
@@ -234,7 +234,7 @@ class Admin
             $update->bindValue(":contract_id", $contract_id, \PDO::PARAM_INT);
             $update->execute();
 
-            return true;
+            return $contract;
         }
         return false;
     }
