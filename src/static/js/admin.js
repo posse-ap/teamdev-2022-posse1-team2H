@@ -48,7 +48,6 @@ const drawHTMLs = {
         amounts,
         user_count,
       } = d;
-      console.log(contract_year_month);
       const year = contract_year_month.substr(0, 4);
       const month = contract_year_month.substr(4);
       text += `
@@ -222,19 +221,18 @@ const confirmUsersDelete = async () => {
 };
 
 const handleUsersDelete = async () => {
-  const contractId = document.getElementsByName("contract_id")[0];
   let userIds = [];
   const userTargets = document.getElementsByName("user_id");
   userTargets.forEach((user) => {
     if (user.checked === true) userIds.push(user.value);
   });
   userIds = userIds.join(',');
-  const { data } = await deleteUsers(userIds, contractId);
-  console.log(data)
+  const { data } = await deleteUsers(userIds);
   drawHTMLs.contract(data)
 };
 
-const deleteUsers = async (userIds, contractId) => {
+const deleteUsers = async (userIds) => {
+  const contractId = getContractId();
   const year = getContractYear();
   const month = getContractMonth();
   const params = {
