@@ -18,7 +18,6 @@ if (!isset($id)) {
 
 $user = $crud->getUserDetail($id);
 $user = json_decode($user);
-var_dump($user);
 
 include dirname(__FILE__) . '/header.php';
 ?>
