@@ -63,12 +63,14 @@ const drawHTMLs = {
     target.innerHTML = text;
   },
   contract: (data) => {
+    console.log(data)
     const {
       agency_id,
       agency_name,
       agency_email,
       contract_id,
       contract_year_month,
+      claim_year_month,
       amounts,
       users,
     } = data;
@@ -79,7 +81,7 @@ const drawHTMLs = {
       usersText += `
         <ol>
             <div>情報登録日時: ${created_at}</div>
-            <a href="./userDetail.php">${name}</a>
+            <a href="./userDetail.php?id=${id}">${name}</a>
             <div>${genderText}</div>
             <div>${age}歳</div>
             <input id="checkbox${id}" class="checkbox" type="hidden" name="user_id" value="${id}"></input><label id="label${id}" for="checkbox${id}"></label>
@@ -89,7 +91,7 @@ const drawHTMLs = {
     let text = `<div class="the_agency_info">
     <a href="./agencyDetail.php?agency_id=${agency_id}">${agency_name}</a>
     <div>情報獲得数: ${users.length}件</div>
-    <div>期限: ${contract_year_month}</div>
+    <div>期限: ${claim_year_month}</div>
     <div>金額: ${amounts}</div>
 </div>
 <ul class="agency_list_inner" id="users_target">

@@ -9,13 +9,14 @@ $cruds = new Cruds($db);
 
 $auth->validate();
 
-$id = $_GET['id'];
+$agency_id = $_GET['agency_id'];
 
-if (!isset($id)) {
+if (!isset($agency_id)) {
     header('Location: agencies.php');
+    exit;
 }
 
-$agency = $cruds->getAgencyDetail($id);
+$agency = $cruds->getAgencyDetail($agency_id);
 
 $agency = json_decode($agency);
 
