@@ -261,14 +261,13 @@ class Admin
         $stmt->execute();
         $user = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-        $count_stmt = $this->db->prepare("SELECT COUNT(*) FROM users_agencies
+        $count_stmt = $this->db->prepare("SELECT * FROM users_agencies
         WHERE user_id = :user_id
-        GROUP BY user_id
         ");
         $count_stmt->bindValue(":user_id", $user_id, \PDO::PARAM_INT);
         $count_stmt->execute();
 
-        $count = $count_stmt->fetch(\PDO::FETCH_ASSOC);
+        $count = $count_stmt->rowcount();
         extract($user);
         $item = array(
             "id" => $id,
