@@ -14,6 +14,7 @@ $industries = $cruds->getIndustries();
 include dirname(__FILE__) . "/header.php";
 ?>
 <main id="user_top" class="content">
+
     <!-- エージェント一覧 -->
     <div class="agency_list">
         <div class="new_agency_wrapper">
@@ -62,27 +63,27 @@ include dirname(__FILE__) . "/header.php";
         <aside id="sidebar_inner" class="sidebar_inner">
             <div class="sidebar_favorite_area">
                 <div class="sidebar_favorite">
-                    <a href="seeLater.php">後で見る</a>
+                    <a href="seeLater.php" class="sidebar_favorite_text">気になるリストへ</a>
                 </div>
                 <div class="favorite_content"></div>
-            </div><br>
+            <!-- </div><br> -->
             <div class="sidebar_search_area">
                 <form name="searchform" method="" action="" onsubmit="return false">
                     <div class="sidebar_search">
-                        <h2 onclick="appearSidebar()">検索</h2>
+                        <h1 onclick="appearSidebar()" class="sidebar_search_text">検索</h1>
                         <div id="serach_content" class="serach_content">
                             <div id="business_type_wrapper" class="business_type_wrapper">
-                                <h3 onclick="appearIndustryTypes()"><i class="fa-solid fa-building"> 業種</i></h3>
+                                <h3 onclick="appearIndustryTypes()" class="business_type_wrapper_text"><i class="fa-solid fa-building"> 業種</i></h3>
                                 <div id="business_type_items" class="business_type_inner">
                                     <?php foreach ($industries as $industry) : ?>
-                                        <label>
+                                        <label class="a">
                                             <input class="business_type_tag" type="checkbox" name="industries" value="<?= $industry['id'] ?>" onclick="handleSearch()"><?= $industry['industry'] ?>
                                         </label>
                                     <?php endforeach ?>
                                 </div>
                             </div>
                             <div class="business_features_wrapper">
-                                <h3 onclick="appearTypes()"><i class="fa-solid fa-glasses"></i> 特徴</h3>
+                                <h3 onclick="appearTypes()" class="business_features_wrapper_text"><i class="fa-solid fa-glasses"></i> 特徴</h3>
                                 <div id="business_features" class="business_type_inner">
                                     <?php foreach ($types as $type) : ?>
                                         <label>
