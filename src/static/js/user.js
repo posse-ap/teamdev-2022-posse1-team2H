@@ -3,15 +3,15 @@ const prefix = "http://localhost/modules/api";
 const userPrefix = `${prefix}/user`;
 
 const drawHTMLs = {
-  agencies: (data) => {
-    let text = ``;
-    data.forEach((d) => {
-      const { id, name, title, eyecatch_url, industries, types } = d;
-      let tags = ``;
-      for (let i = 0; i < types.length; i++) {
-        tags += `<a href=""><span class="filling"></span>#${types[i].agency_type}</a>`;
-      }
-      text += `
+    agencies: (data) => {
+        let text = ``;
+        data.forEach((d) => {
+            const { id, name, title, eyecatch_url, industries, types } = d;
+            let tags = ``;
+            for (let i = 0; i < types.length; i++) {
+                tags += `<a href=""><span class="filling"></span>#${types[i].agency_type}</a>`;
+            }
+            text += `
     <article class="new_agency_card">
         <div class="agency_img">
             <a href="detail.php?id=${id}">
@@ -33,28 +33,28 @@ const drawHTMLs = {
         </div>
     </article>
     `;
-    });
-    let agencyTarget = document.getElementById("new_agencies_target");
-    agencyTarget.innerHTML = text;
-  },
-  favs: (data) => {
-    let text = ``;
-    if (data.length === 0) {
-      text = "後で見るには何もありません";
-    } else {
-      for (let i = 0; i < data.length; i++) {
-        const { id, name, title, industries, types, eyecatch } = data[i];
-        let industriesText = ``;
-        let typesText = ``;
-
-        industries.forEach((industry) => {
-          industriesText += `<a href="">#${industry.industry}</a>`;
         });
-        types.forEach((type) => {
-          typesText += `<a href="">#${type.agency_type}</a>`;
-        });
+        let agencyTarget = document.getElementById("new_agencies_target");
+        agencyTarget.innerHTML = text;
+    },
+    favs: (data) => {
+        let text = ``;
+        if (data.length === 0) {
+            text = "後で見るには何もありません";
+        } else {
+            for (let i = 0; i < data.length; i++) {
+                const { id, name, title, industries, types, eyecatch } = data[i];
+                let industriesText = ``;
+                let typesText = ``;
 
-        text += `
+                industries.forEach((industry) => {
+                    industriesText += `<a href="">#${industry.industry}</a>`;
+                });
+                types.forEach((type) => {
+                    typesText += `<a href="">#${type.agency_type}</a>`;
+                });
+
+                text += `
         <div class="user_likelist_inner1box">
             <div class="user_likelist_inner1">
               <div class="user_likelist_inner1_header">
@@ -90,160 +90,160 @@ const drawHTMLs = {
             </div>
 
           </div>`;
-      }
-    }
-    let favTarget = document.getElementById("fav_target");
-    favTarget.innerHTML = text;
-  },
+            }
+        }
+        let favTarget = document.getElementById("fav_target");
+        favTarget.innerHTML = text;
+    },
 };
 
-const getAgenciesForFirstView = async () => {
-  // TODO ローディング表示
-  const res = await axios(`${userPrefix}/firstView.php`);
-  const { data } = res;
-  drawHTMLs.agencies(data);
+const getAgenciesForFirstView = async() => {
+    // TODO ローディング表示
+    const res = await axios(`${userPrefix}/firstView.php`);
+    const { data } = res;
+    drawHTMLs.agencies(data);
 };
 
-const handleSearch = async () => {
-  let industries = [];
-  let types = [];
-  const industriesTarget = document.getElementsByName("industries");
-  const typesTarget = document.getElementsByName("types");
-  industriesTarget.forEach((industry) => {
-    if (industry.checked === true) industries.push(industry.value);
-  });
-  typesTarget.forEach((type) => {
-    if (type.checked === true) types.push(type.value);
-  });
-  const { data } = await searchAgencies(types, industries);
-  drawHTMLs.agencies(data);
-};
-
-const searchAgencies = async (types, industries) => {
-  types = types.length === 0 ? null : types.join();
-  industries = industries.length === 0 ? null : industries.join();
-  const params = {
-    types: types,
-    industries: industries,
-  };
-  const res = await axios.get(`${userPrefix}/searchAgencies.php`, {
-    params: params,
-  });
-
-  return {
-    data: res.data,
-    stauts: res.status,
-  };
-};
-
-const getFavs = async () => {
-  const agencyIds = sessionStorage.getItem("ids");
-  const params = {
-    agency_ids: agencyIds,
-  };
-  await axios
-    .get(`${userPrefix}/fav.php`, {
-      params: params,
-    })
-    .then((res) => {
-      drawHTMLs.favs(res.data);
+const handleSearch = async() => {
+    let industries = [];
+    let types = [];
+    const industriesTarget = document.getElementsByName("industries");
+    const typesTarget = document.getElementsByName("types");
+    industriesTarget.forEach((industry) => {
+        if (industry.checked === true) industries.push(industry.value);
     });
+    typesTarget.forEach((type) => {
+        if (type.checked === true) types.push(type.value);
+    });
+    const { data } = await searchAgencies(types, industries);
+    drawHTMLs.agencies(data);
+};
+
+const searchAgencies = async(types, industries) => {
+    types = types.length === 0 ? null : types.join();
+    industries = industries.length === 0 ? null : industries.join();
+    const params = {
+        types: types,
+        industries: industries,
+    };
+    const res = await axios.get(`${userPrefix}/searchAgencies.php`, {
+        params: params,
+    });
+
+    return {
+        data: res.data,
+        stauts: res.status,
+    };
+};
+
+const getFavs = async() => {
+    const agencyIds = sessionStorage.getItem("ids");
+    const params = {
+        agency_ids: agencyIds,
+    };
+    await axios
+        .get(`${userPrefix}/fav.php`, {
+            params: params,
+        })
+        .then((res) => {
+            drawHTMLs.favs(res.data);
+        });
 };
 
 const appearing = (appearing) => {
-  document.getElementById(appearing).classList.toggle("appearing");
+    document.getElementById(appearing).classList.toggle("appearing");
 };
 
 const appearSidebar = () => {
-  appearing("serach_content");
+    appearing("serach_content");
 };
 
 const appearIndustryTypes = () => {
-  appearing("business_type_items");
+    appearing("business_type_items");
 };
 
 const appearTypes = () => {
-  appearing("business_features");
+    appearing("business_features");
 };
 
 const handleClickStar = (agencyId) => {
-  toggleColor(agencyId);
-  saveFav(agencyId);
+    toggleColor(agencyId);
+    saveFav(agencyId);
 };
 
 const toggleColor = (agencyId) => {
-  let target = document.getElementById(`star_${agencyId}`);
-  target.classList.toggle("toggle_star");
+    let target = document.getElementById(`star_${agencyId}`);
+    target.classList.toggle("toggle_star");
 };
 
 const handleSaveFav = (agencyId) => {
-  const favs = readFav();
-  if (!favs.includes(agencyId)) {
-    saveFav(agencyId);
-    alert("「後で見る」に保存しました");
-  } else {
-    alert("すでに「後で見る」に存在しています");
-  }
+    const favs = readFav();
+    if (!favs.includes(agencyId)) {
+        saveFav(agencyId);
+        alert("「後で見る」に保存しました");
+    } else {
+        alert("すでに「後で見る」に存在しています");
+    }
 };
 
 const saveFav = (agencyId) => {
-  let agencyIds = readFav();
-  if (agencyIds === undefined) {
-    agencyIds = [];
-  }
-  if (!agencyIds.includes(agencyId)) {
-    agencyIds.push(agencyId);
-  } else {
-    agencyIds.splice(agencyIds.indexOf(agencyId), 1);
-  }
-  sessionStorage.setItem("ids", agencyIds);
+    let agencyIds = readFav();
+    if (agencyIds === undefined) {
+        agencyIds = [];
+    }
+    if (!agencyIds.includes(agencyId)) {
+        agencyIds.push(agencyId);
+    } else {
+        agencyIds.splice(agencyIds.indexOf(agencyId), 1);
+    }
+    sessionStorage.setItem("ids", agencyIds);
 };
 
-const handleRemoveFromFav = async (agencyId) => {
-  removeFromFav(agencyId);
-  await getFavs();
-  countFavs();
+const handleRemoveFromFav = async(agencyId) => {
+    removeFromFav(agencyId);
+    await getFavs();
+    countFavs();
 };
 
 const removeFromFav = (agencyId) => {
-  let favs = readFav();
-  if (!favs.includes(agencyId)) return;
-  favs.splice(favs.indexOf(agencyId), 1);
-  sessionStorage.setItem("ids", favs);
+    let favs = readFav();
+    if (!favs.includes(agencyId)) return;
+    favs.splice(favs.indexOf(agencyId), 1);
+    sessionStorage.setItem("ids", favs);
 };
 
 const countFavs = () => {
-  const favs = readFav();
-  let target = document.getElementById("fav_count");
-  target.innerText = favs.length;
+    const favs = readFav();
+    let target = document.getElementById("fav_count");
+    target.innerText = favs.length;
 };
 
 const readFav = () => {
-  let agencyIds = sessionStorage.getItem("ids");
-  if (agencyIds) {
-    agencyIds = agencyIds.split(",");
-    agencyIds = agencyIds.map((x) => Number(x));
-    return agencyIds;
-  }
-  return [];
+    let agencyIds = sessionStorage.getItem("ids");
+    if (agencyIds) {
+        agencyIds = agencyIds.split(",");
+        agencyIds = agencyIds.map((x) => Number(x));
+        return agencyIds;
+    }
+    return [];
 };
 
 const deleteFav = () => {
-  sessionStorage.removeItem("ids");
+    sessionStorage.removeItem("ids");
 };
 
 const changeStarsColor = () => {
-  const ids = readFav();
-  for (let i = 0; i < ids.length; i++) {
-    toggleColor(ids[i]);
-  }
+    const ids = readFav();
+    for (let i = 0; i < ids.length; i++) {
+        toggleColor(ids[i]);
+    }
 };
 
 const diplayingCompanyInfo = () => {
-  let contentDetail = document.getElementById(
-    "content_detail_subcontent_right_serch_information_details"
-  );
-  contentDetail.classList.toggle("add");
+    let contentDetail = document.getElementById(
+        "content_detail_subcontent_right_serch_information_details"
+    );
+    contentDetail.classList.toggle("add");
 };
 
 const allowTransition = () => {
@@ -280,16 +280,25 @@ const contactAll = () => {
     target.innerHTML = `<a href="./contact.php?ids=${ids}">まとめて問い合わせる</a>`
 }
 
-window.onload = async () => {
-  const userTop = document.getElementById("user_top");
-  if (userTop) {
-    await getAgenciesForFirstView();
-    changeStarsColor();
-  }
-  const favPage = document.getElementById("fav_page");
-  if (favPage) {
-    countFavs();
-    contactAll();
-    await getFavs();
-  }
+window.onload = async() => {
+    const userTop = document.getElementById("user_top");
+    if (userTop) {
+        await getAgenciesForFirstView();
+        changeStarsColor();
+    }
+    const favPage = document.getElementById("fav_page");
+    if (favPage) {
+        countFavs();
+        contactAll();
+        await getFavs();
+    }
+};
+// checkboxにチェックされたら新着とランキングのタイトルを消す
+const businessTypeTag = getElementsByName("business_type_tag");
+
+function titlechecked() {
+    const titleBox = getElementsByName("title_box");
+    if (businessTypeTag.checked) {
+        titleBox.display.style = "none";
+    }
 };

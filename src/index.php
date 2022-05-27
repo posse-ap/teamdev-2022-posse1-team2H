@@ -18,14 +18,22 @@ include dirname(__FILE__) . "/header.php";
     <!-- エージェント一覧 -->
     <div class="agency_list">
         <div class="new_agency_wrapper">
-            <h1 class="title">新着</h1>
+            
+            <div class="title_box">
+            <h1 class="title">NEW ARRIVAL</h1>
+            <h3 class="subtitle">新着</h3>
+            </div>
             <div class="new_agency_inner" id="new_agencies_target">
                     <!-- articles -->
             </div>
         </div>
 
         <div class="popular_agency_wrapper">
-            <h1 class="title">人気</h1>
+            <!-- <h1 class="title">人気</h1> -->
+            <div class="title_box">
+            <h1 class="title">RANKING</h1>
+            <h3 class="subtitle">ランキング</h3>
+            </div>
             <div class="popular_agency_inner">
                 <?php for ($i = 6; $i < 12; $i++) : ?>
                     <article class="popular_agency_card">
