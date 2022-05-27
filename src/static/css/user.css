@@ -102,6 +102,14 @@ header {
     gap: 35px;
 }
 
+.new_agency_card:hover {
+    opacity: 0.5;
+}
+
+.popular_agency_card:hover {
+    opacity: 0.5;
+}
+
 
 /* 新着エージェンシーのカード&人気のエージェンシーのカード */
 
