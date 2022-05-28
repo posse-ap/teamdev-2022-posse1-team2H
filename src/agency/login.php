@@ -16,13 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['agency_manager']['id'] = $manager['id'];
             $_SESSION['agency_manager']['time'] = time();
             $_SESSION['agency']['id'] = $manager['agency_id'];
+            $_SESSION['agency']['name'] = $cruds->getAgencyName($_SESSION['agency']['id']);
         }
         if (isset($_SESSION['agency_manager']['id'])) {
             if ($_POST['save'] === 'on') {
                 setcookie('email', $_POST['email'], time() + 60 * 60 * 24 * 14);
             }
 
-            header('Location: index.php');
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . '/agency/index.php');
             exit();
         } else {
             $error['login'] = 'failed';

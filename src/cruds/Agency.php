@@ -72,6 +72,13 @@ class Agency
         return $user;
     }
 
+    public function getAgencyName($agency_id) {
+        $stmt = $this->db->prepare("SELECT name FROM agencies WHERE id = :agency_id");
+        $stmt->bindValue(':agency_id', $agency_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(\PDO::FETCH_ASSOC)['name'];
+    }
+
     public function getManager($manager_id)
     {
         $stmt = $this->db->prepare('SELECT
