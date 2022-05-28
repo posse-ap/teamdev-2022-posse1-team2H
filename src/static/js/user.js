@@ -202,7 +202,7 @@ const saveFav = (agencyId) => {
 const handleRemoveFromFav = async (agencyId) => {
   removeFromFav(agencyId);
   await getFavs();
-  countFavs()
+  countFavs();
 };
 
 const removeFromFav = (agencyId) => {
