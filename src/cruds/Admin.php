@@ -49,25 +49,28 @@ class Admin
         $stmt->execute();
         $ids = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-        $ids = array_column($ids, 'user_id');
+        if (!empty($ids)) {
+            $ids = array_column($ids, 'user_id');
 
-        $inclause = substr(str_repeat(',?', count($ids)), 1);
+            $inclause = substr(str_repeat(',?', count($ids)), 1);
 
-        $query = sprintf("SELECT
-        id,
-        name,
-        age,
-        gender,
-        created_at
-        FROM users
-        WHERE id IN (
-            %s
-        )
-        ", $inclause);
-        $stmt = $db->prepare($query);
-        $stmt->execute($ids);
-
-        $num = $stmt->rowCount();
+            $query = sprintf("SELECT
+            id,
+            name,
+            age,
+            gender,
+            created_at
+            FROM users
+            WHERE id IN (
+                %s
+            )
+            ", $inclause);
+            $stmt = $db->prepare($query);
+            $stmt->execute($ids);
+            $num = $stmt->rowCount();
+        } else {
+            $num = 0;
+        }
 
         if ($num > 0) {
             $values = array();
@@ -239,7 +242,8 @@ class Admin
         return false;
     }
 
-    public function getUserDetail($user_id) {
+    public function getUserDetail($user_id)
+    {
         $stmt = $this->db->prepare("SELECT
         id,
         name,

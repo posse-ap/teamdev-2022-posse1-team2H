@@ -63,7 +63,6 @@ const drawHTMLs = {
     target.innerHTML = text;
   },
   contract: (data) => {
-    console.log(data)
     const {
       agency_id,
       agency_name,
