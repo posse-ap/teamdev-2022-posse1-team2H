@@ -24,9 +24,7 @@ include dirname(__FILE__) . '/header.php'
 <header>
     <div class="header_inside">
         <div class="page_name">管理画面</div>
-        <!-- <div id="header_content" class="header_content"> -->
             <a href="./index.php">初期画面へ</a>
-        <!-- </div> -->
         <a href="./logout.php">logout</a>
     </div>
 </header>
@@ -35,7 +33,6 @@ include dirname(__FILE__) . '/header.php'
     <input type="hidden" name="year" value="<?= $year ?>">
     <input type="hidden" name="month" value="<?= $month ?>">
     <div id="displayed_content" class="displayed_content">
-        <input id="date_today" class="date_today" type="month">
         <button onclick="enableSelect()">選択</button>
         <button onclick="confirmUsersDelete()">消去</button>
     </div>
