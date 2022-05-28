@@ -43,6 +43,18 @@ class User
         return $types;
     }
 
+    private function getuser($db, $user_id) {
+        $stmt = $db->prepare("SELECT
+        *
+        FROM users
+        WHERE id = :user_id
+        ");
+        $stmt->bindValue(":user_id", $user_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        return $user;
+    }
+
     public function getAgencies($types = null, $industries = null)
     {
         if ($types === null && $industries === null) {
@@ -245,6 +257,7 @@ class User
 
         if ($user_success) {
             $user_id = $this->db->lastInsertId();
+            $user = self::getUser($this->db, $user_id);
             foreach ($agencies as $agency) {
                 $agencies_stmt = $this->db->prepare('INSERT INTO users_agencies (user_id, agency_id) VALUES (:user_id, :agency_id)');
 

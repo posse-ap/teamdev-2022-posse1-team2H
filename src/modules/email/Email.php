@@ -20,4 +20,29 @@ class Email
 
         return mb_send_mail($to, $title, $message, $headers);
     }
+
+    public static function generateTextFromUser($user) {
+
+
+    }
+
+    public static function generatetextToUser($user, $agencies) {
+        $text = "お問い合わせありがとうございます。\n
+        〇〇に以下の内容で〇〇様のお問い合わせ内容を送信しました。
+
+        氏名:
+        年齢:
+        email:
+        電話番号:
+        大学:
+        学部:
+        学科:
+        学年:
+        卒業予定年:
+        性別:
+        住所:
+        郵便番号:
+        ";
+        return $text;
+    }
 }
