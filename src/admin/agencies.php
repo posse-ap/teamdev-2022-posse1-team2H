@@ -27,7 +27,7 @@ include dirname(__FILE__) . '/header.php';
             <ul class="agency_list_inner">
                 <?php foreach ($agencies as $agency) : ?>
                     <ol>
-                        <a href="./agencyInfo.php?id=<?= $agency->id ?>"><?= $agency->name ?></a>
+                        <a href="./agency.php?id=<?= $agency->id ?>"><?= $agency->name ?></a>
                     </ol>
                 <?php endforeach; ?>
             </ul>

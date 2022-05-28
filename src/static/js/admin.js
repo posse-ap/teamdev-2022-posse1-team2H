@@ -88,7 +88,7 @@ const drawHTMLs = {
       `;
     });
     let text = `<div class="the_agency_info">
-    <a href="./agencyDetail.php?agency_id=${agency_id}">${agency_name}</a>
+    <a href="./agency.php?id=${agency_id}">${agency_name}</a>
     <div>情報獲得数: ${users.length}件</div>
     <div>期限: ${claim_year_month}</div>
     <div>金額: ${amounts}</div>
