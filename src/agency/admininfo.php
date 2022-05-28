@@ -45,7 +45,8 @@ include dirname(__FILE__) . '/header.php' ?>
 <main id="managers">
     <input type="hidden" name="agency_id" value="<?= $agency_id ?>">
     <div class="detail_box">
-        <p><?= $agency_info->name ?>メールアドレス： <?= $agency_info->email ?></p>
+        <p>名前: <?= $agency_info->name ?></p>
+        <p>メールアドレス： <?= $agency_info->email ?></p>
         <p>電話番号： <?= $agency_info->agency_tel ?></p>
     </div>
     <a class="edit_button" href="./edit.php">編集</a>

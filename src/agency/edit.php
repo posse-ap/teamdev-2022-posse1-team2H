@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $manager->name = $_POST['name'];
             $manager->email = $_POST['email'];
             if ($crud->updateManager($manager)) {
-                header('Location: index.php');
+                header('Location: http://' . $_SERVER['HTTP_HOST'] . '/agency/admininfo.php');
                 exit();
             } else {
                 $error = 'failed';
