@@ -129,10 +129,10 @@ include dirname(__FILE__) . '/header.php';
                             <div class="content_detail_subcontent_right_serch_seelaterfield_add">
 
                                 <div class="content_detail_subcontent_right_serch_seelaterfield_add_box" onclick="handleSaveFav(<?= Utils::h( $agency->id) ?>)">
-                                    <p class="content_detail_subcontent_right_serch_seelaterfield_add_box_text">「気になる」へ追加</p>
+                                    <p class="content_detail_subcontent_right_serch_seelaterfield_add_box_text">「後で見る」へ追加</p>
                                 </div>
                                 <div class="content_detail_subcontent_right_serch_seelaterfield_seelaterbox">
-                                    <p class="content_detail_subcontent_right_serch_seelaterfield_seelaterbox_text">気になるリスト</p>
+                                    <p class="content_detail_subcontent_right_serch_seelaterfield_seelaterbox_text">後で見るリスト</p>
 
                                 </div>
                             </div>
