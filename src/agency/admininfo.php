@@ -1,44 +1,31 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 use modules\auth\Agency;
+use cruds\Agency as Crud;
 
+$crud = new Crud($db);
 $auth = new Agency($db);
 $auth->validate();
 
 $agency_id = $_SESSION['agency']['id'];
-$manager_id = $_SESSION['manager']['id'];
+$manager_id = $_SESSION['agency_manager']['id'];
+
+$agency_info = json_decode($crud->getManagerWithAgency($manager_id));
 
 include dirname(__FILE__) . '/header.php' ?>
 
-<main>
+<main id="managers">
+    <input type="hidden" name="agency_id" value="<?= $agency_id ?>">
     <div class="detail_box">
-        <p>田中太郎</p>
-        <p>メールアドレス： taro.tanaka@gmail.com</p>
-        <p>電話番号： 090-9999-999</p>
+        <p><?= $agency_info->name ?>メールアドレス： <?= $agency_info->email ?></p>
+        <p>電話番号： <?= $agency_info->agency_tel ?></p>
     </div>
     <a class="edit_button" href="">編集</a>
     <div class="list_box">
         <p>個人担当者一覧</p>
-        <div class="small_list_box">
-            <li class="email">AA BB：aa.bb@gmail.com</li>
-            <button type="button" class="trash">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-        </div>
-        <div class="small_list_box">
-            <li class="email">CC DD：cc.dd@gmail.com</li>
-            <button type="button" class="trash">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-        </div>
-        <div class="small_list_box">
-            <li class="email">EE FF：ee.ff@gmail.com</li>
-            <button type="button" class="trash">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-        </div>
+        <div id="managers_target"></div>
+        <a class="open_modal" href="#" onclick="addAgencyManager()">追加</a>
     </div>
-    <a class="open_modal" href="#" onclick="addAgencyManager()">追加</a>
 </main>
 <div id="overlay" class="overlay"></div>
 <div id="modal" class="modal">

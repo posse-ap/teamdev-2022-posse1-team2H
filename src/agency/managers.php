@@ -9,7 +9,7 @@ $auth->validate();
 
 include dirname(__FILE__) . '/header.php';
 ?>
-<main id="managers">
+<main >
     <div class="container">
 
     </div>
