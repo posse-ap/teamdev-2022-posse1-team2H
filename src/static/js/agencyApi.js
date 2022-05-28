@@ -2,9 +2,24 @@ const prefix = "http://localhost/modules/api";
 
 const agencyPrefix = `${prefix}/agency`;
 
+const drawHTMLs = {
+  users: (data) => {
+    text = ``;
+    data.forEach(d => {
+      const {id, name, email, updated_at, gender, age} = d
+      const genderText = gender === 1 ? '男' : '女'
+      text += `
+      <p class="private_small_box"><a href="detail.php?id=${id}">${updated_at} ${name} ${genderText} ${age}歳 ${email}</a></p>
+      `
+    })
+    let target = document.getElementById('agency_top')
+    target.innerHTML = text
+  }
+}
+
 const getUsersForFirstView = async () => {
   await axios(`${agencyPrefix}/firstView.php`).then((res) => {
-    console.log(res.data);
+    drawHTMLs.users(res.data);
   });
 };
 
