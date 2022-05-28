@@ -45,25 +45,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error['address_num'] = 'address_num required';
     }
     if (empty($error)) {
-    $user = new Model(
-        $_REQUEST['name'],
-        $_REQUEST['email'],
-        $_REQUEST['tel'],
-        $_REQUEST['university'],
-        $_REQUEST['undergraduate'],
-        $_REQUEST['department'],
-        $_REQUEST['age'],
-        $_REQUEST['school_year'],
-        $_REQUEST['graduation_year'],
-        $_REQUEST['gender'],
-        $_REQUEST['address'],
-        $_REQUEST['address_num']
-    );
-    $agencies = $_REQUEST['agency_ids'];
-    $_SESSION['user_form']['user'] = serialize($user);
-    $_SESSION['user_form']['agencies'] = $agencies;
-    header('Location:http://' . $_SERVER['HTTP_HOST'] . '/contactAfter.php');
-    exit();
+        $user = new Model(
+            $_REQUEST['name'],
+            $_REQUEST['email'],
+            $_REQUEST['tel'],
+            $_REQUEST['university'],
+            $_REQUEST['undergraduate'],
+            $_REQUEST['department'],
+            $_REQUEST['age'],
+            $_REQUEST['school_year'],
+            $_REQUEST['graduation_year'],
+            $_REQUEST['gender'],
+            $_REQUEST['address'],
+            $_REQUEST['address_num']
+        );
+        $agencies = $_REQUEST['agency_ids'];
+        $_SESSION['user_form']['user'] = serialize($user);
+        $_SESSION['user_form']['agencies'] = $agencies;
+        header('Location:http://' . $_SERVER['HTTP_HOST'] . '/contactAfter.php');
+        exit();
     }
 }
 
@@ -175,8 +175,10 @@ include dirname(__FILE__) . "/header.php";
                 </dl>
 
                 <dl class="user_inquary_contet_inner_confirmation">
-                    <input onclick="allowTransition();" type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="" name="">
-                    プライバシーポリシーに同意します
+                    <label for="user_inquary_content_inner_confirmation_inner_checkBox">
+                        <input onclick="allowTransition();" type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="" name="">
+                        プライバシーポリシーに同意します
+                    </label>
                 </dl>
                 <p class="user_inquary_content_inner_submit" id="user_inquary_content_inner_submit">
                     <input type="submit" id="user_inquary_content_inner_submit_button" class="user_inquary_content_inner_submit_button" value="確認画面へ">
