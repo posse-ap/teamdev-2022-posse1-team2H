@@ -1,9 +1,11 @@
 /* 全体 */
+
 html,
 body {
   width: 100%;
-  background-color: #eaedf2;
+  background-color: #EAEDF2;
   margin: 0;
+  font-family: AvantGardeGothicITCW01Md;
 }
 
 body {
@@ -11,11 +13,14 @@ body {
   letter-spacing: 0.04em;
 }
 
+
 /* title{
     margin-top: 0;
 } */
 
+
 /* ヘッダー */
+
 header {
   background-color: #26a69a;
   height: 75px;
@@ -28,7 +33,9 @@ header {
   align-items: center;
 }
 
+
 /*  */
+
 .header_inner_craft {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -41,15 +48,23 @@ header {
   font-weight: normal;
 }
 
+
 /* コンテンツ全体 */
+
 .content {
   width: 88%;
   display: flex;
+  justify-content: center;
   gap: 95px;
   margin: 0px auto;
+  /* padding-top: 50px; */
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 95px;
 }
 
+
 /* エージェント一覧 */
+
 .agency_list {
   /* display: flex; */
   /* border: solid 1px; */
@@ -57,20 +72,41 @@ header {
   width: 65%;
 }
 
+
 /* ★の色を変える */
+
 .blue_on_favorite {
   color: aqua;
 }
 
+
 /* 新着エージェンシー &人気のエージェンシー*/
+
 .new_agency_wrapper,
 .popular_agency_wrapper {
   width: 100%;
 }
 
 .title {
-  margin-left: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 65px;
+  padding-top: 60px;
+  font-family: 'Noto Sans JP', sans-serif;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.title_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.subtitle {
+  margin-top: 0;
 }
 
 .new_agency_inner,
@@ -81,7 +117,17 @@ header {
   gap: 35px;
 }
 
+.new_agency_card:hover {
+  opacity: 0.5;
+}
+
+.popular_agency_card:hover {
+  opacity: 0.5;
+}
+
+
 /* 新着エージェンシーのカード&人気のエージェンシーのカード */
+
 .new_agency_card,
 .popular_agency_card {
   background-color: #ffff;
@@ -91,7 +137,9 @@ header {
   padding-bottom: 9px;
 }
 
+
 /* エージェンシーのイメージ */
+
 .agency_img img {
   width: 100%;
 }
@@ -101,7 +149,9 @@ header {
   width: 95%;
 }
 
+
 /* エージェンシーの特徴 */
+
 .agency_feature {
   display: flex;
   justify-content: center;
@@ -110,7 +160,9 @@ header {
     color: #ffff; */
 }
 
+
 /* エージェンシーのタグ */
+
 .agency_feature div {
   border-radius: 15px;
   text-align: center;
@@ -121,7 +173,9 @@ header {
   font-size: 12px;
 }
 
+
 /* 一言と企業目 */
+
 .agency_infromation {
   display: flex;
   flex-direction: column;
@@ -130,7 +184,9 @@ header {
   /* margin: 15px auto auto auto; */
 }
 
+
 /* キャッチコピー */
+
 .agency_slogan_wrapper {
   width: 100%;
   margin-top: 10px;
@@ -170,7 +226,9 @@ header {
   border: solid 3px;
 }
 
+
 /* キャッチコピー */
+
 .slogan {
   /* text-align: center; */
   font-size: 16px;
@@ -182,7 +240,9 @@ header {
   border-bottom: 2px solid #00DD00;
 }
 
+
 /* 企業名とお気に入り追加ボタン */
+
 .name_and_favorite {
   display: flex;
   /* justify-content: space-between; */
@@ -197,32 +257,74 @@ header {
   cursor: pointer;
 }
 
+
 /* ここからサイドバー */
 
+
 /* サイドバー 全体*/
+
 .sidebar_wrapper {
   /* border: solid 1px; */
   width: 20%;
-  /* background-color: #339999; */
+  background-color: rgb(255, 255, 255);
   /* background: linear-gradient(to bottom, #339999, transparent); */
 }
 
+
 /* サイドバーの中身全て */
+
 .sidebar_inner {
   position: sticky;
-  top: 10px;
+  top: 110px;
   margin-top: 15px;
   margin-top: 84px;
-  background-color: #26A69A;
+  background-color: rgb(255, 255, 255);
+  /* border: solid 1px #dadada; */
 }
 
+
 /* お気に入り&検索 */
+
 .sidebar_favorite {
   background-color: #26a69a;
   color: #ffff;
   text-align: center;
   cursor: pointer;
-  border-bottom: 1px solid black;
+  margin-bottom: 20%;
+  border-radius: 50px;
+  /* border-bottom: 1px solid black; */
+}
+
+.sidebar_favorite_text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 100%;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #26a69a;
+  transition: 0.5s;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+.sidebar_favorite_text::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/memo.png);
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.sidebar_favorite_text:hover {
+  text-decoration: none;
+  background-color: #80cbc4;
+  text-decoration: underline;
 }
 
 .sidebar_favorite h2 {
@@ -236,15 +338,19 @@ header {
 }
 
 .sidebar_search {
-  background-color: #26a69a;
-  color: #ffff;
+  background-color: rgb(255, 255, 255);
+  color: black;
   text-align: center;
   cursor: pointer;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  /* border-top: 1px solid black;
+    border-bottom: 1px solid black; */
+  /* border: solid 1px #dadada; */
+  box-shadow: 0 2px 5px #ccc;
 }
 
+
 /* 業種タグ全てを含む箱 */
+
 .business_type_inner {
   display: flex;
   flex-wrap: wrap;
@@ -254,16 +360,32 @@ header {
   font-size: 18px;
 }
 
+label.a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /* 各業種タグ */
 
+
 /* aタグのリンクと下線を変更 */
+
 .business_type_inner div a {
   text-decoration: none;
   color: #ffff;
 }
 
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .serach_content {
   display: block;
+  margin-top: 8%;
 }
 
 .appearing {
@@ -272,20 +394,21 @@ header {
   outline: none;
 }
 
-.sidebar_search h2,
+.sidebar_search_text,
 .sidebar_favorite h2 {
   margin: 0;
   font-size: 30px;
 }
 
-
-.business_type_wrapper h3,
-.business_features_wrapper h3 {
-  margin: 0;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  height: 50px;
-  font-size: 19px;
+.business_type_wrapper_text,
+.business_features_wrapper_text {
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 100%;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #80cbc4;
 }
 
 .toggle_star {
@@ -316,10 +439,14 @@ header {
   display: none;
 }
 
-@media(max-width:640px) {
+.detail_blank {
+  padding-bottom: 8%;
+}
 
+@media(max-width:640px) {
   .content {
     width: 95%;
+    padding-bottom: 40px;
   }
 
   .sidebar_wrapper {
@@ -407,7 +534,8 @@ header {
     margin-bottom: -45px;
   }
 
-  .close_btn::before, .close_btn::after {
+  .close_btn::before,
+  .close_btn::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -444,22 +572,20 @@ header {
     color: #ffff;
   }
 
-  #book_mark, #home_icon, #serach_icon {
-    color: #DCDCDC;
-  }
-
-  #book_mark:hover {
-    color: #C2EEFF;
-  }
-
-  #home_icon:hover {
-    color: #ffff;
-  }
-
-  #serach_icon:hover {
-    color: #ffff;
-  }
-
+  /* #book_mark,
+    #home_icon,
+    #serach_icon {
+        color: #DCDCDC;
+    } */
+  /* #book_mark:hover {
+        color: #C2EEFF;
+    }
+    #home_icon:hover {
+        color: #ffff;
+    }
+    #serach_icon:hover {
+        color: #ffff;
+    } */
   #business_type_icon {
     color: #0000FF;
   }
@@ -484,12 +610,33 @@ header {
     color: gray;
   }
 
-  .star {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 22px;
-    color: #9e9e9e;
-    cursor: pointer;
+  .modal_search_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 300px;
+    color: #2285b1;
+    font-size: 18px;
+    font-weight: 700;
+    border: 2px solid #2285b1;
+    margin-top: 15%;
+    border-radius: 40px;
+    text-decoration: none;
   }
+}
 
+.modal_search_text:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #a0c4d3;
+}
+
+.star {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 22px;
+  color: #9e9e9e;
+  cursor: pointer;
 }
