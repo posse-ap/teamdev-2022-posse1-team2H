@@ -50,7 +50,7 @@ class Agency
                     'gender' => $gender,
                     'address' => $address,
                     'address_num' => $address_num,
-                    "updated_at"=> $updated_at
+                    "updated_at" => $updated_at
                 );
                 array_push($values, $item);
             }
@@ -59,7 +59,8 @@ class Agency
         return json_encode(array());
     }
 
-    public function getUser($user_id) {
+    public function getUser($user_id)
+    {
         $stmt = $this->db->prepare("SELECT
         *
         FROM users
@@ -151,7 +152,8 @@ class Agency
         email,
         is_representative
         FROM managers
-        WHERE agency_id = ?");
+        WHERE agency_id = ?
+        ");
         $stmt->execute(array($agency_id));
         $num = $stmt->rowCount();
 
@@ -238,13 +240,16 @@ class Agency
         if (!($manager['agency_id'] == $_SESSION['agency']['id'])) {
             throw new \Exception();
         }
-        try {
-            $stmt = $this->db->prepare("DELETE FROM managers
+        if (!$manager['is_representative']) {
+
+            try {
+                $stmt = $this->db->prepare("DELETE FROM managers
             WHERE id = :manager_id");
-            $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
-            $stmt->execute();
-        } catch (\Exception $e) {
-            throw $e;
+                $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
+                $stmt->execute();
+            } catch (\Exception $e) {
+                throw $e;
+            }
         }
         return $manager_id;
     }
