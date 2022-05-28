@@ -161,6 +161,8 @@ body {
     border-radius: 60px;
     padding: 0;
     width: 90%;
+    height: 37vw;
+    object-fit: cover;
 }
 
 .content_detail_subcontent_left_agentstudent_table {
@@ -194,6 +196,7 @@ body {
 .content_detail_subcontent {
     display: flex;
     margin-right: -8%;
+    margin-bottom: 8%;
 }
 
 .content_detail_subcontent_left {
@@ -593,12 +596,12 @@ body {
         background-color: #eaedf2;
         padding: 0;
         width: 100%;
-        display: flex;
         justify-content: center;
     }
     .content_detail_inner {
         width: 75%;
         padding-right: 3%;
+        margin-bottom: 8%;
     }
     .content_detail_catchcopy_imgbig {
         width: 100%;
@@ -622,6 +625,8 @@ body {
         border-radius: 60px;
         padding: 0;
         width: 100%;
+        object-fit: cover;
+        height: 400px;
     }
     .content_detail_subcontent_left_agentstudent_table {
         display: flex;

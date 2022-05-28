@@ -158,27 +158,31 @@ include dirname(__FILE__) . '/header.php';
 
                 </div>
             </div>
-
+         <div class="content_detail_underrequest">
+             <div class="content_detail_action_bar">
                 <div class="content_detail_underrequest_seelaterbox">
                     <h4 class="content_detail_underrequest_seelaterText" onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)">後で見るリストに追加
                     </h4>
                 </div>
+
+                <a href="./seeLater.php" class="content_detail_underrequest_likelistbox">
+                    <h4 class="content_detail_underrequest_likelisttext">後で見るリストへ
+                    </h4>
+                </a>
                 <a href="contact.php?ids=<?= $agency->id ?>" class="content_detail_underrequest_inquirybox">
-                    <h4 class="content_detail_underrequest_inquiryText">お問合せ
+                    <h4 class="content_detail_underrequest_inquirytext">お問合せ
                     </h4>
                 </a>
             </div>
         </div>
         </div>
-        </div>
-        <div class="detail_blank"></div>
-        </div>
+      
     
         <!-- 一番下に固定しておく後で見るに追加とお問合せ -->
 
     </div>
         
-<div class="detail_blank"></div>
+<!-- <div class="detail_blank"></div> -->
         
 
 </main>
