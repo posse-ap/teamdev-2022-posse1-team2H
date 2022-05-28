@@ -161,7 +161,6 @@ const handleSearch = async () => {
     month: month,
   };
   const { data } = await searchContracts(params);
-  console.log(data)
   drawHTMLs.contracts(data);
 };
 
