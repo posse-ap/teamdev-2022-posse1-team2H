@@ -39,6 +39,7 @@ class Agency
                 $item = array(
                     'id' => $id,
                     'name' => $name,
+                    'age' => $age,
                     'email' => $email,
                     'tel' => $tel,
                     'university' => $university,
@@ -48,13 +49,26 @@ class Agency
                     'graduation_year' => $graduation_year,
                     'gender' => $gender,
                     'address' => $address,
-                    'address_num' => $address_num
+                    'address_num' => $address_num,
+                    "updated_at"=> $updated_at
                 );
                 array_push($values, $item);
             }
             return json_encode($values, JSON_UNESCAPED_UNICODE);
         }
         return json_encode(array());
+    }
+
+    public function getUser($user_id) {
+        $stmt = $this->db->prepare("SELECT
+        *
+        FROM users
+        WHERE id = :id
+        ");
+        $stmt->bindValue(':id', $user_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        return $user;
     }
 
     public function getManager($manager_id)
