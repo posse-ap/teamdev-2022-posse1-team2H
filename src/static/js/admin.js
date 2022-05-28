@@ -2,7 +2,11 @@
 const select = () => {
     for (let i = 1; i < 6; i++) {
         let checkbox = document.getElementById(`checkbox${i}`);
-        checkbox.type = "checkbox";
+        if (checkbox.type !== 'checkbox') {
+            checkbox.type = "checkbox";
+        } else {
+            checkbox.type = "hidden";
+        }
     }
 }
 

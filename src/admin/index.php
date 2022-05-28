@@ -22,6 +22,7 @@ include dirname(__FILE__) . '/header.php';
                     <li><a href="./agencies.php">掲載・編集関連画面へ</a></li>
                 </ul>
             </nav>
+            <a href="./logout.php">logout</a>
         </div>
     </header>
     <main>

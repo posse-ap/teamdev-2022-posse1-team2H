@@ -23,11 +23,12 @@ include dirname(__FILE__) . '/header.php'
 <!-- <?= $agency ?> -->
 
 <header>
-    <div class="header_inner">
+    <div class="header_inside">
         <div class="page_name">管理画面</div>
-        <div id="header_content" class="header_content">
+        <!-- <div id="header_content" class="header_content"> -->
             <a href="./index.php">初期画面へ</a>
-        </div>
+        <!-- </div> -->
+        <a href="./logout.php">logout</a>
     </div>
 </header>
 <main id="agency">
