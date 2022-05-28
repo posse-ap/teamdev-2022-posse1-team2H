@@ -5,6 +5,9 @@ use modules\auth\Agency;
 $auth = new Agency($db);
 $auth->validate();
 
+$agency_id = $_SESSION['agency']['id'];
+$manager_id = $_SESSION['manager']['id'];
+
 include dirname(__FILE__) . '/header.php' ?>
 
 <main>
