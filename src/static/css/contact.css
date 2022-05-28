@@ -159,6 +159,10 @@ dl.user_inquary_contet_inner_confirmation{
     display: inline;
 }
 
+input:checked ~ .user_inquary_content_inner_submit_button {
+    pointer-events: auto;
+}
+
 @media(max-width:640px) {
 
     .user_inquary_header_title{

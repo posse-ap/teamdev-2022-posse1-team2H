@@ -246,15 +246,15 @@ const diplayingCompanyInfo = () => {
   contentDetail.classList.toggle("add");
 };
 
-const allowTransition = () => {
-    let checkedCheckbox = document.getElementById('user_inquary_content_inner_confirmation_inner_checkBox');
-    let link = document.getElementById('user_inquary_content_inner_submit_button');
-    if (checkedCheckbox.checked) {
-        link.style.pointerEvents = 'auto';
-    } else {
-        link.style.pointerEvents = 'none';
-    }
-}
+// const allowTransition = () => {
+//     let checkedCheckbox = document.getElementById('user_inquary_content_inner_confirmation_inner_checkBox');
+//     let link = document.getElementById('user_inquary_content_inner_submit_button');
+//     if (checkedCheckbox.checked) {
+//         link.style.pointerEvents = 'auto';
+//     } else {
+//         link.style.pointerEvents = 'none';
+//     }
+// }
 
 const dispalyingSerachArea = () => {
     let overlay = document.getElementById('overlay');
