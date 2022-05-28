@@ -119,8 +119,9 @@ class Agency
         ");
         $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
         $success = $stmt->execute();
-        $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
+
         if ($success) {
+            $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
             extract($manager);
             $result = array(
                 "id" => $manager_id,

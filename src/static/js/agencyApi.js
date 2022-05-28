@@ -15,6 +15,22 @@ const drawHTMLs = {
     let target = document.getElementById("agency_top");
     target.innerHTML = text;
   },
+  managers: (data) => {
+    text = ``;
+    data.forEach((d) => {
+      const { id, name, email } = d;
+      text += `
+      <div class="small_list_box">
+            <li class="email">${name}：${email}</li>
+            <button type="button" class="trash" onclick="confirmDelete(${id})">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </div>
+      `;
+    });
+    let target = document.getElementById("managers_target");
+    target.innerHTML = text;
+  },
 };
 
 const getUsersForFirstView = async () => {
@@ -37,30 +53,15 @@ const sortUsers = async () => {
 };
 
 const getManagers = async () => {
-  let main = document.getElementById("managers");
-  let container = main.getElementsByClassName("container")[0];
-  container.innerHTML = "";
-  await axios.get(`${agencyPrefix}/managers.php`).then((res) => {
-    const data = res.data;
-    console.log(res);
-    let html = ``;
-    if (data !== undefined) {
-      for (let i = 0; i < data.length; i++) {
-        const elem = data[i];
-        html += `<div class="manager">${elem.name} ${elem.email}<button class="delete" onclick="confirmDelete(${elem.id})"></button></div>`;
-      }
-    } else {
-      html = "データがありません";
-    }
-    container.insertAdjacentHTML("beforeend", html);
-  });
+  const { data } = await axios.get(`${agencyPrefix}/managers.php`);
+  drawHTMLs.managers(data)
 };
 
-window.onload = () => {
+window.onload = async () => {
   let agencyTop = document.getElementById("agency_top");
-  if (agencyTop) agencyTop.onload = getUsersForFirstView();
+  if (agencyTop) agencyTop.onload = await getUsersForFirstView();
   let managersPage = document.getElementById("managers");
-  if (managersPage) managersPage.onload = getManagers();
+  if (managersPage) managersPage.onload = await getManagers();
 };
 
 const confirmDelete = async (id) => {
