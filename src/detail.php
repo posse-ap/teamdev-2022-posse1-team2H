@@ -125,9 +125,10 @@ include dirname(__FILE__) . '/header.php';
 </main>
 <div class="bar_for_responsive">
     <div class="bar_for_responsive_inner">
-        <a href="" class="back_to_top"><i id="home_icon" class="fa-solid fa-square-caret-up"></i></a>
+        <a href="./contact.php?ids=<?= Utils::h($agency->id) ?>"><i class="fa-solid fa-file-pen"></i></a>
         <a href="./seeLater.php" class="back_to_top"><i id="book_mark" class="fas fa-bookmark"></i></a>
-        <div class="appearing_serach_area" onclick="dispalyingSerachArea()"><i id="serach_icon" class="fa-solid fa-magnifying-glass"></i></div>
+        <a href=""><i  onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)" class="fa-solid fa-star"></i>
+</a>
     </div>
 </div>
 <?php include dirname(__FILE__) . '/footer.php' ?>
