@@ -247,7 +247,7 @@ const diplayingCompanyInfo = () => {
 };
 
 const allowTransition = () => {
-    let checkedCheckbox = document.getElementById('user_inquary_content_inner_confirmation_inner_checkBox');
+    let checkedCheckbox = document.getElementById('user_inquary_content_inner_confirmation_inner_checkbox');
     let link = document.getElementById('user_inquary_content_inner_submit_button');
     if (checkedCheckbox.checked) {
         link.style.pointerEvents = 'auto';
