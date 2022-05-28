@@ -267,4 +267,8 @@
         .user_likelist_topbar_top {
             width: 20%;
         }
+        .user_likelist_inner1_body_under_contact_text,
+        .user_likelist_inner1_body_under_detail_text {
+            font-size: 77%;
+        }
     }
