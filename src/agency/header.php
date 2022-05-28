@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -15,7 +16,7 @@
 <body>
     <header>
         <div class="header_top">
-            <p class="title_underline"><a href="index.php">◯◯株式会社様 管理画面 by CRAFT</a></p>
+            <p class="title_underline"><a href="index.php"><?= $_SESSION['agency']['name'] ?>様 管理画面 by CRAFT</a></p>
             <a class="logout" href="logout.php">ログアウト</a>
         </div>
         <div class="subtitle">
