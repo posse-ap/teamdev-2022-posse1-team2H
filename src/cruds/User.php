@@ -43,7 +43,8 @@ class User
         return $types;
     }
 
-    private function getuser($db, $user_id) {
+    private function getuser($db, $user_id)
+    {
         $stmt = $db->prepare("SELECT
         *
         FROM users
@@ -55,6 +56,18 @@ class User
         return $user;
     }
 
+    private function getAgencyNames($db, $agency_ids)
+    {
+        $names = array();
+        foreach ($agency_ids as $id) {
+            $stmt = $db->prepare("SELECT name FROM agencies WHERE id = :id");
+            $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
+            $stmt->execute();
+            $name = $stmt->fetch();
+            array_push($names, $name);
+        }
+        return $names;
+    }
     public function getAgencies($types = null, $industries = null)
     {
         if ($types === null && $industries === null) {
@@ -269,8 +282,12 @@ class User
                     return false;
                 }
             }
+            // create email text
+            $agency_names = self::getAgencyNames($this->db, $agencies);
+            $text_to_user = Email::generatetextToUser($user, $agency_names);
+
             // send email to user
-            Email::sendMail($user->email, "boozer@example.com", "お問い合わせを完了しました", "sample message");
+            Email::sendMail($user->email, "boozer@example.com", "お問い合わせを完了しました", $text_to_user);
             //send email to each agencies
             $inclause = substr(str_repeat(',?', count($agencies)), 1);
             $stmt = $this->db->prepare(sprintf(
