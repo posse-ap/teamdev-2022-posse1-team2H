@@ -30,8 +30,9 @@ class Email
 
     public static function generatetextToUser($user, $agencies) {
         $agencies_text = "";
+        var_dump($agencies);
         foreach($agencies as $agency){
-            $agencies_text .= $agency . "\n";
+            $agencies_text .= $agency['name'] . "\n";
         }
 
         $text = "お問い合わせありがとうございます。\n
@@ -46,10 +47,10 @@ class Email
         学科: " . $user->department . "
         学年: " . $user->school_year . "
         卒業予定年: " . $user->graduation_year . "
-        性別: " . $user->gender  . "
+        性別: " . Utils::gender($user->gender)  . "
         住所: " . $user->address . "
         郵便番号: " . $user->address_num . "
-        "; // TODO filter gender using Utils::gender()
+        ";
         return $text;
     }
 }
