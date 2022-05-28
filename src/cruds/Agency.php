@@ -261,7 +261,7 @@ class Agency
         return $manager_id;
     }
 
-    public function sendEditRequest(Article $article)
+    public function sendEditRequest($article)
     {
         $text = '
         以下の内容で掲載記事の編集を依頼します。
@@ -272,12 +272,29 @@ class Agency
         $text .=  $article->sentenses;
         $text .= '
         アイキャッチ: ';
-        $text .= $article->eyecatch;
+        $text .= $article->eyecatch_url;
+        $agency = json_decode(
+            self::getManagerWithAgency($_SESSION['agency_manager']['id'])
+        );
+        $admin_email = Email::BOOZER_EMAIL_FOR_NOTICE;
+        Email::sendMail($admin_email, $agency->agency_email, '掲載記事の編集依頼', $text);
+        Email::sendMail($agency->agency_email, $admin_email, '掲載記事の編集依頼をしました', $text);
+    }
+
+    public function sendDeleteUser ($user_email, $reason) {
         $agency = json_decode(
             self::getManagerWithAgency($_SESSION['agency_manager']['id'])
         );
         $to = Email::BOOZER_EMAIL_FOR_NOTICE;
-        Email::sendMail($to, $agency->agency_email, '掲載記事の編集依頼', $text);
+        $from = $agency->agency_email;
+        $title = '学生削除依頼';
+        $message = $agency->agency_name ."以下の内容で学生削除を依頼します。
+
+学生email: " . $user_email . "
+\n 削除理由: " . $reason . "
+        ";
+        Email::sendMail($to, $from ,$title, $message);
+        Email::sendMail($from, $to, $title, $message);
     }
 
     public function sendContact($content)
@@ -293,5 +310,6 @@ class Agency
         お問い合わせ内容: ';
         $message .= $content;
         Email::sendMail($to, $from, $title, $message);
+        Email::sendMail($from, $to, $title, $message);
     }
 }
