@@ -48,7 +48,7 @@ include dirname(__FILE__) . '/header.php' ?>
         <p><?= $agency_info->name ?>メールアドレス： <?= $agency_info->email ?></p>
         <p>電話番号： <?= $agency_info->agency_tel ?></p>
     </div>
-    <a class="edit_button" href="">編集</a>
+    <a class="edit_button" href="./edit.php">編集</a>
     <div class="list_box">
         <p>個人担当者一覧</p>
         <div id="managers_target"></div>
