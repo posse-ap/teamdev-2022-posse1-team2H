@@ -9,6 +9,7 @@ include dirname(__FILE__) . '/header.php';
         <div class="header_inner">
             <div class="page_name">○○○○株式会社の詳細情報</div>
             <a href="./index.php">初期画面へ</a>
+            <a href="./logout.php">logout</a>
         </div>
     </header>
     <main>

@@ -11,6 +11,7 @@ include dirname(__FILE__) . '/header.php';
             <div class="title_name">編集・掲載</div>
             <a href="./agencyInfo.php">基本情報・掲載情報へ</a>
             <a href="./agencies.php">企業一覧へ</a>
+            <a href="logout.php">logout</a>
         </div>
     </header>
     <main>
