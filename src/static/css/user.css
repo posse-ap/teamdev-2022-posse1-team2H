@@ -269,8 +269,7 @@ header {
 
 .sidebar_inner {
   position: sticky;
-  top: 110px;
-  margin-top: 15px;
+  top: 5px;
   margin-top: 84px;
   background-color: rgb(255, 255, 255);
   /* border: solid 1px #dadada; */
