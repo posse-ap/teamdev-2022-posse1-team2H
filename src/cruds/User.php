@@ -287,7 +287,7 @@ class User
             $text_to_user = Email::generatetextToUser($user, $agency_names);
 
             // send email to user
-            Email::sendMail($user->email, "boozer@example.com", "お問い合わせを完了しました", $text_to_user);
+            Email::sendMail($user['email'], "boozer@example.com", "お問い合わせを完了しました", $text_to_user);
             //send email to each agencies
             $inclause = substr(str_repeat(',?', count($agencies)), 1);
             $stmt = $this->db->prepare(sprintf(

@@ -150,7 +150,7 @@ include dirname(__FILE__) . '/header.php';
                     <h4 class="content_detail_underrequest_seelaterText" onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)">後で見るリストに追加
                     </h4>
                 </div>
-                <a href="contact.php" class="content_detail_underrequest_inquirybox">
+                <a href="contact.php?ids=<?= $agency->id ?>" class="content_detail_underrequest_inquirybox">
                     <h4 class="content_detail_underrequest_inquiryText">お問合せ
                     </h4>
                 </a>
