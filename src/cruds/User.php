@@ -43,6 +43,31 @@ class User
         return $types;
     }
 
+    private function getuser($db, $user_id)
+    {
+        $stmt = $db->prepare("SELECT
+        *
+        FROM users
+        WHERE id = :user_id
+        ");
+        $stmt->bindValue(":user_id", $user_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        return $user;
+    }
+
+    private function getAgencyNames($db, $agency_ids)
+    {
+        $names = array();
+        foreach ($agency_ids as $id) {
+            $stmt = $db->prepare("SELECT name FROM agencies WHERE id = :id");
+            $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
+            $stmt->execute();
+            $name = $stmt->fetch();
+            array_push($names, $name);
+        }
+        return $names;
+    }
     public function getAgencies($types = null, $industries = null)
     {
         if ($types === null && $industries === null) {
@@ -245,6 +270,7 @@ class User
 
         if ($user_success) {
             $user_id = $this->db->lastInsertId();
+            $user = self::getUser($this->db, $user_id);
             foreach ($agencies as $agency) {
                 $agencies_stmt = $this->db->prepare('INSERT INTO users_agencies (user_id, agency_id) VALUES (:user_id, :agency_id)');
 
@@ -256,8 +282,12 @@ class User
                     return false;
                 }
             }
+            // create email text
+            $agency_names = self::getAgencyNames($this->db, $agencies);
+            $text_to_user = Email::generateTextToUser($user, $agency_names);
+
             // send email to user
-            Email::sendMail($user->email, "boozer@example.com", "お問い合わせを完了しました", "sample message");
+            Email::sendMail($user['email'], "boozer@example.com", "お問い合わせを完了しました", $text_to_user);
             //send email to each agencies
             $inclause = substr(str_repeat(',?', count($agencies)), 1);
             $stmt = $this->db->prepare(sprintf(
@@ -266,8 +296,9 @@ class User
             ));
             $stmt->execute($agencies);
             $agencies_emails = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            $text_for_agencies = Email::generateTextToAgency($user);
             foreach ($agencies_emails as $email) {
-                Email::sendMail($email['email_for_notification'], "boozer@example.com", "学生からお問い合わせが来ました", "sample message");
+                Email::sendMail($email['email_for_notification'], "boozer@example.com", "学生からお問い合わせが来ました", $text_for_agencies);
             }
         }
 
