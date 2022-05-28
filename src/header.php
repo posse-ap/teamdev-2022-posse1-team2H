@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./static/css/thankyou.css">
     <link rel="stylesheet" href="./static/css/userDetail.css">
     <link rel="stylesheet" href="./static/css/seeLater.css">
+    
     <!-- <script src="./static/js/user.js"></script> -->
 
     <link rel="stylesheet" href="./static/css/contact.css">
