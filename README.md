@@ -38,3 +38,9 @@ docker-compose up -d
 ./mysql/docker-entrypoint-initdb.d/init.sql が実行され初期データが投入されます
 ※エージェンシー、管理者のログイン情報だけ上記の方法で投入してください。
 ```
+
+# M1 MacでDBコンテナが立ち上がらないとき
+```bash
+mysql/Dockerfile:1行目 MySQLのバージョンを8.0にする
+docker-compose.yml:26行目 linux/amd64 -> linux/x86_64
+```
