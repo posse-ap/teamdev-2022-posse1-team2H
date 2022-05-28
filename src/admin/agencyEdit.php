@@ -9,13 +9,13 @@ use models\Agency;
 use models\Article;
 
 $auth = new Auth($db);
-$cruds = new Cruds($db);
+$crud = new Cruds($db);
 
 $auth->validate();
 
 $id = $_GET['id'];
 
-if ($_SERVER['REQEST_METHOD'] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
     Token::validate();
     if (!isset($_POST['agency_id'])) {
         $error['agency_id'] = 'blank';
@@ -26,8 +26,8 @@ if ($_SERVER['REQEST_METHOD'] === "POST") {
     if (!isset($_POST['email'])) {
         $error['email'] = 'blank';
     }
-    if (!isset($_POST['email_for_notice'])) {
-        $error['email_for_notice'] = 'blank';
+    if (!isset($_POST['email_for_notification'])) {
+        $error['email_for_notification'] = 'blank';
     }
     if (!isset($_POST['tel'])) {
         $error['tel'] = 'blank';
@@ -62,7 +62,7 @@ if ($_SERVER['REQEST_METHOD'] === "POST") {
             $_POST['agency_id'],
             $_POST['name'],
             $_POST['email'],
-            $_POST['email_for_notice'],
+            $_POST['email_for_notification'],
             $_POST['tel'],
             $_POST['url'],
             $_POST['representative'],
@@ -87,7 +87,7 @@ if (!isset($id)) {
     exit();
 }
 
-$agency = $cruds->getAgencyDetail($id, $contract_mode = false);
+$agency = $crud->getAgencyDetail($id, $contract_mode = false);
 
 $agency = json_decode($agency);
 
@@ -98,16 +98,18 @@ include dirname(__FILE__) . '/header.php';
     <input type="hidden" name="agency_id" value="<?= Utils::h($agency->agency_id) ?>">
     <label><input type="text" name="name" value="<?= Utils::h($agency->name) ?>"></label>
     <label><input type="text" name="email" value="<?= Utils::h($agency->email) ?>"></label>
-    <label><input type="text" name="email_for_notice" value="<?= Utils::h($agency->email_for_notice) ?>"></label>
+    <label><input type="text" name="email_for_notification" value="<?= Utils::h($agency->email_for_notification) ?>"></label>
     <label><input type="text" name="tel" value="<?= Utils::h($agency->tel) ?>"></label>
     <label><input type="text" name="url" value="<?= Utils::h($agency->url) ?>"></label>
     <label><input type="text" name="representative" value="<?= Utils::h($agency->representative) ?>"></label>
     <label><input type="text" name="contactor" value="<?= Utils::h($agency->contactor) ?>"></label>
     <label><input type="text" name="address" value="<?= Utils::h($agency->address) ?>"></label>
     <label><input type="text" name="address_num" value="<?= Utils::h($agency->address_num) ?>"></label>
-    <label><input type="text" name="title"></label>
-    <label><input type="text" name="sentenses"></label>
-    <label><input type="text" name="eyecatch"></label>
+    <label><input type="text" name="title" value="<?= Utils::h($agency->title) ?>"></label>
+    <label><textarea type="text" name="sentenses">
+    <?= Utils::h($agency->sentenses) ?>
+    </textarea></label>
+    <label><input type="text" name="eyecatch" value="<?= Utils::h($agency->eyecatch) ?>"></label>
     <input type="submit" value="submit">
 </form>
 <?php include dirname(__FILE__) . '/footer.php' ?>

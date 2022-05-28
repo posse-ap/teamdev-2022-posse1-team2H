@@ -8,7 +8,7 @@ class Agency
         $agency_id,
         $name,
         $email,
-        $email_for_notice,
+        $email_for_notification,
         $tel,
         $url,
         $representative,
@@ -20,7 +20,7 @@ class Agency
         $this->agency_id = $agency_id;
         $this->name = $name;
         $this->email = $email;
-        $this->email_for_notice = $email_for_notice;
+        $this->email_for_notification = $email_for_notification;
         $this->tel = $tel;
         $this->url = $url;
         $this->representative = $representative;
