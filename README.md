@@ -17,7 +17,7 @@ docker-compose up -d
 ```
 
 # エージェンシー画面ログイン情報
-``bash
+```bash
 データ挿入: agency/login.php:10行目をコメントインしてページにアクセス。一度アクセスしたらコメントアウト
 メールアドレス: fukuba@example.com
 パスワード: fukuba
@@ -31,7 +31,7 @@ docker-compose up -d
 パスワード：admin
 ```
 
-データ初期化
+# データ初期化
 
 ```bash
 ./mysql/data を削除後、コンテナ再起動
