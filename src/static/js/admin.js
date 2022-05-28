@@ -83,7 +83,7 @@ const drawHTMLs = {
             <a href="./userDetail.php?id=${id}">${name}</a>
             <div>${genderText}</div>
             <div>${age}歳</div>
-            <input id="checkbox${id}" class="checkbox" type="hidden" name="user_id" value="${id}"></input><label id="label${id}" for="checkbox${id}"></label>
+            <input id="checkbox${id}" class="checkbox user_handle_delete" type="hidden" name="user_id" value="${id}"></input><label id="label${id}" for="checkbox${id}"></label>
         </ol>
       `;
     });
@@ -103,12 +103,12 @@ ${usersText}
 };
 
 const enableSelect = () => {
-  for (let i = 1; i < 6; i++) {
-    let checkbox = document.getElementById(`checkbox${i}`);
-    if (checkbox.type !== "checkbox") {
-      checkbox.type = "checkbox";
+  let checkboxes = document.getElementsByClassName("user_handle_delete");
+  for (let i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].type !== "checkbox") {
+      checkboxes[i].type = "checkbox";
     } else {
-      checkbox.type = "hidden";
+      checkboxes[i].type = "hidden";
     }
   }
 };
@@ -231,9 +231,9 @@ const handleUsersDelete = async () => {
   userTargets.forEach((user) => {
     if (user.checked === true) userIds.push(user.value);
   });
-  userIds = userIds.join(',');
+  userIds = userIds.join(",");
   const { data } = await deleteUsers(userIds);
-  drawHTMLs.contract(data)
+  drawHTMLs.contract(data);
 };
 
 const deleteUsers = async (userIds) => {
