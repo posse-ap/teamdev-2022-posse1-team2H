@@ -175,8 +175,8 @@ include dirname(__FILE__) . "/header.php";
                 </dl>
 
                 <dl class="user_inquary_contet_inner_confirmation">
-                    <label for="user_inquary_content_inner_confirmation_inner_checkBox">
-                        <input onclick="allowTransition();" type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkBox" id="user_inquary_content_inner_confirmation_inner_checkBox" value="" name="">
+                    <label for="user_inquary_content_inner_confirmation_inner_checkbox">
+                        <input onclick="allowTransition();" type="checkbox" class="user_inquary_content_inner_confirmation_inner_checkbox" id="user_inquary_content_inner_confirmation_inner_checkbox" value="" name="">
                         プライバシーポリシーに同意します
                     </label>
                 </dl>

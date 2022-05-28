@@ -155,7 +155,7 @@ dl.user_inquary_contet_inner_confirmation{
     margin-top: 8px;
 }
 
-.user_inquary_content_inner_confirmation_inner_checkBox {
+.user_inquary_content_inner_confirmation_inner_checkbox {
     display: inline;
 }
 
@@ -178,7 +178,7 @@ input:checked ~ .user_inquary_content_inner_submit_button {
         width: 30%;
     }
 
-    .user_inquary_content_inner_confirmation_inner_checkBox{
+    .user_inquary_content_inner_confirmation_inner_checkbox{
         width: 5%;
     }
 }
