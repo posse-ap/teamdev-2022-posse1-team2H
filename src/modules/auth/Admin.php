@@ -26,10 +26,13 @@ class Admin
     public function login($email, $password)
     {
         $admin = $this->crud->loginAdmin($email);
-        if (password_verify($password, $admin['password'])) {
-            return $admin;
-        } else {
-            return null;
+        if ($admin) {
+            if (password_verify($password, $admin['password'])) {
+                return $admin;
+            } else {
+                return null;
+            }
         }
+        return null;
     }
 }
