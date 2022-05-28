@@ -323,19 +323,15 @@ class Admin
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
                 extract($row);
                 $count_stmt = $this->db->prepare("SELECT
-                COUNT(*)
+                user_id
                 FROM users_agencies
                 WHERE agency_id = :agency_id
-                AND DATE_FORMAT(created_at, '%Y%m') = :year_month
-                GROUP BY agency_id");
+                AND DATE_FORMAT(created_at, '%Y%m') = :year_month");
 
-                $count_stmt->bindValue(":agency_id", $agency_id . \PDO::PARAM_INT);
+                $count_stmt->bindValue(":agency_id", $agency_id, \PDO::PARAM_INT);
                 $count_stmt->bindValue(":year_month", $contract_year_month, \PDO::PARAM_STR);
                 $count_stmt->execute();
-                $count = $count_stmt->fetch(\PDO::FETCH_ASSOC);
-                if ($count == false) {
-                    $count = 0;
-                }
+                $count = $count_stmt->rowCount();
                 $item = array(
                     'agency_id' => $agency_id,
                     'agency_name' => $agency_name,
