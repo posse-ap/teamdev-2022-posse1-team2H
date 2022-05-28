@@ -18,11 +18,11 @@ include dirname(__FILE__) . '/header.php' ?>
                     <dt class="inquary_content_inner_consul_title">ご相談内容</dt>
                     <dd class="inquary_content_inner_consul_enter">
                         <input id="radio1" type="radio" name="choice" onclick="radioBoxClick()"/>
-                        <label for="edit_change" class="radio_title">掲載情報変更</label>
+                        <label for="radio1" class="radio_title">掲載情報変更</label>
                         <input id="radio2" type="radio" name="choice" onclick="radioBoxClick()"/>
-                        <label for="student_information" class="radio_title">学生個人情報</label>
+                        <label for="radio2" class="radio_title">学生個人情報</label>
                         <input id="radio3" type="radio" name="choice" onclick="radioBoxClick()"/>
-                        <label for="other" class="radio_title">その他</label>
+                        <label for="radio3" class="radio_title">その他</label>
                     </dd>
                 </dl>
                 <dl class="inquary_content_inner_name">

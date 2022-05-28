@@ -93,7 +93,7 @@ const deleteManager = async (id) => {
 };
 
 //モーダル
-const addStudentInformation = () => {
+const addAgencyManager = () => {
   let overlay = document.getElementById('overlay');
   let modal = document.getElementById('modal');
   let html = document.querySelector('html');
@@ -112,7 +112,7 @@ const closingBtn = () => {
 }
 
 //お問い合わせ
-function radioBoxClick() {
+let radioBoxClick = () => {
   let radioBox1 = document.getElementById("radio1");
   let radioBox2 = document.getElementById("radio2");
   let radioBox3 = document.getElementById("radio3");

@@ -16,8 +16,8 @@
 <body>
     <header>
         <div class="header_top">
-            <p class="title_underline">◯◯株式会社様 管理画面 by CRAFT</p>
-            <a class="logout" href="">ログアウト</a>
+            <p class="title_underline"><a href="index.php">◯◯株式会社様 管理画面 by CRAFT</a></p>
+            <a class="logout" href="logout.php">ログアウト</a>
         </div>
         <div class="subtitle">
             <ul class="menu">

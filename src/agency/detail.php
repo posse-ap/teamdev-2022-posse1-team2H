@@ -8,7 +8,7 @@ $auth->validate();
 include dirname(__FILE__) . '/header.php' ?>
 
 <main>
-    <div class="subtitle span">
+    <div class="detail_title">
         <p>田中太郎さん 詳細情報</p>
     </div>
     <div class="detail_box">
