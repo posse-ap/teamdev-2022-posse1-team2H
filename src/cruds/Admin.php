@@ -398,7 +398,7 @@ class Admin
         agencies.id agency_id,
         agencies.name name,
         agencies.email email,
-        agencies.email_for_notification email_for_notice,
+        agencies.email_for_notification email_for_notification,
         agencies.tel tel,
         agencies.url url,
         agencies.representative representative,
@@ -425,7 +425,7 @@ class Admin
             "agency_id" => $agency_id,
             "name" => $name,
             "email" => $email,
-            "email_for_notice" => $email_for_notice,
+            "email_for_notification" => $email_for_notification,
             "tel" => $tel,
             "url" => $url,
             "representative" => $representative,
@@ -468,7 +468,7 @@ class Admin
         $stmt->bindValue(":contactor", $agency->contactor, \PDO::PARAM_STR);
         $stmt->bindValue(":address", $agency->address, \PDO::PARAM_STR);
         $stmt->bindValue(":address_num", $agency->address_num, \PDO::PARAM_STR);
-        $stmt->bindValue(":id", $agency->id, \PDO::PARAM_INT);
+        $stmt->bindValue(":id", $agency->agency_id, \PDO::PARAM_INT);
 
         $stmt->execute();
         return $agency;

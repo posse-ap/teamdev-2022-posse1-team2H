@@ -8,12 +8,12 @@ class Article
         $agency_id,
         $title,
         $sentenses,
-        $eyecatch
+        $eyecatch_url
     )
     {
         $this->agency_id = $agency_id;
         $this->title = $title;
         $this->sentenses = $sentenses;
-        $this->eyecatch = $eyecatch;
+        $this->eyecatch_url = $eyecatch_url;
     }
 }

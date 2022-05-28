@@ -27,7 +27,7 @@ include dirname(__FILE__) . '/header.php';
         <div class="inside_header">
             <div class="page_name">管理画面</div>
             <div class="title_name">基本情報・掲載情報</div>
-            <a href="./edit.php?id=<?= $agency->agency_id ?>">編集・掲載へ</a>
+            <a href="./agencyEdit.php?id=<?= $agency->agency_id ?>">編集・掲載へ</a>
             <a href="./agencies.php">企業一覧へ</a>
         </div>
     </header>
@@ -36,11 +36,11 @@ include dirname(__FILE__) . '/header.php';
         <div class="agency_info_wrapper">
             <div>
                 <div class="editable_info">
-                    <div class="agency_info_type">エージェンシー編集可能情報</div>
+                    <div class="agency_info_type">エージェンシー</div>
                     <ul class="content_inner">
                         <li id="name">企業名：<?= $agency->name ?></li>
                         <li id="email">Email：<?= $agency->email ?></li>
-                        <li id="email_for_notification">通知用Email：<?= $agency->email_for_notice ?></li>
+                        <li id="email_for_notification">通知用Email：<?= $agency->email_for_notification ?></li>
                         <li id="tel">電話番号：<?= $agency->tel ?></li>
                         <li id="url">url：<?= $agency->url ?></li>
                         <li id="representative">代表者：<?= $agency->representative ?></li>
