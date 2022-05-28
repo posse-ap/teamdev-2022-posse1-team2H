@@ -552,12 +552,12 @@ label {
     .bar_for_responsive_inner a:visited {
         color: #ffff;
     }
-    #book_mark,
+    /* #book_mark,
     #home_icon,
     #serach_icon {
         color: #DCDCDC;
-    }
-    #book_mark:hover {
+    } */
+    /* #book_mark:hover {
         color: #C2EEFF;
     }
     #home_icon:hover {
@@ -565,7 +565,7 @@ label {
     }
     #serach_icon:hover {
         color: #ffff;
-    }
+    } */
     #business_type_icon {
         color: #0000FF;
     }

@@ -18,7 +18,6 @@ include dirname(__FILE__) . "/header.php";
     <!-- エージェント一覧 -->
     <div class="agency_list">
         <div class="new_agency_wrapper">
-            
             <div class="title_box">
             <h1 class="title">NEW ARRIVAL</h1>
             <h3 class="subtitle">新着</h3>
@@ -112,7 +111,7 @@ include dirname(__FILE__) . "/header.php";
 <div class="bar_for_responsive">
     <div class="bar_for_responsive_inner">
         <a href="" class="back_to_top"><i id="home_icon" class="fa-solid fa-square-caret-up"></i></a>
-        <a href="./seeLater.php" class="back_to_top"><i id="book_mark" class="fa-solid fa-book-bookmark"></i></a>
+        <a href="./seeLater.php" class="back_to_top"><i id="book_mark" class="fas fa-bookmark"></i></a>
         <div class="appearing_serach_area" onclick="dispalyingSerachArea()"><i id="serach_icon" class="fa-solid fa-magnifying-glass"></i></div>
     </div>
 </div>
