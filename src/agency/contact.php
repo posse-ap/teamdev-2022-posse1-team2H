@@ -35,6 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         default:
             break;
     }
+    header('Location: http://' . $_SERVER['HTTP_HOST'] . '/agency/thankyou.php');
+    exit;
 }
 
 include dirname(__FILE__) . '/header.php' ?>
