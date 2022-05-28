@@ -25,9 +25,9 @@ CREATE TABLE users (
 );
 
 -- usersテーブルにデータを15件入れる。
-INSERT INTO users SET 
-name='中村俊輔', 
-age='23', 
+INSERT INTO users SET
+name='中村俊輔',
+age='23',
 email = 'nakamura@example.com',
 tel = '08000001111',
 university = '早稲田大学',
@@ -39,9 +39,9 @@ gender='1',
 address='東京都杉並区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='香川真司', 
-age='22', 
+INSERT INTO users SET
+name='香川真司',
+age='22',
 email = 'kagawa@example.com',
 tel = '08000001111',
 university = '慶応義塾大学',
@@ -53,9 +53,9 @@ gender='1',
 address='東京都大田区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='ラモス瑠偉', 
-age='23', 
+INSERT INTO users SET
+name='ラモス瑠偉',
+age='23',
 email = 'ramos@example.com',
 tel = '08000001111',
 university = '横浜国立大学',
@@ -67,9 +67,9 @@ gender='1',
 address='東京都文京区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='マラドーナ', 
-age='22', 
+INSERT INTO users SET
+name='マラドーナ',
+age='22',
 email = 'maradona@example.com',
 tel = '08000001111',
 university = '早稲田大学',
@@ -81,9 +81,9 @@ gender='1',
 address='東京都練馬区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='メッシ', 
-age='22', 
+INSERT INTO users SET
+name='メッシ',
+age='22',
 email = 'messi@example.com',
 tel = '08000001111',
 university = '立教大学',
@@ -95,9 +95,9 @@ gender='1',
 address='東京都港区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='大谷翔平', 
-age='22', 
+INSERT INTO users SET
+name='大谷翔平',
+age='22',
 email = 'ohtanisan@example.com',
 tel = '08000001111',
 university = '東京大学',
@@ -109,9 +109,9 @@ gender='1',
 address='東京都足立区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='羽生 結弦', 
-age='23', 
+INSERT INTO users SET
+name='羽生 結弦',
+age='23',
 email = 'hanyu@example.com',
 tel = '08000001111',
 university = '東京大学',
@@ -123,9 +123,9 @@ gender='1',
 address='東京都杉並区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='新垣結衣', 
-age='23', 
+INSERT INTO users SET
+name='新垣結衣',
+age='23',
 email = 'yui@example.com',
 tel = '08000001111',
 university = '京都大学',
@@ -137,9 +137,9 @@ gender='2',
 address='東京都世田谷区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='長澤まさみ', 
-age='22', 
+INSERT INTO users SET
+name='長澤まさみ',
+age='22',
 email = 'nagasawa@example.com',
 tel = '08000001111',
 university = '一橋大学',
@@ -151,9 +151,9 @@ gender='2',
 address='東京都目黒区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='広瀬すず', 
-age='23', 
+INSERT INTO users SET
+name='広瀬すず',
+age='23',
 email = 'suzu@example.com',
 tel = '08000001111',
 university = '上智大学',
@@ -165,9 +165,9 @@ gender='2',
 address='東京都北区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='有村架純', 
-age='23', 
+INSERT INTO users SET
+name='有村架純',
+age='23',
 email = 'arimura@example.com',
 tel = '08000001111',
 university = '明治大学',
@@ -179,9 +179,9 @@ gender='2',
 address='東京都江戸川区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='浜辺美波', 
-age='22', 
+INSERT INTO users SET
+name='浜辺美波',
+age='22',
 email = 'minami@example.com',
 tel = '08000001111',
 university = '法政大学',
@@ -193,9 +193,9 @@ gender='2',
 address='東京都港区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='綾瀬はるか', 
-age='22', 
+INSERT INTO users SET
+name='綾瀬はるか',
+age='22',
 email = 'ayase@example.com',
 tel = '08000001111',
 university = '慶応大学',
@@ -207,9 +207,9 @@ gender='2',
 address='東京都杉並区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='吉岡里帆', 
-age='23', 
+INSERT INTO users SET
+name='吉岡里帆',
+age='23',
 email = 'yoshioka@example.com',
 tel = '08000001111',
 university = '立教大学',
@@ -221,9 +221,9 @@ gender='2',
 address='東京都豊島区',
 address_num="199-9999";
 
-INSERT INTO users SET 
-name='橋本佳奈', 
-age='22', 
+INSERT INTO users SET
+name='橋本佳奈',
+age='22',
 email = 'hashimoto@example.com',
 tel = '08000001111',
 university = '横浜国立大学',
@@ -400,7 +400,7 @@ INSERT INTO agency_articles SET
 agency_id = '1',
 title = '○○です',
 sentenses = '○○○○○○○○○○○○○○○○○○○○○○○○○○○○',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '2',
@@ -409,7 +409,7 @@ sentenses = '過去の自分がいまの自分を作る！
 だから過去から逃げてるお前も！お前も！お前も！
 極めて幼稚なガキのまま成長が止まってるってわけだ！
 そんなやつらが一体なにから卒業するっていうんだよ！',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '3',
@@ -417,7 +417,7 @@ title = '下町ロケット',
 sentenses = '会社の規模などという尺度ではなく
 その製品が本当に優れているかどうかという
 少なとくとも本質的な議論をすべきです！',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '4',
@@ -425,7 +425,7 @@ title = 'まみやしょうたろう',
 sentenses = '同世代の俳優はライバルという意識はない。
 肩肘をはるより肩を組んだ方が
 いい作品なるだろうから。',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '5',
@@ -433,7 +433,7 @@ title = 'なかのたいが',
 sentenses = '見向きもされない時間が
 とても苦しかったですね。10代の頃はとにかく、
 悔しくてしょうがなかったです',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '6',
@@ -441,7 +441,7 @@ title = 'るろうに剣心',
 sentenses = '釣れない人だなぁ...
 遊んでくださいよ。せっかく、志々雄さんからの
 お許しがでたんだから',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '7',
@@ -449,20 +449,20 @@ title = 'まつざかとおり',
 sentenses = 'わかったつもりにならず、
 わからないことがあったら、じゃあどうするの？と
 自分に問いかけ振り返り、考えたい。',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '8',
 title = 'やまだゆうき',
 sentenses = '自分を良く見せようとする過信はダメだけど、
 根拠のない自信を持つことは大切。',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '9',
 title = 'よしざわりょう',
 sentenses = '僕、顔しかイケてないですから',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '10',
@@ -472,7 +472,7 @@ sentenses = 'かつて天才だった俺たちへ 神童だったあなたへ
 未だかつて無いほど入り組んだway
 悩めるだけ悩め 時が来たらかませ
 風任せ どっちみち茨のway',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 INSERT INTO agency_articles SET
 agency_id = '11',
@@ -480,7 +480,7 @@ title = '白日',
 sentenses='時には誰かを知らず知らずのうちに
 傷つけてしまったり、失ったりして初めて
 犯した罪を知る',
-eyecatch_url = '.png';
+eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
 
 -- ダミーデータ50個追加
 DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
@@ -501,6 +501,18 @@ updated_at='2020-01-01';
 
 INSERT INTO users_agencies SET
 user_id='2',
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
+
+INSERT INTO users_agencies SET
+user_id='3',
+agency_id='2',
+created_at='2020-02-01',
+updated_at='2020-02-01';
+
+INSERT INTO users_agencies SET
+user_id='4',
 agency_id='2',
 created_at='2020-02-01',
 updated_at='2020-02-01';
@@ -913,7 +925,7 @@ INSERT INTO contracts SET
 agency_id = '2',
 contract_year_month = '2020-02-01',
 claim_year_month = '2020-03-31',
-request_amounts = '4000',
+request_amounts = '6000',
 student_unit_price = '1000';
 
 INSERT INTO contracts SET

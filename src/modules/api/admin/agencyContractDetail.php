@@ -12,4 +12,5 @@ $id = $_GET['id'];
 $year = $_GET['year'];
 $month = $_GET['month'];
 
-$result = $crud->getAgencyContractsDetail($id, $year, $month);
+echo $crud->getAgencyContractsDetail($id, $year, $month);
+exit();

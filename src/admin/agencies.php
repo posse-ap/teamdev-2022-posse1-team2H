@@ -1,6 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
+use cruds\Admin as Crud;
+use modules\auth\Admin as Auth;
+
+$auth = new Auth($db);
+$auth->validate();
+
+$crud = new Crud($db);
+
+$agencies = json_decode($crud->getAgencies());
+
 include dirname(__FILE__) . '/header.php';
 ?>
 
@@ -16,18 +26,11 @@ include dirname(__FILE__) . '/header.php';
         <div id="displayed_content" class="displayed_content">企業一覧</div>
         <div class="agency_list_wrapper">
             <ul class="agency_list_inner">
-                <ol>
-                    <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
-                </ol>
-
-                <ol>
-                    <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
-                </ol>
-
-                <ol>
-                    <a href="./agencyInfo.php">○○○○llllllllllllll株式会社</a>
-                </ol>
-
+                <?php foreach ($agencies as $agency) : ?>
+                    <ol>
+                        <a href="./agency.php?id=<?= $agency->id ?>"><?= $agency->name ?></a>
+                    </ol>
+                <?php endforeach; ?>
             </ul>
 
         </div>

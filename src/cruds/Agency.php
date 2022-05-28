@@ -41,7 +41,7 @@ class Agency
                     'name' => $name,
                     'email' => $email,
                     'tel' => $tel,
-                    'univercity' => $univercity,
+                    'university' => $university,
                     'undergraduate' => $undergraduate,
                     'department' => $department,
                     'school_year' => $school_year,
@@ -127,7 +127,7 @@ class Agency
         }
         return null;
     }
-    
+
     public function getManagers($agency_id)
     {
         $stmt = $this->db->prepare("SELECT
