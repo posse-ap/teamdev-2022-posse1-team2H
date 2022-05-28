@@ -49,6 +49,11 @@
   margin: 20px 0px 20px 30px;
 }
 
+.title_underline a {
+  text-decoration: none;
+  color: #000;
+}
+
 .logout {
   display: block;
   padding: 5px 20px;
@@ -107,8 +112,12 @@
 }
 
 /*************** detail ***************/
-.span {
+.detail_title {
+  display: flex;
+  justify-content: space-evenly;
+  background: #E6E6E6;
   margin: 30px 150px;
+  padding-top: 10px;
 }
 
 .detail_box {
@@ -196,7 +205,7 @@
   background-color: #FFFFFF;
   border-radius: 10px;
   width: 40%;
-  height: 50%;
+  height: 60%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -244,14 +253,18 @@
 }
 
 .name_box {
-  padding-left: 30px;
+  padding-left: 65px;
 }
 
 .email_box {
-  padding-left: 30px;
+  padding-left: 65px;
 }
 
 .password_box {
+  padding-left: 45px;
+}
+
+.password_confirm_box {
   padding-left: 10px;
 }
 
@@ -263,7 +276,7 @@
   cursor: pointer;
   color: #000;
   text-decoration: none;
-  width: 10%;
+  width: 9%;
   margin-right: 0;
   margin-left: auto;
 }

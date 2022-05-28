@@ -22,12 +22,8 @@ include dirname(__FILE__) . '/header.php' ?>
                 <dt class="agency_inquary_after_content_inner_mail_title">Email</dt>
                 <dt class="agency_inquary_after_content_inner_mail_text">mirei.kubota@gmail.com</dt>
             </dl>
-            <dl class="agency_inquary_after_content_inner_phone">
-                <dt class="agency_inquary_after_content_inner_phone_title">パスワード</dt>
-                <dt class="agency_inquary_after_content_inner_phone_text">mmmmmmm</dt>
-            </dl>
             <p class="add inquary_content_inner_submit">
-                    <a href="admininfo.php" onclick="clickEvent()" class="inquary_content_inner_submit_button">追加する</a>
+                    <a href="admininfo.php" class="inquary_content_inner_submit_button">追加する</a>
             </p>
         </div>
         </div>
