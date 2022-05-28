@@ -93,123 +93,63 @@ const deleteManager = async (id) => {
 };
 
 //モーダル
-;(function(__w,__d){
-  let $$event = (e, m, f) => {
-    if (typeof e.addEventListener !== "undefined"){
-      e.addEventListener(m, f, false);
-    }
-    else if(typeof e.attachEvent !== "undefined"){
-      e.attachEvent('on' + m, function(){f.call(e , __w.event)});
-    }
-  };
-  let $$error = (m) => {
-    console.log("[Modal] Error : "+m);
-  };
+const addStudentInformation = () => {
+  let overlay = document.getElementById('overlay');
+  let modal = document.getElementById('modal');
+  let html = document.querySelector('html');
+  overlay.style.display = "block";
+  modal.style.display = "block";
+  html.style.overflow = "hidden";
+}
 
-  let $$ = function(){
-    // start
-    if(__d.readyState === "complete"){
-      this.start();
-    }
-    else if(__d.readyState === "interactive"){
-      $$event(window , "DOMContentLoaded" , (function(e){this.start(e)}).bind(this));
-    }
-    else{
-      $$event(window , "load" , (function(e){this.start(e)}).bind(this));
-    }
-  };
-
-  $$.prototype.start = function(){
-    let switches = __d.querySelectorAll(".modal_switch");
-    for(let i=0; i<switches.length; i++){
-      $$event(switches[i] , "click" , (function(e){this.click_modalSwitch(e)}).bind(this));
-    }
-  };
-
-  $$.prototype.click_modalSwitch = function(e) {
-    if(!e || !e.currentTarget){
-      $$error("Not event");
-      return;
-    }
-    let selector = e.currentTarget.getAttribute("data-target-selector");
-    if(!selector){
-      $$error("Not selector");
-      return;
-    }
-    let target = __d.querySelector(selector);
-    if(!target){
-      $$error("Not target");
-      return;
-    }
-    this.toggle_modalSwitch(target);
-
-    return false;
-  };
-
-  $$.prototype.toggle_modalSwitch = (element) => {
-    if(!element){
-      $$error("Not switch-element");
-      return;
-    }
-    let currentValue = element.getAttribute("data-view");
-    if(!currentValue){
-      $$event(element , "click" , (function(e){this.toggle_modalSwitch(e.currentTarget)}).bind(this));
-    }
-    if(currentValue === "1"){
-      element.setAttribute("data-view","0");
-    }
-    else{
-      element.setAttribute("data-view","1");
-    }
-  };
-
-  new $$;
-})(window,document);
-
-//追加アラート
-function clickEvent() {
-  alert('この個人情報を追加します。よろしいですか？');
-};
+const closingBtn = () => {
+  let overlay = document.getElementById('overlay');
+  let modal = document.getElementById('modal');
+  let html = document.querySelector('html');
+  overlay.style.display = "none";
+  modal.style.display = "none";
+  html.style.overflow = "auto";
+}
 
 //お問い合わせ
-function buttonClick() {
+function radioBoxClick() {
   let radioBox1 = document.getElementById("radio1");
   let radioBox2 = document.getElementById("radio2");
   let radioBox3 = document.getElementById("radio3");
   let hidden1 = document.getElementById("hidden1");
   let hidden2 = document.getElementById("hidden2");
   let hidden3 = document.getElementById("hidden3");
-  let txt1 = document.getElementById("txt1");
-  let txt2 = document.getElementById("txt2");
-  let txt3 = document.getElementById("txt3");
-  let txt4 = document.getElementById("txt4");
-  let txt5 = document.getElementById("txt5");
-  let txt6 = document.getElementById("txt6");
-  let txt7 = document.getElementById("txt7");
-  let txt8 = document.getElementById("txt8");
+  let editChangeTitle = document.getElementById("edit_change_title");
+  let editChangeText = document.getElementById("edit_change_text");
+  let editChangeIcatch = document.getElementById("edit_change_icatch");
+  let studentName = document.getElementById("student_name");
+  let studentEmail = document.getElementById("student_email");
+  let studentInformationContactReason = document.getElementById("student_information_contact_reason");
+  let otherTitle = document.getElementById("other_title");
+  let otherContactDetail = document.getElementById("other_contact_detail");
 
   if (radioBox1.checked) {
     hidden1.style.display = "block";
-    txt1.value = "";
-    txt2.value = "";
-    txt3.value = "";
+    editChangeTitle.value = "";
+    editChangeText.value = "";
+    editChangeIcatch.value = "";
   } else {
     hidden1.style.display = "none";
   }
 
   if (radioBox2.checked) {
     hidden2.style.display = "block";
-    txt4.value = "";
-    txt5.value = "";
-    txt6.value = "";
+    studentName.value = "";
+    studentEmail.value = "";
+    studentInformationContactReason.value = "";
   } else {
     hidden2.style.display = "none";
   }
 
   if (radioBox3.checked) {
     hidden3.style.display = "block";
-    txt7.value = "";
-    txt8.value = "";
+    otherTitle.value = "";
+    otherContactDetail.value = "";
   } else {
     hidden3.style.display = "none";
   }
