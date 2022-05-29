@@ -33,7 +33,7 @@ body {
 }
 
 .content_detail {
-    background-color: #eaedf2;
+    background-color: #fff;
     padding: 0;
     width: 100%;
     display: flex;
@@ -266,7 +266,7 @@ body {
 }
 
 .content_detail_subcontent_right_serch_inquirybox {
-    border: 1px solid #FFF;
+    border: 1px solid #dadada;
     cursor: pointer;
     margin-bottom: 5px;
     text-align: center;

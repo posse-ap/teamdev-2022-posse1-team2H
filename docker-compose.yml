@@ -23,7 +23,7 @@ services:
       - ./src:/var/www/html
   db:
     container_name: craft_db_dev
-    platform: linux/amd64
+    platform: linux/x86_64
     build: ./mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
