@@ -106,7 +106,7 @@ include dirname(__FILE__) . "/header.php";
                     </div>
                 </div>
                 <div class="modal_search">
-                    <a href="" class="modal_search_text">検索</a>
+                    <div class="modal_search_text" onclick=handleSearch()>検索</div>
                 </div>
             </div>
         </form>
