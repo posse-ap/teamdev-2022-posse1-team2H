@@ -56,11 +56,13 @@ include dirname(__FILE__) . '/header.php' ?>
     </div>
     <a class="edit_button" href="./edit.php">編集</a>
     <div class="list_box">
-        <p>個人担当者一覧</p>
+        <div class="flex">
+            <p>個人担当者一覧</p>
+            <?php if ($manager->is_representative): ?>
+                <div class="open_modal" onclick="addAgencyManager()">追加</div>
+            <?php endif; ?>
+        </div>
         <div id="managers_target"></div>
-        <?php if ($manager->is_representative): ?>
-            <div class="open_modal" onclick="addAgencyManager()">追加</div>
-        <?php endif; ?>
     </div>
 </main>
 <div id="overlay" class="overlay"></div>
