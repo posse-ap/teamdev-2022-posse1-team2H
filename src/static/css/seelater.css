@@ -291,4 +291,8 @@
             height: 35%;
             margin-top: 6px;
         }
+
+        .user_likelist_inner1_body_right {
+            display: block;
+        }
     }
