@@ -47,6 +47,7 @@ body {
 
 .content_detail_catchcopy_img_big {
     width: 100%;
+    object-fit: cover;
 }
 
 .content_detail_catchcopy {
@@ -75,7 +76,8 @@ body {
 .content_detail_agency_imgbig {
     border-radius: 60px;
     padding: 0;
-    width: 50%;
+    width: 65%;
+    object-fit: cover;
 }
 
 .content_detail_subcontent_left_agentstudent_table {
@@ -105,7 +107,6 @@ body {
     color: #909090;
     text-decoration: none;
 }
-
 
 .content_detail_subcontent {
     display: flex;
@@ -236,6 +237,7 @@ body {
 .content_detail_underrequest_inquirybox:hover {
     background-color: #0087e6;
 }
+
 
 /* ここから右サイド */
 
@@ -399,24 +401,35 @@ body {
     .content_detail_subcontent_right {
         display: none;
     }
-
     .content_detail_subcontent_left_company_information {
         display: block;
     }
-
-    .content_detail_underrequest{
+    .content_detail_underrequest {
         display: none;
+    }
+    .content_detail_catchcopy_title {
+        font-family: 游ゴシック体, YuGothic, 游ゴシック, "Yu Gothic", メイリオ, sans-serif;
+        font-size: 250%;
+        font-weight: 700;
+        text-align: center;
+        margin: 2%;
+    }
+    .content_detail_agency_imgbig {
+        border-radius: 60px;
+        padding: 0;
+        width: 85%;
+        object-fit: cover;
     }
 }
 
-.content_detail_subcontent_right_serch_seelaterfield_seelaterbox{
+.content_detail_subcontent_right_serch_seelaterfield_seelaterbox {
     border: 1px solid #FFF;
     cursor: pointer;
     margin-bottom: 5px;
     text-align: center;
 }
 
-.content_detail_subcontent_right_serch_seelaterfield_seelaterbox_text{
+.content_detail_subcontent_right_serch_seelaterfield_seelaterbox_text {
     font-size: 16px;
     color: #524e4d;
     margin-top: 0;

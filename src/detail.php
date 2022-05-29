@@ -33,7 +33,7 @@ include dirname(__FILE__) . '/header.php';
                     </div>
                 </div>
                 <div class="content_detail_agency_img">
-                    <a href="<?= $agency->url ?>" class="content_detail_agency_imgbig_">
+                    <a href="<?= $agency->url ?>" class="content_detail_agency_imgbig">
                         <img src="<?= $agency->eyecatch ?>" alt="<?= Utils::h($agency->name) ?>" class="content_detail_agency_imgbig">
                     </a>
                 </div>
