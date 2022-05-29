@@ -23,7 +23,7 @@ include dirname(__FILE__) . '/header.php';
     <div class="content_detail">
         <div class="content_detail_inner">
             <!-- キャッチコピーと写真 -->
-            <div class="content_detail_catchCopy_imgbig">
+            <div class="content_detail_catchCopy_img_big">
                 <div class="content_detail_catchcopy">
                     <h1 class="content_detail_catchcopy_title"><?= Utils::h($agency->name) ?></h1>
                     <div class="content_detail_catchcopy_subtitle">
@@ -43,12 +43,12 @@ include dirname(__FILE__) . '/header.php';
             <div class="content_detail_subcontent">
                 <!-- 左側のどんな企業かどんな学生におすすめかと後でみるに追加と請求 -->
                 <div class="content_detail_subcontent_left">
-                    <div class="content_detail_subcontent_left_agentStudent">
-                        <ul class="content_detail_subcontent_left_agentStudent_table">
-                            <li class="content_detail_subcontent_left_agentStudent_table_top">
-                                <a href="./index.php" class="content_detail_subcontent_left_agentStudent_table_toptext">TOP画面</a>
+                    <div class="content_detail_subcontent_left_agentstudent">
+                        <ul class="content_detail_subcontent_left_agentstudent_table">
+                            <li class="content_detail_subcontent_left_agentstudent_table_top">
+                                <a href="./index.php" class="content_detail_subcontent_left_agentstudent_table_toptext">TOP画面</a>
                             </li>
-                            <li class="content_detail_subcontent_left_agentStudent_table_detail">詳細ページ</li>
+                            <li class="content_detail_subcontent_left_agentstudent_table_detail">詳細ページ</li>
                         </ul>
                         <div class="content_detail_subcontent_left_agentstudent_agent">
                             <h1 class="content_detail_subcontent_left_agentrequest_agent_title"><?= Utils::h($agency->title) ?></h1>
@@ -84,13 +84,13 @@ include dirname(__FILE__) . '/header.php';
                             <div class="content_detail_subcontent_right_serch_menu_text">メニュー</div>
                         </div>
                         <div class="content_detail_subcontent_right_serch_inquirybox">
-                            <a href="./contact.php?ids=<?= Utils::h($agency->id) ?>" class="content_detail_subcontent_right_serch_inquiryText">お問合せ</a>
+                            <a href="./contact.php?ids=<?= Utils::h($agency->id) ?>" class="content_detail_subcontent_right_serch_inquiry_text">お問合せ</a>
                         </div>
-                        <div class="content_detail_subcontent_right_serch_seelaterField">
-                            <div class="content_detail_subcontent_right_serch_seelaterField_add">
+                        <div class="content_detail_subcontent_right_serch_seelater_field">
+                            <div class="content_detail_subcontent_right_serch_seelater_field_add">
 
-                                <div class="content_detail_subcontent_right_serch_seelaterField_add_box" onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)">
-                                    <h3 class="content_detail_subcontent_right_serch_seelaterField_add_box_text">「後で見る」へ追加</h3>
+                                <div class="content_detail_subcontent_right_serch_seelater_field_add_box" onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)">
+                                    <h3 class="content_detail_subcontent_right_serch_seelater_field_add_box_text">「後で見る」へ追加</h3>
                                 </div>
                                 <div class="content_detail_subcontent_right_serch_seelaterfield_seelaterbox">
                                     <a href="./seeLater.php" class="content_detail_subcontent_right_serch_seelaterfield_seelaterbox_text">後で見るリスト</a>
@@ -127,7 +127,7 @@ include dirname(__FILE__) . '/header.php';
     <div class="content_detail_underrequest">
         <div class="content_detail_action_bar">
             <div class="content_detail_underrequest_seelaterbox">
-                <h4 class="content_detail_underrequest_seelaterText" onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)">後で見るリストに追加
+                <h4 class="content_detail_underrequest_seelater_text" onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)">後で見るリストに追加
                 </h4>
             </div>
 
