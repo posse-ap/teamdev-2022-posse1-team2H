@@ -77,12 +77,8 @@ const drawHTMLs = {
                   </div>
 
                   <div class="user_likelist_inner1_body_under">
-                    <button class="user_likelist_inner1_body_under_contact">
-                      <a href="./contact.php?ids=${id}">問い合わせる</a>
-                    </button>
-                    <button class="user_likelist_inner1_body_under_detail">
-                      <a href="./detail.php?id=${id}">詳細ページ</a>
-                    </button>
+                      <a href="./contact.php?ids=${id}" class="user_likelist_inner1_body_under_contact"><div>問い合わせる</div></a>
+                      <a href="./detail.php?id=${id}" class="user_likelist_inner1_body_under_detail"><div>詳細ページ</div></a>
                   </div>
                 </div>
               </div>
