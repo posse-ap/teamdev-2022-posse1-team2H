@@ -39,6 +39,7 @@ class Agency
                 $item = array(
                     'id' => $id,
                     'name' => $name,
+                    'age' => $age,
                     'email' => $email,
                     'tel' => $tel,
                     'university' => $university,
@@ -48,13 +49,34 @@ class Agency
                     'graduation_year' => $graduation_year,
                     'gender' => $gender,
                     'address' => $address,
-                    'address_num' => $address_num
+                    'address_num' => $address_num,
+                    "updated_at" => $updated_at
                 );
                 array_push($values, $item);
             }
             return json_encode($values, JSON_UNESCAPED_UNICODE);
         }
         return json_encode(array());
+    }
+
+    public function getUser($user_id)
+    {
+        $stmt = $this->db->prepare("SELECT
+        *
+        FROM users
+        WHERE id = :id
+        ");
+        $stmt->bindValue(':id', $user_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        return $user;
+    }
+
+    public function getAgencyName($agency_id) {
+        $stmt = $this->db->prepare("SELECT name FROM agencies WHERE id = :agency_id");
+        $stmt->bindValue(':agency_id', $agency_id, \PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(\PDO::FETCH_ASSOC)['name'];
     }
 
     public function getManager($manager_id)
@@ -105,8 +127,9 @@ class Agency
         ");
         $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
         $success = $stmt->execute();
-        $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
+
         if ($success) {
+            $manager = $stmt->fetch(\PDO::FETCH_ASSOC);
             extract($manager);
             $result = array(
                 "id" => $manager_id,
@@ -136,7 +159,8 @@ class Agency
         email,
         is_representative
         FROM managers
-        WHERE agency_id = ?");
+        WHERE agency_id = ?
+        ");
         $stmt->execute(array($agency_id));
         $num = $stmt->rowCount();
 
@@ -223,18 +247,21 @@ class Agency
         if (!($manager['agency_id'] == $_SESSION['agency']['id'])) {
             throw new \Exception();
         }
-        try {
-            $stmt = $this->db->prepare("DELETE FROM managers
+        if (!$manager['is_representative']) {
+
+            try {
+                $stmt = $this->db->prepare("DELETE FROM managers
             WHERE id = :manager_id");
-            $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
-            $stmt->execute();
-        } catch (\Exception $e) {
-            throw $e;
+                $stmt->bindValue(':manager_id', $manager_id, \PDO::PARAM_INT);
+                $stmt->execute();
+            } catch (\Exception $e) {
+                throw $e;
+            }
         }
         return $manager_id;
     }
 
-    public function sendEditRequest(Article $article)
+    public function sendEditRequest($article)
     {
         $text = '
         以下の内容で掲載記事の編集を依頼します。
@@ -245,12 +272,29 @@ class Agency
         $text .=  $article->sentenses;
         $text .= '
         アイキャッチ: ';
-        $text .= $article->eyecatch;
+        $text .= $article->eyecatch_url;
+        $agency = json_decode(
+            self::getManagerWithAgency($_SESSION['agency_manager']['id'])
+        );
+        $admin_email = Email::BOOZER_EMAIL_FOR_NOTICE;
+        Email::sendMail($admin_email, $agency->agency_email, '掲載記事の編集依頼', $text);
+        Email::sendMail($agency->agency_email, $admin_email, '掲載記事の編集依頼をしました', $text);
+    }
+
+    public function sendDeleteUser ($user_email, $reason) {
         $agency = json_decode(
             self::getManagerWithAgency($_SESSION['agency_manager']['id'])
         );
         $to = Email::BOOZER_EMAIL_FOR_NOTICE;
-        Email::sendMail($to, $agency->agency_email, '掲載記事の編集依頼', $text);
+        $from = $agency->agency_email;
+        $title = '学生削除依頼';
+        $message = $agency->agency_name ."以下の内容で学生削除を依頼します。
+
+学生email: " . $user_email . "
+\n 削除理由: " . $reason . "
+        ";
+        Email::sendMail($to, $from ,$title, $message);
+        Email::sendMail($from, $to, $title, $message);
     }
 
     public function sendContact($content)
@@ -266,5 +310,6 @@ class Agency
         お問い合わせ内容: ';
         $message .= $content;
         Email::sendMail($to, $from, $title, $message);
+        Email::sendMail($from, $to, $title, $message);
     }
 }

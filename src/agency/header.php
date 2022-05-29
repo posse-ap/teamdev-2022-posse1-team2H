@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/727d59e43e.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="../static/js/agencyApi.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/agency.css">
     <title>CRAFT for Agencies</title>
@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="header_top">
-            <p class="title_underline"><a href="index.php">◯◯株式会社様 管理画面 by CRAFT</a></p>
+            <p class="title_underline"><a href="index.php"><?= $_SESSION['agency']['name'] ?>様 管理画面 by CRAFT</a></p>
             <a class="logout" href="logout.php">ログアウト</a>
         </div>
         <div class="subtitle">
