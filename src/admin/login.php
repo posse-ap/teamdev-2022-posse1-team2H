@@ -6,6 +6,7 @@ use cruds\Admin as Cruds;
 $auth = new Auth($db);
 $cruds = new Cruds($db);
 
+// seed
 // $cruds->insertAdmins();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -21,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           }
 
           header('Location: index.php');
-          exit(); 
+          exit();
       } else {
           $error['login'] = 'failed';
       }
