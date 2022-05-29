@@ -104,12 +104,12 @@ include dirname(__FILE__) . '/header.php';
         </div>
     </header>
     <main>
-        <div id="displayed_content" class="displayed_content">○○○○株式会社の基本情報と掲載情報</div>
+        <div id="displayed_content" class="displayed_content"><?= Utils::h($agency->name) ?>の基本情報と掲載情報</div>
         <form action="" method="POST">
             <input type="hidden" name="token" value="<?= Utils::h($_SESSION['token']) ?>">
             <input type="hidden" name="agency_id" value="<?= Utils::h($agency->agency_id) ?>">
             <div class="agency_info_wrapper">
-                <ul class"basic_info">
+                <ul class="basic_info">
                     <li id="name">企業名：<label><input type="text" name="name" value="<?= Utils::h($agency->name) ?>"></label></li>
                     <li id="email">Email：<label><input type="text" name="email" value="<?= Utils::h($agency->email) ?>"></label></li>
                     <li id="email_for_notification">通知用Email：<label><input type="text" name="email_for_notification" value="<?= Utils::h($agency->email_for_notification) ?>"></label></li>

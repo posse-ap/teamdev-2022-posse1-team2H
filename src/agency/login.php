@@ -6,7 +6,6 @@ use cruds\Agency as Cruds;
 $auth = new Auth($db);
 $cruds = new Cruds($db);
 // seed
-//1回データ消した時には必要
 // $cruds->insertManagers();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
