@@ -440,7 +440,7 @@ sentenses = '
 傷つけてしまったり、失ったりして初めて
 犯した罪を知る
 ',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/1673869108/display_1500/stock-vector-vector-isolated-one-line-drawing-men-friends-1673869108.jpg';
 
 INSERT INTO agency_articles SET
 agency_id = '3',
@@ -500,7 +500,7 @@ GFDL権著作は、見解・方針をし文は記事たますことを文章で�
 本表示著作者の権利権が転載しすべてでは、創作しことにおいてフェア物を列と著作が設けることも、対処担保の文というも必要可能ます。フェアの付は、その他はを妥当に翻訳することとするませ。ここは、下でメディアと引用するすべての執筆物を、ペディア複数の主従、区別基づくれあっファイルの妥当で引用・編集を説明していてませ。その他、BY裁判を利用著作従いれるていある方針で著作しればいるペディアも、時にその引用記事が自由ででては、フリーがの投稿はしでとする要件もなるでもありなです。たとえば、カギに列挙し文献も可能ん許諾を該当しられあれていたによる目的でも、方針Licenseの転載上は、要件記事の場上は、フリーで加えれているべき。
 
 主題を投稿するのでい方針フリーの理事ますますURL一つ執筆フリー0補足0で定義できで両国は、記事自体を参照の著作における以下のようます掲載でするてくださいます。',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/718513735/display_1500/stock-vector-continuous-line-drawing-of-family-standing-together-718513735.jpg';
 
 INSERT INTO agency_articles SET
 agency_id = '4',
@@ -701,7 +701,7 @@ sentenses = '私も十月そのうちその意味顔によってののために�
 もうはそこかも解思う訳ですないうが。それでその主義がなりますては、それの傍点をはなはだご忠告を叫びですでしょ、それの奨励もあれがするですのはしなけれう。
 
 元々結果のよかっ叫びありと私に連中が心得たい。',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/1188175669/display_1500/stock-vector-adult-couple-avatar-1188175669.jpg';
 
 INSERT INTO agency_articles SET
 agency_id = '5',
@@ -715,7 +715,7 @@ Morbi dapibus arcu sed metus dignissim, a commodo neque viverra. Integer blandit
 Mauris ullamcorper eu nisi rutrum aliquam. Suspendisse at tortor non elit pulvinar varius eu id sem. Curabitur sed mi quam. Sed congue metus vitae mauris egestas vestibulum. Aenean tempus ornare velit, non malesuada sapien lobortis sit amet. Fusce efficitur mi non faucibus cursus. Quisque pretium ultricies volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus ex vitae velit sodales vestibulum.
 
 Nullam aliquam velit non ex scelerisque, vitae porttitor mi volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean egestas, erat et laoreet sodales, nunc neque imperdiet augue, nec egestas lacus nulla eu lorem. Maecenas eget urna et turpis bibendum vestibulum. Morbi eu rutrum mauris. Fusce arcu tellus, pharetra non consequat at, sagittis convallis erat. Duis consequat orci eget purus ullamcorper, at pretium lectus imperdiet. Etiam varius tellus viverra, finibus nisi eu, sodales massa.',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/718512508/display_1500/stock-vector-continuous-line-drawing-of-man-and-woman-discussing-work-718512508.jpg';
 
 INSERT INTO agency_articles SET
 agency_id = '6',
@@ -729,7 +729,7 @@ Vivamus sit amet varius enim. Fusce aliquam nisi non purus dapibus fermentum. Se
 Integer iaculis quam id diam vestibulum porta. Nunc sollicitudin metus vitae mauris malesuada imperdiet. Proin tristique nisl lorem, vel fermentum turpis sagittis eget. Nulla tempus sem semper, sollicitudin odio in, congue lacus. Cras nec massa eros. Morbi nec urna at eros posuere mattis. Mauris porta arcu urna. Vestibulum nunc eros, iaculis et nulla non, rhoncus facilisis odio. Quisque eget nisi molestie, congue enim at, sagittis enim. In euismod metus in fringilla porta. Nunc mauris sapien, feugiat posuere dolor et, tincidunt accumsan sem. Etiam id mauris tellus. Nullam sagittis metus fermentum lacus ultricies vehicula. Nam in velit ut mauris egestas pretium id vitae libero. Sed commodo tincidunt ligula, quis pulvinar dolor auctor id. Duis urna risus, dapibus fermentum mi sed, posuere congue mi.
 
 Nullam eu nibh eleifend, sagittis lacus vel, ultricies felis. Aliquam vulputate gravida hendrerit. Cras at facilisis ex. Duis urna dui, aliquet vel ipsum euismod, imperdiet feugiat dui. Sed feugiat feugiat sodales. Nulla facilisi. Etiam elementum et elit vitae dapibus. Ut eleifend congue consectetur. Sed id nulla et tortor mollis faucibus. Curabitur at tellus ex. Cras sollicitudin urna ipsum, in rhoncus orci venenatis eget. Vivamus lobortis a dolor ut luctus. Donec est ligula, faucibus vitae faucibus ac, viverra blandit nunc. Sed condimentum justo sit amet felis consectetur, sed imperdiet velit dictum. In egestas non mauris eget dignissim. Maecenas ut nibh eu ipsum tempus convallis.',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/1183961830/display_1500/stock-vector-sketch-lines-people-1183961830.jpg';
 
 INSERT INTO agency_articles SET
 agency_id = '7',
@@ -737,19 +737,19 @@ title = 'まつざかとおり',
 sentenses = 'わかったつもりにならず、
 わからないことがあったら、じゃあどうするの？と
 自分に問いかけ振り返り、考えたい。時計屋の店には明るくネオン燈がついてみるとほんとうにそうなんだねえ。ずうっと町の角までついてくることもあるよ。どうしてって、来ようとした冷たいとこだとは思われませんでした。右手の低い丘の上に降りるものの方が、もっと売れます。だからやっぱりおまえはさっき考えたようにぼんやり白く見えるだけでした。おかしいと思って渡しましたら、燈台守は、にやにや笑って、少しのどがつまってなんとも言えずにただおじぎをしました。そのとき汽車のずうっとうしろの方に見えました。ぼくは学校から帰る途中たびたびカムパネルラのうちへもつれて行ったよ。するとあの鳥捕りは、こんどはずっと近くでまたそんなことがあったんだが。しっぽがまるで箒のようだとも思いました。青年はさっと顔いろが青ざめ、たって一ぺんにジョバンニの方を見ました。けれどもジョバンニは生意気な、いやだいと思いながら、ぼんやりしてだまってしまいました。つりがねそうか野ぎくかの花が、いっぱいに舞いおりて来ました。あれが名高いアルビレオの観測所です窓の外から光りました。ジョバンニ、カムパネルラが、いきなり、喧嘩のようにかかっているのを見ました。そうすると、台の下にはもうあの銀河のはずれにさっきカムパネルラたちのあかりを水の流れる方へ押してやろうとした、ただもうそれっきりになって、いきなり走りだしました。ね、きれいでしょう、あんなに光っているのかと思ってまたよく気をつけて見ると、一人のせいの高いかたちが過ぎて行くときは、その紙切れが何だったか待ちかねたというふうにポケットに手をあげました。りんごをひろってきて、もう歩いているかということを知っている。まっくらな草や、いろいろな宝石が海のような青白い光を出す鋼玉やらでした。先生はしばらく困ったようすでしたが、もうザネリは向こうのひばの植わった家の中はすっかり明るくなりました。ジョバンニはおじぎをすると、水銀がみんな蒸発してしまうのでした。けれどもジョバンニは生意気な、いやだいと思いながら、ジョバンニを見おろして言いました。しかし雁の方が、ほんとうに待って心配して待っているかもわからずに、にわかにとなりの鳥捕りが、黄いろと青じろの、うつくしい燐光をあげて泣き出そうとしましたら、向こうの野原から、ぱっと白く明るくなりました。ええ、ええ、もうこの辺はひどい高原ですからうしろの方から、あの聞きなれた三〇六番の声が、ジョバンニの横の方へ行きました。けれどもいつかジョバンニの眼はまた泪でいっぱいになりました。あすこの岸のずうっと向こうにまるでけむりのような、がらんとしたくらいでした。',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/780784267/display_1500/stock-vector-continuous-line-drawing-happy-elderly-couple-walking-with-bag-vector-illustration-780784267.jpg';
 
 INSERT INTO agency_articles SET
 agency_id = '8',
 title = 'やまだゆうき',
 sentenses = '書画骨董といったから。不思議にもその鼓動の音が玄関に聞こえた時、先生は知らん顔で迎えました。私は人間らしいという言葉も意味も私には解らなかったけれども、その時ようやく悲しい気分に誘われる事ができなくなりました。Ｋは真宗の坊さんの懐から出るのではなかろうかと思われるのは非常の苦痛だともいって来ませんでした。死ぬのが厭になる事がしばしばあったのです。帰ってから以後の自分というものがほとんど存在していたとみえて、また超然と帰って行った。しかし決して復讐ではありませんが、お嬢さんが茶を持っていた。尿毒症が出ると、私の胸が一度に凝結したようにも思っていたのです。私は張合いが抜けたという記憶が、今度は取り戻そうという下心を持って来てくれと答えました。けれども父が何もできないように見えたのです。一時間の後、先生と奥さんから聞かされた危険を思い出した。しかし食事の時気分が悪いとは答えません。もし私が亡友に対すると同じような意味の書状が二、三度以上あった。無理をして、口へは出さないけれども、自分でそっちのほうを択んだのです。それが道学の余習なのか、もしくは好きな想像を描いて、妙な方向から岸の方へ歩いて行った。私はまた始めから猜疑の眼で叔父に対して少しも損われていないという昔風の言葉を並べたなら、二人の間柄として、ちらちらする文字を、眼で刺し通そうと試みたのです。私は結婚してから私は父の希望するような返事をしました。さっきまで傍にいて、どうしても脆いものですねと私がいった。それでは今厄介になってから、この電報はその前から両親の許可を得て、始めて私のいる所へ通ろうとするに足りないという事は、この顛末をまるで知らずにいました。そうすると過去が指し示す路を今まで通り積み重ねて行かせようとして私の心持がこう変ったのだろうかと考えました。私はその言葉のためにかいと父が聞いた。しかし教壇に立つ人の講義が、遠くの方で胡魔化されていた彼ですけれども、私が死んだのです。もし愛という不可思議なものに限られていました。けれども私は厭なのです。他を疑り始めたのは作さんが来てから、眼鏡の失くなったのに先生は苦笑しました。私は次の間に奥さんのいる事を知っているという事を聞いて、すぐ手拭で頭を包んで、封じ目を鄭寧に先生の命が流れていると信じていたとすれば、いつものように見えました。',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/1572286066/display_1500/stock-vector-sketch-of-businessmen-discussion-in-the-meeting-line-drawing-vector-illustration-1572286066.jpg';
 
 INSERT INTO agency_articles SET
 agency_id = '9',
 title = 'よしざわりょう',
 sentenses = '僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから僕、顔しかイケてないですから',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/1797930358/display_1500/stock-vector-line-drawing-vector-illustration-of-talking-young-people-1797930358.jpg';
 
 INSERT INTO agency_articles SET
 agency_id = '10',
@@ -887,7 +887,7 @@ sentenses = 'かつて天才だった俺たちへ 神童だったあなたへ
 未だかつて無いほど入り組んだway
 悩めるだけ悩め 時が来たらかませ
 風任せ どっちみち茨のway',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/1762108322/display_1500/stock-vector-one-continuous-single-line-drawing-of-young-male-and-female-manager-join-run-competition-on-running-1762108322.jpg';
 
 INSERT INTO agency_articles SET
 agency_id = '11',
@@ -959,7 +959,7 @@ sentenses='時には誰かを知らず知らずのうちに
 犯した罪を知る時には誰かを知らず知らずのうちに
 傷つけてしまったり、失ったりして初めて
 犯した罪を知る',
-eyecatch_url = 'https://images-fe.ssl-images-amazon.com/images/I/71wC+DpOhHL.01._CR0,0,1080,1080_SX960_CR0,0,960,854__SX300_CR0,0,250,250.jpg?ver=1586287502';
+eyecatch_url = 'https://image.shutterstock.com/shutterstock/photos/1797197872/display_1500/stock-vector-single-continuous-line-drawing-of-young-happy-businessman-walking-together-with-his-assistant-while-1797197872.jpg';
 
 -- ダミーデータ50個追加
 DROP TABLE IF EXISTS users_agencies; -- ユーザーとエージェンシーの中間テーブル
