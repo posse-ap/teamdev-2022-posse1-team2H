@@ -7,7 +7,11 @@ $crud = new Crud($db);
 $auth = new Agency($db);
 $auth->validate();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$manager = $crud->getManager($_SESSION['agency_manager']['id']);
+$manager = json_decode($manager);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $manager->is_representative) {
+    $error = [];
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -54,7 +58,9 @@ include dirname(__FILE__) . '/header.php' ?>
     <div class="list_box">
         <p>個人担当者一覧</p>
         <div id="managers_target"></div>
-        <div class="open_modal" onclick="addAgencyManager()">追加</div>
+        <?php if ($manager->is_representative): ?>
+            <div class="open_modal" onclick="addAgencyManager()">追加</div>
+        <?php endif; ?>
     </div>
 </main>
 <div id="overlay" class="overlay"></div>
