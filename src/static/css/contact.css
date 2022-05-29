@@ -1,8 +1,8 @@
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
-    background-color: #e6e6e6;
-
+    background-color: #fff;
 }
 
 .user_inquary_header_English,
@@ -20,11 +20,11 @@ html, body {
 }
 
 .user_inquary {
-    background-color: #e6e6e6;
+    background-color: #fff;
 }
 
 .user_inquary_header {
-    background-color: #e6e6e6;
+    background-color: #fff;
     display: flex;
     justify-content: center;
 }
@@ -36,7 +36,9 @@ html, body {
     text-align: center;
 }
 
+
 /*ここからBody*/
+
 .user_inquary_content {
     display: flex;
     justify-content: center;
@@ -54,11 +56,11 @@ html, body {
     box-sizing: border-box;
     width: 70%;
     box-sizing: border-box;
-    background-color: #e6e6e6;
+    background-color: #fff;
 }
 
 .user_inquary_content_inner dl {
-    border-top: 1px solid #fff;
+    border-top: 1px solid #dadada;
     border-bottom: none;
     font-family: montserrat, sans-serif;
     width: 100%;
@@ -67,13 +69,11 @@ html, body {
     align-items: center;
     margin: 0;
     height: 100px;
-
 }
 
 .user_inquary_content_inner_message {
     height: 300px;
 }
-
 
 .user_inquary_content_inner dt {
     line-height: 1.5;
@@ -82,7 +82,8 @@ html, body {
     width: 30%;
 }
 
-dl input, dl select {
+dl input,
+dl select {
     display: block;
     width: auto;
     padding: 0.375rem 0.75rem;
@@ -92,7 +93,7 @@ dl input, dl select {
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid #dadada;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -108,6 +109,9 @@ dl input, dl select {
 
 dl.user_inquary_contet_inner_confirmation {
     display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .user_inquary_content_inner_submit {
@@ -115,6 +119,7 @@ dl.user_inquary_contet_inner_confirmation {
     font-weight: inherit;
     width: 100%;
     margin: 0;
+    padding-bottom: 4%;
 }
 
 .user_inquary_content_inner_submit:hover {
@@ -167,29 +172,23 @@ input:checked~.user_inquary_content_inner_submit_button {
 }
 
 @media(max-width:640px) {
-
     .user_inquary_header_title {
         font-size: 16px;
     }
-
-    dl input, dl select {
-
+    dl input,
+    dl select {
         width: 80%;
     }
-
     .user_inquary_content_inner dt {
         font-size: 15px;
         width: 30%;
     }
-
     .user_inquary_content_inner_confirmation_inner_checkbox {
         width: 5%;
     }
-
     .user_likelist_inner1_body_under {
         display: none;
     }
-
     .user_likelist_inner1_body_under_responsive {
         display: flex;
         margin-left: 10%;
@@ -197,7 +196,6 @@ input:checked~.user_inquary_content_inner_submit_button {
         margin-top: 12px;
         gap: 10%;
     }
-
     .user_likelist_inner1_body_under_responsive a {
         width: auto;
         padding: 0.375rem 0.75rem;

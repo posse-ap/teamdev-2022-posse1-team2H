@@ -19,11 +19,11 @@ body {
 }
 
 .user_inquary_after {
-    background-color: #e6e6e6;
+    background-color: #fff;
 }
 
 .user_inquary_after_header {
-    background-color: #e6e6e6;
+    background-color: #fff;
     display: flex;
     justify-content: center;
 }
@@ -37,7 +37,6 @@ body {
 
 
 /*ここからBody*/
-
 
 .user_inquary_after_content {
     display: flex;
@@ -56,24 +55,24 @@ body {
     box-sizing: border-box;
     width: 70%;
     box-sizing: border-box;
-    background-color: #e6e6e6;
+    background-color: #fff;
 }
 
 .user_inquary_after_content_inner dl {
-    border-top: 1px solid #fff;
-    border-bottom: none;
+    border-top: 1px solid #dadada;
+    /* border-bottom: none; */
     font-family: montserrat, sans-serif;
     width: 100%;
     margin: auto;
     display: flex;
     align-items: center;
     margin: 0;
+    line-height: 6;
 }
 
 .user_inquary_after_content_inner_message {
     height: 300px;
 }
-
 
 .user_inquary_after_content_inner dt {
     font-size: 20px;
@@ -96,9 +95,12 @@ body {
     font-size: 14px;
 }
 
-
 .user_inquary_after_contet_inner_confirmation_check {
     margin: 0;
+}
+
+.user_inquary_after_content_inner_address {
+    border-bottom: 1px solid #dadada;
 }
 
 .user_inquary_after_content_inner_submit {
@@ -106,6 +108,7 @@ body {
     font-weight: inherit;
     width: 100%;
     margin: 0;
+    padding: 4%;
 }
 
 .user_inquary_after_content_inner_submit:hover {
@@ -141,9 +144,7 @@ body {
         width: 50%;
         font-size: 16px;
     }
-
     .user_inquary_after_header_title {
-
         font-size: 14px;
     }
 }
