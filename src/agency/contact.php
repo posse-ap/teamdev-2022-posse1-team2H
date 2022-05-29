@@ -64,7 +64,7 @@ include dirname(__FILE__) . '/header.php' ?>
                     <input type="hidden" name="form_id" value="edit_article">
                     <dl class="inquary_content_inner_edit_change">
                         <dt class="inquary_content_inner_edit_change_title">タイトル</dt>
-                        <dd class="edit_change_title inquary_content_inner_edit_change_enter">
+                        <dd class="title inquary_content_inner_edit_change_enter">
                             <span class="inquary_content_inner_edit_change_enter_box">
                                 <input id="edit_change_title" type="text"  name="title" size="40" class="inquary_content_inner_edit_change_enter_text id">
                             </span>
@@ -72,7 +72,7 @@ include dirname(__FILE__) . '/header.php' ?>
                     </dl>
                     <dl class="inquary_content_inner_edit_change_detail">
                         <dt class="inquary_content_inner_edit_change_detail_title">本文</dt>
-                        <dd class="edit_change_text inquary_content_inner_edit_change_detail_enter">
+                        <dd class="detail inquary_content_inner_edit_change_detail_enter">
                             <span class="inquary_content_inner_edit_change_detail_enter_box">
                                 <textarea id="edit_change_text" name="sentenses" class="inquary_content_inner_edit_change_detail_enter_text" cols="40" rows="10" aria-invalid="false" placeholder="変更内容を含む全文を記入してください。"></textarea>
                             </span>
@@ -80,7 +80,7 @@ include dirname(__FILE__) . '/header.php' ?>
                     </dl>
                     <dl class="inquary_content_inner_edit_change">
                         <dt class="inquary_content_inner_edit_change_title">アイキャッチURL</dt>
-                        <dd class="edit_change inquary_content_inner_icatch_enter">
+                        <dd class="detail inquary_content_inner_icatch_enter">
                             <span class="inquary_content_inner_edit_change_enter_box">
                                 <input id="edit_change_icatch" type="text" name="eyecatch_url" size="40" class="inquary_content_inner_edit_change_enter_text">
                             </span>
@@ -101,7 +101,7 @@ include dirname(__FILE__) . '/header.php' ?>
                     </dl>
                     <dl class="inquary_content_inner_student_information_detail">
                         <dt class="inquary_content_inner_student_information_detail_title">お問い合わせ理由</dt>
-                        <dd class="student_reason inquary_content_inner_student_information_detail_enter">
+                        <dd class="detail inquary_content_inner_student_information_detail_enter">
                             <span class="inquary_content_inner_student_information_detail_enter_box">
                                 <textarea id="student_information_contact_reason" name="reason" id="inquary_content_inner_student_information_enter_text" class="inquary_content_inner_student_information_detail_enter_text" cols="40" rows="10" aria-invalid="false" placeholder="個人情報に関するお問い合わせ理由をご記入ください。"></textarea>
                             </span>
@@ -114,7 +114,7 @@ include dirname(__FILE__) . '/header.php' ?>
                     <input type="hidden" name="form_id" value="other">
                     <dl class="inquary_content_inner_message_detail">
                         <dt class="inquary_content_inner_message_detail_title">お問い合わせ詳細</dt>
-                        <dd class="other_reason inquary_content_inner_message_detail_enter">
+                        <dd class="detail inquary_content_inner_message_detail_enter">
                             <span class="inquary_content_inner_message_detail_enter_box">
                                 <textarea id="other_contact_detail" name="detail" id="inquary_content_inner_message_enter_text" class="inquary_content_inner_message_detail_enter_text" cols="40" rows="10" aria-invalid="false" placeholder="お問い合わせの内容をご記入ください。"></textarea>
                             </span>

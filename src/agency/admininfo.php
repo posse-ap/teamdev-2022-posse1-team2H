@@ -94,7 +94,8 @@ include dirname(__FILE__) . '/header.php' ?>
                 </span>
             </dd>
         </dl>
-        <input type="submit" value="確認">
+        <input class="confirm_button" type="submit" value="確認">
+    </form>
 </div>
 
 <?php include dirname(__FILE__) . '/footer.php' ?>
