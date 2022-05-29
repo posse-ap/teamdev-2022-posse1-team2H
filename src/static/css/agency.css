@@ -1,0 +1,593 @@
+/*************** login ***************/
+.login_whole {
+  padding: 100px 0;
+}
+
+.login_title {
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_small_box {
+  margin: 10px 0;
+  background-color: silver;
+  height: 35px;
+  width: 45%;
+}
+
+.login_box {
+  margin: 10px 0;
+  background-color: #DC143C;
+  color: white;
+  height: 35px;
+  width: 45%;
+}
+
+.password {
+  text-align: center;
+}
+
+/*************** header ***************/
+.header_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title_underline {
+  border-bottom: 2px solid black;
+  display: inline-block;
+  font-size: 30px;
+  margin: 20px 0px 20px 30px;
+}
+
+.title_underline a {
+  text-decoration: none;
+  color: #000;
+}
+
+.logout {
+  display: block;
+  padding: 5px 20px;
+  background-color: #C0C0C0;
+  border-radius: 20rem;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  margin-right: 30px;
+  font-size: 18px;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: space-evenly;
+    background: silver;
+    box-shadow: 3px 3px 3px rgb(204 204 204);
+  }
+
+.menu {
+  display: flex;
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 8px;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-list a:hover {
+  background-color: skyblue;
+  color: white;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: black;
+    padding: 0 10vw;
+}
+
+/*************** index ***************/
+.private_small_box {
+  list-style: none;
+  background-color: #e6e6e6;
+  text-align: center;
+  padding: 8px 0;
+  margin: 20px 0;
+}
+
+.private_small_box a {
+  text-decoration: none;
+  color: black;
+}
+
+/*************** detail ***************/
+.detail_title {
+  display: flex;
+  justify-content: space-evenly;
+  background: #E6E6E6;
+  margin: 30px 150px;
+  padding-top: 10px;
+}
+
+.detail_box {
+  background-color: #e6e6e6;
+  margin: 50px 150px 0 150px;
+  padding: 20px 0 20px 50px;
+}
+
+.button {
+  text-align: right;
+  padding-right: 25px;
+  margin-top: -40px;
+}
+
+.button a {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  padding: 5px 20px;
+}
+
+/*************** admininfo ***************/
+.edit_button {
+  display: block;
+  padding: 5px 20px;
+  background-color: white;
+  border-radius: 20rem;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  position: relative;
+  top: -140px;
+  left: 1250px;
+  width: 5%;
+}
+
+.list_box {
+  background-color: #e6e6e6;
+  margin: 0 150px;
+  padding: 20px 0 20px 50px;
+}
+
+.small_list_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.email {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.trash {
+  margin-right: 50px
+}
+
+.open_modal {
+  display: block;
+  padding: 5px 20px;
+  background-color: white;
+  border-radius: 20rem;
+  cursor: pointer;
+  position: relative;
+  top: -135px;
+  left: 1050px;
+  color: #000;
+  text-decoration: none;
+  width: 6.5%;
+}
+
+.overlay {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(68, 68, 68, 0.8);
+}
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  width: 40%;
+  height: 60%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 30px 5px 30px;
+}
+
+.close_btn {
+  display: block;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 10%;
+  background-color: #F5F5F8;
+  float: right;
+  margin-right: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.close_btn::before, .close_btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 22px;
+  background-color: #A3A3A4;
+}
+
+.close_btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close_btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal_title {
+  padding-bottom: 20px;
+}
+
+.add_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name_box {
+  padding-left: 65px;
+}
+
+.email_box {
+  padding-left: 65px;
+}
+
+.password_box {
+  padding-left: 45px;
+}
+
+.password_confirm_box {
+  padding-left: 10px;
+}
+
+.confirm_button {
+  display: block;
+  padding: 5px 10px;
+  background-color: silver;
+  border-radius: 20rem;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  width: 10%;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/*************** edit ***************/
+.admin_information_change {
+  margin: 30px 350px 0 350px;
+}
+
+/*************** contact ***************/
+.inquary_header_bg {
+  margin: auto;
+  width: 400px;
+  background: #C1E5E2;
+}
+
+.inquary_header_title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.inquary_header_prompt {
+  font-size: 14px;
+  text-align: center;
+}
+
+.inquary_content {
+  display: flex;
+  justify-content: center;
+}
+
+.inquary_content_innerFrame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.inquary_content_inner {
+  width: 70%;
+  background-color: #e6e6e6;
+}
+
+.radio_title {
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+.consul {
+  padding-right: 45px;
+}
+
+.radio_box {
+  display: none;
+}
+
+.title {
+  padding-left: 210px;
+}
+
+.detail {
+  padding-left: 70px;
+}
+
+.student {
+  padding-left: 160px;
+}
+
+.inquary_content_inner_edit_change,
+.inquary_content_inner_edit_change_detail,
+.inquary_content_inner_student_information,
+.inquary_content_inner_student_information_mail,
+.inquary_content_inner_student_information_detail,
+.inquary_content_inner_message,
+.inquary_content_inner_message_detail {
+  height: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.inquary_content_inner_consul,
+.inquary_content_inner_name,
+.inquary_content_inner_mail,
+.inquary_content_inner_phone {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inquary_content_inner_consul_title,
+.inquary_content_inner_name_title,
+.inquary_content_inner_mail_title,
+.inquary_content_inner_phone_title,
+.inquary_content_inner_edit_change_title,
+.inquary_content_inner_edit_change_detail_title,
+.inquary_content_inner_student_information_title,
+.inquary_content_inner_student_information_mail_title,
+.inquary_content_inner_student_information_detail_title,
+.inquary_content_inner_message_title,
+.inquary_content_inner_message_detail_title {
+  color: #000;
+  line-height: 1.5;
+  font-size: 20px;
+  text-align: left;
+  width: 32%;
+}
+
+.inquary_content_inner_consul_enter,
+.inquary_content_inner_name_enter,
+.inquary_content_inner_mail_enter,
+.inquary_content_inner_edit_change_enter,
+.inquary_content_inner_edit_change_detail_enter,
+.inquary_content_inner_icatch_enter,
+.inquary_content_inner_student_information_enter,
+.inquary_content_inner_student_information_mail_enter,
+.inquary_content_inner_student_information_detail_enter,
+.inquary_content_inner_phone_enter,
+.inquary_content_inner_message_enter,
+.inquary_content_inner_message_detail_enter {
+  align-items: center;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+.inquary_content_inner_name_enter_box,
+.inquary_content_inner_mail_enter_box,
+.inquary_content_inner_phone_enter_box,
+.inquary_content_inner_edit_change_enter_box,
+.inquary_content_inner_edit_change_detail_enter_box,
+.inquary_content_inner_student_information_enter_box,
+.inquary_content_inner_student_information_mail_enter_box,
+.inquary_content_inner_student_information_detail_enter_box,
+.inquary_content_inner_message_enter_box,
+.inquary_content_inner_message_detail_enter_box {
+  width: 100%;
+  font-weight: inherit;
+}
+
+.inquary_content_inner_name_enter_text,
+.inquary_content_inner_mail_enter_text,
+.inquary_content_inner_phone_enter_text,
+.inquary_content_inner_edit_change_enter_text,
+.inquary_content_inner_edit_change_detail_enter_text,
+.inquary_content_inner_student_information_enter_text,
+.inquary_content_inner_student_information_mail_enter_text,
+.inquary_content_inner_student_information_detail_enter_text,
+.inquary_content_inner_message_enter_text,
+.inquary_content_inner_message_detail_enter_text {
+  display: block;
+  width: auto;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.inquary_content_inner_submit {
+  list-style-type: none;
+  font-weight: inherit;
+  width: 70%;
+  padding: 0 60px;
+  margin-bottom: 20px;
+}
+
+.inquary_content_inner_submit_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 1em;
+  border: 1px solid black;
+  border-radius: 0;
+  background-color: transparent;
+  color: black;
+  font-family: montserrat, sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+.privacy_policy {
+  text-decoration: none;
+  color: #000;
+}
+
+/*************** confirm ***************/
+.agency_inquary_after_content_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.agency_inquary_after_content_innerFrame {
+    box-sizing: border-box;
+    width: 85%;
+    background-color: #e6e6e6;
+}
+
+.agency_inquary_after_content_inner dl {
+    border-top: 1px solid #fff;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.agency_inquary_after_content_inner dt {
+    font-size: 20px;
+    width: 50%;
+}
+
+.after_submit {
+  display: flex;
+  padding: 10px 0;
+}
+
+.agency_inquary_after_content_inner_submit {
+    list-style-type: none;
+    font-weight: inherit;
+    width: 100%;
+    margin: 0;
+}
+
+.agency_inquary_after_content_inner_submit:hover {
+    background-color: white;
+    margin: 0;
+}
+
+.agency_inquary_after_content_inner_submit_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding: 0 1em;
+    border: 1px solid black;
+    border-radius: 0;
+    background-color: transparent;
+    color: black;
+    font-family: montserrat, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.add {
+  padding-left: 400px;
+  width: 70%;
+}
+
+/*************** footer ***************/
+.agency_thankyou {
+  width: 100%;
+  height: 90%;
+}
+
+.agency_thankyou_inner {
+  padding: 200px 0;
+}
+
+.agency_thankyou_inner_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.agency_thankyou_inner_top {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(0, 135, 230);
+  transition: .4s;
+  margin-top: 5px;
+}
+
+/*************** footer ***************/
+.footer {
+  width: 100%;
+  background-color: aliceblue;
+  text-align: center;
+  padding: 5px 0;
+  bottom: 0;
+  margin-top: 15px;
+}

@@ -1,0 +1,213 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.user_inquary_header_English,
+.user_inquary_header_jp {
+    margin: 0;
+}
+
+.user_inquary_header_prompt {
+    line-height: 1.64286;
+    margin: 0 70 70px;
+    padding: 0 15px;
+    font-family: montserrat, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.user_inquary {
+    background-color: #fff;
+}
+
+.user_inquary_header {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.user_inquary_header_title {
+    font-family: montserrat, sans-serif;
+    font-style: normal;
+    font-size: 21px;
+    text-align: center;
+}
+
+
+/*ここからBody*/
+
+.user_inquary_content {
+    display: flex;
+    justify-content: center;
+}
+
+.user_inquary_content_innerframe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.user_inquary_content_inner {
+    box-sizing: border-box;
+    width: 70%;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.user_inquary_content_inner dl {
+    border-top: 1px solid #dadada;
+    border-bottom: none;
+    font-family: montserrat, sans-serif;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 100px;
+}
+
+.user_inquary_content_inner_message {
+    height: 300px;
+}
+
+.user_inquary_content_inner dt {
+    line-height: 1.5;
+    font-size: 20px;
+    text-align: left;
+    width: 30%;
+}
+
+dl input,
+dl select {
+    display: block;
+    width: auto;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dadada;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.user_inquary_contet_inner_confirmation {
+    border-top: 1px solid #fff;
+    border-bottom: none;
+    font-family: montserrat, sans-serif;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+
+dl.user_inquary_contet_inner_confirmation {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user_inquary_content_inner_submit {
+    list-style-type: none;
+    font-weight: inherit;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 4%;
+}
+
+.user_inquary_content_inner_submit:hover {
+    background-color: white;
+    margin: 0;
+}
+
+.user_inquary_content_inner_submit_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding: 0 1em;
+    border: 1px solid black;
+    border-radius: 0;
+    background-color: transparent;
+    color: black;
+    font-family: montserrat, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    padding: 0;
+    margin-bottom: 5px;
+    pointer-events: none;
+}
+
+.user_inquary_contet_inner_addressnumber_enter {
+    display: flex;
+}
+
+.hyphen {
+    margin-top: 8px;
+}
+
+.user_inquary_content_inner_confirmation_inner_checkbox {
+    display: inline;
+}
+
+input:checked~.user_inquary_content_inner_submit_button {
+    pointer-events: auto;
+}
+
+.user_likelist_inner1_body_under_responsive {
+    display: none;
+}
+
+@media(max-width:640px) {
+    .user_inquary_header_title {
+        font-size: 16px;
+    }
+    dl input,
+    dl select {
+        width: 80%;
+    }
+    .user_inquary_content_inner dt {
+        font-size: 15px;
+        width: 30%;
+    }
+    .user_inquary_content_inner_confirmation_inner_checkbox {
+        width: 5%;
+    }
+    .user_likelist_inner1_body_under {
+        display: none;
+    }
+    .user_likelist_inner1_body_under_responsive {
+        display: flex;
+        margin-left: 10%;
+        font-weight: 500;
+        margin-top: 12px;
+        gap: 10%;
+    }
+    .user_likelist_inner1_body_under_responsive a {
+        width: auto;
+        padding: 0.375rem 0.75rem;
+        line-height: 1.5;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        background-color: #26A69A;
+        color: #ffff;
+        font-size: 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        height: 47px;
+    }
+}

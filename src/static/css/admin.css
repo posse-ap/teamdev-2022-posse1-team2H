@@ -1,0 +1,292 @@
+/* 全体 */
+html, body {
+    width: 100%;
+    margin: 0;
+    background-color: #FAEBD7;
+}
+
+body {
+    font-family: "メイリオ";
+    letter-spacing: .04em;
+    background-color: #FAEBD7;
+}
+
+
+a:link {
+    text-decoration: none;
+    color: black;
+
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: red;
+}
+
+header {
+    font-size: 25px;
+    background-color: #FFE4B5;
+    height: 65px;
+}
+
+.header_inner {
+    height: 60px;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.header_inner {
+    width: 100%;
+}
+
+.header_inner, .for_transition {
+    display: flex;
+}
+
+.header_inner a{
+    margin-right: 38px;
+}
+
+
+button {
+    font-size: 20px;
+    padding: 0px 20px;
+}
+
+.header_content button{
+    font-size: 20px;
+    padding: 0px 20px;
+
+}
+
+.page_name {
+    margin-left: 30px;
+}
+
+.select_content {
+    font-size: 18px;
+}
+
+.chaning_status {
+    display: flex;
+    gap: 45px;
+}
+
+.for_serach {
+    margin-right: 30px;
+}
+
+.for_serach input {
+    font-size: 18px;
+}
+
+main {
+    margin-top: 5%;
+}
+
+.for_transition {
+    margin: 0;
+    gap: 0px 50px;
+}
+
+
+.displayed_content {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    font-size: 30px;
+}
+
+input#date_today{
+    font-size: 30px;
+    border: none;
+    background: none;
+}
+
+.displayed_content form input {
+
+    font-size: 20px;
+}
+
+.agency_list_wrapper {
+    margin-top: 40px;
+}
+
+.agency_list_inner {
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+}
+
+.agency_list_inner ol {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin-top: 35px;
+    background-color: #ffff;
+    display: flex;
+    gap: 40px;
+
+}
+
+.agency_list_inner ol:hover {
+    box-shadow: 4px 7px 1px rgba(0, 0, 0, 0.10);
+}
+
+.agency_list_inner input[type="checkbox"] {
+    display: none;
+}
+
+
+.the_agency_info {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin-top: 35px;
+    background-color: #ffff;
+    display: flex;
+    gap: 40px;
+    font-size: 25px;
+    padding-left: 40px;
+}
+
+
+
+/* チェックボックスの代わりを成すラベル */
+.agency_list_inner input[type="checkbox"]+label {
+    display: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    padding-right: 10px;
+}
+
+/* ラベルの左に表示させる正方形のボックス□ */
+.agency_list_inner input[type="checkbox"]+label::before {
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 22px;
+    height: 22px;
+    margin-top: -10px;
+    left: 0;
+    top: 42%;
+    border: 1px solid;
+    border-color: black;
+    /* 枠の色変更 お好きな色を */
+    background-color: #FFF;
+    /* 背景の色変更 お好きな色を */
+}
+
+/* チェックが入った時のレ点 */
+.agency_list_inner input[type="checkbox"]:checked+label::after {
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 18px;
+    height: 9px;
+    margin-top: -9px;
+    top: 50%;
+    left: 3px;
+    transform: rotate(-45deg);
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-color: black;
+    /* チェックの色変更 お好きな色を */
+}
+/* ----------------------------------------------------------------------------------------------------------
+contract.php */
+
+.header_inside{
+    display: flex;
+    height: 60px;
+    align-items: end;
+    gap: 38%;
+}
+
+/* -------------------------------------------------------------------------------------------------------- 
+userDetail
+*/
+
+.content_wrapper {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.content_inner {
+    list-style: none;
+    padding: 0px;
+}
+
+
+.num_sent_infromation {
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------
+agencyInfo.php
+*/
+
+.agency_info_wrapper {
+    margin-top: 40px;
+    border: 1px solid black;
+    width: 80%;
+    margin: 0px auto 0px auto;
+    font-size: 18px;
+}
+
+.editable_info ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 2%;
+}
+
+.agency_info_type {
+    font-weight: bold;
+}
+
+.uneditable_info_content {
+    margin-top: 18px;
+    margin-left: 2%;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------
+edit.php
+*/
+
+.title_name{
+    font-weight: bold;
+}
+
+.info_for_post {
+    padding: 0;
+    margin: 5px 0px 5px 20px;
+    font-size: 20px;
+    list-style: none;
+}
+
+.info_for_post li {
+    padding: 0;
+    margin: 5px 0px 5px 20px;
+    font-size: 20px;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.post_btn{
+    margin-left: 23%;
+    margin-top: 2%;
+    width: 51%;
+    cursor: pointer;
+}
+
+.inside_header{
+    display: flex;
+    height: 60px;
+    align-items: end;
+    gap: 10%;    
+}

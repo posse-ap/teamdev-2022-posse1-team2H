@@ -1,0 +1,612 @@
+/* 全体 */
+
+html,
+body {
+    width: 100%;
+    background-color: #EAEDF2;
+    margin: 0;
+    font-family: AvantGardeGothicITCW01Md;
+}
+
+body {
+    font-family: "メイリオ";
+    letter-spacing: 0.04em;
+}
+
+
+/* title{
+    margin-top: 0;
+} */
+
+
+/* ヘッダー */
+
+header {
+    background-color: #26a69a;
+    height: 75px;
+    /* margin-top: 0; */
+}
+
+.header_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+
+/*  */
+
+.header_inner_craft {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.header_inner_catchCopy {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ffff;
+    font-weight: normal;
+}
+
+
+/* コンテンツ全体 */
+
+.content {
+    width: 88%;
+    display: flex;
+    justify-content: center;
+    gap: 95px;
+    margin: 0px auto;
+    /* padding-top: 50px; */
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 95px;
+}
+
+
+/* エージェント一覧 */
+
+.agency_list {
+    /* display: flex; */
+    /* border: solid 1px; */
+    /* gap:30px; */
+    width: 65%;
+}
+
+
+/* ★の色を変える */
+
+.blue_on_favorite {
+    color: aqua;
+}
+
+
+/* 新着エージェンシー &人気のエージェンシー*/
+
+.new_agency_wrapper,
+.popular_agency_wrapper {
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 65px;
+    padding-top: 60px;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.title_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.subtitle {
+    margin-top: 0;
+}
+
+.new_agency_inner,
+.popular_agency_inner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.new_agency_card:hover {
+    opacity: 0.5;
+}
+
+.popular_agency_card:hover {
+    opacity: 0.5;
+}
+
+
+/* 新着エージェンシーのカード&人気のエージェンシーのカード */
+
+.new_agency_card,
+.popular_agency_card {
+    background-color: #ffff;
+    box-shadow: 0 2px 5px #ccc;
+    width: 47%;
+    /* padding-bottom: 20px; */
+    padding-bottom: 9px;
+}
+
+
+/* エージェンシーのイメージ */
+
+.agency_img img {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.agency_card_content {
+    margin: 3px auto auto auto;
+    width: 95%;
+}
+
+
+/* エージェンシーの特徴 */
+
+.agency_feature {
+    display: flex;
+    justify-content: center;
+    /* gap: 10px;
+    flex-wrap: wrap;
+    color: #ffff; */
+}
+
+
+/* エージェンシーのタグ */
+
+.agency_feature div {
+    border-radius: 15px;
+    text-align: center;
+    width: 30%;
+    height: 25px;
+    /* background-color: #26A69A; */
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+
+/* 一言と企業目 */
+
+.agency_infromation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    /* width: 95%; */
+    /* margin: 15px auto auto auto; */
+}
+
+
+/* キャッチコピー */
+
+.agency_slogan_wrapper {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.agency_name_wrapper {
+    width: 100%;
+    margin-top: 4px;
+}
+
+.agency_tags_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 10px;
+    margin-top: 15px;
+    /* display: none; */
+}
+
+.agency_tags_wrapper a {
+    text-decoration: none;
+    border: solid 0.5px;
+    border-color: #9e9e9e;
+    color: #9e9e9e;
+    padding: 0px 9px;
+    font-size: 14px;
+}
+
+.agency_tags_wrapper a:hover {
+    /* border-color:#0000ee; */
+    border-color: #26a69a;
+    /* color: #0000ee; */
+    color: #26a69a;
+    padding: 0px 9px;
+    font-size: 14px;
+    /* background-color: #EAEDF2; */
+    font-weight: bold;
+    border: solid 3px;
+}
+
+
+/* キャッチコピー */
+
+.slogan {
+    /* text-align: center; */
+    font-size: 16px;
+}
+
+.agency_name {
+    font-size: 19px;
+    font-weight: bold;
+    border-bottom: 2px solid #00dd00;
+}
+
+
+/* 企業名とお気に入り追加ボタン */
+
+.name_and_favorite {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+
+/* ここからサイドバー */
+
+
+/* サイドバー 全体*/
+
+.sidebar_wrapper {
+    /* border: solid 1px; */
+    width: 20%;
+    background-color: rgb(255, 255, 255);
+    /* background: linear-gradient(to bottom, #339999, transparent); */
+}
+
+
+/* サイドバーの中身全て */
+
+.sidebar_inner {
+    position: sticky;
+    top: 5px;
+    margin-top: 84px;
+    background-color: rgb(255, 255, 255);
+    /* border: solid 1px #dadada; */
+}
+
+
+/* お気に入り&検索 */
+
+.sidebar_favorite {
+    background-color: #26a69a;
+    color: #ffff;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20%;
+    border-radius: 50px;
+    /* border-bottom: 1px solid black; */
+}
+
+.sidebar_favorite_text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 100%;
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #26a69a;
+    transition: 0.5s;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+.sidebar_favorite_text::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/memo.png);
+    background-size: contain;
+    vertical-align: middle;
+}
+
+.sidebar_favorite_text:hover {
+    text-decoration: none;
+    background-color: #80cbc4;
+    text-decoration: underline;
+}
+
+.sidebar_favorite h2 {
+    box-shadow: 0 2px 5px black;
+}
+
+.sidebar_favorite h2:hover {
+    box-shadow: none;
+    transform: translate3d(0, 3px, 0);
+    transition-duration: 0.3s;
+}
+
+.sidebar_search {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    /* border-top: 1px solid black;
+    border-bottom: 1px solid black; */
+    /* border: solid 1px #dadada; */
+    box-shadow: 0 2px 5px #ccc;
+}
+
+
+/* 業種タグ全てを含む箱 */
+
+.business_type_inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    justify-content: center;
+    height: 200px;
+    font-size: 18px;
+}
+
+label.a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 各業種タグ */
+
+
+/* aタグのリンクと下線を変更 */
+
+.business_type_inner div a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serach_content {
+    display: block;
+    margin-top: 8%;
+}
+
+.appearing {
+    display: none;
+    border: none;
+    outline: none;
+}
+
+.sidebar_search_text,
+.sidebar_favorite h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.business_type_wrapper_text,
+.business_features_wrapper_text {
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 100%;
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #80cbc4;
+}
+
+.toggle_star {
+    color: #0099ff;
+}
+
+.gray_star {
+    color: #9e9e9e;
+}
+
+.showing_blue_star {
+    display: block;
+}
+
+.showing {
+    display: block;
+}
+
+.bar_for_responsive {
+    display: none;
+}
+
+.overlay {
+    display: none;
+}
+
+.modal {
+    display: none;
+}
+
+.detail_blank {
+    padding-bottom: 8%;
+}
+
+@media(max-width:640px) {
+    .content {
+        width: 95%;
+        padding-bottom: 40px;
+        min-height: 100vh;
+    }
+    .sidebar_wrapper {
+        display: none;
+    }
+    .agency_list {
+        width: 100%;
+    }
+    .bar_for_responsive {
+        display: block;
+        background-color: red;
+        position: sticky;
+        bottom: 0px;
+        background-color: #26a69a;
+    }
+    .agency_name {
+        font-size: 20px;
+    }
+    .bar_for_responsive_inner {
+        display: flex;
+        justify-content: space-around;
+        font-size: 31px;
+        color: #ffff;
+        font-weight: bold;
+        height: 50px;
+        align-items: end;
+    }
+    .overlay {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(68, 68, 68, 0.8);
+    }
+    .modal {
+        position: fixed;
+        z-index: 2;
+        background-color: #ffffff;
+        border-radius: 40px;
+        width: 80%;
+        height: 90%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .modal_content h2 {
+        text-align: center;
+        font-size: 28px;
+    }
+    .modal_inner {
+        margin-top: 13%;
+    }
+    .modal_main_content {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .modal_main_content p {
+        margin-left: 19px;
+    }
+    .close_btn {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        background-color: #f5f5f8;
+        float: right;
+        margin-right: 25px;
+        cursor: pointer;
+        margin-top: 26px;
+        margin-bottom: -45px;
+    }
+    .close_btn::before,
+    .close_btn::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 3px;
+        height: 22px;
+        background-color: #a3a3a4;
+    }
+    .close_btn::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .close_btn::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    .business_type_inner_modal {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+    .business_features_modal {
+        margin-top: 13%;
+    }
+    .bar_for_responsive_inner a:link {
+        text-decoration: none;
+    }
+    .bar_for_responsive_inner a:visited {
+        color: #ffff;
+    }
+    /* #book_mark,
+    #home_icon,
+    #serach_icon {
+        color: #DCDCDC;
+    } */
+    /* #book_mark:hover {
+        color: #C2EEFF;
+    }
+    #home_icon:hover {
+        color: #ffff;
+    }
+    #serach_icon:hover {
+        color: #ffff;
+    } */
+    #business_type_icon {
+        color: #0000ff;
+    }
+    #business_feature_icon {
+        color: #00cc00;
+    }
+    .business_type_title_modal {
+        width: 20%;
+        margin-left: 19px;
+        border-bottom: 1px solid #0000ff;
+    }
+    .business_feature_title_modal {
+        width: 20%;
+        margin-left: 19px;
+        border-bottom: 1px solid #00cc00;
+    }
+    .serach_icon_modal {
+        color: gray;
+    }
+    .modal_search_text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 1em 2em;
+        width: 300px;
+        color: #2285b1;
+        font-size: 18px;
+        font-weight: 700;
+        border: 2px solid #2285b1;
+        margin-top: 15%;
+        border-radius: 40px;
+        text-decoration: none;
+    }
+}
+
+.modal_search_text:hover {
+    color: #333333;
+    text-decoration: none;
+    background-color: #a0c4d3;
+}
+
+.star {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 22px;
+    /* color: #9e9e9e; */
+    cursor: pointer;
+}
