@@ -10,10 +10,6 @@ $crud = new Crud($db);
 $auth = new Agency($db);
 $auth->validate();
 
-// $form_name = $_SESSION['manager_add']['name'];
-// $form_email = $_SESSION['manager_add']['email'];
-// $form_password = $_SESSION['manager_add']['password'];
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $form_name = $_SESSION['manager_add']['name'];
     $form_email = $_SESSION['manager_add']['email'];
