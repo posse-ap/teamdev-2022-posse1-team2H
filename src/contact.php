@@ -6,43 +6,43 @@ use modules\utils\Utils;
 use modules\auth\Token;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $error = array();
+    $error = [];
     Token::validate();
-    if (!isset($_REQUEST['name'])) {
-        $error['name'] = 'name required';
+    if ($_REQUEST['name'] === '') {
+        $error['name'] = 'blank';
     }
-    if (!isset($_REQUEST['email'])) {
-        $error['email'] = 'email required';
+    if ($_REQUEST['email'] === '') {
+        $error['email'] = 'blank';
     }
-    if (!isset($_REQUEST['tel'])) {
-        $error['tel'] = 'tel required';
+    if ($_REQUEST['tel'] === '') {
+        $error['tel'] = 'blank';
     }
-    if (!isset($_REQUEST['university'])) {
-        $error['university'] = 'university required';
+    if ($_REQUEST['university'] === '') {
+        $error['university'] = 'blank';
     }
-    if (!isset($_REQUEST['undergraduate'])) {
-        $error['undergraduate'] = 'undergraduate required';
+    if ($_REQUEST['undergraduate'] === '') {
+        $error['undergraduate'] = 'blank';
     }
-    if (!isset($_REQUEST['age'])) {
-        $error['age'] = 'age required';
+    if ($_REQUEST['age'] === '') {
+        $error['age'] = 'blank';
     }
-    if (!isset($_REQUEST['department'])) {
-        $error['department'] = 'department required';
+    if ($_REQUEST['department'] === '') {
+        $error['department'] = 'blank';
     }
-    if (!isset($_REQUEST['school_year'])) {
-        $error['school_year'] = 'school year required';
+    if ($_REQUEST['school_year'] === '') {
+        $error['school_year'] = 'blank';
     }
-    if (!isset($_REQUEST['graduation_year'])) {
-        $error['graduation_year'] = 'graduation_year required';
+    if ($_REQUEST['graduation_year'] === '') {
+        $error['graduation_year'] = 'blank';
     }
-    if (!isset($_REQUEST['gender'])) {
-        $error['gender'] = 'gender required';
+    if ($_REQUEST['gender'] === '') {
+        $error['gender'] = 'blank';
     }
-    if (!isset($_REQUEST['address'])) {
-        $error['address'] = 'address required';
+    if ($_REQUEST['address'] === '') {
+        $error['address'] = 'blank';
     }
-    if (!isset($_REQUEST['address_num'])) {
-        $error['address_num'] = 'address_num required';
+    if ($_REQUEST['address_num'] === '') {
+        $error['address_num'] = 'blank';
     }
     if (empty($error)) {
         $user = new Model(
@@ -166,8 +166,8 @@ include dirname(__FILE__) . "/header.php";
                     <dt class="user_inquary_content_inner_gender_title">性別 ※
                     </dt>
                     <select name="gender" id="user_inquary_content_inner_gender_enter_text" class="user_inquary_content_inner_gender_enter_text" aria-invalid="false">
-                        <option value="0">男</option>
-                        <option value="1">女</option>
+                        <option value="1">男</option>
+                        <option value="2">女</option>
                     </select>
                 </dl>
                 <dl class="user_inquary_content_inner_addressnumber">
