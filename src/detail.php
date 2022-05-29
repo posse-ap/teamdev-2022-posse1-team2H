@@ -122,13 +122,24 @@ include dirname(__FILE__) . '/header.php';
             </div>
         </div>
     </div>
+    <div class="content_detail_underrequest">
+        <div class="content_detail_action_bar">
+            <div class="content_detail_underrequest_seelaterbox">
+                <h4 class="content_detail_underrequest_seelaterText" onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)">後で見るリストに追加
+                </h4>
+            </div>
+
+            <a href="./contact.php?ids=<?= Utils::h($agency->id) ?>" class="content_detail_underrequest_inquirybox">
+                <h4 class="content_detail_underrequest_inquiryText">お問合せ</h4>
+            </a>
+        </div>
 </main>
 <div class="bar_for_responsive">
     <div class="bar_for_responsive_inner">
         <a href="./contact.php?ids=<?= Utils::h($agency->id) ?>"><i class="fa-solid fa-file-pen"></i></a>
         <a href="./seeLater.php" class="back_to_top"><i id="book_mark" class="fas fa-bookmark"></i></a>
-        <a href=""><i  onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)" class="fa-solid fa-star"></i>
-</a>
+        <a href=""><i onclick="handleSaveFav(<?= Utils::h($agency->id) ?>)" class="fa-solid fa-star"></i>
+        </a>
     </div>
 </div>
 <?php include dirname(__FILE__) . '/footer.php' ?>
