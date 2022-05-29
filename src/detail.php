@@ -64,12 +64,6 @@ include dirname(__FILE__) . '/header.php';
                             <p class="content_detail_subcontent_left_agentrequest_agent_text">
                             <?= Utils::h($agency->sentenses) ?>
                             </p>
-                            <p class="content_detail_subcontent_left_agentrequest_agent_text">
-                            <?= Utils::h($agency->sentenses) ?>
-                            </p>
-                            <p class="content_detail_subcontent_left_agentrequest_agent_text">
-                            <?= Utils::h($agency->sentenses) ?>
-                            </p>
                         </div>
                         <div class="content_detail_subcontent_left_responsive_company">
                                 <div class="borderline">
