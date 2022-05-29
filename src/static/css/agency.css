@@ -181,11 +181,11 @@
   border-radius: 20rem;
   cursor: pointer;
   position: relative;
-  top: -170px;
-  left: 1250px;
+  top: -135px;
+  left: 1050px;
   color: #000;
   text-decoration: none;
-  width: 5%;
+  width: 6.5%;
 }
 
 .overlay {
@@ -281,6 +281,11 @@
   margin-left: auto;
 }
 
+/*************** edit ***************/
+.admin_information_change {
+  margin: 30px 350px 0 350px;
+}
+
 /*************** contact ***************/
 .inquary_header_bg {
   margin: auto;
@@ -329,28 +334,16 @@
   display: none;
 }
 
-.edit_change_title {
+.title {
   padding-left: 210px;
 }
 
-.edit_change_text {
+.detail {
   padding-left: 70px;
 }
 
 .student {
   padding-left: 160px;
-}
-
-.student_reason {
-  padding-left: 70px;
-}
-
-.other_title {
-  padding-left: 210px;
-}
-
-.other_reason {
-  padding-left: 70px;
 }
 
 .inquary_content_inner_edit_change,
