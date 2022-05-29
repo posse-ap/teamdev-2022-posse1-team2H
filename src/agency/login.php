@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $manager = $auth->login($_POST['email'], $_POST['password']);
         if ($manager) {
             $_SESSION['agency_manager']['id'] = $manager['id'];
+            $_SESSION['agency_manager']['email'] = $manager['email'];
             $_SESSION['agency_manager']['time'] = time();
             $_SESSION['agency']['id'] = $manager['agency_id'];
             $_SESSION['agency']['name'] = $cruds->getAgencyName($_SESSION['agency']['id']);

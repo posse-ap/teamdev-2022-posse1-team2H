@@ -17,17 +17,18 @@ const drawHTMLs = {
   },
   managers: (data) => {
     text = ``;
+    const loginUser = document.getElementById('login_user').value;
     data.forEach((d) => {
       const { id, name, email, is_representative } = d;
       let button = ``;
-      if (!is_representative) {
+      if (!is_representative && loginUser !== email) {
         button = `<button type="button" class="trash" onclick="confirmDelete(${id})">
         <i class="fa-solid fa-trash-can"></i>
     </button>`;
       }
       text += `
       <div class="small_list_box">
-            <li class="email">${name}：${email}</li>
+            <li class="email">${name}: ${email}</li>
           ${button}
         </div>
       `;
