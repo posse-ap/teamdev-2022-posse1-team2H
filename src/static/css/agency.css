@@ -176,16 +176,16 @@
 
 .open_modal {
   display: block;
-  padding: 5px 20px;
+  padding: 6px 20px;
   background-color: white;
   border-radius: 20rem;
   cursor: pointer;
-  position: relative;
-  top: -135px;
-  left: 1050px;
-  color: #000;
-  text-decoration: none;
-  width: 6.5%;
+  margin-right: 50px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
 }
 
 .overlay {
