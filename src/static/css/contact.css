@@ -119,6 +119,7 @@ dl.user_inquary_contet_inner_confirmation {
     font-weight: inherit;
     width: 100%;
     margin: 0;
+    padding-bottom: 4%;
 }
 
 .user_inquary_content_inner_submit:hover {
