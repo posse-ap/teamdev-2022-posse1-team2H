@@ -252,7 +252,7 @@ CREATE TABLE agencies (
 );
 
 INSERT INTO agencies SET
-name = '株式会社〇〇',
+name = 'レバテックルーキー',
 email = 'marumaru@example.com',
 email_for_notification = 'marumarun@example.com',
 tel = '08000001111',
@@ -264,7 +264,7 @@ address_num = '199-9999';
 
 -- ('株式会社菅田将暉', 'suda@example.com', password_hash('sudamasaki'), 'sudan@example.com', '08000001111', 'https://google.com', 'すだ', '菅生大将', '199-9999'),
 INSERT INTO agencies SET
-name = '株式会社菅田将暉',
+name = '株式会社Acaric',
 email = 'suda@example.com',
 email_for_notification = 'sudan@example.com',
 tel = '08000001111',
@@ -276,7 +276,7 @@ address_num = '199-9999';
 
 -- ('株式会社竹内涼真', 'takeuti@example.com', password_hash('takeuti'), 'takeutin@example.com', '08000001111', 'https://google.com', 'たけうち', 'たけうち', '199-9999'),
 INSERT INTO agencies SET
-name = '株式会社竹内涼真',
+name = '株式会社career ticket',
 email = 'takeuti@example.com',
 email_for_notification = 'takeutin@example.com',
 tel = '08000001111',
@@ -288,7 +288,7 @@ address_num = '199-9999';
 
 -- ('', 'mamiya@example.com', password_hash('mamiya'), 'mamiyan@example.com', '08000001111', 'https://google.com', 'まみや', 'まみや', '199-9999'),
 INSERT INTO agencies SET
-name = '株式会社間宮祥太朗',
+name = '株式会社AXIS CONSULTING',
 email = 'mamiya@example.com',
 email_for_notification = 'mamiyan@example.com',
 tel = '08000001111',
@@ -300,7 +300,7 @@ address_num = '199-9999';
 
 -- ('株式会社仲野太賀', 'nakano@example.com', password_hash('nakano'), 'nakano@example.com', '08000001111', 'https://google.com', 'なかの', 'なかの', '199-9999'),
 INSERT INTO agencies SET
-name = '株式会社仲野太賀',
+name = 'リクナビ就活エージェント',
 email = 'nakano@example.com',
 email_for_notification = 'nakano@example.com',
 tel = '08000001111',
@@ -312,7 +312,7 @@ address_num = '199-9999';
 
 -- ('株式会社神木隆之介', 'kamiki@example.com', sha1('kamiki'), 'kamikin@example.com', '08000001111', 'https://google.com', 'かみき', 'かみき', '199-9999'),
 INSERT INTO agencies SET
-name = '株式会社神木隆之介',
+name = '株式会社転職+',
 email = 'kamiki@example.com',
 email_for_notification = 'kamikin@example.com',
 tel = '08000001111',
@@ -324,7 +324,7 @@ address_num = '199-9999';
 
 -- ('株式会社松坂桃李', 'matuzaka@example.com', sha1('matuzaka'), 'matuzaka@example.com', '08000001111', 'https://google.com', 'まつざか', 'まつざか', '199-9999'),
 INSERT INTO agencies SET
-name = '株式会社松坂桃李',
+name = 'マイナビ新卒紹介',
 email = 'matuzaka@example.com',
 email_for_notification = 'matuzakan@example.com',
 tel = '08000001111',
@@ -336,7 +336,7 @@ address_num = '199-9999';
 
 -- ('株式会社山田裕貴', 'yamada@example.com', sha1('yamada'), 'yamada@example.com', '08000001111', 'https://google.com', 'やまだ', 'やまだ', '199-9999'),
 INSERT INTO agencies SET
-name = '株式会社山田裕貴',
+name = '株式会社就活AGENT neo',
 email = 'yamada@example.com',
 email_for_notification = 'yamadan@example.com',
 tel = '08000001111',
@@ -348,7 +348,7 @@ address_num = '199-9999';
 
 -- ('株式会社吉沢亮', 'yosizawa@example.com', sha1('yosizawa'), 'yosizawan@example.com', '08000001111', 'https://google.com', 'よしざわ', 'よしざわ', '199-9999'),
 INSERT INTO agencies SET
-name = '株式会社吉沢亮',
+name = '株式会社JOBRASS新卒紹介',
 email = 'yosizawa@example.com',
 email_for_notification = 'yosizawan@example.com',
 tel = '08000001111',
@@ -360,7 +360,7 @@ address_num = '199-9999';
 
 -- ('株式会社DJ松永', 'matsunaga@example.com', sha1('matsunaga'), 'matsunagan@example.com', '08000001111', 'https://google.com', 'くにひこ', 'くにひこ', '199-9999'),
 INSERT INTO agencies SET
-name = '株式会社DJ松永',
+name = '株式会社Job String',
 email = 'matsunaga@example.com',
 email_for_notification = 'matsunagan@example.com',
 tel = '08000001111',
@@ -372,7 +372,7 @@ address_num = '199-9999';
 
 -- ('株式会社常田大希', 'tuneta@example.com', sha1('tuneta'), 'tunetan@example.com', '08000001111', 'https://google.com', 'つねた', 'つねた', '199-9999');
 INSERT INTO agencies SET
-name = '株式会社常田大希',
+name = '株式会社理系就活チャージ',
 email = 'tuneta@example.com',
 email_for_notification = 'tunetan@example.com',
 tel = '08000001111',
