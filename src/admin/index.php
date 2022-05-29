@@ -28,7 +28,6 @@ include dirname(__FILE__) . '/header.php';
     <main id="top_page">
         <div id="displayed_content" class="displayed_content">
             <input id="date_today" class="date_today" type="month" name="yearmonth" onchange="handleSearch()">
-            <div class="got_information">総情報獲得数: 6件</div>
         </div>
         <div class="agency_list_wrapper">
                 <ul class="agency_list_inner" id="contracts_target">

@@ -67,24 +67,23 @@ const drawHTMLs = {
 
                 <img src="${eyecatch}" alt="${name}" class="user_likelist_inner1_body_img">
 
-                <div class="user_likelist_inner1_body_right">
+               <div class="user_likelist_inner1_body_right">
                   <div class="user_likelist_inner1_body_text">
                     <p class="user_likelist_inner1_body_text_catchcopy">${title}</p>
                     <div class="user_likelist_inner1_body_text_connection">
-                        ${industriesText}
-                        ${typesText}
+                      ${industriesText}
+                      ${typesText}
                     </div>
-                  </div>
-
-                  <div class="user_likelist_inner1_body_under">
-                    <button class="user_likelist_inner1_body_under_contact">
-                      <a href="./contact.php?ids=${id}">問い合わせる</a>
-                    </button>
-                    <button class="user_likelist_inner1_body_under_detail">
-                      <a href="./detail.php?id=${id}">詳細ページ</a>
-                    </button>
-                  </div>
+                    <div class="user_likelist_inner1_body_under_responsive">
+                      <a href="./contact.php?ids=${id}" class="user_likelist_inner1_body_under_contactr_responsive"><div>問い合わせる</div></a>
+                      <a href="./detail.php?id=${id}" class="user_likelist_inner1_body_under_detailr_responsive"><div>詳細ページ</div></a>
+                    </div>
+                  </div> 
                 </div>
+             </div>
+              <div class="user_likelist_inner1_body_under">
+                <a href="./contact.php?ids=${id}" class="user_likelist_inner1_body_under_contact"><div>問い合わせる</div></a>
+                <a href="./detail.php?id=${id}" class="user_likelist_inner1_body_under_detail"><div>詳細ページ</div></a>
               </div>
 
             </div>
@@ -248,37 +247,37 @@ const diplayingCompanyInfo = () => {
 };
 
 const allowTransition = () => {
-    let checkedCheckbox = document.getElementById('user_inquary_content_inner_confirmation_inner_checkbox');
-    let link = document.getElementById('user_inquary_content_inner_submit_button');
-    if (checkedCheckbox.checked) {
-        link.style.pointerEvents = 'auto';
-    } else {
-        link.style.pointerEvents = 'none';
-    }
+  let checkedCheckbox = document.getElementById('user_inquary_content_inner_confirmation_inner_checkbox');
+  let link = document.getElementById('user_inquary_content_inner_submit_button');
+  if (checkedCheckbox.checked) {
+    link.style.pointerEvents = 'auto';
+  } else {
+    link.style.pointerEvents = 'none';
+  }
 }
 
 const dispalyingSerachArea = () => {
-    let overlay = document.getElementById('overlay');
-    let modal = document.getElementById('modal');
-    let html = document.querySelector('html');
-    overlay.style.display = "block";
-    modal.style.display = "block";
-    html.style.overflow = "hidden";
+  let overlay = document.getElementById('overlay');
+  let modal = document.getElementById('modal');
+  let html = document.querySelector('html');
+  overlay.style.display = "block";
+  modal.style.display = "block";
+  html.style.overflow = "hidden";
 }
 
 const closingBtn = () => {
-    let overlay = document.getElementById('overlay');
-    let modal = document.getElementById('modal');
-    let html = document.querySelector('html');
-    overlay.style.display = "none";
-    modal.style.display = "none";
-    html.style.overflow = "auto";
+  let overlay = document.getElementById('overlay');
+  let modal = document.getElementById('modal');
+  let html = document.querySelector('html');
+  overlay.style.display = "none";
+  modal.style.display = "none";
+  html.style.overflow = "auto";
 }
 
 const contactAll = () => {
-    let target = document.getElementById('contact_all')
-    const ids = sessionStorage.getItem("ids")
-    target.innerHTML = `<a href="./contact.php?ids=${ids}">まとめて問い合わせる</a>`
+  let target = document.getElementById('contact_all')
+  const ids = sessionStorage.getItem("ids")
+  target.innerHTML = `<a href="./contact.php?ids=${ids}">まとめて問い合わせる</a>`
 }
 
 window.onload = async () => {
