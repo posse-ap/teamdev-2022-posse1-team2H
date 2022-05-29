@@ -44,6 +44,7 @@ include dirname(__FILE__) . '/header.php' ?>
 
 <main id="managers">
     <input type="hidden" name="agency_id" value="<?= $agency_id ?>">
+    <input type="hidden" id="login_user" name="login_user" value="<?= $_SESSION['agency_manager']['email'] ?>">
     <div class="detail_box">
         <p>名前: <?= $agency_info->name ?></p>
         <p>メールアドレス： <?= $agency_info->email ?></p>

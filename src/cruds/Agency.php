@@ -247,7 +247,7 @@ class Agency
         if (!($manager['agency_id'] == $_SESSION['agency']['id'])) {
             throw new \Exception();
         }
-        if (!$manager['is_representative']) {
+        if (!$manager['is_representative'] && $manager['email'] !== $_SESSION['agency_manager']['email']) {
 
             try {
                 $stmt = $this->db->prepare("DELETE FROM managers

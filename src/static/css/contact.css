@@ -101,13 +101,12 @@ dl input, dl select {
     border-top: 1px solid #fff;
     border-bottom: none;
     font-family: montserrat, sans-serif;
-    /* justify-content: space-around; */
     align-items: center;
     width: 100%;
     height: 70px;
 }
 
-dl.user_inquary_contet_inner_confirmation{
+dl.user_inquary_contet_inner_confirmation {
     display: block;
 }
 
@@ -159,13 +158,17 @@ dl.user_inquary_contet_inner_confirmation{
     display: inline;
 }
 
-input:checked ~ .user_inquary_content_inner_submit_button {
+input:checked~.user_inquary_content_inner_submit_button {
     pointer-events: auto;
+}
+
+.user_likelist_inner1_body_under_responsive {
+    display: none;
 }
 
 @media(max-width:640px) {
 
-    .user_inquary_header_title{
+    .user_inquary_header_title {
         font-size: 16px;
     }
 
@@ -173,12 +176,40 @@ input:checked ~ .user_inquary_content_inner_submit_button {
 
         width: 80%;
     }
+
     .user_inquary_content_inner dt {
         font-size: 15px;
         width: 30%;
     }
 
-    .user_inquary_content_inner_confirmation_inner_checkbox{
+    .user_inquary_content_inner_confirmation_inner_checkbox {
         width: 5%;
+    }
+
+    .user_likelist_inner1_body_under {
+        display: none;
+    }
+
+    .user_likelist_inner1_body_under_responsive {
+        display: flex;
+        margin-left: 10%;
+        font-weight: 500;
+        margin-top: 12px;
+        gap: 10%;
+    }
+
+    .user_likelist_inner1_body_under_responsive a {
+        width: auto;
+        padding: 0.375rem 0.75rem;
+        line-height: 1.5;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        background-color: #26A69A;
+        color: #ffff;
+        font-size: 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        height: 47px;
     }
 }
