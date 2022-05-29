@@ -403,4 +403,8 @@ body {
     .content_detail_subcontent_left_company_information {
         display: block;
     }
+
+    .content_detail_underrequest{
+        display: none;
+    }
 }
