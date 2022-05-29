@@ -20,11 +20,11 @@ body {
 }
 
 .user_inquary {
-    background-color: #e6e6e6;
+    background-color: #fff;
 }
 
 .user_inquary_header {
-    background-color: #e6e6e6;
+    background-color: #fff;
     display: flex;
     justify-content: center;
 }
@@ -56,11 +56,11 @@ body {
     box-sizing: border-box;
     width: 70%;
     box-sizing: border-box;
-    background-color: #e6e6e6;
+    background-color: #fff;
 }
 
 .user_inquary_content_inner dl {
-    border-top: 1px solid #fff;
+    border-top: 1px solid #dadada;
     border-bottom: none;
     font-family: montserrat, sans-serif;
     width: 100%;
@@ -93,7 +93,7 @@ dl select {
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid #dadada;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -109,6 +109,9 @@ dl select {
 
 dl.user_inquary_contet_inner_confirmation {
     display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .user_inquary_content_inner_submit {
