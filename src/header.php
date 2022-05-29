@@ -14,17 +14,17 @@
     <link rel="stylesheet" href="./static/css/thankyou.css">
     <link rel="stylesheet" href="./static/css/userDetail.css">
     <link rel="stylesheet" href="./static/css/seeLater.css">
-    
+
     <!-- <script src="./static/js/user.js"></script> -->
 
     <link rel="stylesheet" href="./static/css/contact.css">
-    <title>TOP画面</title>
+    <title>CRAFT</title>
 </head>
 <body>
     <!-- ヘッダー -->
     <header>
-        <div class="header_inner">
+        <a href="./index.php" class="header_inner">
             <h1 class="header_inner_craft">CRAFT</h1>
             <p class="header_inner_catchCopy">学生のための就職情報サイト</p>
-        </div>
+        </a>
     </header>

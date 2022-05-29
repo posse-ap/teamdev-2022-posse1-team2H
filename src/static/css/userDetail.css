@@ -470,6 +470,7 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .content_detail_subcontent_right_serch_information_detail {
