@@ -108,8 +108,7 @@ include dirname(__FILE__) . '/header.php';
                                     <p class="content_detail_subcontent_right_serch_seelaterfield_add_box_text">「後で見る」へ追加</p>
                                 </div>
                                 <div class="content_detail_subcontent_right_serch_seelaterfield_seelaterbox">
-                                    <p class="content_detail_subcontent_right_serch_seelaterfield_seelaterbox_text">後で見るリスト</p>
-
+                                    <a href="./seeLater.php" class="content_detail_subcontent_right_serch_seelaterfield_seelaterbox_text">後で見るリスト</a>
                                 </div>
                             </div>
                         </div>
