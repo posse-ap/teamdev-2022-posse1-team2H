@@ -53,7 +53,7 @@ include dirname(__FILE__) . '/header.php' ?>
     <div class="list_box">
         <p>個人担当者一覧</p>
         <div id="managers_target"></div>
-        <a class="open_modal" href="#" onclick="addAgencyManager()">追加</a>
+        <div class="open_modal" onclick="addAgencyManager()">追加</div>
     </div>
 </main>
 <div id="overlay" class="overlay"></div>
