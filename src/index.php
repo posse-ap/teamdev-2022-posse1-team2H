@@ -19,8 +19,8 @@ include dirname(__FILE__) . "/header.php";
     <div class="agency_list">
         <div class="new_agency_wrapper">
             <div class="title_box">
-                <h1 class="title">NEW ARRIVAL</h1>
-                <h3 class="subtitle">新着</h3>
+                <h1 class="title">AGENCIES</h1>
+                <h3 class="subtitle">エージェント企業一覧</h3>
             </div>
             <div class="new_agency_inner" id="new_agencies_target"></div>
         </div>
