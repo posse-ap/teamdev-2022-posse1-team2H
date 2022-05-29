@@ -194,6 +194,7 @@ body {
     border: solid 3px #0087e6;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
     color: #0087e6;
+    text-decoration: none;
 }
 
 .content_detail_underrequest_seelaterbox,
@@ -347,6 +348,7 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    text-decoration: none;
 }
 
 .content_detail_subcontent_right_serch_inquirybox:hover {
