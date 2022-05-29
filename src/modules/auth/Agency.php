@@ -26,11 +26,13 @@ class Agency
     public function login($email, $password)
     {
         $manager = $this->crud->loginManager($email);
-        if (password_verify($password, $manager['password'])) {
-            return $manager;
-        } else {
-            return null;
-        }
+        if ($manager) {
+            if (password_verify($password, $manager['password'])) {
+                return $manager;
+            } else {
+                return null;
+            }
+        } return null;
     }
 
     public function validateRepreserntative($manager)

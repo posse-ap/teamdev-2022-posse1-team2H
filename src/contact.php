@@ -67,6 +67,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+$ids = $_GET['ids'];
+
+if (empty($ids)) {
+    header('Location: http://' . $_SERVER['HTTP_HOST'] . '/index.php');
+    exit();
+}
+
 include dirname(__FILE__) . "/header.php";
 ?>
 <main class="user_inquary">

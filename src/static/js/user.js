@@ -203,6 +203,7 @@ const handleRemoveFromFav = async (agencyId) => {
   removeFromFav(agencyId);
   await getFavs();
   countFavs();
+  contactAll();
 };
 
 const removeFromFav = (agencyId) => {
